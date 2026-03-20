@@ -126,7 +126,7 @@ The methodology is described in full in the monograph's preface. The use of AI a
   title     = {{CRISPR Systems and Artificial Intelligence: Technical Frontiers, Therapeutic Applications, and Sociotechnical Governance}},
   year      = {2026},
   publisher = {Universidad de Granada},
-  doi       = {10.5281/zenodo.XXXXXXX},
+  doi       = {10.5281/zenodo.19136685},
   url       = {https://crispr-ai-chi.vercel.app/},
   note      = {Quarto Book, HTML edition}
 }
