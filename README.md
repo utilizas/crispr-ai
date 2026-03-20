@@ -4,8 +4,8 @@
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
-[![Deploy: Vercel](https://img.shields.io/badge/deploy-Vercel-black?logo=vercel)](https://crispr-ai-monograph.vercel.app)
-[![Deploy: Netlify](https://img.shields.io/badge/deploy-Netlify-00C7B7?logo=netlify)](https://crispr-ai-monograph.netlify.app)
+[![Deploy: Vercel](https://img.shields.io/badge/deploy-Vercel-black?logo=vercel)](https://crispr-ai-chi.vercel.app/)
+[![Deploy: Netlify](https://img.shields.io/badge/deploy-Netlify-00C7B7?logo=netlify)](https://crispr-ai.netlify.app/)
 
 ---
 
@@ -66,8 +66,8 @@ Each Part closes with a *Sociotechnical Interlude* connecting the preceding tech
 
 The rendered site is deployed as a static HTML book to:
 
-- **Vercel**: [https://crispr-ai-monograph.vercel.app](https://crispr-ai-monograph.vercel.app)
-- **Netlify**: [https://crispr-ai-monograph.netlify.app](https://crispr-ai-monograph.netlify.app)
+- **Vercel**: [https://crispr-ai-chi.vercel.app](https://crispr-ai-chi.vercel.app/)
+- **Netlify**: [https://crispr-ai.netlify.app](https://crispr-ai.netlify.app/)
 
 Both platforms serve the contents of this repository directly. No build step is required — the HTML is pre-rendered.
 
@@ -127,7 +127,7 @@ The methodology is described in full in the monograph's preface. The use of AI a
   year      = {2026},
   publisher = {Universidad de Granada},
   doi       = {10.5281/zenodo.XXXXXXX},
-  url       = {https://crispr-ai-monograph.vercel.app},
+  url       = {https://crispr-ai-chi.vercel.app/},
   note      = {Quarto Book, HTML edition}
 }
 ```
