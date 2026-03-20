@@ -15,7 +15,7 @@
 <p align="center">
   <img src="og-cover.png" alt="Monograph cover" width="400">
 </p>
-<p align="center"><em>Cover generated with AI image models; final selection by the author.</em></p>
+<p align="center"><em>Cover generated with Perplexity; final selection by the author.</em></p>
 </details>
 
 ---
@@ -24,9 +24,9 @@
 
 This repository contains the **rendered HTML output** of an academic monograph examining the convergence of CRISPR-based genome editing and artificial intelligence — from molecular mechanism to clinical application to sociotechnical governance.
 
-The monograph (~58,000 words, 384+ bibliographic entries) was authored by Miguel Moreno at the Universidad de Granada as a contribution to several active Horizon Europe and nationally funded research programmes. It is structured as a [Quarto Book](https://quarto.org/docs/books/) rendered to HTML (primary) and PDF (secondary).
+The monograph (~58,000 words, 384+ bibliographic entries) was authored by Miguel Moreno at the Universidad de Granada as a contribution to several active Horizon Europe and nationally funded research programmes. It is structured as a [Quarto Book](https://quarto.org/docs/books/) rendered to HTML.
 
-> **Note on repository contents.** This repository hosts the **pre-rendered site** (the `_output/` build artefact) for static deployment. It does not include the Quarto source files (`.qmd`), R code, or bibliography sources used during authoring. The complete archival package — including sources, `.bib` file, and R scripts — is deposited on [Zenodo](https://doi.org/10.5281/zenodo.XXXXXXX).
+> **Note on repository contents.** This repository hosts the **pre-rendered site** (the `_output/` build artefact) for static deployment. It does not include the Quarto source files (`.qmd`), R code, or bibliography sources used during authoring. The archival package — including `.bib` file — is deposited on [Zenodo](https://doi.org/10.5281/zenodo.19136685).
 
 ---
 
