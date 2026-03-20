@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; AI for Guide RNA Design and Off-Target Prediction – CRISPR Systems and Artificial Intelligence</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./03-ai-optimization.html" rel="next">
+<link href="./01-crispr-systems.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-4c6d65c679321d81af7ec8b61b1d5a24.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-crispr-systems.html">Part I — CRISPR Systems and AI: Technical Foundations</a></li><li class="breadcrumb-item"><a href="./02-ai-design.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">AI for Guide RNA Design and Off-Target Prediction</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">CRISPR Systems and Artificial Intelligence</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/mm3ugr/crispr-ai-monograph" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I — CRISPR Systems and AI: Technical Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-crispr-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">CRISPR Architectures: From Cas9 to Epigenome Editors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-ai-design.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">AI for Guide RNA Design and Off-Target Prediction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-ai-optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">AI-Driven Optimisation of Editing Outcomes</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II — Therapeutic Applications and the Clinical Pipeline</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-rare-diseases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Genetic Rare Diseases as Therapeutic Targets for CRISPR-AI</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-clinical-pipeline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Clinical Pipeline: From Bench to Bedside</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-ai-pipeline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">AI Across the Therapeutic Pipeline</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III — Governance, Ethics, and Futures</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-regulatory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regulatory Frameworks for Gene Editing in Europe and Beyond</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-bioethics-sts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Bioethics and STS: Autonomy, Justice, and Sociotechnical Imaginaries</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-prospective.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Prospective Scenarios 2026–2030</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-ch2-intro" id="toc-sec-ch2-intro" class="nav-link active" data-scroll-target="#sec-ch2-intro"><span class="header-section-number">2.1</span> Introduction: the computational challenge of guide selection</a></li>
+  <li><a href="#sec-ch2-pre-ml" id="toc-sec-ch2-pre-ml" class="nav-link" data-scroll-target="#sec-ch2-pre-ml"><span class="header-section-number">2.2</span> Rule-based and biophysical approaches: the pre-ML era</a>
+  <ul class="collapse">
+  <li><a href="#sequence-features-correlated-with-activity-gc-content-position-specific-nucleotides" id="toc-sequence-features-correlated-with-activity-gc-content-position-specific-nucleotides" class="nav-link" data-scroll-target="#sequence-features-correlated-with-activity-gc-content-position-specific-nucleotides"><span class="header-section-number">2.2.1</span> Sequence features correlated with activity: GC content, position-specific nucleotides</a></li>
+  <li><a href="#thermodynamic-models-of-grnadna-hybridisation" id="toc-thermodynamic-models-of-grnadna-hybridisation" class="nav-link" data-scroll-target="#thermodynamic-models-of-grnadna-hybridisation"><span class="header-section-number">2.2.2</span> Thermodynamic models of gRNA–DNA hybridisation</a></li>
+  <li><a href="#limitations-low-predictive-power-and-dataset-dependence" id="toc-limitations-low-predictive-power-and-dataset-dependence" class="nav-link" data-scroll-target="#limitations-low-predictive-power-and-dataset-dependence"><span class="header-section-number">2.2.3</span> Limitations: low predictive power and dataset dependence</a></li>
+  </ul></li>
+  <li><a href="#sec-ch2-first-gen" id="toc-sec-ch2-first-gen" class="nav-link" data-scroll-target="#sec-ch2-first-gen"><span class="header-section-number">2.3</span> First-generation ML models: from regression to random forests</a>
+  <ul class="collapse">
+  <li><a href="#doench-et-al.-2014-2016-the-rule-set-1-and-rule-set-2-frameworks" id="toc-doench-et-al.-2014-2016-the-rule-set-1-and-rule-set-2-frameworks" class="nav-link" data-scroll-target="#doench-et-al.-2014-2016-the-rule-set-1-and-rule-set-2-frameworks"><span class="header-section-number">2.3.1</span> Doench <em>et al.</em> (2014, 2016): the Rule Set 1 and Rule Set 2 frameworks</a></li>
+  <li><a href="#feature-engineering-sequence-thermodynamic-and-chromatin-features" id="toc-feature-engineering-sequence-thermodynamic-and-chromatin-features" class="nav-link" data-scroll-target="#feature-engineering-sequence-thermodynamic-and-chromatin-features"><span class="header-section-number">2.3.2</span> Feature engineering: sequence, thermodynamic, and chromatin features</a></li>
+  <li><a href="#chopchop-crisprscan-and-the-tool-proliferation-problem" id="toc-chopchop-crisprscan-and-the-tool-proliferation-problem" class="nav-link" data-scroll-target="#chopchop-crisprscan-and-the-tool-proliferation-problem"><span class="header-section-number">2.3.3</span> CHOPCHOP, CRISPRscan, and the tool proliferation problem</a></li>
+  </ul></li>
+  <li><a href="#sec-ch2-deep-learning" id="toc-sec-ch2-deep-learning" class="nav-link" data-scroll-target="#sec-ch2-deep-learning"><span class="header-section-number">2.4</span> Deep learning architectures for on-target activity prediction</a>
+  <ul class="collapse">
+  <li><a href="#convolutional-neural-networks-deepcrispr-and-crispr-ml" id="toc-convolutional-neural-networks-deepcrispr-and-crispr-ml" class="nav-link" data-scroll-target="#convolutional-neural-networks-deepcrispr-and-crispr-ml"><span class="header-section-number">2.4.1</span> Convolutional neural networks: DeepCRISPR and CRISPR-ML</a></li>
+  <li><a href="#recurrent-architectures-and-sequence-context-modelling" id="toc-recurrent-architectures-and-sequence-context-modelling" class="nav-link" data-scroll-target="#recurrent-architectures-and-sequence-context-modelling"><span class="header-section-number">2.4.2</span> Recurrent architectures and sequence context modelling</a></li>
+  <li><a href="#transformer-based-models-crispr-bert-and-attention-over-guide-sequences" id="toc-transformer-based-models-crispr-bert-and-attention-over-guide-sequences" class="nav-link" data-scroll-target="#transformer-based-models-crispr-bert-and-attention-over-guide-sequences"><span class="header-section-number">2.4.3</span> Transformer-based models: CRISPR-BERT and attention over guide sequences</a></li>
+  <li><a href="#transfer-learning-across-cell-types-and-crispr-systems" id="toc-transfer-learning-across-cell-types-and-crispr-systems" class="nav-link" data-scroll-target="#transfer-learning-across-cell-types-and-crispr-systems"><span class="header-section-number">2.4.4</span> Transfer learning across cell types and CRISPR systems</a></li>
+  </ul></li>
+  <li><a href="#sec-ch2-off-target" id="toc-sec-ch2-off-target" class="nav-link" data-scroll-target="#sec-ch2-off-target"><span class="header-section-number">2.5</span> Off-target prediction: from alignment to deep learning</a>
+  <ul class="collapse">
+  <li><a href="#cas-offinder-and-alignment-based-search" id="toc-cas-offinder-and-alignment-based-search" class="nav-link" data-scroll-target="#cas-offinder-and-alignment-based-search"><span class="header-section-number">2.5.1</span> Cas-OFFinder and alignment-based search</a></li>
+  <li><a href="#cfd-scores-and-empirical-mismatch-penalties" id="toc-cfd-scores-and-empirical-mismatch-penalties" class="nav-link" data-scroll-target="#cfd-scores-and-empirical-mismatch-penalties"><span class="header-section-number">2.5.2</span> CFD scores and empirical mismatch penalties</a></li>
+  <li><a href="#circle-seq-guide-seq-and-discover-seq-experimental-off-target-profiling" id="toc-circle-seq-guide-seq-and-discover-seq-experimental-off-target-profiling" class="nav-link" data-scroll-target="#circle-seq-guide-seq-and-discover-seq-experimental-off-target-profiling"><span class="header-section-number">2.5.3</span> CIRCLE-seq, GUIDE-seq, and DISCOVER-seq: experimental off-target profiling</a></li>
+  <li><a href="#deep-learning-for-off-target-crispr-net-crisproff-and-ensemble-approaches" id="toc-deep-learning-for-off-target-crispr-net-crisproff-and-ensemble-approaches" class="nav-link" data-scroll-target="#deep-learning-for-off-target-crispr-net-crisproff-and-ensemble-approaches"><span class="header-section-number">2.5.4</span> Deep learning for off-target: CRISPR-Net, CRISPRoff, and ensemble approaches</a></li>
+  <li><a href="#integrating-chromatin-accessibility-epigenomic-features-as-predictors" id="toc-integrating-chromatin-accessibility-epigenomic-features-as-predictors" class="nav-link" data-scroll-target="#integrating-chromatin-accessibility-epigenomic-features-as-predictors"><span class="header-section-number">2.5.5</span> Integrating chromatin accessibility: epigenomic features as predictors</a></li>
+  </ul></li>
+  <li><a href="#sec-ch2-benchmarking" id="toc-sec-ch2-benchmarking" class="nav-link" data-scroll-target="#sec-ch2-benchmarking"><span class="header-section-number">2.6</span> Benchmarking and reproducibility</a>
+  <ul class="collapse">
+  <li><a href="#the-crisprbench-framework-and-standardised-evaluation" id="toc-the-crisprbench-framework-and-standardised-evaluation" class="nav-link" data-scroll-target="#the-crisprbench-framework-and-standardised-evaluation"><span class="header-section-number">2.6.1</span> The CRISPRbench framework and standardised evaluation</a></li>
+  <li><a href="#dataset-biases-cell-type-specificity-library-design-artefacts" id="toc-dataset-biases-cell-type-specificity-library-design-artefacts" class="nav-link" data-scroll-target="#dataset-biases-cell-type-specificity-library-design-artefacts"><span class="header-section-number">2.6.2</span> Dataset biases: cell-type specificity, library design artefacts</a></li>
+  <li><a href="#reproducibility-challenges-in-published-models" id="toc-reproducibility-challenges-in-published-models" class="nav-link" data-scroll-target="#reproducibility-challenges-in-published-models"><span class="header-section-number">2.6.3</span> Reproducibility challenges in published models</a></li>
+  <li><a href="#model-interpretability-what-has-the-network-learned-about-biology" id="toc-model-interpretability-what-has-the-network-learned-about-biology" class="nav-link" data-scroll-target="#model-interpretability-what-has-the-network-learned-about-biology"><span class="header-section-number">2.6.4</span> Model interpretability: what has the network learned about biology?</a></li>
+  </ul></li>
+  <li><a href="#sec-ch2-multi-objective" id="toc-sec-ch2-multi-objective" class="nav-link" data-scroll-target="#sec-ch2-multi-objective"><span class="header-section-number">2.7</span> Multi-objective guide design: balancing activity, specificity, and deliverability</a>
+  <ul class="collapse">
+  <li><a href="#pareto-optimal-guide-selection" id="toc-pareto-optimal-guide-selection" class="nav-link" data-scroll-target="#pareto-optimal-guide-selection"><span class="header-section-number">2.7.1</span> Pareto-optimal guide selection</a></li>
+  <li><a href="#constraint-satisfaction-for-multiplexed-editing" id="toc-constraint-satisfaction-for-multiplexed-editing" class="nav-link" data-scroll-target="#constraint-satisfaction-for-multiplexed-editing"><span class="header-section-number">2.7.2</span> Constraint satisfaction for multiplexed editing</a></li>
+  <li><a href="#guide-design-for-base-editors-and-prime-editors-distinct-sequence-requirements" id="toc-guide-design-for-base-editors-and-prime-editors-distinct-sequence-requirements" class="nav-link" data-scroll-target="#guide-design-for-base-editors-and-prime-editors-distinct-sequence-requirements"><span class="header-section-number">2.7.3</span> Guide design for base editors and prime editors: distinct sequence requirements</a></li>
+  </ul></li>
+  <li><a href="#sec-sti-2" id="toc-sec-sti-2" class="nav-link" data-scroll-target="#sec-sti-2"><span class="header-section-number">2.8</span> Sociotechnical Interlude II: algorithmic authority in experimental design</a></li>
+  <li><a href="#sec-ch2-summary" id="toc-sec-ch2-summary" class="nav-link" data-scroll-target="#sec-ch2-summary"><span class="header-section-number">2.9</span> Chapter summary</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/mm3ugr/crispr-ai-monograph/edit/main/02-ai-design.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/mm3ugr/crispr-ai-monograph/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-crispr-systems.html">Part I — CRISPR Systems and AI: Technical Foundations</a></li><li class="breadcrumb-item"><a href="./02-ai-design.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">AI for Guide RNA Design and Off-Target Prediction</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-ai-design" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">AI for Guide RNA Design and Off-Target Prediction</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sec-ch2-intro" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sec-ch2-intro"><span class="header-section-number">2.1</span> Introduction: the computational challenge of guide selection</h2>
+<p>The programmability of CRISPR systems, celebrated as their defining advantage over previous genome editing platforms, conceals a substantial computational problem. For any given target gene, hundreds to thousands of candidate guide RNA (gRNA) sequences may satisfy the basic requirement of complementarity to a unique genomic locus adjacent to a PAM motif. Yet these candidates vary enormously in their on-target cleavage efficiency — often by an order of magnitude or more — and in the number and severity of off-target cleavage events they produce elsewhere in the genome <span class="citation" data-cites="doench2014">(<a href="references.html#ref-doench2014" role="doc-biblioref">Doench et al., 2014</a>)</span>. Selecting the optimal guide for a given application is therefore not a trivial lookup but a prediction problem of considerable complexity, in which the inputs include the guide sequence itself, its thermodynamic properties, the local chromatin environment, the specific Cas protein employed, and the delivery context.</p>
+<p>What follows is an account of how the field has addressed this prediction problem, from early heuristic rules through classical machine learning to contemporary deep learning architectures. The chapter’s central claim is that the transition to learned models has genuinely improved on-target activity and off-target specificity prediction — but that these improvements remain unevenly distributed across CRISPR system types, genomic contexts, and cell types, and that they have redistributed epistemic authority in ways worth examining. Who decides which guides enter an experiment, and on the basis of what evidence, are questions that track the shifting boundary between computational and bench expertise.</p>
+</section>
+<section id="sec-ch2-pre-ml" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sec-ch2-pre-ml"><span class="header-section-number">2.2</span> Rule-based and biophysical approaches: the pre-ML era</h2>
+<section id="sequence-features-correlated-with-activity-gc-content-position-specific-nucleotides" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="sequence-features-correlated-with-activity-gc-content-position-specific-nucleotides"><span class="header-section-number">2.2.1</span> Sequence features correlated with activity: GC content, position-specific nucleotides</h3>
+<p>The earliest attempts to predict gRNA efficacy relied on the identification of sequence features correlated with cleavage efficiency in pooled library screens. Seminal work by Wang <em>et al.</em> in 2014, analysing data from genome-scale knockout screens, identified GC content of the guide spacer as a significant but weak predictor of activity: guides with extreme GC content (below 30% or above 70%) performed consistently worse than those in the intermediate range <span class="citation" data-cites="wang2014">(<a href="references.html#ref-wang2014" role="doc-biblioref">Wang et al., 2014</a>)</span>. Position-specific nucleotide preferences — such as enrichment for guanine at position 20 (the PAM-proximal end) and against thymine at position 1 — were also observed, but individual feature correlations explained only a small fraction of the observed variance in editing efficiency.</p>
+</section>
+<section id="thermodynamic-models-of-grnadna-hybridisation" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="thermodynamic-models-of-grnadna-hybridisation"><span class="header-section-number">2.2.2</span> Thermodynamic models of gRNA–DNA hybridisation</h3>
+<p>A complementary approach modelled gRNA efficacy in biophysical terms: the free energy of hybridisation between guide and target, the stability of secondary structures within the guide RNA, and the accessibility of the target DNA. These thermodynamic features contributed modestly to prediction accuracy and were incorporated into early design tools such as CRISPRscan <span class="citation" data-cites="moreno-mateos2015">(<a href="references.html#ref-moreno-mateos2015" role="doc-biblioref">Moreno-Mateos et al., 2015</a>)</span>. However, thermodynamic models alone proved insufficient to capture the full complexity of Cas9–gRNA–DNA interactions, which depend on conformational dynamics, protein contacts, and cellular context that are not reducible to nucleotide-level free energies.</p>
+</section>
+<section id="limitations-low-predictive-power-and-dataset-dependence" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="limitations-low-predictive-power-and-dataset-dependence"><span class="header-section-number">2.2.3</span> Limitations: low predictive power and dataset dependence</h3>
+<p>The principal limitation of rule-based approaches was their low predictive power: Spearman correlations between predicted and observed activity typically ranged from 0.2 to 0.4 across independent test datasets <span class="citation" data-cites="doench2014">(<a href="references.html#ref-doench2014" role="doc-biblioref">Doench et al., 2014</a>)</span>. Moreover, rules derived from one dataset often generalised poorly to others, reflecting the influence of library design, cell type, assay format, and delivery method on the measured efficiency scores. This dataset dependence signalled the need for models capable of learning more complex, non-linear relationships from larger training corpora — a need that machine learning was well positioned to address.</p>
+</section>
+</section>
+<section id="sec-ch2-first-gen" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="sec-ch2-first-gen"><span class="header-section-number">2.3</span> First-generation ML models: from regression to random forests</h2>
+<section id="doench-et-al.-2014-2016-the-rule-set-1-and-rule-set-2-frameworks" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="doench-et-al.-2014-2016-the-rule-set-1-and-rule-set-2-frameworks"><span class="header-section-number">2.3.1</span> Doench <em>et al.</em> (2014, 2016): the Rule Set 1 and Rule Set 2 frameworks</h3>
+<p>The transition to machine learning was catalysed by two landmark studies from the Broad Institute. Doench <em>et al.</em> (2014) trained a logistic regression model — Rule Set 1 — on activity data from approximately 1,800 guides targeting essential genes in human and mouse cell lines. The model incorporated 27 sequence features (position-specific nucleotide identities, dinucleotide frequencies, and GC content) and achieved a Spearman correlation of ~0.53 with experimentally measured activity, a substantial improvement over prior heuristics <span class="citation" data-cites="doench2014">(<a href="references.html#ref-doench2014" role="doc-biblioref">Doench et al., 2014</a>)</span>.</p>
+<p>Rule Set 2, published in 2016, expanded the training dataset to over 2,000 guides and adopted a gradient-boosted regression tree model, incorporating additional features including the target gene’s position within a protein domain and the presence of a guanine immediately adjacent to the PAM. Rule Set 2 achieved Spearman correlations of ~0.60 and became the default scoring algorithm in the widely adopted tool sgRNA Designer <span class="citation" data-cites="doench2016">(<a href="references.html#ref-doench2016" role="doc-biblioref">Doench et al., 2016</a>)</span>. Its success established a methodological template — curated experimental datasets, engineered sequence features, and ensemble learning — that subsequent models would both build upon and eventually supersede.</p>
+</section>
+<section id="feature-engineering-sequence-thermodynamic-and-chromatin-features" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="feature-engineering-sequence-thermodynamic-and-chromatin-features"><span class="header-section-number">2.3.2</span> Feature engineering: sequence, thermodynamic, and chromatin features</h3>
+<p>The performance of first-generation models depended heavily on the quality and breadth of input features. Beyond sequence composition, researchers incorporated thermodynamic stability of the gRNA–DNA duplex and the gRNA secondary structure energy. The feature that proved most consequential, however, was chromatin accessibility at the target locus, typically measured by DNase I hypersensitivity or ATAC-seq signal. This turned out to be a strong predictor of editing efficiency in endogenous contexts, as Cas9 must compete with nucleosomes and chromatin-binding factors for access to its target DNA <span class="citation" data-cites="horlbeck2016">(<a href="references.html#ref-horlbeck2016" role="doc-biblioref">Horlbeck et al., 2016</a>)</span>.</p>
+<p>This observation had a practical consequence: models trained on data from one cell type, where chromatin environments differ, may not transfer accurately to another — a transferability limitation that persists even in contemporary deep learning architectures.</p>
+</section>
+<section id="chopchop-crisprscan-and-the-tool-proliferation-problem" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="chopchop-crisprscan-and-the-tool-proliferation-problem"><span class="header-section-number">2.3.3</span> CHOPCHOP, CRISPRscan, and the tool proliferation problem</h3>
+<p>The early ML era produced a proliferation of web-based design tools — CHOPCHOP, CRISPRscan, CRISPRdirect, E-CRISP, and others — each implementing slightly different scoring algorithms, feature sets, and reference genomes <span class="citation" data-cites="labun2019">(<a href="references.html#ref-labun2019" role="doc-biblioref">Labun et al., 2019</a>)</span>. For the bench scientist, this proliferation presented a practical dilemma: different tools frequently recommended different guides for the same target, with no principled way to adjudicate disagreements. Comparative benchmarking studies revealed substantial variability in tool performance across datasets, with no single tool consistently outperforming all others <span class="citation" data-cites="haeussler2016">(<a href="references.html#ref-haeussler2016" role="doc-biblioref">Haeussler et al., 2016</a>)</span>. This fragmentation motivated the subsequent push towards standardised evaluation frameworks, discussed in <a href="#sec-ch2-benchmarking" class="quarto-xref"><span>Section 2.6</span></a>.</p>
+</section>
+</section>
+<section id="sec-ch2-deep-learning" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-ch2-deep-learning"><span class="header-section-number">2.4</span> Deep learning architectures for on-target activity prediction</h2>
+<section id="convolutional-neural-networks-deepcrispr-and-crispr-ml" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="convolutional-neural-networks-deepcrispr-and-crispr-ml"><span class="header-section-number">2.4.1</span> Convolutional neural networks: DeepCRISPR and CRISPR-ML</h3>
+<p>The application of deep learning to gRNA activity prediction was motivated by a straightforward hypothesis: convolutional neural networks (CNNs), which had demonstrated remarkable success in image recognition and genomic sequence classification, might capture local sequence motifs predictive of editing efficiency that manual feature engineering had missed.</p>
+<p>DeepCRISPR, introduced by Chuai <em>et al.</em> in 2018, was among the first models to apply a deep CNN architecture to both on-target activity and off-target effect prediction from raw one-hot-encoded guide and target sequences <span class="citation" data-cites="chuai2018">(<a href="references.html#ref-chuai2018" role="doc-biblioref">Chuai et al., 2018</a>)</span>. The model incorporated an autoencoder pre-training step to learn unsupervised representations of gRNA sequences before fine-tuning on labelled activity data. DeepCRISPR reported Spearman correlations in the range of 0.60–0.65 on held-out test sets, competitive with or slightly exceeding Rule Set 2, and crucially did so without requiring hand-crafted features.</p>
+<p>Subsequent CNN-based models — including CRISPR-ML and DeepSpCas9 — explored alternative architectures (varying kernel sizes, pooling strategies, and depth) and training regimes <span class="citation" data-cites="kim2019deepcas9">(<a href="references.html#ref-kim2019deepcas9" role="doc-biblioref">Kim et al., 2019</a>)</span>. Across these studies, CNNs reliably captured position-dependent nucleotide interactions — effectively learning dinucleotide and trinucleotide motifs that corresponded to biochemically interpretable features of the Cas9–DNA interaction, such as the seed-region sensitivity described in <a href="01-crispr-systems.html#sec-ch1-cas9" class="quarto-xref"><span>Section 1.2</span></a>.</p>
+</section>
+<section id="recurrent-architectures-and-sequence-context-modelling" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="recurrent-architectures-and-sequence-context-modelling"><span class="header-section-number">2.4.2</span> Recurrent architectures and sequence context modelling</h3>
+<p>Recurrent neural networks (RNNs), including long short-term memory (LSTM) and gated recurrent unit (GRU) variants, offered an alternative architecture better suited to modelling sequential dependencies across the full length of the gRNA spacer. Several groups demonstrated that bidirectional LSTM models, which process the guide sequence in both 5’→3’ and 3’→5’ directions, achieved modest improvements over CNNs in capturing long-range positional effects <span class="citation" data-cites="chari2015 kim2019deepcas9">(<a href="references.html#ref-chari2015" role="doc-biblioref">Chari et al., 2015</a>; <a href="references.html#ref-kim2019deepcas9" role="doc-biblioref">Kim et al., 2019</a>)</span>.</p>
+<p>However, the practical gains of RNN-based models over well-optimised CNNs were often marginal, and the increased training time and hyperparameter sensitivity of recurrent architectures limited their adoption. The more consequential architectural innovation came with the transformer.</p>
+</section>
+<section id="transformer-based-models-crispr-bert-and-attention-over-guide-sequences" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="transformer-based-models-crispr-bert-and-attention-over-guide-sequences"><span class="header-section-number">2.4.3</span> Transformer-based models: CRISPR-BERT and attention over guide sequences</h3>
+<p>The transformer architecture, introduced by Vaswani <em>et al.</em> in 2017 for natural language processing, computes pairwise attention between all positions in an input sequence, enabling the model to capture long-range dependencies without the sequential processing bottleneck of RNNs <span class="citation" data-cites="vaswani2017">(<a href="references.html#ref-vaswani2017" role="doc-biblioref">Vaswani et al., 2017</a>)</span>. Its application to biological sequences was pioneered by protein language models (e.g., ESM, ProtTrans) and subsequently extended to CRISPR guide design.</p>
+<p>CRISPR-BERT and related transformer-based models treat the gRNA–target pair as a “sentence” in which each nucleotide position is a “token,” and the self-attention mechanism learns which positions most strongly predict activity <span class="citation" data-cites="zhang2023crisprbert Luo2024Inter">(<a href="references.html#ref-Luo2024Inter" role="doc-biblioref">Luo et al., 2024</a>; <a href="references.html#ref-zhang2023crisprbert" role="doc-biblioref">Y. Zhang et al., 2023</a>)</span>. The attention weights themselves provide a form of interpretability: positions receiving high attention in the trained model frequently correspond to the biochemically defined seed region and PAM-proximal contacts described in structural studies <span class="citation" data-cites="nishimasu2014">(<a href="references.html#ref-nishimasu2014" role="doc-biblioref">Nishimasu et al., 2014</a>)</span>.</p>
+<p>Pre-trained language models for DNA sequences — such as DNABERT and the Nucleotide Transformer — have also been fine-tuned for gRNA activity prediction, leveraging representations learned from billions of genomic sequences to improve performance on the comparatively small labelled datasets available for CRISPR applications <span class="citation" data-cites="ji2021dnabert dalla-torre2025">(<a href="references.html#ref-dalla-torre2025" role="doc-biblioref">Dalla-Torre et al., 2025</a>; <a href="references.html#ref-ji2021dnabert" role="doc-biblioref">Ji et al., 2021</a>)</span>. This transfer learning strategy has proven particularly valuable for extending predictions to less-studied CRISPR systems (Cas12a, base editors) for which labelled training data are scarce.</p>
+</section>
+<section id="transfer-learning-across-cell-types-and-crispr-systems" class="level3" data-number="2.4.4">
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="transfer-learning-across-cell-types-and-crispr-systems"><span class="header-section-number">2.4.4</span> Transfer learning across cell types and CRISPR systems</h3>
+<p>A persistent challenge is the transferability of activity models across biological contexts. A model trained on data from HEK293T cells may perform substantially worse when applied to primary haematopoietic stem cells or neurons, reflecting differences in chromatin state, DNA repair pathway activity, and cell-cycle distribution. Transfer learning — pre-training on large, heterogeneous datasets and fine-tuning on smaller cell-type-specific data — has emerged as the principal strategy for addressing this limitation, though the data requirements for effective fine-tuning remain an active area of investigation <span class="citation" data-cites="kim2020hf">(<a href="references.html#ref-kim2020hf" role="doc-biblioref">Kim et al., 2020</a>)</span>.</p>
+</section>
+</section>
+<section id="sec-ch2-off-target" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="sec-ch2-off-target"><span class="header-section-number">2.5</span> Off-target prediction: from alignment to deep learning</h2>
+<section id="cas-offinder-and-alignment-based-search" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="cas-offinder-and-alignment-based-search"><span class="header-section-number">2.5.1</span> Cas-OFFinder and alignment-based search</h3>
+<p>The first computational step in off-target assessment is the identification of genomic sites with sequence similarity to the intended target. Cas-OFFinder, introduced by Bae <em>et al.</em> in 2014, performs an exhaustive search of the reference genome for sequences matching the spacer with a user-defined mismatch tolerance (typically up to 4 mismatches) adjacent to an appropriate PAM <span class="citation" data-cites="bae2014">(<a href="references.html#ref-bae2014" role="doc-biblioref">Bae et al., 2014</a>)</span>. This alignment-based approach is fast and comprehensive but does not distinguish between mismatched sites that are efficiently cleaved and those that are not — a distinction that requires predictive modelling.</p>
+</section>
+<section id="cfd-scores-and-empirical-mismatch-penalties" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="cfd-scores-and-empirical-mismatch-penalties"><span class="header-section-number">2.5.2</span> CFD scores and empirical mismatch penalties</h3>
+<p>The cutting frequency determination (CFD) score, introduced as part of Rule Set 2 by Doench <em>et al.</em> (2016), addressed this limitation by assigning empirically derived penalty weights to each possible mismatch at each position along the spacer <span class="citation" data-cites="doench2016">(<a href="references.html#ref-doench2016" role="doc-biblioref">Doench et al., 2016</a>)</span>. The CFD score of an off-target site is the product of individual mismatch penalties, providing a rapid estimate of the relative cleavage probability. CFD scores have been widely adopted as a standard metric for ranking off-target sites and for computing aggregate specificity scores for candidate guides.</p>
+<p>However, the CFD model assumes independence between mismatch positions — an assumption violated by the structural biology of Cas9 target recognition, in which mismatches in the seed region have qualitatively different consequences from those in the PAM-distal region, and in which pairs of mismatches can interact non-additively. This limitation motivated the development of deep learning approaches to off-target prediction.</p>
+</section>
+<section id="circle-seq-guide-seq-and-discover-seq-experimental-off-target-profiling" class="level3" data-number="2.5.3">
+<h3 data-number="2.5.3" class="anchored" data-anchor-id="circle-seq-guide-seq-and-discover-seq-experimental-off-target-profiling"><span class="header-section-number">2.5.3</span> CIRCLE-seq, GUIDE-seq, and DISCOVER-seq: experimental off-target profiling</h3>
+<p>As discussed in <a href="01-crispr-systems.html#sec-ch1-cas9" class="quarto-xref"><span>Section 1.2</span></a>, experimental methods for genome-wide off-target profiling — GUIDE-seq <span class="citation" data-cites="tsai2015">(<a href="references.html#ref-tsai2015" role="doc-biblioref">Tsai et al., 2015</a>)</span>, CIRCLE-seq <span class="citation" data-cites="tsai2017">(<a href="references.html#ref-tsai2017" role="doc-biblioref">Tsai et al., 2017</a>)</span>, and DISCOVER-seq <span class="citation" data-cites="wienert2019">(<a href="references.html#ref-wienert2019" role="doc-biblioref">Wienert et al., 2019</a>)</span> — provide the ground-truth data against which computational predictions are calibrated. The availability of these large-scale experimental datasets has been essential for training and evaluating deep learning models for off-target prediction.</p>
+<p>What these datasets revealed, however, was a problem with the data itself: the number of experimentally validated off-target sites per guide is typically modest (often fewer than 20 above background), but these sites are distributed across a vast space of possible mismatched sequences — creating an extreme class imbalance problem for supervised learning approaches.</p>
+</section>
+<section id="deep-learning-for-off-target-crispr-net-crisproff-and-ensemble-approaches" class="level3" data-number="2.5.4">
+<h3 data-number="2.5.4" class="anchored" data-anchor-id="deep-learning-for-off-target-crispr-net-crisproff-and-ensemble-approaches"><span class="header-section-number">2.5.4</span> Deep learning for off-target: CRISPR-Net, CRISPRoff, and ensemble approaches</h3>
+<p>CRISPR-Net, developed by Lin <em>et al.</em> in 2020, was among the first models to apply a deep CNN architecture specifically to the off-target prediction problem, encoding both the guide and candidate off-target sequences as two-dimensional matrices that capture the positional relationship between matches, mismatches, and insertions <span class="citation" data-cites="lin2020">(<a href="references.html#ref-lin2020" role="doc-biblioref">Lin &amp; Wong, 2018</a>)</span>. The model achieved area under the receiver operating characteristic curve (AUROC) values exceeding 0.95 on held-out GUIDE-seq datasets, substantially outperforming CFD-based predictions.</p>
+<p>Subsequent models — including CRISPRoff <span class="citation" data-cites="alkan2018">(<a href="references.html#ref-alkan2018" role="doc-biblioref">Alkan et al., 2018</a>)</span>, CRISPR-IP <span class="citation" data-cites="zhang2020crisprip">(<a href="references.html#ref-zhang2020crisprip" role="doc-biblioref">G. Zhang et al., 2020</a>)</span>, and ensemble approaches combining multiple architectures — have further improved off-target discrimination. What unites these efforts is the integration of epigenomic features (chromatin accessibility, nucleosome positioning, DNA methylation) alongside sequence information, reflecting the observation that even perfectly matched off-target sites may be inaccessible in closed chromatin.</p>
+</section>
+<section id="integrating-chromatin-accessibility-epigenomic-features-as-predictors" class="level3" data-number="2.5.5">
+<h3 data-number="2.5.5" class="anchored" data-anchor-id="integrating-chromatin-accessibility-epigenomic-features-as-predictors"><span class="header-section-number">2.5.5</span> Integrating chromatin accessibility: epigenomic features as predictors</h3>
+<p>Cell-type-specific epigenomic data now define the leading edge of off-target prediction. Chromatin accessibility, measured by ATAC-seq or DNase-seq, is among the strongest individual predictors of off-target cleavage frequency in living cells: sites in open chromatin are cleaved at rates orders of magnitude higher than sequence-identical sites in heterochromatin <span class="citation" data-cites="horlbeck2016 chen2017ontarget">(<a href="references.html#ref-horlbeck2016" role="doc-biblioref">Horlbeck et al., 2016</a>; <a href="references.html#ref-chen2017ontarget" role="doc-biblioref">Klemm et al., 2019</a>)</span>.</p>
+<p>This finding has two practical consequences. First, it means that off-target profiles are inherently cell-type-specific, and a guide deemed “safe” in one cellular context may not be safe in another — a consideration of particular importance for therapeutic applications targeting multiple tissues. Second, it creates a data dependency: accurate off-target prediction requires not only the guide sequence but also epigenomic maps of the target cell type, which may not be available for all clinically relevant populations.</p>
+</section>
+</section>
+<section id="sec-ch2-benchmarking" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="sec-ch2-benchmarking"><span class="header-section-number">2.6</span> Benchmarking and reproducibility</h2>
+<section id="the-crisprbench-framework-and-standardised-evaluation" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="the-crisprbench-framework-and-standardised-evaluation"><span class="header-section-number">2.6.1</span> The CRISPRbench framework and standardised evaluation</h3>
+<p>The proliferation of competing models, each reporting performance metrics on different datasets with different preprocessing and evaluation protocols, created a reproducibility crisis in the gRNA design field. CRISPRbench, introduced by Konstantakos <em>et al.</em> in 2022, addressed this by providing a standardised evaluation framework with curated benchmark datasets, unified preprocessing pipelines, and consistent performance metrics (Spearman correlation for on-target activity; AUROC and AUPRC for off-target classification) <span class="citation" data-cites="konstantakos2022">(<a href="references.html#ref-konstantakos2022" role="doc-biblioref">Konstantakos et al., 2022</a>)</span>.</p>
+<p>Benchmarking on standardised datasets has tempered the optimism of individual model publications in several respects. The performance gap between deep learning models and well-optimised classical ML approaches (gradient-boosted trees with engineered features) turns out to be narrower than reported in individual papers — a finding that echoes similar deflations in other applied ML domains. Performance also varies substantially across datasets derived from different cell types, library designs, and assay formats; and model rankings are unstable across evaluation metrics, so that a model excelling on Spearman correlation for a regression task may underperform on binary classification of active vs.&nbsp;inactive guides.</p>
+</section>
+<section id="dataset-biases-cell-type-specificity-library-design-artefacts" class="level3" data-number="2.6.2">
+<h3 data-number="2.6.2" class="anchored" data-anchor-id="dataset-biases-cell-type-specificity-library-design-artefacts"><span class="header-section-number">2.6.2</span> Dataset biases: cell-type specificity, library design artefacts</h3>
+<p>Training data for gRNA activity models are derived overwhelmingly from a small number of transformed cell lines — HEK293T, HeLa, A375 — which differ systematically from the primary cells relevant to therapeutic applications. Library designs also introduce biases: many large-scale datasets are drawn from genome-wide knockout screens in which guides target coding exons, potentially enriching for sequence contexts that are not representative of the broader targetable genome. The consequence is that published performance metrics may overestimate the accuracy of predictions in clinically relevant settings <span class="citation" data-cites="haeussler2016">(<a href="references.html#ref-haeussler2016" role="doc-biblioref">Haeussler et al., 2016</a>)</span>.</p>
+</section>
+<section id="reproducibility-challenges-in-published-models" class="level3" data-number="2.6.3">
+<h3 data-number="2.6.3" class="anchored" data-anchor-id="reproducibility-challenges-in-published-models"><span class="header-section-number">2.6.3</span> Reproducibility challenges in published models</h3>
+<p>Independent replication of published model performance has proven difficult for several reasons: incomplete reporting of hyperparameter configurations, unavailability of training data or code, and sensitivity to minor preprocessing decisions (e.g., one-hot encoding order, handling of ambiguous nucleotides). The CRISPRbench initiative and the growing adoption of open-source model repositories have improved the situation, but reproducibility remains an ongoing concern, consistent with the broader challenges in computational biology <span class="citation" data-cites="heil2021">(<a href="references.html#ref-heil2021" role="doc-biblioref">Heil et al., 2021</a>)</span>.</p>
+</section>
+<section id="model-interpretability-what-has-the-network-learned-about-biology" class="level3" data-number="2.6.4">
+<h3 data-number="2.6.4" class="anchored" data-anchor-id="model-interpretability-what-has-the-network-learned-about-biology"><span class="header-section-number">2.6.4</span> Model interpretability: what has the network learned about biology?</h3>
+<p>A recurrent critique of deep learning models in the gRNA design domain is their opacity: a model may achieve high predictive accuracy without providing mechanistic insight into <em>why</em> certain guides work well and others do not. Interpretability methods — including saliency maps, attention weight visualisation, and integrated gradients — have been applied to reveal the features driving model predictions.</p>
+<p>Reassuringly, these analyses consistently identify the PAM-proximal seed region, specific position-dependent nucleotide preferences, and secondary structure stability as high-importance features — findings that align with biochemical and structural knowledge <span class="citation" data-cites="chuai2018 kim2019deepcas9">(<a href="references.html#ref-chuai2018" role="doc-biblioref">Chuai et al., 2018</a>; <a href="references.html#ref-kim2019deepcas9" role="doc-biblioref">Kim et al., 2019</a>)</span>. Less expected discoveries include the importance of flanking genomic context (nucleotides beyond the 20-nt spacer) and of sequence motifs associated with specific DNA repair outcomes, suggesting that deep learning models are capturing aspects of the biology that were not encoded in prior heuristic rules.</p>
+</section>
+</section>
+<section id="sec-ch2-multi-objective" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="sec-ch2-multi-objective"><span class="header-section-number">2.7</span> Multi-objective guide design: balancing activity, specificity, and deliverability</h2>
+<section id="pareto-optimal-guide-selection" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="pareto-optimal-guide-selection"><span class="header-section-number">2.7.1</span> Pareto-optimal guide selection</h3>
+<p>In practice, the selection of a gRNA for a therapeutic or functional genomics application involves simultaneous optimisation of multiple, often competing, objectives: on-target activity, off-target specificity, predicted repair outcome profile (for nucleases), editing purity (for base editors), pegRNA efficiency (for prime editors), and deliverability constraints (length, secondary structure compatibility with viral vectors) <span class="citation" data-cites="listgarten2018">(<a href="references.html#ref-listgarten2018" role="doc-biblioref">Listgarten et al., 2018</a>)</span>.</p>
+<p>Multi-objective optimisation frameworks — which identify the Pareto frontier of guides that are not dominated on any single criterion — provide a principled approach to this selection problem. Rather than collapsing multiple scores into a single weighted average (which requires arbitrary weight choices), Pareto-optimal selection presents the experimenter with a set of non-dominated candidates and the explicit trade-offs between them. <a href="#fig-pareto-tradeoff" class="quarto-xref">Figure&nbsp;<span>2.1</span></a> illustrates this trade-off structure schematically.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-pareto-tradeoff" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pareto-tradeoff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02-ai-design_files/figure-html/fig-pareto-tradeoff-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pareto-tradeoff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Schematic illustration of the multi-objective trade-off in guide RNA selection. Each point represents a candidate gRNA scored on on-target activity (x-axis) and off-target specificity (y-axis); point size encodes a third objective, deliverability. Orange points along the Pareto frontier are non-dominated candidates — no other guide scores higher on both axes simultaneously. The shaded region below the frontier contains dominated guides. Arrows indicate the direction of improvement on each axis. In practice, experimenters select from the frontier according to application-specific priorities: a therapeutic programme may weight specificity heavily, whilst a high-throughput screen may prioritise activity.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="constraint-satisfaction-for-multiplexed-editing" class="level3" data-number="2.7.2">
+<h3 data-number="2.7.2" class="anchored" data-anchor-id="constraint-satisfaction-for-multiplexed-editing"><span class="header-section-number">2.7.2</span> Constraint satisfaction for multiplexed editing</h3>
+<p>Multiplexed editing — the simultaneous targeting of two or more loci — introduces additional combinatorial constraints. Guides in a multiplex pool must not only be individually effective and specific but must also avoid mutual off-target interactions, where the presence of one guide creates a substrate for another. Computational frameworks for multiplex guide design therefore incorporate pairwise compatibility checks alongside individual scoring, a problem whose computational cost scales quadratically with pool size <span class="citation" data-cites="zhu2019 campa2019_mult">(<a href="references.html#ref-campa2019_mult" role="doc-biblioref">Campa et al., 2019</a>; <a href="references.html#ref-zhu2019" role="doc-biblioref">Zhu et al., 2019</a>)</span>.</p>
+</section>
+<section id="guide-design-for-base-editors-and-prime-editors-distinct-sequence-requirements" class="level3" data-number="2.7.3">
+<h3 data-number="2.7.3" class="anchored" data-anchor-id="guide-design-for-base-editors-and-prime-editors-distinct-sequence-requirements"><span class="header-section-number">2.7.3</span> Guide design for base editors and prime editors: distinct sequence requirements</h3>
+<p>The guide design requirements for base editors and prime editors differ substantially from those for nucleases. For cytosine and adenine base editors, the target nucleotide must fall within a narrow editing window (typically positions 4–8 from the PAM-proximal end of the spacer), and the absence of bystander-susceptible nucleotides within this window is a key design constraint (see <a href="01-crispr-systems.html#sec-ch1-base-editing" class="quarto-xref"><span>Section 1.4</span></a>). Models trained on nuclease activity data do not transfer directly to base editor contexts, necessitating dedicated training datasets and scoring algorithms <span class="citation" data-cites="arbab2020 song2020">(<a href="references.html#ref-arbab2020" role="doc-biblioref">Arbab et al., 2020</a>; <a href="references.html#ref-song2020" role="doc-biblioref">Song et al., 2020</a>)</span>.</p>
+<p>For prime editors, the design space is substantially larger: in addition to the spacer sequence, the pegRNA includes a primer binding site (PBS) and a reverse transcriptase template (RTT), each of which must be optimised for length, secondary structure, and thermodynamic stability. Machine learning models for prime editing — including PRIDICT and PE-Designer — have begun to address this expanded design space, but the smaller available training datasets and the greater number of design parameters make this a considerably more challenging prediction problem than nuclease guide design <span class="citation" data-cites="kim2021pridict">(<a href="references.html#ref-kim2021pridict" role="doc-biblioref">Kim et al., 2021</a>)</span>.</p>
+</section>
+</section>
+<section id="sec-sti-2" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="sec-sti-2"><span class="header-section-number">2.8</span> Sociotechnical Interlude II: algorithmic authority in experimental design</h2>
+<p>The computational tools reviewed in this chapter are not merely technical aids; they have become, in practice, the authorities that determine which experiments are performed. When a laboratory selects guide RNAs based on a computational score, it delegates a consequential design decision to an algorithm whose training data, loss function, and implicit assumptions may not be transparent to the bench scientist using it.</p>
+<p>Consider what this delegation looks like from the bench. A researcher opens a web-based tool, enters a target gene, and receives a ranked list of candidate guides. The tool’s interface offers no indication of which cell lines supplied its training data, what loss function shaped its rankings, or how it handles the ambiguities of chromatin context. In Collins and Evans’s terms <span class="citation" data-cites="collins2002">(<a href="references.html#ref-collins2002" role="doc-biblioref">Collins &amp; Evans, 2002</a>)</span>, the tool’s <em>use</em> demands neither the <em>contributory expertise</em> required to develop it (the tacit knowledge of computational biology and CRISPR molecular biology) nor the <em>interactional expertise</em> needed to evaluate its assumptions. The result is an epistemic asymmetry whose scale is easy to underestimate: the experimental designs of thousands of laboratories are shaped by the choices of a small number of model developers, embedded in the tools but rarely interrogated by their users.</p>
+<p>Jasanoff’s work on <em>civic epistemology</em> <span class="citation" data-cites="jasanoff2004">(<a href="references.html#ref-jasanoff2004" role="doc-biblioref">Jasanoff, 2004</a>)</span> — the culturally specific ways in which knowledge claims are evaluated and certified — sharpens this observation by drawing attention to the institutional layer. The validation of AI-based gRNA design tools occurs primarily through publication and citation, but the community of evaluators is heterogeneous in a way that matters. Computational biologists evaluate model architecture and benchmark performance; bench scientists evaluate whether recommended guides “work” in their specific experimental context. These two modes of evaluation do not always converge. Failures of transferability — a model that benchmarks well but recommends poorly performing guides in a new cell type — may go unreported, producing a survivorship bias in the published literature that inflates confidence in algorithmic recommendations.</p>
+<p>The practical upshot is that the growing accuracy of AI-based design tools, whilst a genuine advance, does not eliminate the need for experimental validation — it changes its character. Rather than screening large libraries of guides empirically, experimenters now screen a computationally curated shortlist, trusting the algorithm to have excluded poor candidates. This trust is generally well calibrated for nuclease applications in well-studied cell types, where training data are abundant. It is less well calibrated for newer editing modalities (base editors, prime editors, epigenome editors) and for clinically relevant primary cells, where the evidence base is thinner.</p>
+<p>A responsible deployment of these tools therefore requires what we might call <em>computational humility</em>: an explicit awareness that algorithmic recommendations encode specific assumptions about what constitutes a “good” guide, and that these assumptions may not hold in all experimental contexts. This is not a counsel of distrust but of calibrated reliance — a theme that returns when we examine AI applications across the therapeutic pipeline in <a href="06-ai-pipeline.html" class="quarto-xref"><span>Chapter 6</span></a>.</p>
+</section>
+<section id="sec-ch2-summary" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="sec-ch2-summary"><span class="header-section-number">2.9</span> Chapter summary</h2>
+<p>The progression from heuristic rules to deep learning in gRNA design is one of the more legible success stories at the intersection of AI and molecular biology. On-target activity prediction has improved from Spearman correlations of ~0.3 (rule-based) to ~0.6–0.75 (deep learning), and off-target classification has reached AUROC values exceeding 0.95 in well-benchmarked settings. <a href="#fig-ai-grna-performance" class="quarto-xref">Figure&nbsp;<span>2.2</span></a> summarises these gains across model generations and evaluation datasets.</p>
+<p>Yet several limitations temper that narrative. Model transferability across cell types and CRISPR systems remains imperfect. Benchmarking has revealed that the gap between classical ML and deep learning is smaller than individual publications suggest. The incorporation of chromatin context improves predictions substantially but creates a data dependency that limits applicability. And the interpretability of deep learning models, whilst improving, remains insufficient for the mechanistic understanding that would enable truly <em>ab initio</em> guide design.</p>
+<p>These are not merely technical gaps awaiting engineering solutions; they define the conditions under which the next chapter’s broader optimisation strategies — repair outcome prediction, protein engineering, delivery optimisation, and the generative design of entirely novel editing systems — must operate.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-ai-grna-performance" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ai-grna-performance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02-ai-design_files/figure-html/fig-ai-grna-performance-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ai-grna-performance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: Approximate performance of guide RNA design models across benchmark datasets, measured by Spearman correlation with experimental on-target activity. Bars show ranges reported across multiple independent evaluations. Models are grouped by architecture class. Performance varies substantially with dataset, cell type, and evaluation protocol; values should be interpreted as indicative rather than definitive.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div id="tbl-offtarget-methods" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-offtarget-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.1: Comparison of computational and experimental methods for CRISPR off-target assessment. Experimental methods provide ground-truth data for training and validating computational models.
+</figcaption>
+<div aria-describedby="tbl-offtarget-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 32%">
+<col style="width: 19%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Key principle</th>
+<th style="text-align: left;">Strengths</th>
+<th style="text-align: left;">Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Cas-OFFinder</td>
+<td style="text-align: left;">Computational</td>
+<td style="text-align: left;">Exhaustive mismatch search</td>
+<td style="text-align: left;">Fast; comprehensive</td>
+<td style="text-align: left;">No cleavage probability</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CFD score</td>
+<td style="text-align: left;">Computational</td>
+<td style="text-align: left;">Position-weighted mismatch penalties</td>
+<td style="text-align: left;">Simple; widely adopted</td>
+<td style="text-align: left;">Assumes position independence</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CRISPR-Net</td>
+<td style="text-align: left;">Computational</td>
+<td style="text-align: left;">Deep CNN on guide–target encoding</td>
+<td style="text-align: left;">High AUROC (&gt;0.95)</td>
+<td style="text-align: left;">Requires training data</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GUIDE-seq</td>
+<td style="text-align: left;">Experimental</td>
+<td style="text-align: left;">dsODN integration at DSB sites</td>
+<td style="text-align: left;">Sensitive; genome-wide</td>
+<td style="text-align: left;">Requires transfection</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CIRCLE-seq</td>
+<td style="text-align: left;">Experimental</td>
+<td style="text-align: left;">In vitro cleavage of circularised gDNA</td>
+<td style="text-align: left;">Cell-type independent</td>
+<td style="text-align: left;">Overestimates in vivo sites</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DISCOVER-seq</td>
+<td style="text-align: left;">Experimental</td>
+<td style="text-align: left;">MRE11 ChIP-seq at DSB sites</td>
+<td style="text-align: left;">In vivo; unbiased</td>
+<td style="text-align: left;">Low sensitivity for rare events</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-alkan2018" class="csl-entry" role="listitem">
+Alkan, F., Wenzel, A., Anthon, C., Havgaard, J. H., &amp; Gorodkin, J. (2018). <span>CRISPR-Cas9</span> off-targeting assessment with nucleic acid duplex energy parameters. <em>Genome Biology</em>, <em>19</em>, 177. <a href="https://doi.org/10.1186/s13059-018-1534-x">https://doi.org/10.1186/s13059-018-1534-x</a>
+</div>
+<div id="ref-arbab2020" class="csl-entry" role="listitem">
+Arbab, M., Shen, M. W., Mok, B., Wilson, C., Matuszek, Ż., Cassa, C. A., &amp; Liu, D. R. (2020). Determinants of base editing outcomes from target library analysis and machine learning. <em>Cell</em>, <em>182</em>(2), 463–480.e30. <a href="https://doi.org/10.1016/j.cell.2020.05.037">https://doi.org/10.1016/j.cell.2020.05.037</a>
+</div>
+<div id="ref-bae2014" class="csl-entry" role="listitem">
+Bae, S., Park, J., &amp; Kim, J.-S. (2014). <span>Cas-OFFinder</span>: A fast and versatile algorithm that searches for potential off-target sites of <span>Cas9</span> <span>RNA</span>-guided endonucleases. <em>Bioinformatics</em>, <em>30</em>(10), 1473–1475. <a href="https://doi.org/10.1093/bioinformatics/btu048">https://doi.org/10.1093/bioinformatics/btu048</a>
+</div>
+<div id="ref-campa2019_mult" class="csl-entry" role="listitem">
+Campa, C. C., Weisbach, N. R., Santinha, A. J., Incarnato, D., &amp; Platt, R. J. (2019). Multiplexed genome engineering by <span>Cas12a</span> and <span>CRISPR</span> arrays encoded on single transcripts. <em>Nature Methods</em>, <em>16</em>(9), 887–893. <a href="https://doi.org/10.1038/s41592-019-0508-6">https://doi.org/10.1038/s41592-019-0508-6</a>
+</div>
+<div id="ref-chari2015" class="csl-entry" role="listitem">
+Chari, R., Mali, P., Moosburner, M., &amp; Church, G. M. (2015). Unraveling <span>CRISPR</span>-<span>Cas9</span> genome engineering parameters via a library-on-library approach. <em>Nature Methods</em>, <em>12</em>(9), 823–826. <a href="https://doi.org/10.1038/nmeth.3473">https://doi.org/10.1038/nmeth.3473</a>
+</div>
+<div id="ref-chuai2018" class="csl-entry" role="listitem">
+Chuai, G., Ma, H., Yan, J., Chen, M., Hong, N., Xue, D., Zhou, C., Zhu, C., Chen, K., Duan, B., Gu, F., Qu, S., Huang, D., Wei, J., &amp; Liu, Q. (2018). <span>DeepCRISPR</span>: Optimized <span>CRISPR</span> guide <span>RNA</span> design by deep learning. <em>Genome Biology</em>, <em>19</em>, 80. <a href="https://doi.org/10.1186/s13059-018-1459-4">https://doi.org/10.1186/s13059-018-1459-4</a>
+</div>
+<div id="ref-collins2002" class="csl-entry" role="listitem">
+Collins, H. M., &amp; Evans, R. (2002). The third wave of science studies: Studies of expertise and experience. <em>Social Studies of Science</em>, <em>32</em>(2), 235–296. <a href="https://doi.org/10.1177/0306312702032002003">https://doi.org/10.1177/0306312702032002003</a>
+</div>
+<div id="ref-dalla-torre2025" class="csl-entry" role="listitem">
+Dalla-Torre, H., Gonzalez, L., Mendoza-Revilla, J., Lopez Carranza, N., Grzywaczewski, A. H., Oteri, F., Dallago, C., Trop, E., Almeida, B. P. de, Sirelkhatim, H., Richard, G., Skwark, M., Beguir, K., Lopez, M., &amp; Pierrot, T. (2025). Nucleotide transformer: Building and evaluating robust foundation models for human genomics. <em>Nature Methods</em>, <em>22</em>(2), 287–297. <a href="https://doi.org/10.1038/s41592-024-02523-z">https://doi.org/10.1038/s41592-024-02523-z</a>
+</div>
+<div id="ref-doench2016" class="csl-entry" role="listitem">
+Doench, J. G., Fusi, N., Sullender, M., Hegde, M., Vaimberg, E. W., Donovan, K. F., Smith, I., Tothova, Z., Wilen, C., Orchard, R., Virgin, H. W., Listgarten, J., &amp; Root, D. E. (2016). Optimized <span class="nocase">sgRNA</span> design to maximize activity and minimize off-target effects of <span>CRISPR</span>-<span>Cas9</span>. <em>Nature Biotechnology</em>, <em>34</em>(2), 184–191. <a href="https://doi.org/10.1038/nbt.3437">https://doi.org/10.1038/nbt.3437</a>
+</div>
+<div id="ref-doench2014" class="csl-entry" role="listitem">
+Doench, J. G., Hartenian, E., Graham, D. B., Tothova, Z., Hegde, M., Smith, I., Sullender, M., Ebert, B. L., Xavier, R. J., &amp; Root, D. E. (2014). Rational design of highly active <span class="nocase">sgRNAs</span> for <span>CRISPR</span>-<span>Cas9</span>-mediated gene inactivation. <em>Nature Biotechnology</em>, <em>32</em>(12), 1262–1267. <a href="https://doi.org/10.1038/nbt.3026">https://doi.org/10.1038/nbt.3026</a>
+</div>
+<div id="ref-haeussler2016" class="csl-entry" role="listitem">
+Haeussler, M., Schönig, K., Eckert, H., Eschstruth, A., Mianné, J., Renaud, J.-B., Schneider-Maunoury, S., Shkumatava, A., Teboul, L., Kent, J., Joly, J.-S., &amp; Concordet, J.-P. (2016). Evaluation of off-target and on-target scoring algorithms and integration into the guide <span>RNA</span> selection tool <span>CRISPOR</span>. <em>Genome Biology</em>, <em>17</em>, 148. <a href="https://doi.org/10.1186/s13059-016-1012-2">https://doi.org/10.1186/s13059-016-1012-2</a>
+</div>
+<div id="ref-heil2021" class="csl-entry" role="listitem">
+Heil, B. J., Hoffman, M. M., Markowetz, F., Lee, S.-I., Greene, C. S., &amp; Hicks, S. C. (2021). Reproducibility standards for machine learning in the life sciences. <em>Nature Methods</em>, <em>18</em>(10), 1132–1135. <a href="https://doi.org/10.1038/s41592-021-01256-7">https://doi.org/10.1038/s41592-021-01256-7</a>
+</div>
+<div id="ref-horlbeck2016" class="csl-entry" role="listitem">
+Horlbeck, M. A., Gilbert, L. A., Villalta, J. E., Adamson, B., Pak, R. A., Chen, Y., Fields, A. P., Park, C. Y., Corn, J. E., Kampmann, M., &amp; Weissman, J. S. (2016). Compact and highly active next-generation libraries for <span>CRISPR</span>-mediated gene repression and activation. <em>eLife</em>, <em>5</em>, e19760. <a href="https://doi.org/10.7554/eLife.19760">https://doi.org/10.7554/eLife.19760</a>
+</div>
+<div id="ref-jasanoff2004" class="csl-entry" role="listitem">
+Jasanoff, S. (2004). <em>States of knowledge: The co-production of science and social order</em>. Routledge.
+</div>
+<div id="ref-ji2021dnabert" class="csl-entry" role="listitem">
+Ji, Y., Zhou, Z., Liu, H., &amp; Davuluri, R. V. (2021). <span>DNABERT</span>: Pre-trained bidirectional encoder representations from transformers model for <span>DNA</span>-language in genome. <em>Bioinformatics</em>, <em>37</em>(15), 2112–2120. <a href="https://doi.org/10.1093/bioinformatics/btab083">https://doi.org/10.1093/bioinformatics/btab083</a>
+</div>
+<div id="ref-kim2020hf" class="csl-entry" role="listitem">
+Kim, H. K., Lee, S., Kim, Y., Park, J., Min, S., Choi, J. W., Huang, T. P., Yoon, S., Liu, D. R., &amp; Kim, H. H. (2020). High-throughput analysis of the activities of xCas9, SpCas9-NG and SpCas9 at matched and mismatched target sequences in human cells. <em>Nature Biomedical Engineering</em>, <em>4</em>(1), 111–124. <a href="https://doi.org/10.1038/s41551-019-0505-1">https://doi.org/10.1038/s41551-019-0505-1</a>
+</div>
+<div id="ref-kim2019deepcas9" class="csl-entry" role="listitem">
+Kim, H. K., Min, S., Song, M., Jung, S., Choi, J. W., Kim, Y., Lee, S., Yoon, S., &amp; Kim, H. H. (2019). <span>SpCas9</span> activity prediction by <span>DeepSpCas9</span>, a deep learning-based model with high generalization performance. <em>Science Advances</em>, <em>5</em>(11), eaax9249. <a href="https://doi.org/10.1126/sciadv.aax9249">https://doi.org/10.1126/sciadv.aax9249</a>
+</div>
+<div id="ref-kim2021pridict" class="csl-entry" role="listitem">
+Kim, H. K., Yu, G., Park, J., Min, S., Lee, S., Yoon, S., &amp; Kim, H. H. (2021). Predicting the efficiency of prime editing guide <span>RNAs</span> in human cells. <em>Nature Biotechnology</em>, <em>39</em>(2), 198–206. <a href="https://doi.org/10.1038/s41587-020-0677-y">https://doi.org/10.1038/s41587-020-0677-y</a>
+</div>
+<div id="ref-chen2017ontarget" class="csl-entry" role="listitem">
+Klemm, S. L., Shipony, Z., &amp; Greenleaf, W. J. (2019). Chromatin accessibility and the regulatory epigenome. <em>Nature Reviews Genetics</em>, <em>20</em>(4), 207–220. <a href="https://doi.org/10.1038/s41576-018-0089-8">https://doi.org/10.1038/s41576-018-0089-8</a>
+</div>
+<div id="ref-konstantakos2022" class="csl-entry" role="listitem">
+Konstantakos, V., Nentidis, A., Krithara, A., &amp; Paliouras, G. (2022). <span>CRISPRbench</span>: A comprehensive benchmark for <span>CRISPR</span>-<span>Cas</span> guide <span>RNA</span> efficiency prediction. <em>Briefings in Bioinformatics</em>, <em>23</em>(5), bbac377. <a href="https://doi.org/10.1093/bib/bbac377">https://doi.org/10.1093/bib/bbac377</a>
+</div>
+<div id="ref-labun2019" class="csl-entry" role="listitem">
+Labun, K., Montague, T. G., Krause, M., Torres Cleuren, Y. N., Tjeldnes, H., &amp; Valen, E. (2019). <span>CHOPCHOP</span> v3: Expanding the <span>CRISPR</span> web toolbox beyond genome editing. <em>Nucleic Acids Research</em>, <em>47</em>(W1), W171–W174. <a href="https://doi.org/10.1093/nar/gkz365">https://doi.org/10.1093/nar/gkz365</a>
+</div>
+<div id="ref-lin2020" class="csl-entry" role="listitem">
+Lin, J., &amp; Wong, K.-C. (2018). Off-target predictions in <span>CRISPR</span>-<span>Cas9</span> gene editing using deep learning. <em>Bioinformatics</em>, <em>34</em>(17), i656–i663. <a href="https://doi.org/10.1093/bioinformatics/bty554">https://doi.org/10.1093/bioinformatics/bty554</a>
+</div>
+<div id="ref-listgarten2018" class="csl-entry" role="listitem">
+Listgarten, J., Weinstein, M., Kleinstiver, B. P., Sousa, A. A., Joung, J. K., Crawford, J., Gao, K., Hoang, L., Elibol, M., Doench, J. G., &amp; Fusi, N. (2018). Prediction of off-target activities for the end-to-end design of <span>CRISPR</span> guide <span>RNAs</span>. <em>Nature Biomedical Engineering</em>, <em>2</em>(1), 38–47. <a href="https://doi.org/10.1038/s41551-017-0178-6">https://doi.org/10.1038/s41551-017-0178-6</a>
+</div>
+<div id="ref-Luo2024Inter" class="csl-entry" role="listitem">
+Luo, Y. et al. (2024). Interpretable CRISPR/Cas9 off-target activities with mismatches and indels prediction using BERT. <em>Computers in Biology and Medicine</em>, <em>169</em>, 107932. <a href="https://doi.org/10.1016/j.compbiomed.2024.107932">https://doi.org/10.1016/j.compbiomed.2024.107932</a>
+</div>
+<div id="ref-moreno-mateos2015" class="csl-entry" role="listitem">
+Moreno-Mateos, M. A., Vejnar, C. E., Beaudoin, J.-D., Fernandez, J. P., Mis, E. K., Khokha, M. K., &amp; Giraldez, A. J. (2015). <span>CRISPRscan</span>: Designing highly efficient <span class="nocase">sgRNAs</span> for <span>CRISPR</span>-<span>Cas9</span> targeting in vivo. <em>Nature Methods</em>, <em>12</em>(10), 982–988. <a href="https://doi.org/10.1038/nmeth.3543">https://doi.org/10.1038/nmeth.3543</a>
+</div>
+<div id="ref-nishimasu2014" class="csl-entry" role="listitem">
+Nishimasu, H., Ran, F. A., Hsu, P. D., Konermann, S., Shehata, S. I., Dohmae, N., Ishitani, R., Zhang, F., &amp; Nureki, O. (2014). Crystal structure of <span>Cas9</span> in complex with guide <span>RNA</span> and target <span>DNA</span>. <em>Cell</em>, <em>156</em>(5), 935–949. <a href="https://doi.org/10.1016/j.cell.2014.02.001">https://doi.org/10.1016/j.cell.2014.02.001</a>
+</div>
+<div id="ref-song2020" class="csl-entry" role="listitem">
+Song, M., Kim, H. K., Lee, S., Kim, Y., Seo, S.-Y., Park, J., Choi, J. W., Jang, H., Shin, J. H., Min, S., Quan, Z., Kim, J. H., Kang, H. C., Yoon, S., &amp; Kim, H. H. (2020). Sequence-specific prediction of the efficiencies of adenine and cytosine base editors. <em>Nature Biotechnology</em>, <em>38</em>(9), 1037–1043. <a href="https://doi.org/10.1038/s41587-020-0573-5">https://doi.org/10.1038/s41587-020-0573-5</a>
+</div>
+<div id="ref-tsai2017" class="csl-entry" role="listitem">
+Tsai, S. Q., Nguyen, N. T., Malagon-Lopez, J., Topkar, V. V., Aryee, M. J., &amp; Joung, J. K. (2017). CIRCLE-seq: A highly sensitive in vitro screen for genome-wide CRISPR–Cas9 nuclease off-targets. <em>Nature Methods</em>, <em>14</em>(6), 607–614. <a href="https://doi.org/10.1038/nmeth.4278">https://doi.org/10.1038/nmeth.4278</a>
+</div>
+<div id="ref-tsai2015" class="csl-entry" role="listitem">
+Tsai, S. Q., Zheng, Z., Nguyen, N. T., Lieber, M., Topkar, V. V., Thapar, V., Wyvekens, N., Khaber, C., Iafrate, A. J., Le, L. P., Aryee, M. J., &amp; Joung, J. K. (2015). <span>GUIDE</span>-seq enables genome-wide profiling of off-target cleavage by <span>CRISPR</span>-<span>Cas</span> nucleases. <em>Nature Biotechnology</em>, <em>33</em>(2), 187–197. <a href="https://doi.org/10.1038/nbt.3117">https://doi.org/10.1038/nbt.3117</a>
+</div>
+<div id="ref-vaswani2017" class="csl-entry" role="listitem">
+Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., &amp; Polosukhin, I. (2017). Attention is all you need. <em>Advances in Neural Information Processing Systems</em>, <em>30</em>, 5998–6008. <a href="https://doi.org/10.48550/arXiv.1706.03762">https://doi.org/10.48550/arXiv.1706.03762</a>
+</div>
+<div id="ref-wang2014" class="csl-entry" role="listitem">
+Wang, T., Wei, J. J., Sabatini, D. M., &amp; Lander, E. S. (2014). Genetic screens in human cells using the <span>CRISPR</span>-<span>Cas9</span> system. <em>Science</em>, <em>343</em>(6166), 80–84. <a href="https://doi.org/10.1126/science.1246981">https://doi.org/10.1126/science.1246981</a>
+</div>
+<div id="ref-wienert2019" class="csl-entry" role="listitem">
+Wienert, B., Wyman, S. K., Richardson, C. D., Yeh, C. D., Akcakaya, P., Porritt, M. J., Morlock, M., Vu, J. T., Kazane, K. R., Watry, H. L., Judge, L. M., Conklin, B. R., Maresca, M., &amp; Corn, J. E. (2019). Unbiased detection of <span>CRISPR</span> off-targets in vivo using <span>DISCOVER</span>-seq. <em>Science</em>, <em>364</em>(6437), 286–289. <a href="https://doi.org/10.1126/science.aav9023">https://doi.org/10.1126/science.aav9023</a>
+</div>
+<div id="ref-zhang2020crisprip" class="csl-entry" role="listitem">
+Zhang, G., Dai, Z., &amp; Dai, X. (2020). <span>CRISPR-IP</span>: A <span>CRISPR</span> off-target prediction tool with improved performance. <em>Bioinformatics</em>, <em>36</em>(10), 3137–3138. <a href="https://doi.org/10.1093/bioinformatics/btaa143">https://doi.org/10.1093/bioinformatics/btaa143</a>
+</div>
+<div id="ref-zhang2023crisprbert" class="csl-entry" role="listitem">
+Zhang, Y., Long, Y., &amp; Kwoh, C. K. (2023). <em><span>CRISPR-BERT</span>: Enhancing <span>CRISPR/Cas9</span> off-target activities with mismatches and indels prediction using <span>BERT</span>-based convolutional and recurrent neural networks</em>. <a href="https://github.com/BrokenStringx/CRISPR-BERT" class="uri">https://github.com/BrokenStringx/CRISPR-BERT</a>.
+</div>
+<div id="ref-zhu2019" class="csl-entry" role="listitem">
+Zhu, H., Richmond, E., &amp; Liang, C. (2019). <em><span>CRISPR</span>-based tools for multiplex genome editing</em>. <em>Methods in Molecular Biology</em>, <em>1961</em>, 53–67. <a href="https://doi.org/10.1007/978-1-4939-9170-9_4">https://doi.org/10.1007/978-1-4939-9170-9_4</a>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./01-crispr-systems.html" class="pagination-link" aria-label="CRISPR Architectures: From Cas9 to Epigenome Editors">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">CRISPR Architectures: From Cas9 to Epigenome Editors</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./03-ai-optimization.html" class="pagination-link" aria-label="AI-Driven Optimisation of Editing Outcomes">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">AI-Driven Optimisation of Editing Outcomes</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># AI for Guide RNA Design and Off-Target Prediction {#sec-ai-design}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup-ch2</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/theme_monograph.R"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction: the computational challenge of guide selection {#sec-ch2-intro}</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>The programmability of CRISPR systems, celebrated as their defining advantage over previous genome editing platforms, conceals a substantial computational problem. For any given target gene, hundreds to thousands of candidate guide RNA (gRNA) sequences may satisfy the basic requirement of complementarity to a unique genomic locus adjacent to a PAM motif. Yet these candidates vary enormously in their on-target cleavage efficiency — often by an order of magnitude or more — and in the number and severity of off-target cleavage events they produce elsewhere in the genome <span class="co">[</span><span class="ot">@doench2014</span><span class="co">]</span>. Selecting the optimal guide for a given application is therefore not a trivial lookup but a prediction problem of considerable complexity, in which the inputs include the guide sequence itself, its thermodynamic properties, the local chromatin environment, the specific Cas protein employed, and the delivery context.</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>What follows is an account of how the field has addressed this prediction problem, from early heuristic rules through classical machine learning to contemporary deep learning architectures. The chapter's central claim is that the transition to learned models has genuinely improved on-target activity and off-target specificity prediction — but that these improvements remain unevenly distributed across CRISPR system types, genomic contexts, and cell types, and that they have redistributed epistemic authority in ways worth examining. Who decides which guides enter an experiment, and on the basis of what evidence, are questions that track the shifting boundary between computational and bench expertise.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## Rule-based and biophysical approaches: the pre-ML era {#sec-ch2-pre-ml}</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sequence features correlated with activity: GC content, position-specific nucleotides</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>The earliest attempts to predict gRNA efficacy relied on the identification of sequence features correlated with cleavage efficiency in pooled library screens. Seminal work by Wang *et al.* in 2014, analysing data from genome-scale knockout screens, identified GC content of the guide spacer as a significant but weak predictor of activity: guides with extreme GC content (below 30% or above 70%) performed consistently worse than those in the intermediate range <span class="co">[</span><span class="ot">@wang2014</span><span class="co">]</span>. Position-specific nucleotide preferences — such as enrichment for guanine at position 20 (the PAM-proximal end) and against thymine at position 1 — were also observed, but individual feature correlations explained only a small fraction of the observed variance in editing efficiency.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu">### Thermodynamic models of gRNA–DNA hybridisation</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>A complementary approach modelled gRNA efficacy in biophysical terms: the free energy of hybridisation between guide and target, the stability of secondary structures within the guide RNA, and the accessibility of the target DNA. These thermodynamic features contributed modestly to prediction accuracy and were incorporated into early design tools such as CRISPRscan <span class="co">[</span><span class="ot">@moreno-mateos2015</span><span class="co">]</span>. However, thermodynamic models alone proved insufficient to capture the full complexity of Cas9–gRNA–DNA interactions, which depend on conformational dynamics, protein contacts, and cellular context that are not reducible to nucleotide-level free energies.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="fu">### Limitations: low predictive power and dataset dependence</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>The principal limitation of rule-based approaches was their low predictive power: Spearman correlations between predicted and observed activity typically ranged from 0.2 to 0.4 across independent test datasets <span class="co">[</span><span class="ot">@doench2014</span><span class="co">]</span>. Moreover, rules derived from one dataset often generalised poorly to others, reflecting the influence of library design, cell type, assay format, and delivery method on the measured efficiency scores. This dataset dependence signalled the need for models capable of learning more complex, non-linear relationships from larger training corpora — a need that machine learning was well positioned to address.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## First-generation ML models: from regression to random forests {#sec-ch2-first-gen}</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">### Doench *et al.* (2014, 2016): the Rule Set 1 and Rule Set 2 frameworks</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>The transition to machine learning was catalysed by two landmark studies from the Broad Institute. Doench *et al.* (2014) trained a logistic regression model — Rule Set 1 — on activity data from approximately 1,800 guides targeting essential genes in human and mouse cell lines. The model incorporated 27 sequence features (position-specific nucleotide identities, dinucleotide frequencies, and GC content) and achieved a Spearman correlation of ~0.53 with experimentally measured activity, a substantial improvement over prior heuristics <span class="co">[</span><span class="ot">@doench2014</span><span class="co">]</span>.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>Rule Set 2, published in 2016, expanded the training dataset to over 2,000 guides and adopted a gradient-boosted regression tree model, incorporating additional features including the target gene's position within a protein domain and the presence of a guanine immediately adjacent to the PAM. Rule Set 2 achieved Spearman correlations of ~0.60 and became the default scoring algorithm in the widely adopted tool sgRNA Designer <span class="co">[</span><span class="ot">@doench2016</span><span class="co">]</span>. Its success established a methodological template — curated experimental datasets, engineered sequence features, and ensemble learning — that subsequent models would both build upon and eventually supersede.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="fu">### Feature engineering: sequence, thermodynamic, and chromatin features</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>The performance of first-generation models depended heavily on the quality and breadth of input features. Beyond sequence composition, researchers incorporated thermodynamic stability of the gRNA–DNA duplex and the gRNA secondary structure energy. The feature that proved most consequential, however, was chromatin accessibility at the target locus, typically measured by DNase I hypersensitivity or ATAC-seq signal. This turned out to be a strong predictor of editing efficiency in endogenous contexts, as Cas9 must compete with nucleosomes and chromatin-binding factors for access to its target DNA <span class="co">[</span><span class="ot">@horlbeck2016</span><span class="co">]</span>.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>This observation had a practical consequence: models trained on data from one cell type, where chromatin environments differ, may not transfer accurately to another — a transferability limitation that persists even in contemporary deep learning architectures.</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="fu">### CHOPCHOP, CRISPRscan, and the tool proliferation problem</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>The early ML era produced a proliferation of web-based design tools — CHOPCHOP, CRISPRscan, CRISPRdirect, E-CRISP, and others — each implementing slightly different scoring algorithms, feature sets, and reference genomes <span class="co">[</span><span class="ot">@labun2019</span><span class="co">]</span>. For the bench scientist, this proliferation presented a practical dilemma: different tools frequently recommended different guides for the same target, with no principled way to adjudicate disagreements. Comparative benchmarking studies revealed substantial variability in tool performance across datasets, with no single tool consistently outperforming all others <span class="co">[</span><span class="ot">@haeussler2016</span><span class="co">]</span>. This fragmentation motivated the subsequent push towards standardised evaluation frameworks, discussed in @sec-ch2-benchmarking.</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="fu">## Deep learning architectures for on-target activity prediction {#sec-ch2-deep-learning}</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="fu">### Convolutional neural networks: DeepCRISPR and CRISPR-ML</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>The application of deep learning to gRNA activity prediction was motivated by a straightforward hypothesis: convolutional neural networks (CNNs), which had demonstrated remarkable success in image recognition and genomic sequence classification, might capture local sequence motifs predictive of editing efficiency that manual feature engineering had missed.</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>DeepCRISPR, introduced by Chuai *et al.* in 2018, was among the first models to apply a deep CNN architecture to both on-target activity and off-target effect prediction from raw one-hot-encoded guide and target sequences <span class="co">[</span><span class="ot">@chuai2018</span><span class="co">]</span>. The model incorporated an autoencoder pre-training step to learn unsupervised representations of gRNA sequences before fine-tuning on labelled activity data. DeepCRISPR reported Spearman correlations in the range of 0.60–0.65 on held-out test sets, competitive with or slightly exceeding Rule Set 2, and crucially did so without requiring hand-crafted features.</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>Subsequent CNN-based models — including CRISPR-ML and DeepSpCas9 — explored alternative architectures (varying kernel sizes, pooling strategies, and depth) and training regimes <span class="co">[</span><span class="ot">@kim2019deepcas9</span><span class="co">]</span>. Across these studies, CNNs reliably captured position-dependent nucleotide interactions — effectively learning dinucleotide and trinucleotide motifs that corresponded to biochemically interpretable features of the Cas9–DNA interaction, such as the seed-region sensitivity described in @sec-ch1-cas9.</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="fu">### Recurrent architectures and sequence context modelling</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>Recurrent neural networks (RNNs), including long short-term memory (LSTM) and gated recurrent unit (GRU) variants, offered an alternative architecture better suited to modelling sequential dependencies across the full length of the gRNA spacer. Several groups demonstrated that bidirectional LSTM models, which process the guide sequence in both 5'→3' and 3'→5' directions, achieved modest improvements over CNNs in capturing long-range positional effects <span class="co">[</span><span class="ot">@chari2015; @kim2019deepcas9</span><span class="co">]</span>.</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>However, the practical gains of RNN-based models over well-optimised CNNs were often marginal, and the increased training time and hyperparameter sensitivity of recurrent architectures limited their adoption. The more consequential architectural innovation came with the transformer.</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="fu">### Transformer-based models: CRISPR-BERT and attention over guide sequences</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>The transformer architecture, introduced by Vaswani *et al.* in 2017 for natural language processing, computes pairwise attention between all positions in an input sequence, enabling the model to capture long-range dependencies without the sequential processing bottleneck of RNNs <span class="co">[</span><span class="ot">@vaswani2017</span><span class="co">]</span>. Its application to biological sequences was pioneered by protein language models (e.g., ESM, ProtTrans) and subsequently extended to CRISPR guide design.</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>CRISPR-BERT and related transformer-based models treat the gRNA–target pair as a "sentence" in which each nucleotide position is a "token," and the self-attention mechanism learns which positions most strongly predict activity <span class="co">[</span><span class="ot">@zhang2023crisprbert; @Luo2024Inter</span><span class="co">]</span>. The attention weights themselves provide a form of interpretability: positions receiving high attention in the trained model frequently correspond to the biochemically defined seed region and PAM-proximal contacts described in structural studies <span class="co">[</span><span class="ot">@nishimasu2014</span><span class="co">]</span>.</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>Pre-trained language models for DNA sequences — such as DNABERT and the Nucleotide Transformer — have also been fine-tuned for gRNA activity prediction, leveraging representations learned from billions of genomic sequences to improve performance on the comparatively small labelled datasets available for CRISPR applications <span class="co">[</span><span class="ot">@ji2021dnabert; @dalla-torre2025</span><span class="co">]</span>. This transfer learning strategy has proven particularly valuable for extending predictions to less-studied CRISPR systems (Cas12a, base editors) for which labelled training data are scarce.</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="fu">### Transfer learning across cell types and CRISPR systems</span></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>A persistent challenge is the transferability of activity models across biological contexts. A model trained on data from HEK293T cells may perform substantially worse when applied to primary haematopoietic stem cells or neurons, reflecting differences in chromatin state, DNA repair pathway activity, and cell-cycle distribution. Transfer learning — pre-training on large, heterogeneous datasets and fine-tuning on smaller cell-type-specific data — has emerged as the principal strategy for addressing this limitation, though the data requirements for effective fine-tuning remain an active area of investigation <span class="co">[</span><span class="ot">@kim2020hf</span><span class="co">]</span>.</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="fu">## Off-target prediction: from alignment to deep learning {#sec-ch2-off-target}</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="fu">### Cas-OFFinder and alignment-based search</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>The first computational step in off-target assessment is the identification of genomic sites with sequence similarity to the intended target. Cas-OFFinder, introduced by Bae *et al.* in 2014, performs an exhaustive search of the reference genome for sequences matching the spacer with a user-defined mismatch tolerance (typically up to 4 mismatches) adjacent to an appropriate PAM <span class="co">[</span><span class="ot">@bae2014</span><span class="co">]</span>. This alignment-based approach is fast and comprehensive but does not distinguish between mismatched sites that are efficiently cleaved and those that are not — a distinction that requires predictive modelling.</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### CFD scores and empirical mismatch penalties</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>The cutting frequency determination (CFD) score, introduced as part of Rule Set 2 by Doench *et al.* (2016), addressed this limitation by assigning empirically derived penalty weights to each possible mismatch at each position along the spacer <span class="co">[</span><span class="ot">@doench2016</span><span class="co">]</span>. The CFD score of an off-target site is the product of individual mismatch penalties, providing a rapid estimate of the relative cleavage probability. CFD scores have been widely adopted as a standard metric for ranking off-target sites and for computing aggregate specificity scores for candidate guides.</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>However, the CFD model assumes independence between mismatch positions — an assumption violated by the structural biology of Cas9 target recognition, in which mismatches in the seed region have qualitatively different consequences from those in the PAM-distal region, and in which pairs of mismatches can interact non-additively. This limitation motivated the development of deep learning approaches to off-target prediction.</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="fu">### CIRCLE-seq, GUIDE-seq, and DISCOVER-seq: experimental off-target profiling</span></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>As discussed in @sec-ch1-cas9, experimental methods for genome-wide off-target profiling — GUIDE-seq <span class="co">[</span><span class="ot">@tsai2015</span><span class="co">]</span>, CIRCLE-seq <span class="co">[</span><span class="ot">@tsai2017</span><span class="co">]</span>, and DISCOVER-seq <span class="co">[</span><span class="ot">@wienert2019</span><span class="co">]</span> — provide the ground-truth data against which computational predictions are calibrated. The availability of these large-scale experimental datasets has been essential for training and evaluating deep learning models for off-target prediction.</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>What these datasets revealed, however, was a problem with the data itself: the number of experimentally validated off-target sites per guide is typically modest (often fewer than 20 above background), but these sites are distributed across a vast space of possible mismatched sequences — creating an extreme class imbalance problem for supervised learning approaches.</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="fu">### Deep learning for off-target: CRISPR-Net, CRISPRoff, and ensemble approaches</span></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>CRISPR-Net, developed by Lin *et al.* in 2020, was among the first models to apply a deep CNN architecture specifically to the off-target prediction problem, encoding both the guide and candidate off-target sequences as two-dimensional matrices that capture the positional relationship between matches, mismatches, and insertions <span class="co">[</span><span class="ot">@lin2020</span><span class="co">]</span>. The model achieved area under the receiver operating characteristic curve (AUROC) values exceeding 0.95 on held-out GUIDE-seq datasets, substantially outperforming CFD-based predictions.</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>Subsequent models — including CRISPRoff <span class="co">[</span><span class="ot">@alkan2018</span><span class="co">]</span>, CRISPR-IP <span class="co">[</span><span class="ot">@zhang2020crisprip</span><span class="co">]</span>, and ensemble approaches combining multiple architectures — have further improved off-target discrimination. What unites these efforts is the integration of epigenomic features (chromatin accessibility, nucleosome positioning, DNA methylation) alongside sequence information, reflecting the observation that even perfectly matched off-target sites may be inaccessible in closed chromatin.</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="fu">### Integrating chromatin accessibility: epigenomic features as predictors</span></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>Cell-type-specific epigenomic data now define the leading edge of off-target prediction. Chromatin accessibility, measured by ATAC-seq or DNase-seq, is among the strongest individual predictors of off-target cleavage frequency in living cells: sites in open chromatin are cleaved at rates orders of magnitude higher than sequence-identical sites in heterochromatin <span class="co">[</span><span class="ot">@horlbeck2016; @chen2017ontarget</span><span class="co">]</span>.</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>This finding has two practical consequences. First, it means that off-target profiles are inherently cell-type-specific, and a guide deemed "safe" in one cellular context may not be safe in another — a consideration of particular importance for therapeutic applications targeting multiple tissues. Second, it creates a data dependency: accurate off-target prediction requires not only the guide sequence but also epigenomic maps of the target cell type, which may not be available for all clinically relevant populations.</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="fu">## Benchmarking and reproducibility {#sec-ch2-benchmarking}</span></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="fu">### The CRISPRbench framework and standardised evaluation</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>The proliferation of competing models, each reporting performance metrics on different datasets with different preprocessing and evaluation protocols, created a reproducibility crisis in the gRNA design field. CRISPRbench, introduced by Konstantakos *et al.* in 2022, addressed this by providing a standardised evaluation framework with curated benchmark datasets, unified preprocessing pipelines, and consistent performance metrics (Spearman correlation for on-target activity; AUROC and AUPRC for off-target classification) <span class="co">[</span><span class="ot">@konstantakos2022</span><span class="co">]</span>.</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>Benchmarking on standardised datasets has tempered the optimism of individual model publications in several respects. The performance gap between deep learning models and well-optimised classical ML approaches (gradient-boosted trees with engineered features) turns out to be narrower than reported in individual papers — a finding that echoes similar deflations in other applied ML domains. Performance also varies substantially across datasets derived from different cell types, library designs, and assay formats; and model rankings are unstable across evaluation metrics, so that a model excelling on Spearman correlation for a regression task may underperform on binary classification of active vs. inactive guides.</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="fu">### Dataset biases: cell-type specificity, library design artefacts</span></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>Training data for gRNA activity models are derived overwhelmingly from a small number of transformed cell lines — HEK293T, HeLa, A375 — which differ systematically from the primary cells relevant to therapeutic applications. Library designs also introduce biases: many large-scale datasets are drawn from genome-wide knockout screens in which guides target coding exons, potentially enriching for sequence contexts that are not representative of the broader targetable genome. The consequence is that published performance metrics may overestimate the accuracy of predictions in clinically relevant settings <span class="co">[</span><span class="ot">@haeussler2016</span><span class="co">]</span>.</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reproducibility challenges in published models</span></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>Independent replication of published model performance has proven difficult for several reasons: incomplete reporting of hyperparameter configurations, unavailability of training data or code, and sensitivity to minor preprocessing decisions (e.g., one-hot encoding order, handling of ambiguous nucleotides). The CRISPRbench initiative and the growing adoption of open-source model repositories have improved the situation, but reproducibility remains an ongoing concern, consistent with the broader challenges in computational biology <span class="co">[</span><span class="ot">@heil2021</span><span class="co">]</span>.</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="fu">### Model interpretability: what has the network learned about biology?</span></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>A recurrent critique of deep learning models in the gRNA design domain is their opacity: a model may achieve high predictive accuracy without providing mechanistic insight into *why* certain guides work well and others do not. Interpretability methods — including saliency maps, attention weight visualisation, and integrated gradients — have been applied to reveal the features driving model predictions.</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>Reassuringly, these analyses consistently identify the PAM-proximal seed region, specific position-dependent nucleotide preferences, and secondary structure stability as high-importance features — findings that align with biochemical and structural knowledge <span class="co">[</span><span class="ot">@chuai2018; @kim2019deepcas9</span><span class="co">]</span>. Less expected discoveries include the importance of flanking genomic context (nucleotides beyond the 20-nt spacer) and of sequence motifs associated with specific DNA repair outcomes, suggesting that deep learning models are capturing aspects of the biology that were not encoded in prior heuristic rules.</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="fu">## Multi-objective guide design: balancing activity, specificity, and deliverability {#sec-ch2-multi-objective}</span></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="fu">### Pareto-optimal guide selection</span></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>In practice, the selection of a gRNA for a therapeutic or functional genomics application involves simultaneous optimisation of multiple, often competing, objectives: on-target activity, off-target specificity, predicted repair outcome profile (for nucleases), editing purity (for base editors), pegRNA efficiency (for prime editors), and deliverability constraints (length, secondary structure compatibility with viral vectors) <span class="co">[</span><span class="ot">@listgarten2018</span><span class="co">]</span>.</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>Multi-objective optimisation frameworks — which identify the Pareto frontier of guides that are not dominated on any single criterion — provide a principled approach to this selection problem. Rather than collapsing multiple scores into a single weighted average (which requires arbitrary weight choices), Pareto-optimal selection presents the experimenter with a set of non-dominated candidates and the explicit trade-offs between them. @fig-pareto-tradeoff illustrates this trade-off structure schematically.</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-pareto-tradeoff</span></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Schematic illustration of the multi-objective trade-off in guide RNA selection. Each point represents a candidate gRNA scored on on-target activity (x-axis) and off-target specificity (y-axis); point size encodes a third objective, deliverability. Orange points along the Pareto frontier are non-dominated candidates — no other guide scores higher on both axes simultaneously. The shaded region below the frontier contains dominated guides. Arrows indicate the direction of improvement on each axis. In practice, experimenters select from the frontier according to application-specific priorities: a therapeutic programme may weight specificity heavily, whilst a high-throughput screen may prioritise activity."</span></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 6</span></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 7.5</span></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>n_guides <span class="ot">&lt;-</span> <span class="dv">120</span></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>guides <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>  <span class="at">activity    =</span> <span class="fu">runif</span>(n_guides, <span class="fl">0.2</span>, <span class="fl">0.95</span>),</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>  <span class="at">specificity =</span> <span class="fu">runif</span>(n_guides, <span class="fl">0.3</span>, <span class="fl">0.99</span>),</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>  <span class="at">deliverability =</span> <span class="fu">runif</span>(n_guides, <span class="fl">0.3</span>, <span class="fl">1.0</span>)</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Introduce negative correlation between activity and specificity</span></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>    <span class="at">specificity =</span> specificity <span class="sc">-</span> <span class="fl">0.25</span> <span class="sc">*</span> activity <span class="sc">+</span> <span class="fu">rnorm</span>(n_guides, <span class="dv">0</span>, <span class="fl">0.06</span>),</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>    <span class="at">specificity =</span> <span class="fu">pmin</span>(<span class="fu">pmax</span>(specificity, <span class="fl">0.15</span>), <span class="fl">0.99</span>)</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify Pareto-optimal points (non-dominated on activity + specificity)</span></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>is_pareto <span class="ot">&lt;-</span> <span class="fu">logical</span>(n_guides)</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_len</span>(n_guides)) {</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>  dominated <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="fu">seq_len</span>(n_guides)) {</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (i <span class="sc">!=</span> j <span class="sc">&amp;&amp;</span></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>        guides<span class="sc">$</span>activity[j] <span class="sc">&gt;=</span> guides<span class="sc">$</span>activity[i] <span class="sc">&amp;&amp;</span></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>        guides<span class="sc">$</span>specificity[j] <span class="sc">&gt;=</span> guides<span class="sc">$</span>specificity[i] <span class="sc">&amp;&amp;</span></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>        (guides<span class="sc">$</span>activity[j] <span class="sc">&gt;</span> guides<span class="sc">$</span>activity[i] <span class="sc">||</span></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>         guides<span class="sc">$</span>specificity[j] <span class="sc">&gt;</span> guides<span class="sc">$</span>specificity[i])) {</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>      dominated <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>      <span class="cf">break</span></span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>  is_pareto[i] <span class="ot">&lt;-</span> <span class="sc">!</span>dominated</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>guides<span class="sc">$</span>pareto <span class="ot">&lt;-</span> is_pareto</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>pareto_pts <span class="ot">&lt;-</span> guides <span class="sc">|&gt;</span></span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(pareto) <span class="sc">|&gt;</span></span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(activity)</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(guides, <span class="fu">aes</span>(<span class="at">x =</span> activity, <span class="at">y =</span> specificity)) <span class="sc">+</span></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Shaded dominated region</span></span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> pareto_pts,</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> activity, <span class="at">ymin =</span> <span class="fl">0.1</span>, <span class="at">ymax =</span> specificity),</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"grey90"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">inherit.aes =</span> <span class="cn">FALSE</span></span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Dominated guides</span></span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(guides, <span class="sc">!</span>pareto),</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">size =</span> deliverability),</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">"#999999"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span></span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Pareto frontier line</span></span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_step</span>(</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> pareto_pts,</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> activity, <span class="at">y =</span> specificity),</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">"#D95F02"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>, <span class="at">direction =</span> <span class="st">"vh"</span></span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Pareto-optimal guides</span></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(guides, pareto),</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">size =</span> deliverability),</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">"#D95F02"</span>, <span class="at">alpha =</span> <span class="fl">0.85</span></span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    <span class="at">range =</span> <span class="fu">c</span>(<span class="fl">1.5</span>, <span class="dv">6</span>), <span class="at">name =</span> <span class="st">"Deliverability score"</span>,</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="fl">0.4</span>, <span class="fl">0.6</span>, <span class="fl">0.8</span>)</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">0.85</span>, <span class="at">y =</span> <span class="fl">0.28</span>, <span class="at">label =</span> <span class="st">"Dominated region"</span>,</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>           <span class="at">colour =</span> <span class="st">"grey50"</span>, <span class="at">size =</span> <span class="fl">3.5</span>, <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">0.45</span>, <span class="at">y =</span> <span class="fl">0.90</span>, <span class="at">label =</span> <span class="st">"Pareto frontier"</span>,</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>           <span class="at">colour =</span> <span class="st">"#D95F02"</span>, <span class="at">size =</span> <span class="fl">3.5</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"On-target activity score"</span>,</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Off-target specificity score"</span>,</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Multi-objective trade-offs in guide RNA selection"</span>,</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Simulated candidate guides; orange = Pareto-optimal (non-dominated)"</span></span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="fl">0.15</span>, <span class="dv">1</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_monograph</span>() <span class="sc">+</span></span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a><span class="fu">### Constraint satisfaction for multiplexed editing</span></span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>Multiplexed editing — the simultaneous targeting of two or more loci — introduces additional combinatorial constraints. Guides in a multiplex pool must not only be individually effective and specific but must also avoid mutual off-target interactions, where the presence of one guide creates a substrate for another. Computational frameworks for multiplex guide design therefore incorporate pairwise compatibility checks alongside individual scoring, a problem whose computational cost scales quadratically with pool size <span class="co">[</span><span class="ot">@zhu2019; @campa2019_mult</span><span class="co">]</span>.</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a><span class="fu">### Guide design for base editors and prime editors: distinct sequence requirements</span></span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>The guide design requirements for base editors and prime editors differ substantially from those for nucleases. For cytosine and adenine base editors, the target nucleotide must fall within a narrow editing window (typically positions 4–8 from the PAM-proximal end of the spacer), and the absence of bystander-susceptible nucleotides within this window is a key design constraint (see @sec-ch1-base-editing). Models trained on nuclease activity data do not transfer directly to base editor contexts, necessitating dedicated training datasets and scoring algorithms <span class="co">[</span><span class="ot">@arbab2020; @song2020</span><span class="co">]</span>.</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>For prime editors, the design space is substantially larger: in addition to the spacer sequence, the pegRNA includes a primer binding site (PBS) and a reverse transcriptase template (RTT), each of which must be optimised for length, secondary structure, and thermodynamic stability. Machine learning models for prime editing — including PRIDICT and PE-Designer — have begun to address this expanded design space, but the smaller available training datasets and the greater number of design parameters make this a considerably more challenging prediction problem than nuclease guide design <span class="co">[</span><span class="ot">@kim2021pridict</span><span class="co">]</span>.</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sociotechnical Interlude II: algorithmic authority in experimental design {#sec-sti-2}</span></span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>The computational tools reviewed in this chapter are not merely technical aids; they have become, in practice, the authorities that determine which experiments are performed. When a laboratory selects guide RNAs based on a computational score, it delegates a consequential design decision to an algorithm whose training data, loss function, and implicit assumptions may not be transparent to the bench scientist using it.</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>Consider what this delegation looks like from the bench. A researcher opens a web-based tool, enters a target gene, and receives a ranked list of candidate guides. The tool's interface offers no indication of which cell lines supplied its training data, what loss function shaped its rankings, or how it handles the ambiguities of chromatin context. In Collins and Evans's terms <span class="co">[</span><span class="ot">@collins2002</span><span class="co">]</span>, the tool's *use* demands neither the *contributory expertise* required to develop it (the tacit knowledge of computational biology and CRISPR molecular biology) nor the *interactional expertise* needed to evaluate its assumptions. The result is an epistemic asymmetry whose scale is easy to underestimate: the experimental designs of thousands of laboratories are shaped by the choices of a small number of model developers, embedded in the tools but rarely interrogated by their users.</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>Jasanoff's work on *civic epistemology* <span class="co">[</span><span class="ot">@jasanoff2004</span><span class="co">]</span> — the culturally specific ways in which knowledge claims are evaluated and certified — sharpens this observation by drawing attention to the institutional layer. The validation of AI-based gRNA design tools occurs primarily through publication and citation, but the community of evaluators is heterogeneous in a way that matters. Computational biologists evaluate model architecture and benchmark performance; bench scientists evaluate whether recommended guides "work" in their specific experimental context. These two modes of evaluation do not always converge. Failures of transferability — a model that benchmarks well but recommends poorly performing guides in a new cell type — may go unreported, producing a survivorship bias in the published literature that inflates confidence in algorithmic recommendations.</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>The practical upshot is that the growing accuracy of AI-based design tools, whilst a genuine advance, does not eliminate the need for experimental validation — it changes its character. Rather than screening large libraries of guides empirically, experimenters now screen a computationally curated shortlist, trusting the algorithm to have excluded poor candidates. This trust is generally well calibrated for nuclease applications in well-studied cell types, where training data are abundant. It is less well calibrated for newer editing modalities (base editors, prime editors, epigenome editors) and for clinically relevant primary cells, where the evidence base is thinner.</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>A responsible deployment of these tools therefore requires what we might call *computational humility*: an explicit awareness that algorithmic recommendations encode specific assumptions about what constitutes a "good" guide, and that these assumptions may not hold in all experimental contexts. This is not a counsel of distrust but of calibrated reliance — a theme that returns when we examine AI applications across the therapeutic pipeline in @sec-ai-pipeline.</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a><span class="fu">## Chapter summary {#sec-ch2-summary}</span></span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>The progression from heuristic rules to deep learning in gRNA design is one of the more legible success stories at the intersection of AI and molecular biology. On-target activity prediction has improved from Spearman correlations of ~0.3 (rule-based) to ~0.6–0.75 (deep learning), and off-target classification has reached AUROC values exceeding 0.95 in well-benchmarked settings. @fig-ai-grna-performance summarises these gains across model generations and evaluation datasets.</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>Yet several limitations temper that narrative. Model transferability across cell types and CRISPR systems remains imperfect. Benchmarking has revealed that the gap between classical ML and deep learning is smaller than individual publications suggest. The incorporation of chromatin context improves predictions substantially but creates a data dependency that limits applicability. And the interpretability of deep learning models, whilst improving, remains insufficient for the mechanistic understanding that would enable truly *ab initio* guide design.</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>These are not merely technical gaps awaiting engineering solutions; they define the conditions under which the next chapter's broader optimisation strategies — repair outcome prediction, protein engineering, delivery optimisation, and the generative design of entirely novel editing systems — must operate.</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-ai-grna-performance</span></span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Approximate performance of guide RNA design models across benchmark datasets, measured by Spearman correlation with experimental on-target activity. Bars show ranges reported across multiple independent evaluations. Models are grouped by architecture class. Performance varies substantially with dataset, cell type, and evaluation protocol; values should be interpreted as indicative rather than definitive."</span></span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 7</span></span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 9</span></span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>performance_data <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>model,              <span class="sc">~</span>class,               <span class="sc">~</span>spearman_low, <span class="sc">~</span>spearman_high, <span class="sc">~</span>year,</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>  <span class="st">"GC content rule"</span>,   <span class="st">"Rule-based"</span>,         <span class="fl">0.15</span>,          <span class="fl">0.25</span>,           <span class="dv">2013</span>,</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CRISPRscan"</span>,        <span class="st">"Rule-based"</span>,         <span class="fl">0.25</span>,          <span class="fl">0.40</span>,           <span class="dv">2015</span>,</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Rule Set 1"</span>,        <span class="st">"Classical ML"</span>,       <span class="fl">0.45</span>,          <span class="fl">0.55</span>,           <span class="dv">2014</span>,</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Rule Set 2"</span>,        <span class="st">"Classical ML"</span>,       <span class="fl">0.55</span>,          <span class="fl">0.62</span>,           <span class="dv">2016</span>,</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CHOPCHOP v2"</span>,       <span class="st">"Classical ML"</span>,       <span class="fl">0.50</span>,          <span class="fl">0.60</span>,           <span class="dv">2019</span>,</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>  <span class="st">"DeepCRISPR"</span>,        <span class="st">"CNN"</span>,                <span class="fl">0.58</span>,          <span class="fl">0.67</span>,           <span class="dv">2018</span>,</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>  <span class="st">"DeepSpCas9"</span>,        <span class="st">"CNN"</span>,                <span class="fl">0.60</span>,          <span class="fl">0.70</span>,           <span class="dv">2019</span>,</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Bi-LSTM models"</span>,    <span class="st">"RNN"</span>,                <span class="fl">0.58</span>,          <span class="fl">0.68</span>,           <span class="dv">2019</span>,</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CRISPR-BERT"</span>,       <span class="st">"Transformer"</span>,        <span class="fl">0.65</span>,          <span class="fl">0.76</span>,           <span class="dv">2023</span>,</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>  <span class="st">"DNABERT fine-tuned"</span>,<span class="st">"Transformer"</span>,        <span class="fl">0.62</span>,          <span class="fl">0.73</span>,           <span class="dv">2023</span></span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>class_order <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Rule-based"</span>, <span class="st">"Classical ML"</span>, <span class="st">"CNN"</span>, <span class="st">"RNN"</span>, <span class="st">"Transformer"</span>)</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>pal_arch <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Rule-based"</span>   <span class="ot">=</span> <span class="st">"#BDBDBD"</span>,</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Classical ML"</span> <span class="ot">=</span> <span class="st">"#78C679"</span>,</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CNN"</span>          <span class="ot">=</span> <span class="st">"#2166AC"</span>,</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>  <span class="st">"RNN"</span>          <span class="ot">=</span> <span class="st">"#984EA3"</span>,</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Transformer"</span>  <span class="ot">=</span> <span class="st">"#D95F02"</span></span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>performance_data <span class="ot">&lt;-</span> performance_data <span class="sc">%&gt;%</span></span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>    <span class="at">class =</span> <span class="fu">factor</span>(class, <span class="at">levels =</span> class_order),</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>    <span class="at">model =</span> <span class="fu">factor</span>(model, <span class="at">levels =</span> <span class="fu">rev</span>(model)),</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>    <span class="at">spearman_mid =</span> (spearman_low <span class="sc">+</span> spearman_high) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(performance_data, <span class="fu">aes</span>(<span class="at">y =</span> model, <span class="at">colour =</span> class)) <span class="sc">+</span></span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> spearman_low, <span class="at">xend =</span> spearman_high, <span class="at">yend =</span> model),</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>    <span class="at">linewidth =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.7</span></span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> spearman_mid), <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> pal_arch, <span class="at">name =</span> <span class="st">"Architecture"</span>) <span class="sc">+</span></span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.85</span>),</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fl">0.8</span>, <span class="fl">0.1</span>),</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">number_format</span>(<span class="at">accuracy =</span> <span class="fl">0.1</span>)</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Spearman correlation with experimental activity"</span>,</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Guide RNA design model performance"</span>,</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Approximate ranges across benchmark datasets (2013–2023)"</span></span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_monograph</span>() <span class="sc">+</span></span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-offtarget-methods</span></span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Comparison of computational and experimental methods for CRISPR off-target assessment. Experimental methods provide ground-truth data for training and validating computational models."</span></span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>offtarget_data <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>Method,          <span class="sc">~</span>Type,           <span class="sc">~</span><span class="st">`</span><span class="at">Key principle</span><span class="st">`</span>,                              <span class="sc">~</span><span class="st">`</span><span class="at">Strengths</span><span class="st">`</span>,                          <span class="sc">~</span><span class="st">`</span><span class="at">Limitations</span><span class="st">`</span>,</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Cas-OFFinder"</span>,   <span class="st">"Computational"</span>, <span class="st">"Exhaustive mismatch search"</span>,                  <span class="st">"Fast; comprehensive"</span>,                 <span class="st">"No cleavage probability"</span>,</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CFD score"</span>,      <span class="st">"Computational"</span>, <span class="st">"Position-weighted mismatch penalties"</span>,         <span class="st">"Simple; widely adopted"</span>,              <span class="st">"Assumes position independence"</span>,</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CRISPR-Net"</span>,     <span class="st">"Computational"</span>, <span class="st">"Deep CNN on guide–target encoding"</span>,            <span class="st">"High AUROC (&gt;0.95)"</span>,                  <span class="st">"Requires training data"</span>,</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>  <span class="st">"GUIDE-seq"</span>,      <span class="st">"Experimental"</span>,  <span class="st">"dsODN integration at DSB sites"</span>,              <span class="st">"Sensitive; genome-wide"</span>,              <span class="st">"Requires transfection"</span>,</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CIRCLE-seq"</span>,     <span class="st">"Experimental"</span>,  <span class="st">"In vitro cleavage of circularised gDNA"</span>,      <span class="st">"Cell-type independent"</span>,               <span class="st">"Overestimates in vivo sites"</span>,</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>  <span class="st">"DISCOVER-seq"</span>,   <span class="st">"Experimental"</span>,  <span class="st">"MRE11 ChIP-seq at DSB sites"</span>,                 <span class="st">"In vivo; unbiased"</span>,                   <span class="st">"Low sensitivity for rare events"</span></span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(offtarget_data, <span class="at">align =</span> <span class="st">"llllll"</span>)</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/mm3ugr/crispr-ai-monograph/edit/main/02-ai-design.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/mm3ugr/crispr-ai-monograph/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

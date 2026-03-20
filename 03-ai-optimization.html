@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; AI-Driven Optimisation of Editing Outcomes – CRISPR Systems and Artificial Intelligence</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./04-rare-diseases.html" rel="next">
+<link href="./02-ai-design.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-4c6d65c679321d81af7ec8b61b1d5a24.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-crispr-systems.html">Part I — CRISPR Systems and AI: Technical Foundations</a></li><li class="breadcrumb-item"><a href="./03-ai-optimization.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">AI-Driven Optimisation of Editing Outcomes</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">CRISPR Systems and Artificial Intelligence</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/mm3ugr/crispr-ai-monograph" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I — CRISPR Systems and AI: Technical Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-crispr-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">CRISPR Architectures: From Cas9 to Epigenome Editors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-ai-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">AI for Guide RNA Design and Off-Target Prediction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-ai-optimization.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">AI-Driven Optimisation of Editing Outcomes</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II — Therapeutic Applications and the Clinical Pipeline</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-rare-diseases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Genetic Rare Diseases as Therapeutic Targets for CRISPR-AI</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-clinical-pipeline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Clinical Pipeline: From Bench to Bedside</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-ai-pipeline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">AI Across the Therapeutic Pipeline</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III — Governance, Ethics, and Futures</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-regulatory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regulatory Frameworks for Gene Editing in Europe and Beyond</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-bioethics-sts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Bioethics and STS: Autonomy, Justice, and Sociotechnical Imaginaries</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-prospective.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Prospective Scenarios 2026–2030</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-from-guide-selection-to-outcome-engineering" id="toc-introduction-from-guide-selection-to-outcome-engineering" class="nav-link active" data-scroll-target="#introduction-from-guide-selection-to-outcome-engineering"><span class="header-section-number">3.1</span> Introduction: from guide selection to outcome engineering</a></li>
+  <li><a href="#predicting-repair-outcomes-genotype-level-modelling" id="toc-predicting-repair-outcomes-genotype-level-modelling" class="nav-link" data-scroll-target="#predicting-repair-outcomes-genotype-level-modelling"><span class="header-section-number">3.2</span> Predicting repair outcomes: genotype-level modelling</a>
+  <ul class="collapse">
+  <li><a href="#the-conceptual-breakthrough-repair-is-not-random" id="toc-the-conceptual-breakthrough-repair-is-not-random" class="nav-link" data-scroll-target="#the-conceptual-breakthrough-repair-is-not-random"><span class="header-section-number">3.2.1</span> The conceptual breakthrough: repair is not random</a></li>
+  <li><a href="#indelphi-neural-networks-for-indel-prediction" id="toc-indelphi-neural-networks-for-indel-prediction" class="nav-link" data-scroll-target="#indelphi-neural-networks-for-indel-prediction"><span class="header-section-number">3.2.2</span> inDelphi: neural networks for indel prediction</a></li>
+  <li><a href="#forecast-and-lindel-complementary-architectures" id="toc-forecast-and-lindel-complementary-architectures" class="nav-link" data-scroll-target="#forecast-and-lindel-complementary-architectures"><span class="header-section-number">3.2.3</span> FORECasT and Lindel: complementary architectures</a></li>
+  <li><a href="#cross-model-comparison-and-the-domain-adaptation-problem" id="toc-cross-model-comparison-and-the-domain-adaptation-problem" class="nav-link" data-scroll-target="#cross-model-comparison-and-the-domain-adaptation-problem"><span class="header-section-number">3.2.4</span> Cross-model comparison and the domain adaptation problem</a></li>
+  <li><a href="#base-editing-outcome-prediction-be-hive-and-beyond" id="toc-base-editing-outcome-prediction-be-hive-and-beyond" class="nav-link" data-scroll-target="#base-editing-outcome-prediction-be-hive-and-beyond"><span class="header-section-number">3.2.5</span> Base editing outcome prediction: BE-Hive and beyond</a></li>
+  <li><a href="#prime-editing-outcome-prediction" id="toc-prime-editing-outcome-prediction" class="nav-link" data-scroll-target="#prime-editing-outcome-prediction"><span class="header-section-number">3.2.6</span> Prime editing outcome prediction</a></li>
+  </ul></li>
+  <li><a href="#protein-engineering-with-machine-learning" id="toc-protein-engineering-with-machine-learning" class="nav-link" data-scroll-target="#protein-engineering-with-machine-learning"><span class="header-section-number">3.3</span> Protein engineering with machine learning</a>
+  <ul class="collapse">
+  <li><a href="#navigating-fitness-landscapes-at-scale" id="toc-navigating-fitness-landscapes-at-scale" class="nav-link" data-scroll-target="#navigating-fitness-landscapes-at-scale"><span class="header-section-number">3.3.1</span> Navigating fitness landscapes at scale</a></li>
+  <li><a href="#ml-coupled-combinatorial-mutagenesis-of-cas9" id="toc-ml-coupled-combinatorial-mutagenesis-of-cas9" class="nav-link" data-scroll-target="#ml-coupled-combinatorial-mutagenesis-of-cas9"><span class="header-section-number">3.3.2</span> ML-coupled combinatorial mutagenesis of Cas9</a></li>
+  <li><a href="#deep-mutational-scanning-and-zero-shot-prediction" id="toc-deep-mutational-scanning-and-zero-shot-prediction" class="nav-link" data-scroll-target="#deep-mutational-scanning-and-zero-shot-prediction"><span class="header-section-number">3.3.3</span> Deep mutational scanning and zero-shot prediction</a></li>
+  <li><a href="#evolvepro-protein-language-models-for-rapid-directed-evolution" id="toc-evolvepro-protein-language-models-for-rapid-directed-evolution" class="nav-link" data-scroll-target="#evolvepro-protein-language-models-for-rapid-directed-evolution"><span class="header-section-number">3.3.4</span> EVOLVEpro: protein language models for rapid directed evolution</a></li>
+  <li><a href="#engineering-pam-specificity-with-deep-learning" id="toc-engineering-pam-specificity-with-deep-learning" class="nav-link" data-scroll-target="#engineering-pam-specificity-with-deep-learning"><span class="header-section-number">3.3.5</span> Engineering PAM specificity with deep learning</a></li>
+  </ul></li>
+  <li><a href="#delivery-optimisation-through-computational-approaches" id="toc-delivery-optimisation-through-computational-approaches" class="nav-link" data-scroll-target="#delivery-optimisation-through-computational-approaches"><span class="header-section-number">3.4</span> Delivery optimisation through computational approaches</a>
+  <ul class="collapse">
+  <li><a href="#the-delivery-bottleneck" id="toc-the-delivery-bottleneck" class="nav-link" data-scroll-target="#the-delivery-bottleneck"><span class="header-section-number">3.4.1</span> The delivery bottleneck</a></li>
+  <li><a href="#bayesian-optimisation-of-lipid-nanoparticle-formulations" id="toc-bayesian-optimisation-of-lipid-nanoparticle-formulations" class="nav-link" data-scroll-target="#bayesian-optimisation-of-lipid-nanoparticle-formulations"><span class="header-section-number">3.4.2</span> Bayesian optimisation of lipid nanoparticle formulations</a></li>
+  <li><a href="#predicting-aav-tissue-tropism-from-capsid-sequence" id="toc-predicting-aav-tissue-tropism-from-capsid-sequence" class="nav-link" data-scroll-target="#predicting-aav-tissue-tropism-from-capsid-sequence"><span class="header-section-number">3.4.3</span> Predicting AAV tissue tropism from capsid sequence</a></li>
+  <li><a href="#electroporation-and-rnp-delivery-optimisation" id="toc-electroporation-and-rnp-delivery-optimisation" class="nav-link" data-scroll-target="#electroporation-and-rnp-delivery-optimisation"><span class="header-section-number">3.4.4</span> Electroporation and RNP delivery optimisation</a></li>
+  </ul></li>
+  <li><a href="#multiplexed-and-combinatorial-editing" id="toc-multiplexed-and-combinatorial-editing" class="nav-link" data-scroll-target="#multiplexed-and-combinatorial-editing"><span class="header-section-number">3.5</span> Multiplexed and combinatorial editing</a>
+  <ul class="collapse">
+  <li><a href="#the-rationale-for-multiplexed-perturbation" id="toc-the-rationale-for-multiplexed-perturbation" class="nav-link" data-scroll-target="#the-rationale-for-multiplexed-perturbation"><span class="header-section-number">3.5.1</span> The rationale for multiplexed perturbation</a></li>
+  <li><a href="#perturb-seq-and-single-cell-readouts" id="toc-perturb-seq-and-single-cell-readouts" class="nav-link" data-scroll-target="#perturb-seq-and-single-cell-readouts"><span class="header-section-number">3.5.2</span> Perturb-seq and single-cell readouts</a></li>
+  <li><a href="#multi-target-editing-scheduling-and-interference" id="toc-multi-target-editing-scheduling-and-interference" class="nav-link" data-scroll-target="#multi-target-editing-scheduling-and-interference"><span class="header-section-number">3.5.3</span> Multi-target editing: scheduling and interference</a></li>
+  </ul></li>
+  <li><a href="#reinforcement-learning-and-generative-models" id="toc-reinforcement-learning-and-generative-models" class="nav-link" data-scroll-target="#reinforcement-learning-and-generative-models"><span class="header-section-number">3.6</span> Reinforcement learning and generative models</a>
+  <ul class="collapse">
+  <li><a href="#beyond-prediction-generative-approaches" id="toc-beyond-prediction-generative-approaches" class="nav-link" data-scroll-target="#beyond-prediction-generative-approaches"><span class="header-section-number">3.6.1</span> Beyond prediction: generative approaches</a></li>
+  <li><a href="#reinforcement-learning-for-experimental-protocols" id="toc-reinforcement-learning-for-experimental-protocols" class="nav-link" data-scroll-target="#reinforcement-learning-for-experimental-protocols"><span class="header-section-number">3.6.2</span> Reinforcement learning for experimental protocols</a></li>
+  <li><a href="#foundation-models-and-genome-editing" id="toc-foundation-models-and-genome-editing" class="nav-link" data-scroll-target="#foundation-models-and-genome-editing"><span class="header-section-number">3.6.3</span> Foundation models and genome editing</a></li>
+  </ul></li>
+  <li><a href="#sec-sti-3" id="toc-sec-sti-3" class="nav-link" data-scroll-target="#sec-sti-3"><span class="header-section-number">3.7</span> Sociotechnical Interlude III: optimisation as a value-laden practice</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">3.8</span> Chapter summary</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/mm3ugr/crispr-ai-monograph/edit/main/03-ai-optimization.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/mm3ugr/crispr-ai-monograph/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-crispr-systems.html">Part I — CRISPR Systems and AI: Technical Foundations</a></li><li class="breadcrumb-item"><a href="./03-ai-optimization.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">AI-Driven Optimisation of Editing Outcomes</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-ai-optimization" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">AI-Driven Optimisation of Editing Outcomes</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction-from-guide-selection-to-outcome-engineering" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="introduction-from-guide-selection-to-outcome-engineering"><span class="header-section-number">3.1</span> Introduction: from guide selection to outcome engineering</h2>
+<p>The previous chapter examined how artificial intelligence has transformed the selection of guide RNAs — the first computational decision point in any CRISPR experiment. Yet choosing a guide is only the beginning. Once a double-strand break is introduced, or a base editor deaminates its target cytosine, the outcome is shaped by a cascade of cellular processes over which the experimenter has, historically, limited control. The repair machinery of the cell — non-homologous end joining (NHEJ), microhomology-mediated end joining (MMEJ), homology-directed repair (HDR), and their sub-pathways — produces a distribution of genotypic products that was, until recently, treated as essentially stochastic <span class="citation" data-cites="shen2018 allen2019forecast">(<a href="references.html#ref-allen2019forecast" role="doc-biblioref">Allen et al., 2019</a>; <a href="references.html#ref-shen2018" role="doc-biblioref">Shen et al., 2018</a>)</span>.</p>
+<p>The scope of computational genome editing has since expanded well beyond guide selection. AI now informs the prediction of repair outcomes at single-nucleotide resolution, the engineering of Cas proteins with novel properties, the optimisation of delivery vehicles through high-dimensional screening, and the design of multiplexed perturbation experiments that would be intractable without algorithmic coordination. Each of these domains poses a distinct modelling problem, but they share a common logic: the use of learned representations to search combinatorial spaces that exceed the capacity of brute-force experimentation.</p>
+<p>Two features of this expansion deserve emphasis. First, the models discussed here are not merely descriptive — many are now <em>generative</em>, proposing novel sequences, formulations, or experimental protocols that have no precedent in training data. Second, and central to the sociotechnical analysis threaded through this monograph, every optimisation encodes a value judgement. To optimise editing efficiency is to accept a particular trade-off between on-target precision and off-target risk; to optimise delivery for a specific tissue is to prioritise one patient population over another. These choices are not technical in the narrow sense — they are political in the sense articulated by <span class="citation" data-cites="winner1980artifacts">Winner (<a href="references.html#ref-winner1980artifacts" role="doc-biblioref">1980</a>)</span>, a point to which Sociotechnical Interlude III returns with specific attention to loss functions.</p>
+</section>
+<section id="predicting-repair-outcomes-genotype-level-modelling" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="predicting-repair-outcomes-genotype-level-modelling"><span class="header-section-number">3.2</span> Predicting repair outcomes: genotype-level modelling</h2>
+<section id="the-conceptual-breakthrough-repair-is-not-random" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="the-conceptual-breakthrough-repair-is-not-random"><span class="header-section-number">3.2.1</span> The conceptual breakthrough: repair is not random</h3>
+<p>The dominant assumption through the early years of CRISPR application was that NHEJ-mediated repair of Cas9-induced double-strand breaks produced unpredictable, heterogeneous insertions and deletions (indels). This view was both empirically incomplete and theoretically convenient: it justified the use of HDR templates for precision editing and discouraged systematic investigation of template-free repair products. Three landmark studies, published in rapid succession between 2018 and 2019, overturned this assumption by demonstrating that repair outcomes are substantially determined by local sequence context at the cut site <span class="citation" data-cites="shen2018 allen2019forecast chen2019forecast">(<a href="references.html#ref-allen2019forecast" role="doc-biblioref">Allen et al., 2019</a>; <a href="references.html#ref-chen2019forecast" role="doc-biblioref">Chen et al., 2019</a>; <a href="references.html#ref-shen2018" role="doc-biblioref">Shen et al., 2018</a>)</span>.</p>
+</section>
+<section id="indelphi-neural-networks-for-indel-prediction" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="indelphi-neural-networks-for-indel-prediction"><span class="header-section-number">3.2.2</span> inDelphi: neural networks for indel prediction</h3>
+<p>Shen, Arbab and colleagues constructed a library of 2,000 Cas9 guide RNAs paired with integrated DNA target sites and profiled the resulting repair products across five human and mouse cell lines <span class="citation" data-cites="shen2018">(<a href="references.html#ref-shen2018" role="doc-biblioref">Shen et al., 2018</a>)</span>. The resulting dataset — comprising millions of independent repair events — revealed that microhomology-mediated deletions, microhomology-independent deletions, and single-base-pair insertions each followed distinct but learnable patterns. The authors trained inDelphi, a composite machine-learning model that uses separate neural network modules to predict the frequencies of these three outcome classes from local sequence context alone.</p>
+<p>inDelphi achieves a Pearson correlation of <em>r</em> = 0.87 between predicted and observed indel frequencies across held-out target sites, and can predict frameshift frequencies with comparable accuracy. The model also identifies a subset of guide RNAs — termed ‘precise-50’ guides — for which a single genotype accounts for at least 50% of all major editing products. Shen and colleagues estimate that 5–11% of all possible Cas9 guides targeting the human genome fall into this category, and they experimentally confirmed precise template-free correction of 195 human disease-relevant alleles, including pathogenic mutations associated with Hermansky–Pudlak syndrome and Menkes disease <span class="citation" data-cites="shen2018">(<a href="references.html#ref-shen2018" role="doc-biblioref">Shen et al., 2018</a>)</span>. The clinical implication is substantial: for a meaningful fraction of pathogenic variants, template-free editing guided by outcome prediction may offer a viable therapeutic strategy without the efficiency penalties of HDR.</p>
+</section>
+<section id="forecast-and-lindel-complementary-architectures" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="forecast-and-lindel-complementary-architectures"><span class="header-section-number">3.2.3</span> FORECasT and Lindel: complementary architectures</h3>
+<p>In parallel, Allen and colleagues developed FORECasT (Favoured Outcomes of Repair Events at Cas9 Targets), training on a library of over 40,000 guide–target pairs in mouse embryonic stem cells and human cell lines <span class="citation" data-cites="allen2019forecast">(<a href="references.html#ref-allen2019forecast" role="doc-biblioref">Allen et al., 2019</a>)</span>. FORECasT employs a regularised logistic regression framework that predicts the frequencies of all major indel products — both deletions (modelled by microhomology length and position) and 1–2 base-pair insertions. The model achieves comparable accuracy to inDelphi on its own test set and, importantly, identifies distinct sequence features that drive insertion versus deletion outcomes.</p>
+<p>Chen, McKenna and colleagues independently developed Lindel, a lightweight logistic regression model trained on 6,872 synthetic target sequences yielding approximately 1.16 million independent mutational events in a human cell line <span class="citation" data-cites="chen2019forecast">(<a href="references.html#ref-chen2019forecast" role="doc-biblioref">Chen et al., 2019</a>)</span>. Lindel’s architecture deliberately prioritises simplicity and interpretability: it uses one-hot encoded sequence features within a six-base-pair window flanking the cut site and achieves competitive performance with substantially fewer parameters than inDelphi’s neural network modules. When trained on an aggregated dataset combining both the Lindel and FORECasT training sequences (14,625 target sites), the model achieves the best overall cross-dataset performance, suggesting that data volume may matter more than architectural complexity for this prediction task <span class="citation" data-cites="chen2019forecast">(<a href="references.html#ref-chen2019forecast" role="doc-biblioref">Chen et al., 2019</a>)</span>.</p>
+</section>
+<section id="cross-model-comparison-and-the-domain-adaptation-problem" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="cross-model-comparison-and-the-domain-adaptation-problem"><span class="header-section-number">3.2.4</span> Cross-model comparison and the domain adaptation problem</h3>
+<p>A recent systematic comparison by Gonçalves and colleagues, through the X-CRISP framework, benchmarked inDelphi, FORECasT, Lindel, and the more recent CROTON model on standardised datasets, revealing that no single model dominates across all evaluation metrics and cell types <span class="citation" data-cites="xcrisp2025">(<a href="references.html#ref-xcrisp2025" role="doc-biblioref">Seale &amp; Gonçalves, 2025</a>)</span>. The key finding is that models trained on data from one cellular context frequently underperform when applied to another — a domain adaptation problem that reflects genuine biological variation in repair pathway usage across cell types. X-CRISP addresses this through a transfer-learning strategy, pre-training on a source cell line and fine-tuning on a small target-cell-line dataset, achieving improved cross-domain generalisation with as few as 200 target-domain training examples.</p>
+<p>This domain adaptation challenge is not merely a technical inconvenience. It reflects a fundamental biological reality: the relative activities of NHEJ, MMEJ, and other repair pathways differ across cell types, developmental stages, and disease states. For clinical applications — where the target cells may be haematopoietic stem cells, hepatocytes, or T lymphocytes — a model trained exclusively on HEK293T or mouse embryonic stem cell data cannot be assumed to transfer. The field is moving toward cell-type-specific or cell-type-conditioned models, but this requires the generation of large-scale repair outcome datasets in clinically relevant cell populations, an effort that remains in its early stages.</p>
+</section>
+<section id="base-editing-outcome-prediction-be-hive-and-beyond" class="level3" data-number="3.2.5">
+<h3 data-number="3.2.5" class="anchored" data-anchor-id="base-editing-outcome-prediction-be-hive-and-beyond"><span class="header-section-number">3.2.5</span> Base editing outcome prediction: BE-Hive and beyond</h3>
+<p>The repair outcome prediction framework extends naturally to base editing, where the relevant question shifts from ‘which indels will be produced?’ to ‘which bases will be edited, and with what efficiency and purity?’. Arbab, Shen and colleagues characterised the sequence–activity relationships of 11 cytosine and adenine base editors (CBEs and ABEs) across 38,538 genomically integrated target sites in mammalian cells, generating a comprehensive dataset of editing outcomes that includes not only the intended target nucleotide but also bystander edits at neighbouring positions <span class="citation" data-cites="arbab2020">(<a href="references.html#ref-arbab2020" role="doc-biblioref">Arbab et al., 2020</a>)</span>.</p>
+<p>The resulting model, BE-Hive, uses a two-component architecture: gradient-boosted trees predict overall editing efficiency (<em>R</em> ≈ 0.7), while a neural network module predicts the full distribution of genotypic outcomes at single-nucleotide resolution (<em>R</em> ≈ 0.9). The bystander editing component is particularly significant, as it models the conditional probabilities of editing at multiple substrate positions within the editing window — a source of unpredictable off-target effects that had previously resisted systematic characterisation. BE-Hive correctly predicts that 675 disease-associated alleles with bystander nucleotides within the editing window will <em>not</em> experience bystander editing, substantially expanding the set of alleles amenable to high-precision base editing <span class="citation" data-cites="arbab2020">(<a href="references.html#ref-arbab2020" role="doc-biblioref">Arbab et al., 2020</a>)</span>.</p>
+<p>Subsequent models have refined and extended this work. Song and colleagues developed DeepCBE and DeepABE, neural network architectures trained on independent datasets in HEK293T cells, while Marquart and colleagues introduced FORECasT-BE, a gradient-boosted tree model trained on aggregated data from multiple studies and cell types <span class="citation" data-cites="song2020 marquart2022">(<a href="references.html#ref-marquart2022" role="doc-biblioref">Pallaseni et al., 2022</a>; <a href="references.html#ref-song2020" role="doc-biblioref">Song et al., 2020</a>)</span>. FORECasT-BE demonstrates improved cross-dataset generalisation compared to models trained on a single dataset, achieving at least 88% of the best Pearson correlation for every dataset and editing position — a result that parallels the aggregated-training advantage observed in the Lindel nuclease outcome model.</p>
+</section>
+<section id="prime-editing-outcome-prediction" class="level3" data-number="3.2.6">
+<h3 data-number="3.2.6" class="anchored" data-anchor-id="prime-editing-outcome-prediction"><span class="header-section-number">3.2.6</span> Prime editing outcome prediction</h3>
+<p>Prime editing introduces additional complexity, as the editing outcome depends not only on the target sequence and the prime editor protein but also on the design of the prime editing guide RNA (pegRNA), including its primer binding site length, reverse transcriptase template sequence, and any engineered structural modifications <span class="citation" data-cites="anzalone2019">(<a href="references.html#ref-anzalone2019" role="doc-biblioref">Anzalone et al., 2019</a>)</span>. Computational prediction of prime editing outcomes is correspondingly more challenging, and the field lags behind nuclease and base editing prediction in both data availability and model maturity. Early tools such as PRIDICT and DeepPrime have demonstrated promising initial results, predicting editing efficiency from pegRNA sequence features, but comprehensive genotype-level outcome prediction for prime editing remains an open problem <span class="citation" data-cites="kim2023_deeprime">(<a href="references.html#ref-kim2023_deeprime" role="doc-biblioref">Kim et al., 2023</a>)</span>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-repair-outcome-prediction" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-repair-outcome-prediction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03-ai-optimization_files/figure-html/fig-repair-outcome-prediction-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-repair-outcome-prediction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: Accuracy of repair outcome prediction models across cell types. Each point corresponds to a genomic target site; the x-axis shows the observed frequency of the predominant indel product and the y-axis the model-predicted frequency. Diagonal line indicates perfect prediction. Colour distinguishes cell types (blue: mESC; orange: HEK293T; green: K562; purple: U2OS). Pearson <em>r</em> values for each cell type are annotated. Data are illustrative, based on reported performance ranges from Shen et al.&nbsp;(2018) and Chen et al.&nbsp;(2019).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="protein-engineering-with-machine-learning" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="protein-engineering-with-machine-learning"><span class="header-section-number">3.3</span> Protein engineering with machine learning</h2>
+<section id="navigating-fitness-landscapes-at-scale" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="navigating-fitness-landscapes-at-scale"><span class="header-section-number">3.3.1</span> Navigating fitness landscapes at scale</h3>
+<p>The engineering of CRISPR-associated proteins — to improve activity, alter PAM specificity, reduce immunogenicity, or decrease size for delivery — has historically relied on two complementary strategies: structure-guided rational design and directed evolution. Both face scalability limitations. Rational design requires detailed structural knowledge and tends to explore only a small neighbourhood of sequence space around the wild-type protein. Directed evolution can, in principle, traverse larger regions of the fitness landscape, but experimental throughput constrains the number of variants that can be screened in each round <span class="citation" data-cites="arnold2018directed">(<a href="references.html#ref-arnold2018directed" role="doc-biblioref">Arnold, 2018</a>)</span>.</p>
+<p>Machine learning offers a third path: the construction of surrogate fitness functions — learned mappings from protein sequence to functional phenotype — that can be evaluated <em>in silico</em> orders of magnitude faster than wet-lab assays. These surrogate models enable the computational exploration of vast combinatorial spaces, identifying promising variants for experimental validation and dramatically reducing the screening burden.</p>
+</section>
+<section id="ml-coupled-combinatorial-mutagenesis-of-cas9" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="ml-coupled-combinatorial-mutagenesis-of-cas9"><span class="header-section-number">3.3.2</span> ML-coupled combinatorial mutagenesis of Cas9</h3>
+<p>Lim and colleagues provided an early demonstration of this approach, applying machine-learning-guided screening to combinatorial mutagenesis libraries for Cas9 engineering <span class="citation" data-cites="lim2022">(<a href="references.html#ref-lim2022" role="doc-biblioref">Thean et al., 2022</a>)</span>. Working with the KKH variant of <em>Staphylococcus aureus</em> Cas9 (KKH-SaCas9), they generated multi-site combinatorial libraries targeting amino acid positions proximal to the target DNA, experimentally characterised a small fraction of variants, and trained regression models to predict the editing activity of the remaining library members <em>in silico</em>.</p>
+<p>The ML-based approach reduced the experimental screening burden by up to 95% while enriching top-performing variants by approximately 7.5-fold compared to random sampling. Among the variants identified was N888R/A889Q — located in the WED domain, a region not previously targeted for SaCas9 optimisation — which conferred increased editing activity on both the nuclease and its derived base editor. This result illustrates a key advantage of ML-guided engineering: it can identify beneficial mutations in protein regions that would not be prioritised by structure-guided intuition alone.</p>
+</section>
+<section id="deep-mutational-scanning-and-zero-shot-prediction" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="deep-mutational-scanning-and-zero-shot-prediction"><span class="header-section-number">3.3.3</span> Deep mutational scanning and zero-shot prediction</h3>
+<p>Deep mutational scanning (DMS) provides the data substrate for many ML-guided engineering campaigns. By constructing and phenotyping comprehensive single-mutation libraries, DMS generates fitness landscapes that can be used to train or validate predictive models. For CRISPR enzymes, DMS datasets have been generated for both SpCas9 and SaCas9 variants, revealing the distribution of tolerated, neutral, and deleterious mutations across the protein sequence <span class="citation" data-cites="schmiedel2019 chu2024">(<a href="references.html#ref-chu2024" role="doc-biblioref">Chu et al., 2024</a>; <a href="references.html#ref-schmiedel2019" role="doc-biblioref">Schmiedel &amp; Lehner, 2019</a>)</span>.</p>
+<p>A complementary approach bypasses DMS entirely by using <em>zero-shot</em> predictors — models that infer mutational effects from evolutionary information (multiple sequence alignments) or protein language models (PLMs) without any target-specific experimental data. EVmutation, arDCA, and ESM-2-based predictors have all been applied to Cas9 engineering, with varying degrees of success <span class="citation" data-cites="riesselman2018 meier2021">(<a href="references.html#ref-meier2021" role="doc-biblioref">Meier et al., 2021</a>; <a href="references.html#ref-riesselman2018" role="doc-biblioref">Riesselman et al., 2018</a>)</span>. The TopVIP framework developed by Chu and colleagues combines zero-shot prediction with iterative low-N experimental validation, demonstrating that four rounds of sampling just 12 variants can identify the true top 1% performers in combinatorial libraries with up to 92.6% accuracy <span class="citation" data-cites="chu2024">(<a href="references.html#ref-chu2024" role="doc-biblioref">Chu et al., 2024</a>)</span>.</p>
+</section>
+<section id="evolvepro-protein-language-models-for-rapid-directed-evolution" class="level3" data-number="3.3.4">
+<h3 data-number="3.3.4" class="anchored" data-anchor-id="evolvepro-protein-language-models-for-rapid-directed-evolution"><span class="header-section-number">3.3.4</span> EVOLVEpro: protein language models for rapid directed evolution</h3>
+<p>The most recent advance in this space is EVOLVEpro, developed by Jiang and colleagues, which integrates protein language model embeddings with a top-layer regression model trained on a small number of experimental observations <span class="citation" data-cites="jiang2025evolvepro">(<a href="references.html#ref-jiang2025evolvepro" role="doc-biblioref">Jiang et al., 2025</a>)</span>. EVOLVEpro outperforms zero-shot methods across 12 DMS benchmark datasets and has been applied to engineer six different proteins, including a miniature CRISPR nuclease (Cas12f) whose indel formation activity was improved five-fold, and a prime editor whose insertion efficiency was doubled.</p>
+<p>The approach is notable for its sample efficiency: EVOLVEpro generates meaningful improvements from as few as 20–50 experimental data points per round, making it accessible to laboratories without high-throughput screening infrastructure. The mutations nominated by EVOLVEpro are distinctive from an evolutionary perspective and insightful from structural analysis, suggesting that the model has learned to explore regions of sequence space distant from natural variation — precisely the regions where the most dramatic functional gains may lie.</p>
+</section>
+<section id="engineering-pam-specificity-with-deep-learning" class="level3" data-number="3.3.5">
+<h3 data-number="3.3.5" class="anchored" data-anchor-id="engineering-pam-specificity-with-deep-learning"><span class="header-section-number">3.3.5</span> Engineering PAM specificity with deep learning</h3>
+<p>The PAM constraint remains one of the most significant practical limitations of CRISPR systems: each Cas enzyme recognises only a subset of potential target sites in a genome, defined by the PAM sequence immediately adjacent to the protospacer. Several groups have now applied deep learning to the specific problem of engineering PAM recognition. Protein2PAM, an evolution-informed model trained on over 45,000 CRISPR-Cas PAMs, predicts PAM specificity directly from Cas protein sequence across Type I, II, and V systems and has been used to computationally evolve Nme1Cas9 variants with broadened PAM recognition and up to 50-fold increases in cleavage rate compared to wild type <span class="citation" data-cites="protein2pam2025">(<a href="references.html#ref-protein2pam2025" role="doc-biblioref">Nayfach et al., 2025</a>)</span>.</p>
+<p>In parallel, Kleinstiver and colleagues have developed PAMmla, a machine-learning-assisted framework for generating custom SpCas9 variants with altered PAM specificities, using <em>in silico</em> directed evolution guided by learned fitness functions <span class="citation" data-cites="kleinstiver2025_pammla">(<a href="references.html#ref-kleinstiver2025_pammla" role="doc-biblioref">Kleinstiver et al., 2025</a>)</span>. These approaches bring together protein language models, evolutionary data, and experimental validation in a way that is likely to generalise to other Cas protein engineering challenges, including the reduction of immunogenicity and the optimisation of base editor deaminase domains.</p>
+</section>
+</section>
+<section id="delivery-optimisation-through-computational-approaches" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="delivery-optimisation-through-computational-approaches"><span class="header-section-number">3.4</span> Delivery optimisation through computational approaches</h2>
+<section id="the-delivery-bottleneck" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="the-delivery-bottleneck"><span class="header-section-number">3.4.1</span> The delivery bottleneck</h3>
+<p>The clinical translation of CRISPR therapies is constrained not only by editing efficiency and specificity but also, and often primarily, by the challenge of delivering the editing machinery to target cells <em>in vivo</em> with sufficient potency, tissue specificity, and safety <span class="citation" data-cites="wang2020delivery">(<a href="references.html#ref-wang2020delivery" role="doc-biblioref">Wang et al., 2020</a>)</span>. Lipid nanoparticles (LNPs) and adeno-associated viral (AAV) vectors represent the two dominant delivery modalities, each with a vast design space that has proven amenable to computational optimisation.</p>
+</section>
+<section id="bayesian-optimisation-of-lipid-nanoparticle-formulations" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="bayesian-optimisation-of-lipid-nanoparticle-formulations"><span class="header-section-number">3.4.2</span> Bayesian optimisation of lipid nanoparticle formulations</h3>
+<p>LNP formulations are defined by multiple continuous parameters — the identity and molar ratio of ionisable lipids, helper lipids, cholesterol, and PEG-lipids, as well as process parameters such as mixing speed and N/P ratio — creating a combinatorial space that is too large for exhaustive experimental screening. Bayesian optimisation (BO) provides a principled framework for this problem: it constructs a probabilistic surrogate model (typically a Gaussian process) of the objective function (e.g., transfection efficiency in target cells) and uses an acquisition function to select the most informative experiments in each round, balancing exploration of unknown regions against exploitation of promising candidates <span class="citation" data-cites="shields2021bayesian angermueller2020pop">(<a href="references.html#ref-angermueller2020pop" role="doc-biblioref">Angermueller, Dohan, Belanger, Murphy, et al., 2020</a>; <a href="references.html#ref-shields2021bayesian" role="doc-biblioref">Shields et al., 2021</a>)</span>.</p>
+<p>Several groups have applied BO to LNP formulation discovery, demonstrating that 5–10 rounds of iterative experimentation — each involving the synthesis and testing of 10–20 formulations — can identify top-performing candidates from a design space comprising millions of possible combinations. The approach is particularly valuable when multiple objectives must be balanced simultaneously, such as maximising transfection efficiency in hepatocytes while minimising uptake in splenic macrophages. Multi-objective Bayesian optimisation naturally accommodates such trade-offs by constructing a Pareto frontier of non-dominated solutions <span class="citation" data-cites="gonzalez2016batch">(<a href="references.html#ref-gonzalez2016batch" role="doc-biblioref">González et al., 2016</a>)</span>.</p>
+</section>
+<section id="predicting-aav-tissue-tropism-from-capsid-sequence" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="predicting-aav-tissue-tropism-from-capsid-sequence"><span class="header-section-number">3.4.3</span> Predicting AAV tissue tropism from capsid sequence</h3>
+<p>For AAV-based delivery, the key engineering challenge is tissue tropism: the ability of a viral capsid to transduce specific cell types while avoiding others. The AAV capsid surface is determined by the VP1, VP2, and VP3 subunit proteins, and sequence variation in hypervariable regions of VP1 dictates tropism. Directed evolution of AAV capsids through <em>in vivo</em> biopanning — infecting animal models with capsid libraries and recovering variants enriched in target tissues — has yielded clinically useful serotypes, but the process is slow, expensive, and poorly understood mechanistically <span class="citation" data-cites="deverman2016credne">(<a href="references.html#ref-deverman2016credne" role="doc-biblioref">Deverman et al., 2016</a>)</span>.</p>
+<p>Machine-learning models trained on biopanning data can predict tissue tropism from capsid sequence, enabling <em>in silico</em> screening of candidate capsids before experimental validation. These models range from simple regression on engineered sequence features to deep learning architectures that operate on raw amino acid sequences, and they have been used to identify novel capsids with enhanced tropism for the central nervous system, liver, and muscle — the three tissues of greatest current clinical interest for CRISPR delivery <span class="citation" data-cites="ogden2019predictive bryant2021deep">(<a href="references.html#ref-bryant2021deep" role="doc-biblioref">Bryant et al., 2021</a>; <a href="references.html#ref-ogden2019predictive" role="doc-biblioref">Ogden et al., 2019</a>)</span>.</p>
+</section>
+<section id="electroporation-and-rnp-delivery-optimisation" class="level3" data-number="3.4.4">
+<h3 data-number="3.4.4" class="anchored" data-anchor-id="electroporation-and-rnp-delivery-optimisation"><span class="header-section-number">3.4.4</span> Electroporation and RNP delivery optimisation</h3>
+<p>For <em>ex vivo</em> applications — particularly the editing of haematopoietic stem and progenitor cells (HSPCs) and T lymphocytes — electroporation of ribonucleoprotein (RNP) complexes is the dominant delivery method. Here, the design space includes electrical parameters (voltage, pulse duration, number of pulses), RNP concentration, cell density, and media composition. While less commonly addressed by formal ML frameworks than LNP or AAV optimisation, several groups have applied design-of-experiments (DoE) and response surface methodology to systematically explore electroporation parameter spaces, with emerging applications of Bayesian optimisation to this modality as well <span class="citation" data-cites="roth2018">(<a href="references.html#ref-roth2018" role="doc-biblioref">Roth et al., 2018</a>)</span>.</p>
+</section>
+</section>
+<section id="multiplexed-and-combinatorial-editing" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="multiplexed-and-combinatorial-editing"><span class="header-section-number">3.5</span> Multiplexed and combinatorial editing</h2>
+<section id="the-rationale-for-multiplexed-perturbation" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="the-rationale-for-multiplexed-perturbation"><span class="header-section-number">3.5.1</span> The rationale for multiplexed perturbation</h3>
+<p>Many therapeutic applications and fundamental biological questions require the simultaneous perturbation of multiple genomic loci. In functional genomics, combinatorial CRISPR screens probe genetic interactions — epistasis, synthetic lethality, buffering — that cannot be detected by single-gene perturbations. In therapeutic contexts, multigene editing may be necessary to address polygenic diseases, engineer complex cellular phenotypes (e.g., armoured CAR-T cells), or simultaneously disrupt and correct distinct loci <span class="citation" data-cites="adamson2016multiplex">(<a href="references.html#ref-adamson2016multiplex" role="doc-biblioref">Adamson et al., 2016</a>)</span>.</p>
+<p>The design of multiplexed CRISPR experiments is a combinatorial problem that scales explosively with the number of target genes: a pairwise screen of 100 genes requires 4,950 guide combinations, and higher-order interactions increase the dimensionality further. AI-driven approaches address this challenge at multiple levels: optimising guide library composition, designing experimental layouts that maximise information per cell, and analysing the resulting high-dimensional phenotypic data.</p>
+</section>
+<section id="perturb-seq-and-single-cell-readouts" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="perturb-seq-and-single-cell-readouts"><span class="header-section-number">3.5.2</span> Perturb-seq and single-cell readouts</h3>
+<p>Perturb-seq (and related approaches such as CROP-seq and CRISP-seq) combines pooled CRISPR screens with single-cell RNA sequencing, enabling the simultaneous measurement of perturbation identity and transcriptomic phenotype in individual cells <span class="citation" data-cites="dixit2016perturbseq datlinger2017pooled">(<a href="references.html#ref-datlinger2017pooled" role="doc-biblioref">Datlinger et al., 2017</a>; <a href="references.html#ref-dixit2016perturbseq" role="doc-biblioref">Dixit et al., 2016</a>)</span>. The resulting datasets are high-dimensional — thousands of genes measured across thousands of perturbation conditions — and their analysis requires sophisticated computational frameworks including variational autoencoders, Gaussian process latent variable models, and causal inference methods <span class="citation" data-cites="lotfollahi2023">(<a href="references.html#ref-lotfollahi2023" role="doc-biblioref">Lotfollahi et al., 2023</a>)</span>.</p>
+<p>For multiplexed editing, the experimental design problem becomes acute: which combinations of guides should be included in the library to maximise the informativeness of the screen while minimising library complexity and sequencing cost? ML-based experimental design tools address this by predicting which guide combinations are likely to reveal the strongest genetic interactions, prioritising these for inclusion and deprioritising redundant or uninformative combinations <span class="citation" data-cites="norman2019exploring">(<a href="references.html#ref-norman2019exploring" role="doc-biblioref">Norman et al., 2019</a>)</span>.</p>
+</section>
+<section id="multi-target-editing-scheduling-and-interference" class="level3" data-number="3.5.3">
+<h3 data-number="3.5.3" class="anchored" data-anchor-id="multi-target-editing-scheduling-and-interference"><span class="header-section-number">3.5.3</span> Multi-target editing: scheduling and interference</h3>
+<p>When multiple edits are introduced simultaneously <em>in vivo</em> or <em>ex vivo</em>, the editing events are not independent: competition for the editing machinery, chromatin accessibility changes induced by one edit, and activation of DNA damage responses can all modulate the efficiency of subsequent edits. Computational models of editing interference and sequential scheduling are emerging to address this challenge, though the field is substantially less mature than single-target outcome prediction <span class="citation" data-cites="gonatopoulos2019systematic">(<a href="references.html#ref-gonatopoulos2019systematic" role="doc-biblioref">Gonatopoulos-Pournatzis et al., 2020</a>)</span>.</p>
+</section>
+</section>
+<section id="reinforcement-learning-and-generative-models" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="reinforcement-learning-and-generative-models"><span class="header-section-number">3.6</span> Reinforcement learning and generative models</h2>
+<section id="beyond-prediction-generative-approaches" class="level3" data-number="3.6.1">
+<h3 data-number="3.6.1" class="anchored" data-anchor-id="beyond-prediction-generative-approaches"><span class="header-section-number">3.6.1</span> Beyond prediction: generative approaches</h3>
+<p>The models discussed thus far are primarily <em>discriminative</em>: given an input (a target sequence, a protein variant, a formulation), they predict an output (an indel distribution, an activity score, a transfection efficiency). A complementary paradigm is <em>generative</em> modelling, in which the algorithm proposes novel inputs — sequences, structures, or experimental designs — that are predicted to satisfy specified functional criteria.</p>
+<p>Generative approaches to CRISPR optimisation include variational autoencoders (VAEs) trained on CRISPR–Cas protein families that can sample novel sequences from the learned latent space, generative adversarial networks (GANs) that produce synthetic guide RNA sequences with predicted high activity, and diffusion models that generate protein structures conditioned on desired functional properties <span class="citation" data-cites="madani2023 ruffolo2024">(<a href="references.html#ref-madani2023" role="doc-biblioref">Madani et al., 2023</a>; <a href="references.html#ref-ruffolo2024" role="doc-biblioref">Ruffolo &amp; Madani, 2024</a>)</span>. These methods are still in their early stages of application to genome editing, but they mark a departure from optimisation-within-a-known-space toward <em>design-of-novel-entities</em>.</p>
+</section>
+<section id="reinforcement-learning-for-experimental-protocols" class="level3" data-number="3.6.2">
+<h3 data-number="3.6.2" class="anchored" data-anchor-id="reinforcement-learning-for-experimental-protocols"><span class="header-section-number">3.6.2</span> Reinforcement learning for experimental protocols</h3>
+<p>Reinforcement learning (RL) offers a distinct framework for optimisation in which an agent learns a policy — a mapping from experimental states to actions — by iteratively taking actions in an environment and receiving reward signals. In the context of genome editing, RL has been applied to the sequential design of experimental protocols: given a current state of knowledge (e.g., the results of previous editing experiments), the RL agent selects the next experiment to perform (e.g., the next guide to test, the next formulation to synthesise) so as to maximise cumulative reward (e.g., the probability of identifying an optimal editing strategy within a fixed experimental budget) <span class="citation" data-cites="angermueller2020model">(<a href="references.html#ref-angermueller2020model" role="doc-biblioref">Angermueller, Dohan, Belanger, Deshpande, et al., 2020</a>)</span>.</p>
+<p>The RL framework is naturally suited to the adaptive, sequential nature of experimental optimisation, where each experiment generates information that should inform the design of subsequent experiments. It is also well-suited to multi-objective problems, where the agent must balance competing desiderata — efficiency, specificity, deliverability, cost — without a priori specification of their relative weights.</p>
+</section>
+<section id="foundation-models-and-genome-editing" class="level3" data-number="3.6.3">
+<h3 data-number="3.6.3" class="anchored" data-anchor-id="foundation-models-and-genome-editing"><span class="header-section-number">3.6.3</span> Foundation models and genome editing</h3>
+<p>The rapid development of large foundation models for biology — including protein language models (ESM-2, ProGen2), genomic language models (Evo, Nucleotide Transformer), and multimodal models that integrate sequence, structure, and function — raises the question of whether genome editing will benefit from the same scaling dynamics observed in natural language processing <span class="citation" data-cites="lin2023 nguyen2024 dalla-torre2025">(<a href="references.html#ref-dalla-torre2025" role="doc-biblioref">Dalla-Torre et al., 2025</a>; <a href="references.html#ref-lin2023" role="doc-biblioref">Lin et al., 2023</a>; <a href="references.html#ref-nguyen2024" role="doc-biblioref">Nguyen et al., 2024</a>)</span>. Early results are promising: ESM-2 embeddings improve Cas protein engineering (as demonstrated by EVOLVEpro), and genomic language models can predict the functional consequences of genetic variants with increasing accuracy <span class="citation" data-cites="jiang2025evolvepro">(<a href="references.html#ref-jiang2025evolvepro" role="doc-biblioref">Jiang et al., 2025</a>)</span>.</p>
+<p>However, the application of foundation models to genome editing faces specific challenges. The relevant phenotypes — editing efficiency, repair outcome distributions, tissue tropism — are experimentally expensive to measure, limiting the availability of labelled training data. The biological systems involved are stochastic and context-dependent, making zero-shot generalisation unreliable. And the stakes of error are high: in a clinical setting, a false-positive prediction of editing precision could have severe consequences. These considerations argue for a continued emphasis on hybrid approaches that combine foundation model representations with task-specific, experimentally validated models — a strategy that EVOLVEpro and similar frameworks explicitly adopt.</p>
+</section>
+</section>
+<section id="sec-sti-3" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="sec-sti-3"><span class="header-section-number">3.7</span> Sociotechnical Interlude III: optimisation as a value-laden practice</h2>
+<p>The preceding sections have documented a progressive expansion of computational methods across every stage of genome editing — from repair outcome prediction to protein engineering, delivery design, and experimental planning. It would be easy to read this expansion as straightforwardly technical progress: imprecise methods yielding to more precise ones. But an STS perspective reveals that ‘optimisation’ is never a neutral operation: it always optimises <em>for something</em> and <em>at the cost of something else</em>.</p>
+<p>The loss function makes this concrete. When inDelphi is trained to predict repair outcome frequencies, the implicit objective is to minimise the discrepancy between predicted and observed genotypic distributions. But which genotypes matter? The model treats all indel products equally, assigning no differential weight to clinically relevant versus clinically irrelevant outcomes. A model optimised for therapeutic applications might instead minimise the frequency of specific deleterious genotypes, or maximise the frequency of a desired corrective edit — objectives that embed clinical judgements about what counts as a ‘good’ outcome. This is precisely the kind of choice that Langdon Winner’s foundational analysis of the politics of artefacts was designed to illuminate: the loss function, no less than a bridge or a building code, embeds a political decision about whose interests are served <span class="citation" data-cites="winner1980artifacts">(<a href="references.html#ref-winner1980artifacts" role="doc-biblioref">Winner, 1980</a>)</span>. At the same time, the quantitative authority that surrounds these choices — the Pearson correlations, the mean squared errors, the precision-50 percentages — works in the manner that Theodore Porter describes in <em>Trust in Numbers</em>: measurement produces an impersonal authority that can obscure the contingency of the decisions it encodes <span class="citation" data-cites="porter1995trust">(<a href="references.html#ref-porter1995trust" role="doc-biblioref">Porter, 1995</a>)</span>. A model that achieves <em>r</em> = 0.87 on a benchmark dataset acquires a form of epistemic credibility that may not be warranted when the model is applied to a different cell type, a different disease context, or a different patient population. The danger is not that the numbers are wrong but that their precision creates a false sense of certainty about a fundamentally uncertain — and fundamentally political — process.</p>
+<p>Winner and Porter thus address different but interlocking dimensions of the same problem. Winner asks <em>what values are embedded in the artefact</em>; Porter asks <em>how the artefact’s quantitative presentation conceals those values</em>. For repair outcome prediction models, the loss function determines which outcomes are valued (Winner’s question), and the performance metric determines how confidently those values are communicated (Porter’s question). Both forms of concealment must be addressed if AI-driven optimisation is to be governed rather than merely deployed.</p>
+<p>For the CRISPR-AI field, this requires, at minimum, transparent documentation of loss functions and their clinical implications, systematic evaluation of model performance across diverse populations and cell types, and mechanisms for patient and public input into the definition of ‘optimal’ outcomes. Chapter 8 develops the ethical frameworks available for such governance, and Chapter 9 examines prospective scenarios for integrating these considerations into clinical practice.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-loss-function-politics" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-loss-function-politics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03-ai-optimization_files/figure-html/fig-loss-function-politics-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-loss-function-politics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.2: How loss function choice reorders guide RNA rankings. The same ten hypothetical guide RNAs are ranked under three different objective functions: maximising on-target efficiency (left), minimising off-target risk (centre), and maximising equitable performance across cell types (right). Guide identity is preserved by colour. No single guide dominates all objectives, and the ‘optimal’ choice depends on the value judgement encoded in the loss function. Data are illustrative.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="chapter-summary" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">3.8</span> Chapter summary</h2>
+<p>The extension of AI from guide RNA selection (Chapter 2) to the optimisation of editing outcomes operates across multiple scales, from genotype-level repair product prediction through protein engineering and delivery design to multiplexed experimental planning and generative modelling.</p>
+<p>Repair outcome prediction models — inDelphi, FORECasT, Lindel, and their successors — have established that CRISPR-mediated DNA repair is substantially predictable from local sequence context, with Pearson correlations of 0.85–0.90 between predicted and observed indel frequencies. This predictability extends to base editing outcomes through BE-Hive and related models; the primary open challenge remains domain adaptation across cell types and biological contexts.</p>
+<p>Machine-learning-guided protein engineering has, in turn, reduced the experimental screening burden for Cas protein optimisation by up to 95%, enabling the discovery of novel variants with improved activity, altered PAM specificity, and reduced immunogenicity. Protein language models and zero-shot predictors are now routinely paired with low-N experimental validation, as exemplified by EVOLVEpro and TopVIP.</p>
+<p>Delivery optimisation through Bayesian methods and ML-predicted tissue tropism addresses the persistent bottleneck of <em>in vivo</em> CRISPR delivery, particularly for LNP formulation and AAV capsid engineering. Meanwhile, generative models and reinforcement learning open an emerging frontier, shifting the operative logic from selecting among known candidates to designing novel entities and protocols — a transition with significant implications for the scale and speed of genome editing innovation.</p>
+<p>The Sociotechnical Interlude has argued that optimisation is inherently value-laden, encoding choices about whose outcomes matter and what trade-offs are acceptable. Making these choices explicit is essential for the responsible integration of AI-driven optimisation into clinical genome editing — a theme that gains institutional specificity in Chapter 4, where the focus shifts from computational foundations to therapeutic application in genetic rare diseases, including Lynch syndrome, informed by the tools developed across Part I.</p>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-adamson2016multiplex" class="csl-entry" role="listitem">
+Adamson, B., Norman, T. M., Jost, M., Cho, M. Y., Nuñez, J. K., Chen, Y., Villalta, J. E., Gilbert, L. A., Horlbeck, M. A., Hein, M. Y., Pak, R. A., Gray, A. N., Gross, C. A., Dixit, A., Parnas, O., Regev, A., &amp; Weissman, J. S. (2016). A multiplexed single-cell <span>CRISPR</span> screening platform enables systematic dissection of the unfolded protein response. <em>Cell</em>, <em>167</em>(7), 1867–1882.e21. <a href="https://doi.org/10.1016/j.cell.2016.11.048">https://doi.org/10.1016/j.cell.2016.11.048</a>
+</div>
+<div id="ref-allen2019forecast" class="csl-entry" role="listitem">
+Allen, F., Crepaldi, L., Alsinet, C., Strong, A. J., Kleshchevnikov, V., De Angeli, P., Páleníková, P., Khodak, A., Kiselev, V., Kosicki, M., Bassett, A. R., Harding, H., Gaber, Y., Muñoz-Manchado, A. B., Barber, M., &amp; Parts, L. (2019). Predicting the mutations generated by repair of <span>Cas9</span>-induced double-strand breaks. <em>Nature Biotechnology</em>, <em>37</em>(1), 64–72. <a href="https://doi.org/10.1038/nbt.4317">https://doi.org/10.1038/nbt.4317</a>
+</div>
+<div id="ref-angermueller2020model" class="csl-entry" role="listitem">
+Angermueller, C., Dohan, D., Belanger, D., Deshpande, R., Murphy, K., &amp; Colwell, L. (2020). Model-based reinforcement learning for biological sequence design. <em>Proceedings of the International Conference on Learning Representations (ICLR)</em>.
+</div>
+<div id="ref-angermueller2020pop" class="csl-entry" role="listitem">
+Angermueller, C., Dohan, D., Belanger, D., Murphy, K., &amp; Colwell, L. J. (2020). Population-based black-box optimization for biological sequence design. <em>Nature Methods</em>, <em>17</em>, 1173–1180. <a href="https://doi.org/10.1038/s41592-020-0965-8">https://doi.org/10.1038/s41592-020-0965-8</a>
+</div>
+<div id="ref-anzalone2019" class="csl-entry" role="listitem">
+Anzalone, A. V., Randolph, P. B., Davis, J. R., Sousa, A. A., Koblan, L. W., Levy, J. M., Chen, P. J., Wilson, C., Newby, G. A., Raguram, A., &amp; Liu, D. R. (2019). Search-and-replace genome editing without double-strand breaks or donor <span>DNA</span>. <em>Nature</em>, <em>576</em>(7785), 149–157. <a href="https://doi.org/10.1038/s41586-019-1711-4">https://doi.org/10.1038/s41586-019-1711-4</a>
+</div>
+<div id="ref-arbab2020" class="csl-entry" role="listitem">
+Arbab, M., Shen, M. W., Mok, B., Wilson, C., Matuszek, Ż., Cassa, C. A., &amp; Liu, D. R. (2020). Determinants of base editing outcomes from target library analysis and machine learning. <em>Cell</em>, <em>182</em>(2), 463–480.e30. <a href="https://doi.org/10.1016/j.cell.2020.05.037">https://doi.org/10.1016/j.cell.2020.05.037</a>
+</div>
+<div id="ref-arnold2018directed" class="csl-entry" role="listitem">
+Arnold, F. H. (2018). Directed evolution: Bringing new chemistry to life. <em>Angewandte Chemie International Edition</em>, <em>57</em>(16), 4143–4148. <a href="https://doi.org/10.1002/anie.201708408">https://doi.org/10.1002/anie.201708408</a>
+</div>
+<div id="ref-bryant2021deep" class="csl-entry" role="listitem">
+Bryant, D. H., Bashir, A., Sinai, S., Jain, N. K., Ogden, P. J., Riley, P. F., Church, G. M., Colwell, L. J., &amp; Kelsic, E. D. (2021). Deep diversification of an <span>AAV</span> capsid protein by machine learning. <em>Nature Biotechnology</em>, <em>39</em>, 691–696. <a href="https://doi.org/10.1038/s41587-020-00793-4">https://doi.org/10.1038/s41587-020-00793-4</a>
+</div>
+<div id="ref-chen2019forecast" class="csl-entry" role="listitem">
+Chen, W., McKenna, A., Schreiber, J., Haeussler, M., Yin, Y., Agarwal, V., Noble, W. S., &amp; Shendure, J. (2019). Massively parallel profiling and predictive modeling of the outcomes of <span>CRISPR</span>/<span>Cas9</span>-mediated double-strand break repair. <em>Nucleic Acids Research</em>, <em>47</em>(15), 7989–8003. <a href="https://doi.org/10.1093/nar/gkz487">https://doi.org/10.1093/nar/gkz487</a>
+</div>
+<div id="ref-chu2024" class="csl-entry" role="listitem">
+Chu, H. Y., Fong, J. H. C., Thean, D. G. L., Zhou, P., Fung, F. K. C., Huang, Y., &amp; Wong, A. S. L. (2024). Accurate top protein variant discovery via low-<span>N</span> pick-and-validate machine learning. <em>Cell Systems</em>, <em>15</em>(2), 193–203.e6. <a href="https://doi.org/10.1016/j.cels.2024.01.002">https://doi.org/10.1016/j.cels.2024.01.002</a>
+</div>
+<div id="ref-dalla-torre2025" class="csl-entry" role="listitem">
+Dalla-Torre, H., Gonzalez, L., Mendoza-Revilla, J., Lopez Carranza, N., Grzywaczewski, A. H., Oteri, F., Dallago, C., Trop, E., Almeida, B. P. de, Sirelkhatim, H., Richard, G., Skwark, M., Beguir, K., Lopez, M., &amp; Pierrot, T. (2025). Nucleotide transformer: Building and evaluating robust foundation models for human genomics. <em>Nature Methods</em>, <em>22</em>(2), 287–297. <a href="https://doi.org/10.1038/s41592-024-02523-z">https://doi.org/10.1038/s41592-024-02523-z</a>
+</div>
+<div id="ref-datlinger2017pooled" class="csl-entry" role="listitem">
+Datlinger, P., Rendeiro, A. F., Schmidl, C., Krausgruber, T., Traxler, P., Klughammer, J., Schuster, L. C., Kuchler, A., Alpar, D., &amp; Bock, C. (2017). Pooled <span>CRISPR</span> screening with single-cell transcriptome readout. <em>Nature Methods</em>, <em>14</em>(3), 297–301. <a href="https://doi.org/10.1038/nmeth.4177">https://doi.org/10.1038/nmeth.4177</a>
+</div>
+<div id="ref-deverman2016credne" class="csl-entry" role="listitem">
+Deverman, B. E., Pravdo, P. L., Simpson, B. P., Kumar, S. R., Chan, K. Y., Banerjee, A., Wu, W.-L., Yang, B., Huber, N., Pasca, S. P., Bhatt, H. R., et al. (2016). <span>Cre</span>-dependent selection yields <span>AAV</span> variants for widespread gene transfer to the adult brain. <em>Nature Biotechnology</em>, <em>34</em>(2), 204–209. <a href="https://doi.org/10.1038/nbt.3440">https://doi.org/10.1038/nbt.3440</a>
+</div>
+<div id="ref-dixit2016perturbseq" class="csl-entry" role="listitem">
+Dixit, A., Parnas, O., Li, B., Chen, J., Fulco, C. P., Jerby-Arnon, L., Marjanovic, N. D., Dionne, D., Burks, T., Raychowdhury, R., Adamson, B., Norman, T. M., Lander, E. S., Weissman, J. S., Friedman, N., &amp; Regev, A. (2016). Perturb-seq: Dissecting molecular circuits with scalable single-cell <span>RNA</span> profiling of pooled genetic screens. <em>Cell</em>, <em>167</em>(7), 1853–1866.e17. <a href="https://doi.org/10.1016/j.cell.2016.11.038">https://doi.org/10.1016/j.cell.2016.11.038</a>
+</div>
+<div id="ref-gonatopoulos2019systematic" class="csl-entry" role="listitem">
+Gonatopoulos-Pournatzis, T., Aregger, M., Brown, K. R., Farhangmehr, S., Braunschweig, U., Ward, H. N., Ha, K. C. H., Weiss, A., Billmann, M., Durbic, T., Myers, C. L., Blencowe, B. J., &amp; Moffat, J. (2020). Genetic interaction mapping and exon-resolution functional genomics with a hybrid <span>Cas9</span>–<span>Cas12a</span> platform. <em>Nature Biotechnology</em>, <em>38</em>, 638–648. <a href="https://doi.org/10.1038/s41587-020-0437-z">https://doi.org/10.1038/s41587-020-0437-z</a>
+</div>
+<div id="ref-gonzalez2016batch" class="csl-entry" role="listitem">
+González, J., Dai, Z., Hennig, P., &amp; Lawrence, N. (2016). Batch <span>Bayesian</span> optimization via local penalization. <em>Proceedings of the 19th International Conference on Artificial Intelligence and Statistics (AISTATS)</em>, 648–657. <a href="https://proceedings.mlr.press/v51/gonzalez16a.pdf">https://proceedings.mlr.press/v51/gonzalez16a.pdf</a>
+</div>
+<div id="ref-jiang2025evolvepro" class="csl-entry" role="listitem">
+Jiang, K., Yan, Z., Di Bernardo, M., Sgrizzi, S. R., Villiger, L., Kayabolen, A., Kim, B. J., Carscadden, J. K., Hiraizumi, M., Nishimasu, H., Gootenberg, J. S., &amp; Abudayyeh, O. O. (2025). Rapid in silico directed evolution by a protein language model with <span>EVOLVE</span>pro. <em>Science</em>, <em>387</em>(6732), eadr6006. <a href="https://doi.org/10.1126/science.adr6006">https://doi.org/10.1126/science.adr6006</a>
+</div>
+<div id="ref-kim2023_deeprime" class="csl-entry" role="listitem">
+Kim, H. K., Yu, G., Park, J., Min, S., Lee, S., Yoon, S., &amp; Kim, H. H. (2023). Predicting the efficiency of prime editing guide <span>RNAs</span> in human cells. <em>Nature Biotechnology</em>, <em>41</em>, 1135–1148. <a href="https://doi.org/10.1038/s41587-020-0677-y">https://doi.org/10.1038/s41587-020-0677-y</a>
+</div>
+<div id="ref-kleinstiver2025_pammla" class="csl-entry" role="listitem">
+Kleinstiver, B. P. et al. (2025). Custom <span>CRISPR</span>-<span>Cas9</span> <span>PAM</span> variants via scalable engineering and machine learning. <em>Nature Biotechnology</em>. <a href="https://doi.org/10.1038/s41586-025-09021-y">https://doi.org/10.1038/s41586-025-09021-y</a>
+</div>
+<div id="ref-lin2023" class="csl-entry" role="listitem">
+Lin, Z., Akin, H., Rao, R., Hie, B., Zhu, Z., Lu, W., Smetanin, N., Verkuil, R., Kabeli, O., Shmueli, Y., Santos Costa, A. dos, Fazel-Zarandi, M., Sercu, T., Candela, S., &amp; Rives, A. (2023). Evolutionary-scale prediction of atomic-level protein structure with a language model. <em>Science</em>, <em>379</em>(6637), 1123–1130. <a href="https://doi.org/10.1126/science.ade2574">https://doi.org/10.1126/science.ade2574</a>
+</div>
+<div id="ref-lotfollahi2023" class="csl-entry" role="listitem">
+Lotfollahi, M., Klimovskaia Susmelj, A., De Donno, C., Xia, L., et al. (2023). Predicting cellular responses to complex perturbations in high-throughput screens. <em>Molecular Systems Biology</em>, <em>19</em>, e11517. <a href="https://doi.org/10.15252/msb.202211517">https://doi.org/10.15252/msb.202211517</a>
+</div>
+<div id="ref-madani2023" class="csl-entry" role="listitem">
+Madani, A., Krause, B., Greene, E. R., Subramanian, S., Mohr, B. P., Holton, J. M., Olmos, J. L., Xiong, C., Sun, Z. Z., Socher, R., Fraser, J. S., &amp; Naik, N. (2023). Large language models generate functional protein sequences across diverse families. <em>Nature Biotechnology</em>, <em>41</em>, 1099–1106. <a href="https://doi.org/10.1038/s41587-022-01618-2">https://doi.org/10.1038/s41587-022-01618-2</a>
+</div>
+<div id="ref-meier2021" class="csl-entry" role="listitem">
+Meier, J., Rao, R., Verkuil, R., Liu, J., Sercu, T., &amp; Rives, A. (2021). Language models enable zero-shot prediction of the effects of mutations on protein function. <em>Advances in Neural Information Processing Systems</em>, <em>34</em>, 29287–29303. <a href="https://proceedings.neurips.cc/paper_files/paper/2021/file/f51338d736f95dd42427296047067694-Paper.pdf">https://proceedings.neurips.cc/paper_files/paper/2021/file/f51338d736f95dd42427296047067694-Paper.pdf</a>
+</div>
+<div id="ref-protein2pam2025" class="csl-entry" role="listitem">
+Nayfach, S., Bhatnagar, A., Novichkov, A., Estevam, G. O., Kim, N., Hill, E., Ruffolo, J. A., Silverstein, R., Gallagher, J., Kleinstiver, B., Meeske, A. J., Cameron, P., &amp; Madani, A. (2025). Engineering of <span>CRISPR</span>-<span>Cas</span> <span>PAM</span> recognition using deep learning of vast evolutionary data. <em>bioRxiv</em>. <a href="https://doi.org/10.1101/2025.01.06.631536">https://doi.org/10.1101/2025.01.06.631536</a>
+</div>
+<div id="ref-nguyen2024" class="csl-entry" role="listitem">
+Nguyen, E., Poli, M., Durrant, M. G., Thomas, A. W., Kang, B., Sullivan, J., Ng, M. Y., Lewis, A., Patel, A., Lou, A., Erber, S., et al. (2024). Sequence modeling and design from molecular to genome scale with <span>Evo</span>. <em>Science</em>, <em>386</em>(6723), eado9336. <a href="https://doi.org/10.1126/science.ado9336">https://doi.org/10.1126/science.ado9336</a>
+</div>
+<div id="ref-norman2019exploring" class="csl-entry" role="listitem">
+Norman, T. M., Horlbeck, M. A., Replogle, J. M., Ge, A. Y., Xu, A., Jost, M., Gilbert, L. A., &amp; Weissman, J. S. (2019). Exploring genetic interaction manifolds constructed from rich single-cell phenotypes. <em>Science</em>, <em>365</em>(6455), 786–793. <a href="https://doi.org/10.1126/science.aax4438">https://doi.org/10.1126/science.aax4438</a>
+</div>
+<div id="ref-ogden2019predictive" class="csl-entry" role="listitem">
+Ogden, P. J., Kelsic, E. D., Sinai, S., &amp; Church, G. M. (2019). Comprehensive <span>AAV</span> capsid fitness landscape reveals a viral gene and enables machine-guided design. <em>Science</em>, <em>366</em>(6469), 1139–1143. <a href="https://doi.org/10.1126/science.aaw2900">https://doi.org/10.1126/science.aaw2900</a>
+</div>
+<div id="ref-marquart2022" class="csl-entry" role="listitem">
+Pallaseni, A., Peets, E. M., Koeppel, J., Weller, J., Vanderstichele, T., Ho, U. L., Crepaldi, L., Leeuwen, J. van, Allen, F., &amp; Parts, L. (2022). Predicting base editing outcomes using position-specific sequence determinants. <em>Nucleic Acids Research</em>, <em>50</em>(6), 3551–3564. <a href="https://doi.org/10.1093/nar/gkac161">https://doi.org/10.1093/nar/gkac161</a>
+</div>
+<div id="ref-porter1995trust" class="csl-entry" role="listitem">
+Porter, T. M. (1995). <em>Trust in numbers: The pursuit of objectivity in science and public life</em>. Princeton University Press.
+</div>
+<div id="ref-riesselman2018" class="csl-entry" role="listitem">
+Riesselman, A. J., Ingraham, J. B., &amp; Marks, D. S. (2018). Deep generative models of genetic variation capture the effects of mutations. <em>Nature Methods</em>, <em>15</em>, 816–822. <a href="https://doi.org/10.1038/s41592-018-0138-4">https://doi.org/10.1038/s41592-018-0138-4</a>
+</div>
+<div id="ref-roth2018" class="csl-entry" role="listitem">
+Roth, T. L., Puig-Saus, C., Yu, R., Shifrut, E., Carnevale, J., Li, P. J., Hiatt, J., Saco, J., Krystofinski, P., Li, H., Tobin, V., Nguyen, D. N., Lee, M. R., Putnam, A. L., Ferris, A. L., Chen, J. W., Schickel, J.-N., Pellerin, L., Carmody, D., … Marson, A. (2018). Reprogramming human <span>T</span> cell function and specificity with non-viral genome targeting. <em>Nature</em>, <em>559</em>, 405–409. <a href="https://doi.org/10.1038/s41586-018-0326-5">https://doi.org/10.1038/s41586-018-0326-5</a>
+</div>
+<div id="ref-ruffolo2024" class="csl-entry" role="listitem">
+Ruffolo, J. A., &amp; Madani, A. (2024). Designing proteins with language models. <em>Nature Biotechnology</em>, <em>42</em>, 200–202. <a href="https://doi.org/10.1038/s41587-024-02123-4">https://doi.org/10.1038/s41587-024-02123-4</a>
+</div>
+<div id="ref-schmiedel2019" class="csl-entry" role="listitem">
+Schmiedel, J. M., &amp; Lehner, B. (2019). Determining protein structures using deep mutagenesis. <em>Nature Genetics</em>, <em>51</em>(7), 1177–1186. <a href="https://doi.org/10.1038/s41588-019-0431-x">https://doi.org/10.1038/s41588-019-0431-x</a>
+</div>
+<div id="ref-xcrisp2025" class="csl-entry" role="listitem">
+Seale, C., &amp; Gonçalves, J. P. (2025). <span>X-CRISP</span>: Domain-adaptable and interpretable <span>CRISPR</span> repair outcome prediction. <em>Bioinformatics Advances</em>, <em>5</em>(1), vbaf157. <a href="https://doi.org/10.1093/bioadv/vbaf157">https://doi.org/10.1093/bioadv/vbaf157</a>
+</div>
+<div id="ref-shen2018" class="csl-entry" role="listitem">
+Shen, M. W., Arbab, M., Hsu, J. Y., Worstell, D., Culbertson, S. J., Krabbe, O., Cassa, C. A., Liu, D. R., Gifford, D. K., &amp; Sherwood, R. I. (2018). Predictable and precise template-free <span>CRISPR</span> editing of pathogenic variants. <em>Nature</em>, <em>563</em>(7733), 646–651. <a href="https://doi.org/10.1038/s41586-018-0686-x">https://doi.org/10.1038/s41586-018-0686-x</a>
+</div>
+<div id="ref-shields2021bayesian" class="csl-entry" role="listitem">
+Shields, B. J., Stevens, J., Li, J., Parasram, M., Damber, F., Janey, J. M., Adams, A., &amp; Gonzalez, J. (2021). Bayesian reaction optimization as a tool for chemical synthesis. <em>Nature</em>, <em>590</em>, 89–96. <a href="https://doi.org/10.1038/s41586-021-03213-y">https://doi.org/10.1038/s41586-021-03213-y</a>
+</div>
+<div id="ref-song2020" class="csl-entry" role="listitem">
+Song, M., Kim, H. K., Lee, S., Kim, Y., Seo, S.-Y., Park, J., Choi, J. W., Jang, H., Shin, J. H., Min, S., Quan, Z., Kim, J. H., Kang, H. C., Yoon, S., &amp; Kim, H. H. (2020). Sequence-specific prediction of the efficiencies of adenine and cytosine base editors. <em>Nature Biotechnology</em>, <em>38</em>(9), 1037–1043. <a href="https://doi.org/10.1038/s41587-020-0573-5">https://doi.org/10.1038/s41587-020-0573-5</a>
+</div>
+<div id="ref-lim2022" class="csl-entry" role="listitem">
+Thean, D. G. L., Chu, H. Y., Fong, J. H. C., Chan, B. K. C., Zhou, P., Kwok, C. C. S., Chan, Y. M., Mak, S. Y. L., Choi, G. C. G., Ho, J. W. K., Zheng, Z., &amp; Wong, A. S. L. (2022). Machine learning-coupled combinatorial mutagenesis enables resource-efficient engineering of <span>CRISPR</span>-<span>Cas9</span> genome editor activities. <em>Nature Communications</em>, <em>13</em>(1), 2219. <a href="https://doi.org/10.1038/s41467-022-29874-5">https://doi.org/10.1038/s41467-022-29874-5</a>
+</div>
+<div id="ref-wang2020delivery" class="csl-entry" role="listitem">
+Wang, D., Zhang, F., &amp; Gao, G. (2020). <span>CRISPR</span>-based therapeutic genome editing: Strategies and in vivo delivery by <span>AAV</span> vectors. <em>Cell</em>, <em>181</em>(1), 136–150. <a href="https://doi.org/10.1016/j.cell.2020.03.023">https://doi.org/10.1016/j.cell.2020.03.023</a>
+</div>
+<div id="ref-winner1980artifacts" class="csl-entry" role="listitem">
+Winner, L. (1980). Do artifacts have politics? <em>Daedalus</em>, <em>109</em>(1), 121–136. <a href="https://www.jstor.org/stable/20024652">https://www.jstor.org/stable/20024652</a>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02-ai-design.html" class="pagination-link" aria-label="AI for Guide RNA Design and Off-Target Prediction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">AI for Guide RNA Design and Off-Target Prediction</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./04-rare-diseases.html" class="pagination-link" aria-label="Genetic Rare Diseases as Therapeutic Targets for CRISPR-AI">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Genetic Rare Diseases as Therapeutic Targets for CRISPR-AI</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># AI-Driven Optimisation of Editing Outcomes {#sec-ai-optimization}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup-ch3</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/theme_monograph.R"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction: from guide selection to outcome engineering</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>The previous chapter examined how artificial intelligence has transformed the selection of guide RNAs — the first computational decision point in any CRISPR experiment. Yet choosing a guide is only the beginning. Once a double-strand break is introduced, or a base editor deaminates its target cytosine, the outcome is shaped by a cascade of cellular processes over which the experimenter has, historically, limited control. The repair machinery of the cell — non-homologous end joining (NHEJ), microhomology-mediated end joining (MMEJ), homology-directed repair (HDR), and their sub-pathways — produces a distribution of genotypic products that was, until recently, treated as essentially stochastic <span class="co">[</span><span class="ot">@shen2018; @allen2019forecast</span><span class="co">]</span>.</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>The scope of computational genome editing has since expanded well beyond guide selection. AI now informs the prediction of repair outcomes at single-nucleotide resolution, the engineering of Cas proteins with novel properties, the optimisation of delivery vehicles through high-dimensional screening, and the design of multiplexed perturbation experiments that would be intractable without algorithmic coordination. Each of these domains poses a distinct modelling problem, but they share a common logic: the use of learned representations to search combinatorial spaces that exceed the capacity of brute-force experimentation.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Two features of this expansion deserve emphasis. First, the models discussed here are not merely descriptive — many are now *generative*, proposing novel sequences, formulations, or experimental protocols that have no precedent in training data. Second, and central to the sociotechnical analysis threaded through this monograph, every optimisation encodes a value judgement. To optimise editing efficiency is to accept a particular trade-off between on-target precision and off-target risk; to optimise delivery for a specific tissue is to prioritise one patient population over another. These choices are not technical in the narrow sense — they are political in the sense articulated by @winner1980artifacts, a point to which Sociotechnical Interlude III returns with specific attention to loss functions.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Predicting repair outcomes: genotype-level modelling</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">### The conceptual breakthrough: repair is not random</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>The dominant assumption through the early years of CRISPR application was that NHEJ-mediated repair of Cas9-induced double-strand breaks produced unpredictable, heterogeneous insertions and deletions (indels). This view was both empirically incomplete and theoretically convenient: it justified the use of HDR templates for precision editing and discouraged systematic investigation of template-free repair products. Three landmark studies, published in rapid succession between 2018 and 2019, overturned this assumption by demonstrating that repair outcomes are substantially determined by local sequence context at the cut site <span class="co">[</span><span class="ot">@shen2018; @allen2019forecast; @chen2019forecast</span><span class="co">]</span>.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">### inDelphi: neural networks for indel prediction</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Shen, Arbab and colleagues constructed a library of 2,000 Cas9 guide RNAs paired with integrated DNA target sites and profiled the resulting repair products across five human and mouse cell lines <span class="co">[</span><span class="ot">@shen2018</span><span class="co">]</span>. The resulting dataset — comprising millions of independent repair events — revealed that microhomology-mediated deletions, microhomology-independent deletions, and single-base-pair insertions each followed distinct but learnable patterns. The authors trained inDelphi, a composite machine-learning model that uses separate neural network modules to predict the frequencies of these three outcome classes from local sequence context alone.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>inDelphi achieves a Pearson correlation of *r* = 0.87 between predicted and observed indel frequencies across held-out target sites, and can predict frameshift frequencies with comparable accuracy. The model also identifies a subset of guide RNAs — termed 'precise-50' guides — for which a single genotype accounts for at least 50% of all major editing products. Shen and colleagues estimate that 5–11% of all possible Cas9 guides targeting the human genome fall into this category, and they experimentally confirmed precise template-free correction of 195 human disease-relevant alleles, including pathogenic mutations associated with Hermansky–Pudlak syndrome and Menkes disease <span class="co">[</span><span class="ot">@shen2018</span><span class="co">]</span>. The clinical implication is substantial: for a meaningful fraction of pathogenic variants, template-free editing guided by outcome prediction may offer a viable therapeutic strategy without the efficiency penalties of HDR.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">### FORECasT and Lindel: complementary architectures</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>In parallel, Allen and colleagues developed FORECasT (Favoured Outcomes of Repair Events at Cas9 Targets), training on a library of over 40,000 guide–target pairs in mouse embryonic stem cells and human cell lines <span class="co">[</span><span class="ot">@allen2019forecast</span><span class="co">]</span>. FORECasT employs a regularised logistic regression framework that predicts the frequencies of all major indel products — both deletions (modelled by microhomology length and position) and 1–2 base-pair insertions. The model achieves comparable accuracy to inDelphi on its own test set and, importantly, identifies distinct sequence features that drive insertion versus deletion outcomes.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>Chen, McKenna and colleagues independently developed Lindel, a lightweight logistic regression model trained on 6,872 synthetic target sequences yielding approximately 1.16 million independent mutational events in a human cell line <span class="co">[</span><span class="ot">@chen2019forecast</span><span class="co">]</span>. Lindel's architecture deliberately prioritises simplicity and interpretability: it uses one-hot encoded sequence features within a six-base-pair window flanking the cut site and achieves competitive performance with substantially fewer parameters than inDelphi's neural network modules. When trained on an aggregated dataset combining both the Lindel and FORECasT training sequences (14,625 target sites), the model achieves the best overall cross-dataset performance, suggesting that data volume may matter more than architectural complexity for this prediction task <span class="co">[</span><span class="ot">@chen2019forecast</span><span class="co">]</span>.</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="fu">### Cross-model comparison and the domain adaptation problem</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>A recent systematic comparison by Gonçalves and colleagues, through the X-CRISP framework, benchmarked inDelphi, FORECasT, Lindel, and the more recent CROTON model on standardised datasets, revealing that no single model dominates across all evaluation metrics and cell types <span class="co">[</span><span class="ot">@xcrisp2025</span><span class="co">]</span>. The key finding is that models trained on data from one cellular context frequently underperform when applied to another — a domain adaptation problem that reflects genuine biological variation in repair pathway usage across cell types. X-CRISP addresses this through a transfer-learning strategy, pre-training on a source cell line and fine-tuning on a small target-cell-line dataset, achieving improved cross-domain generalisation with as few as 200 target-domain training examples.</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>This domain adaptation challenge is not merely a technical inconvenience. It reflects a fundamental biological reality: the relative activities of NHEJ, MMEJ, and other repair pathways differ across cell types, developmental stages, and disease states. For clinical applications — where the target cells may be haematopoietic stem cells, hepatocytes, or T lymphocytes — a model trained exclusively on HEK293T or mouse embryonic stem cell data cannot be assumed to transfer. The field is moving toward cell-type-specific or cell-type-conditioned models, but this requires the generation of large-scale repair outcome datasets in clinically relevant cell populations, an effort that remains in its early stages.</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="fu">### Base editing outcome prediction: BE-Hive and beyond</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>The repair outcome prediction framework extends naturally to base editing, where the relevant question shifts from 'which indels will be produced?' to 'which bases will be edited, and with what efficiency and purity?'. Arbab, Shen and colleagues characterised the sequence–activity relationships of 11 cytosine and adenine base editors (CBEs and ABEs) across 38,538 genomically integrated target sites in mammalian cells, generating a comprehensive dataset of editing outcomes that includes not only the intended target nucleotide but also bystander edits at neighbouring positions <span class="co">[</span><span class="ot">@arbab2020</span><span class="co">]</span>.</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>The resulting model, BE-Hive, uses a two-component architecture: gradient-boosted trees predict overall editing efficiency (*R* ≈ 0.7), while a neural network module predicts the full distribution of genotypic outcomes at single-nucleotide resolution (*R* ≈ 0.9). The bystander editing component is particularly significant, as it models the conditional probabilities of editing at multiple substrate positions within the editing window — a source of unpredictable off-target effects that had previously resisted systematic characterisation. BE-Hive correctly predicts that 675 disease-associated alleles with bystander nucleotides within the editing window will *not* experience bystander editing, substantially expanding the set of alleles amenable to high-precision base editing <span class="co">[</span><span class="ot">@arbab2020</span><span class="co">]</span>.</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>Subsequent models have refined and extended this work. Song and colleagues developed DeepCBE and DeepABE, neural network architectures trained on independent datasets in HEK293T cells, while Marquart and colleagues introduced FORECasT-BE, a gradient-boosted tree model trained on aggregated data from multiple studies and cell types <span class="co">[</span><span class="ot">@song2020; @marquart2022</span><span class="co">]</span>. FORECasT-BE demonstrates improved cross-dataset generalisation compared to models trained on a single dataset, achieving at least 88% of the best Pearson correlation for every dataset and editing position — a result that parallels the aggregated-training advantage observed in the Lindel nuclease outcome model.</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="fu">### Prime editing outcome prediction</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>Prime editing introduces additional complexity, as the editing outcome depends not only on the target sequence and the prime editor protein but also on the design of the prime editing guide RNA (pegRNA), including its primer binding site length, reverse transcriptase template sequence, and any engineered structural modifications <span class="co">[</span><span class="ot">@anzalone2019</span><span class="co">]</span>. Computational prediction of prime editing outcomes is correspondingly more challenging, and the field lags behind nuclease and base editing prediction in both data availability and model maturity. Early tools such as PRIDICT and DeepPrime have demonstrated promising initial results, predicting editing efficiency from pegRNA sequence features, but comprehensive genotype-level outcome prediction for prime editing remains an open problem <span class="co">[</span><span class="ot">@kim2023_deeprime</span><span class="co">]</span>.</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-repair-outcome-prediction</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Accuracy of repair outcome prediction models across cell types. Each point corresponds to a genomic target site; the x-axis shows the observed frequency of the predominant indel product and the y-axis the model-predicted frequency. Diagonal line indicates perfect prediction. Colour distinguishes cell types (blue: mESC; orange: HEK293T; green: K562; purple: U2OS). Pearson *r* values for each cell type are annotated. Data are illustrative, based on reported performance ranges from Shen et al. (2018) and Chen et al. (2019)."</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/theme_monograph.R"</span>)</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate illustrative data based on reported performance ranges</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="co"># inDelphi: r ≈ 0.87 across cell lines; Lindel: r ≈ 0.85</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>n_per_cell <span class="ot">&lt;-</span> <span class="dv">120</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>cell_types <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"mESC"</span>, <span class="st">"HEK293T"</span>, <span class="st">"K562"</span>, <span class="st">"U2OS"</span>)</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>correlations <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.89</span>, <span class="fl">0.87</span>, <span class="fl">0.84</span>, <span class="fl">0.86</span>)</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>sim_data <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, <span class="fu">lapply</span>(<span class="fu">seq_along</span>(cell_types), <span class="cf">function</span>(i) {</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>  rho <span class="ot">&lt;-</span> correlations[i]</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Generate correlated observed/predicted pairs</span></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>  mu <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.15</span>, <span class="fl">0.15</span>)</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>  sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.012</span>, rho <span class="sc">*</span> <span class="fl">0.012</span>, rho <span class="sc">*</span> <span class="fl">0.012</span>, <span class="fl">0.012</span>), <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>  xy <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">mvrnorm</span>(n_per_cell, mu, sigma)</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>    <span class="at">observed  =</span> <span class="fu">pmin</span>(<span class="fu">pmax</span>(xy[, <span class="dv">1</span>], <span class="dv">0</span>), <span class="dv">1</span>),</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>    <span class="at">predicted =</span> <span class="fu">pmin</span>(<span class="fu">pmax</span>(xy[, <span class="dv">2</span>], <span class="dv">0</span>), <span class="dv">1</span>),</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>    <span class="at">cell_type =</span> cell_types[i],</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>    <span class="at">r_value   =</span> rho</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>}))</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute annotation labels</span></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>annot <span class="ot">&lt;-</span> sim_data <span class="sc">|&gt;</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cell_type) <span class="sc">|&gt;</span></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>    <span class="at">r_label =</span> <span class="fu">paste0</span>(<span class="st">"r = "</span>, <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, <span class="fu">cor</span>(observed, predicted))),</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fl">0.75</span>, <span class="at">y =</span> <span class="fl">0.08</span>,</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sim_data, <span class="fu">aes</span>(<span class="at">x =</span> observed, <span class="at">y =</span> predicted, <span class="at">colour =</span> cell_type)) <span class="sc">+</span></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">1</span>, <span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">colour =</span> <span class="st">"grey50"</span>) <span class="sc">+</span></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.45</span>, <span class="at">size =</span> <span class="fl">1.3</span>) <span class="sc">+</span></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> annot, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">label =</span> r_label, <span class="at">colour =</span> cell_type),</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="fl">3.2</span>, <span class="at">fontface =</span> <span class="st">"italic"</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"mESC"</span> <span class="ot">=</span> <span class="st">"#2166AC"</span>, <span class="st">"HEK293T"</span> <span class="ot">=</span> <span class="st">"#FF7F00"</span>,</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>               <span class="st">"K562"</span> <span class="ot">=</span> <span class="st">"#4DAF4A"</span>, <span class="st">"U2OS"</span> <span class="ot">=</span> <span class="st">"#984EA3"</span>),</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Cell type"</span></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Observed predominant indel frequency"</span>,</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Predicted predominant indel frequency"</span></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_equal</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_monograph</span>() <span class="sc">+</span></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.15</span>, <span class="fl">0.85</span>))</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="fu">## Protein engineering with machine learning</span></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="fu">### Navigating fitness landscapes at scale</span></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>The engineering of CRISPR-associated proteins — to improve activity, alter PAM specificity, reduce immunogenicity, or decrease size for delivery — has historically relied on two complementary strategies: structure-guided rational design and directed evolution. Both face scalability limitations. Rational design requires detailed structural knowledge and tends to explore only a small neighbourhood of sequence space around the wild-type protein. Directed evolution can, in principle, traverse larger regions of the fitness landscape, but experimental throughput constrains the number of variants that can be screened in each round <span class="co">[</span><span class="ot">@arnold2018directed</span><span class="co">]</span>.</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>Machine learning offers a third path: the construction of surrogate fitness functions — learned mappings from protein sequence to functional phenotype — that can be evaluated *in silico* orders of magnitude faster than wet-lab assays. These surrogate models enable the computational exploration of vast combinatorial spaces, identifying promising variants for experimental validation and dramatically reducing the screening burden.</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a><span class="fu">### ML-coupled combinatorial mutagenesis of Cas9</span></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>Lim and colleagues provided an early demonstration of this approach, applying machine-learning-guided screening to combinatorial mutagenesis libraries for Cas9 engineering <span class="co">[</span><span class="ot">@lim2022</span><span class="co">]</span>. Working with the KKH variant of *Staphylococcus aureus* Cas9 (KKH-SaCas9), they generated multi-site combinatorial libraries targeting amino acid positions proximal to the target DNA, experimentally characterised a small fraction of variants, and trained regression models to predict the editing activity of the remaining library members *in silico*.</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>The ML-based approach reduced the experimental screening burden by up to 95% while enriching top-performing variants by approximately 7.5-fold compared to random sampling. Among the variants identified was N888R/A889Q — located in the WED domain, a region not previously targeted for SaCas9 optimisation — which conferred increased editing activity on both the nuclease and its derived base editor. This result illustrates a key advantage of ML-guided engineering: it can identify beneficial mutations in protein regions that would not be prioritised by structure-guided intuition alone.</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="fu">### Deep mutational scanning and zero-shot prediction</span></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>Deep mutational scanning (DMS) provides the data substrate for many ML-guided engineering campaigns. By constructing and phenotyping comprehensive single-mutation libraries, DMS generates fitness landscapes that can be used to train or validate predictive models. For CRISPR enzymes, DMS datasets have been generated for both SpCas9 and SaCas9 variants, revealing the distribution of tolerated, neutral, and deleterious mutations across the protein sequence <span class="co">[</span><span class="ot">@schmiedel2019; @chu2024</span><span class="co">]</span>.</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>A complementary approach bypasses DMS entirely by using *zero-shot* predictors — models that infer mutational effects from evolutionary information (multiple sequence alignments) or protein language models (PLMs) without any target-specific experimental data. EVmutation, arDCA, and ESM-2-based predictors have all been applied to Cas9 engineering, with varying degrees of success <span class="co">[</span><span class="ot">@riesselman2018; @meier2021</span><span class="co">]</span>. The TopVIP framework developed by Chu and colleagues combines zero-shot prediction with iterative low-N experimental validation, demonstrating that four rounds of sampling just 12 variants can identify the true top 1% performers in combinatorial libraries with up to 92.6% accuracy <span class="co">[</span><span class="ot">@chu2024</span><span class="co">]</span>.</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="fu">### EVOLVEpro: protein language models for rapid directed evolution</span></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>The most recent advance in this space is EVOLVEpro, developed by Jiang and colleagues, which integrates protein language model embeddings with a top-layer regression model trained on a small number of experimental observations <span class="co">[</span><span class="ot">@jiang2025evolvepro</span><span class="co">]</span>. EVOLVEpro outperforms zero-shot methods across 12 DMS benchmark datasets and has been applied to engineer six different proteins, including a miniature CRISPR nuclease (Cas12f) whose indel formation activity was improved five-fold, and a prime editor whose insertion efficiency was doubled.</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>The approach is notable for its sample efficiency: EVOLVEpro generates meaningful improvements from as few as 20–50 experimental data points per round, making it accessible to laboratories without high-throughput screening infrastructure. The mutations nominated by EVOLVEpro are distinctive from an evolutionary perspective and insightful from structural analysis, suggesting that the model has learned to explore regions of sequence space distant from natural variation — precisely the regions where the most dramatic functional gains may lie.</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="fu">### Engineering PAM specificity with deep learning</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>The PAM constraint remains one of the most significant practical limitations of CRISPR systems: each Cas enzyme recognises only a subset of potential target sites in a genome, defined by the PAM sequence immediately adjacent to the protospacer. Several groups have now applied deep learning to the specific problem of engineering PAM recognition. Protein2PAM, an evolution-informed model trained on over 45,000 CRISPR-Cas PAMs, predicts PAM specificity directly from Cas protein sequence across Type I, II, and V systems and has been used to computationally evolve Nme1Cas9 variants with broadened PAM recognition and up to 50-fold increases in cleavage rate compared to wild type <span class="co">[</span><span class="ot">@protein2pam2025</span><span class="co">]</span>.</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>In parallel, Kleinstiver and colleagues have developed PAMmla, a machine-learning-assisted framework for generating custom SpCas9 variants with altered PAM specificities, using *in silico* directed evolution guided by learned fitness functions <span class="co">[</span><span class="ot">@kleinstiver2025_pammla</span><span class="co">]</span>. These approaches bring together protein language models, evolutionary data, and experimental validation in a way that is likely to generalise to other Cas protein engineering challenges, including the reduction of immunogenicity and the optimisation of base editor deaminase domains.</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="fu">## Delivery optimisation through computational approaches</span></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a><span class="fu">### The delivery bottleneck</span></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>The clinical translation of CRISPR therapies is constrained not only by editing efficiency and specificity but also, and often primarily, by the challenge of delivering the editing machinery to target cells *in vivo* with sufficient potency, tissue specificity, and safety <span class="co">[</span><span class="ot">@wang2020delivery</span><span class="co">]</span>. Lipid nanoparticles (LNPs) and adeno-associated viral (AAV) vectors represent the two dominant delivery modalities, each with a vast design space that has proven amenable to computational optimisation.</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bayesian optimisation of lipid nanoparticle formulations</span></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>LNP formulations are defined by multiple continuous parameters — the identity and molar ratio of ionisable lipids, helper lipids, cholesterol, and PEG-lipids, as well as process parameters such as mixing speed and N/P ratio — creating a combinatorial space that is too large for exhaustive experimental screening. Bayesian optimisation (BO) provides a principled framework for this problem: it constructs a probabilistic surrogate model (typically a Gaussian process) of the objective function (e.g., transfection efficiency in target cells) and uses an acquisition function to select the most informative experiments in each round, balancing exploration of unknown regions against exploitation of promising candidates <span class="co">[</span><span class="ot">@shields2021bayesian; @angermueller2020pop</span><span class="co">]</span>.</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>Several groups have applied BO to LNP formulation discovery, demonstrating that 5–10 rounds of iterative experimentation — each involving the synthesis and testing of 10–20 formulations — can identify top-performing candidates from a design space comprising millions of possible combinations. The approach is particularly valuable when multiple objectives must be balanced simultaneously, such as maximising transfection efficiency in hepatocytes while minimising uptake in splenic macrophages. Multi-objective Bayesian optimisation naturally accommodates such trade-offs by constructing a Pareto frontier of non-dominated solutions <span class="co">[</span><span class="ot">@gonzalez2016batch</span><span class="co">]</span>.</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="fu">### Predicting AAV tissue tropism from capsid sequence</span></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>For AAV-based delivery, the key engineering challenge is tissue tropism: the ability of a viral capsid to transduce specific cell types while avoiding others. The AAV capsid surface is determined by the VP1, VP2, and VP3 subunit proteins, and sequence variation in hypervariable regions of VP1 dictates tropism. Directed evolution of AAV capsids through *in vivo* biopanning — infecting animal models with capsid libraries and recovering variants enriched in target tissues — has yielded clinically useful serotypes, but the process is slow, expensive, and poorly understood mechanistically <span class="co">[</span><span class="ot">@deverman2016credne</span><span class="co">]</span>.</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>Machine-learning models trained on biopanning data can predict tissue tropism from capsid sequence, enabling *in silico* screening of candidate capsids before experimental validation. These models range from simple regression on engineered sequence features to deep learning architectures that operate on raw amino acid sequences, and they have been used to identify novel capsids with enhanced tropism for the central nervous system, liver, and muscle — the three tissues of greatest current clinical interest for CRISPR delivery <span class="co">[</span><span class="ot">@ogden2019predictive; @bryant2021deep</span><span class="co">]</span>.</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a><span class="fu">### Electroporation and RNP delivery optimisation</span></span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>For *ex vivo* applications — particularly the editing of haematopoietic stem and progenitor cells (HSPCs) and T lymphocytes — electroporation of ribonucleoprotein (RNP) complexes is the dominant delivery method. Here, the design space includes electrical parameters (voltage, pulse duration, number of pulses), RNP concentration, cell density, and media composition. While less commonly addressed by formal ML frameworks than LNP or AAV optimisation, several groups have applied design-of-experiments (DoE) and response surface methodology to systematically explore electroporation parameter spaces, with emerging applications of Bayesian optimisation to this modality as well <span class="co">[</span><span class="ot">@roth2018</span><span class="co">]</span>.</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a><span class="fu">## Multiplexed and combinatorial editing</span></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a><span class="fu">### The rationale for multiplexed perturbation</span></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>Many therapeutic applications and fundamental biological questions require the simultaneous perturbation of multiple genomic loci. In functional genomics, combinatorial CRISPR screens probe genetic interactions — epistasis, synthetic lethality, buffering — that cannot be detected by single-gene perturbations. In therapeutic contexts, multigene editing may be necessary to address polygenic diseases, engineer complex cellular phenotypes (e.g., armoured CAR-T cells), or simultaneously disrupt and correct distinct loci <span class="co">[</span><span class="ot">@adamson2016multiplex</span><span class="co">]</span>.</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>The design of multiplexed CRISPR experiments is a combinatorial problem that scales explosively with the number of target genes: a pairwise screen of 100 genes requires 4,950 guide combinations, and higher-order interactions increase the dimensionality further. AI-driven approaches address this challenge at multiple levels: optimising guide library composition, designing experimental layouts that maximise information per cell, and analysing the resulting high-dimensional phenotypic data.</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a><span class="fu">### Perturb-seq and single-cell readouts</span></span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>Perturb-seq (and related approaches such as CROP-seq and CRISP-seq) combines pooled CRISPR screens with single-cell RNA sequencing, enabling the simultaneous measurement of perturbation identity and transcriptomic phenotype in individual cells <span class="co">[</span><span class="ot">@dixit2016perturbseq; @datlinger2017pooled</span><span class="co">]</span>. The resulting datasets are high-dimensional — thousands of genes measured across thousands of perturbation conditions — and their analysis requires sophisticated computational frameworks including variational autoencoders, Gaussian process latent variable models, and causal inference methods <span class="co">[</span><span class="ot">@lotfollahi2023</span><span class="co">]</span>.</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>For multiplexed editing, the experimental design problem becomes acute: which combinations of guides should be included in the library to maximise the informativeness of the screen while minimising library complexity and sequencing cost? ML-based experimental design tools address this by predicting which guide combinations are likely to reveal the strongest genetic interactions, prioritising these for inclusion and deprioritising redundant or uninformative combinations <span class="co">[</span><span class="ot">@norman2019exploring</span><span class="co">]</span>.</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a><span class="fu">### Multi-target editing: scheduling and interference</span></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>When multiple edits are introduced simultaneously *in vivo* or *ex vivo*, the editing events are not independent: competition for the editing machinery, chromatin accessibility changes induced by one edit, and activation of DNA damage responses can all modulate the efficiency of subsequent edits. Computational models of editing interference and sequential scheduling are emerging to address this challenge, though the field is substantially less mature than single-target outcome prediction <span class="co">[</span><span class="ot">@gonatopoulos2019systematic</span><span class="co">]</span>.</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reinforcement learning and generative models</span></span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a><span class="fu">### Beyond prediction: generative approaches</span></span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>The models discussed thus far are primarily *discriminative*: given an input (a target sequence, a protein variant, a formulation), they predict an output (an indel distribution, an activity score, a transfection efficiency). A complementary paradigm is *generative* modelling, in which the algorithm proposes novel inputs — sequences, structures, or experimental designs — that are predicted to satisfy specified functional criteria.</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>Generative approaches to CRISPR optimisation include variational autoencoders (VAEs) trained on CRISPR–Cas protein families that can sample novel sequences from the learned latent space, generative adversarial networks (GANs) that produce synthetic guide RNA sequences with predicted high activity, and diffusion models that generate protein structures conditioned on desired functional properties <span class="co">[</span><span class="ot">@madani2023; @ruffolo2024</span><span class="co">]</span>. These methods are still in their early stages of application to genome editing, but they mark a departure from optimisation-within-a-known-space toward *design-of-novel-entities*.</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reinforcement learning for experimental protocols</span></span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>Reinforcement learning (RL) offers a distinct framework for optimisation in which an agent learns a policy — a mapping from experimental states to actions — by iteratively taking actions in an environment and receiving reward signals. In the context of genome editing, RL has been applied to the sequential design of experimental protocols: given a current state of knowledge (e.g., the results of previous editing experiments), the RL agent selects the next experiment to perform (e.g., the next guide to test, the next formulation to synthesise) so as to maximise cumulative reward (e.g., the probability of identifying an optimal editing strategy within a fixed experimental budget) <span class="co">[</span><span class="ot">@angermueller2020model</span><span class="co">]</span>.</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>The RL framework is naturally suited to the adaptive, sequential nature of experimental optimisation, where each experiment generates information that should inform the design of subsequent experiments. It is also well-suited to multi-objective problems, where the agent must balance competing desiderata — efficiency, specificity, deliverability, cost — without a priori specification of their relative weights.</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a><span class="fu">### Foundation models and genome editing</span></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>The rapid development of large foundation models for biology — including protein language models (ESM-2, ProGen2), genomic language models (Evo, Nucleotide Transformer), and multimodal models that integrate sequence, structure, and function — raises the question of whether genome editing will benefit from the same scaling dynamics observed in natural language processing <span class="co">[</span><span class="ot">@lin2023; @nguyen2024; @dalla-torre2025</span><span class="co">]</span>. Early results are promising: ESM-2 embeddings improve Cas protein engineering (as demonstrated by EVOLVEpro), and genomic language models can predict the functional consequences of genetic variants with increasing accuracy <span class="co">[</span><span class="ot">@jiang2025evolvepro</span><span class="co">]</span>.</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>However, the application of foundation models to genome editing faces specific challenges. The relevant phenotypes — editing efficiency, repair outcome distributions, tissue tropism — are experimentally expensive to measure, limiting the availability of labelled training data. The biological systems involved are stochastic and context-dependent, making zero-shot generalisation unreliable. And the stakes of error are high: in a clinical setting, a false-positive prediction of editing precision could have severe consequences. These considerations argue for a continued emphasis on hybrid approaches that combine foundation model representations with task-specific, experimentally validated models — a strategy that EVOLVEpro and similar frameworks explicitly adopt.</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sociotechnical Interlude III: optimisation as a value-laden practice {#sec-sti-3}</span></span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>The preceding sections have documented a progressive expansion of computational methods across every stage of genome editing — from repair outcome prediction to protein engineering, delivery design, and experimental planning. It would be easy to read this expansion as straightforwardly technical progress: imprecise methods yielding to more precise ones. But an STS perspective reveals that 'optimisation' is never a neutral operation: it always optimises *for something* and *at the cost of something else*.</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>The loss function makes this concrete. When inDelphi is trained to predict repair outcome frequencies, the implicit objective is to minimise the discrepancy between predicted and observed genotypic distributions. But which genotypes matter? The model treats all indel products equally, assigning no differential weight to clinically relevant versus clinically irrelevant outcomes. A model optimised for therapeutic applications might instead minimise the frequency of specific deleterious genotypes, or maximise the frequency of a desired corrective edit — objectives that embed clinical judgements about what counts as a 'good' outcome. This is precisely the kind of choice that Langdon Winner's foundational analysis of the politics of artefacts was designed to illuminate: the loss function, no less than a bridge or a building code, embeds a political decision about whose interests are served <span class="co">[</span><span class="ot">@winner1980artifacts</span><span class="co">]</span>. At the same time, the quantitative authority that surrounds these choices — the Pearson correlations, the mean squared errors, the precision-50 percentages — works in the manner that Theodore Porter describes in *Trust in Numbers*: measurement produces an impersonal authority that can obscure the contingency of the decisions it encodes [@porter1995trust]. A model that achieves *r* = 0.87 on a benchmark dataset acquires a form of epistemic credibility that may not be warranted when the model is applied to a different cell type, a different disease context, or a different patient population. The danger is not that the numbers are wrong but that their precision creates a false sense of certainty about a fundamentally uncertain — and fundamentally political — process.</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>Winner and Porter thus address different but interlocking dimensions of the same problem. Winner asks *what values are embedded in the artefact*; Porter asks *how the artefact's quantitative presentation conceals those values*. For repair outcome prediction models, the loss function determines which outcomes are valued (Winner's question), and the performance metric determines how confidently those values are communicated (Porter's question). Both forms of concealment must be addressed if AI-driven optimisation is to be governed rather than merely deployed.</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>For the CRISPR-AI field, this requires, at minimum, transparent documentation of loss functions and their clinical implications, systematic evaluation of model performance across diverse populations and cell types, and mechanisms for patient and public input into the definition of 'optimal' outcomes. Chapter 8 develops the ethical frameworks available for such governance, and Chapter 9 examines prospective scenarios for integrating these considerations into clinical practice.</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-loss-function-politics</span></span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "How loss function choice reorders guide RNA rankings. The same ten hypothetical guide RNAs are ranked under three different objective functions: maximising on-target efficiency (left), minimising off-target risk (centre), and maximising equitable performance across cell types (right). Guide identity is preserved by colour. No single guide dominates all objectives, and the 'optimal' choice depends on the value judgement encoded in the loss function. Data are illustrative."</span></span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/theme_monograph.R"</span>)</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">303</span>)</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a><span class="co"># Ten hypothetical guides with different performance profiles</span></span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>n_guides <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>guides <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>  <span class="at">guide =</span> <span class="fu">paste0</span>(<span class="st">"g"</span>, <span class="fu">sprintf</span>(<span class="st">"%02d"</span>, <span class="dv">1</span><span class="sc">:</span>n_guides)),</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>  <span class="at">efficiency   =</span> <span class="fu">c</span>(<span class="fl">0.92</span>, <span class="fl">0.88</span>, <span class="fl">0.85</span>, <span class="fl">0.78</span>, <span class="fl">0.95</span>, <span class="fl">0.70</span>, <span class="fl">0.82</span>, <span class="fl">0.91</span>, <span class="fl">0.65</span>, <span class="fl">0.74</span>),</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>  <span class="at">safety       =</span> <span class="fu">c</span>(<span class="fl">0.60</span>, <span class="fl">0.85</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.45</span>, <span class="fl">0.92</span>, <span class="fl">0.80</span>, <span class="fl">0.55</span>, <span class="fl">0.98</span>, <span class="fl">0.88</span>),</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>  <span class="at">equity       =</span> <span class="fu">c</span>(<span class="fl">0.70</span>, <span class="fl">0.78</span>, <span class="fl">0.82</span>, <span class="fl">0.88</span>, <span class="fl">0.50</span>, <span class="fl">0.85</span>, <span class="fl">0.91</span>, <span class="fl">0.62</span>, <span class="fl">0.80</span>, <span class="fl">0.93</span>)</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a><span class="co"># Rank under each objective (1 = best)</span></span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>guides<span class="sc">$</span>rank_eff    <span class="ot">&lt;-</span> <span class="fu">rank</span>(<span class="sc">-</span>guides<span class="sc">$</span>efficiency)</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>guides<span class="sc">$</span>rank_safe   <span class="ot">&lt;-</span> <span class="fu">rank</span>(<span class="sc">-</span>guides<span class="sc">$</span>safety)</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>guides<span class="sc">$</span>rank_equity <span class="ot">&lt;-</span> <span class="fu">rank</span>(<span class="sc">-</span>guides<span class="sc">$</span>equity)</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot to long format for plotting</span></span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>rank_long <span class="ot">&lt;-</span> guides <span class="sc">|&gt;</span></span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(guide, rank_eff, rank_safe, rank_equity) <span class="sc">|&gt;</span></span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"rank_"</span>),</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"objective"</span>, <span class="at">values_to =</span> <span class="st">"rank"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">objective =</span> <span class="fu">factor</span>(objective,</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>    <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"rank_eff"</span>, <span class="st">"rank_safe"</span>, <span class="st">"rank_equity"</span>),</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Max. on-target</span><span class="sc">\n</span><span class="st">efficiency"</span>,</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Min. off-target</span><span class="sc">\n</span><span class="st">risk"</span>,</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Max. equitable</span><span class="sc">\n</span><span class="st">performance"</span>)))</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(rank_long, <span class="fu">aes</span>(<span class="at">x =</span> objective, <span class="at">y =</span> rank, <span class="at">group =</span> guide, <span class="at">colour =</span> guide)) <span class="sc">+</span></span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">linewidth =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_reverse</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">labels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#E41A1C"</span>, <span class="st">"#377EB8"</span>, <span class="st">"#4DAF4A"</span>, <span class="st">"#984EA3"</span>, <span class="st">"#FF7F00"</span>,</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>               <span class="st">"#A65628"</span>, <span class="st">"#F781BF"</span>, <span class="st">"#999999"</span>, <span class="st">"#66C2A5"</span>, <span class="st">"#FC8D62"</span>),</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Guide RNA"</span></span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Objective function"</span>,</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Rank (1 = best)"</span></span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_monograph</span>() <span class="sc">+</span></span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"right"</span>,</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a><span class="fu">## Chapter summary</span></span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>The extension of AI from guide RNA selection (Chapter 2) to the optimisation of editing outcomes operates across multiple scales, from genotype-level repair product prediction through protein engineering and delivery design to multiplexed experimental planning and generative modelling.</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>Repair outcome prediction models — inDelphi, FORECasT, Lindel, and their successors — have established that CRISPR-mediated DNA repair is substantially predictable from local sequence context, with Pearson correlations of 0.85–0.90 between predicted and observed indel frequencies. This predictability extends to base editing outcomes through BE-Hive and related models; the primary open challenge remains domain adaptation across cell types and biological contexts.</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>Machine-learning-guided protein engineering has, in turn, reduced the experimental screening burden for Cas protein optimisation by up to 95%, enabling the discovery of novel variants with improved activity, altered PAM specificity, and reduced immunogenicity. Protein language models and zero-shot predictors are now routinely paired with low-N experimental validation, as exemplified by EVOLVEpro and TopVIP.</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>Delivery optimisation through Bayesian methods and ML-predicted tissue tropism addresses the persistent bottleneck of *in vivo* CRISPR delivery, particularly for LNP formulation and AAV capsid engineering. Meanwhile, generative models and reinforcement learning open an emerging frontier, shifting the operative logic from selecting among known candidates to designing novel entities and protocols — a transition with significant implications for the scale and speed of genome editing innovation.</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>The Sociotechnical Interlude has argued that optimisation is inherently value-laden, encoding choices about whose outcomes matter and what trade-offs are acceptable. Making these choices explicit is essential for the responsible integration of AI-driven optimisation into clinical genome editing — a theme that gains institutional specificity in Chapter 4, where the focus shifts from computational foundations to therapeutic application in genetic rare diseases, including Lynch syndrome, informed by the tools developed across Part I.</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/mm3ugr/crispr-ai-monograph/edit/main/03-ai-optimization.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/mm3ugr/crispr-ai-monograph/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

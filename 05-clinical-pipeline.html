@@ -1,0 +1,1969 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; The Clinical Pipeline: From Bench to Bedside – CRISPR Systems and Artificial Intelligence</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./06-ai-pipeline.html" rel="next">
+<link href="./04-rare-diseases.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-4c6d65c679321d81af7ec8b61b1d5a24.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating slimcontent quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-rare-diseases.html">Part II — Therapeutic Applications and the Clinical Pipeline</a></li><li class="breadcrumb-item"><a href="./05-clinical-pipeline.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Clinical Pipeline: From Bench to Bedside</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">CRISPR Systems and Artificial Intelligence</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/mm3ugr/crispr-ai-monograph" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I — CRISPR Systems and AI: Technical Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-crispr-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">CRISPR Architectures: From Cas9 to Epigenome Editors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-ai-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">AI for Guide RNA Design and Off-Target Prediction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-ai-optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">AI-Driven Optimisation of Editing Outcomes</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II — Therapeutic Applications and the Clinical Pipeline</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-rare-diseases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Genetic Rare Diseases as Therapeutic Targets for CRISPR-AI</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-clinical-pipeline.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Clinical Pipeline: From Bench to Bedside</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-ai-pipeline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">AI Across the Therapeutic Pipeline</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III — Governance, Ethics, and Futures</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-regulatory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regulatory Frameworks for Gene Editing in Europe and Beyond</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-bioethics-sts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Bioethics and STS: Autonomy, Justice, and Sociotechnical Imaginaries</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-prospective.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Prospective Scenarios 2026–2030</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-translating-molecular-precision-into-therapeutic-reality" id="toc-introduction-translating-molecular-precision-into-therapeutic-reality" class="nav-link active" data-scroll-target="#introduction-translating-molecular-precision-into-therapeutic-reality"><span class="header-section-number">5.1</span> Introduction: translating molecular precision into therapeutic reality</a></li>
+  <li><a href="#ex-vivo-gene-editing-the-current-clinical-frontier" id="toc-ex-vivo-gene-editing-the-current-clinical-frontier" class="nav-link" data-scroll-target="#ex-vivo-gene-editing-the-current-clinical-frontier"><span class="header-section-number">5.2</span> Ex vivo gene editing: the current clinical frontier</a>
+  <ul class="collapse">
+  <li><a href="#the-casgevy-manufacturing-workflow" id="toc-the-casgevy-manufacturing-workflow" class="nav-link" data-scroll-target="#the-casgevy-manufacturing-workflow"><span class="header-section-number">5.2.1</span> The Casgevy manufacturing workflow</a></li>
+  <li><a href="#conditioning-regimens-and-the-burden-of-treatment" id="toc-conditioning-regimens-and-the-burden-of-treatment" class="nav-link" data-scroll-target="#conditioning-regimens-and-the-burden-of-treatment"><span class="header-section-number">5.2.2</span> Conditioning regimens and the burden of treatment</a></li>
+  <li><a href="#beyond-casgevy-other-ex-vivo-programmes" id="toc-beyond-casgevy-other-ex-vivo-programmes" class="nav-link" data-scroll-target="#beyond-casgevy-other-ex-vivo-programmes"><span class="header-section-number">5.2.3</span> Beyond Casgevy: other ex vivo programmes</a></li>
+  </ul></li>
+  <li><a href="#in-vivo-gene-editing-emerging-clinical-programmes" id="toc-in-vivo-gene-editing-emerging-clinical-programmes" class="nav-link" data-scroll-target="#in-vivo-gene-editing-emerging-clinical-programmes"><span class="header-section-number">5.3</span> In vivo gene editing: emerging clinical programmes</a>
+  <ul class="collapse">
+  <li><a href="#verve-101-and-verve-102-base-editing-for-cardiovascular-disease" id="toc-verve-101-and-verve-102-base-editing-for-cardiovascular-disease" class="nav-link" data-scroll-target="#verve-101-and-verve-102-base-editing-for-cardiovascular-disease"><span class="header-section-number">5.3.1</span> VERVE-101 and VERVE-102: base editing for cardiovascular disease</a></li>
+  <li><a href="#intellia-ntla-2001-and-liver-targeted-nuclease-editing" id="toc-intellia-ntla-2001-and-liver-targeted-nuclease-editing" class="nav-link" data-scroll-target="#intellia-ntla-2001-and-liver-targeted-nuclease-editing"><span class="header-section-number">5.3.2</span> Intellia NTLA-2001 and liver-targeted nuclease editing</a></li>
+  <li><a href="#retinal-and-other-tissue-targeted-programmes" id="toc-retinal-and-other-tissue-targeted-programmes" class="nav-link" data-scroll-target="#retinal-and-other-tissue-targeted-programmes"><span class="header-section-number">5.3.3</span> Retinal and other tissue-targeted programmes</a></li>
+  </ul></li>
+  <li><a href="#clinical-trial-design-for-gene-editing-therapies" id="toc-clinical-trial-design-for-gene-editing-therapies" class="nav-link" data-scroll-target="#clinical-trial-design-for-gene-editing-therapies"><span class="header-section-number">5.4</span> Clinical trial design for gene editing therapies</a>
+  <ul class="collapse">
+  <li><a href="#the-single-arm-trial-and-the-evidentiary-challenge" id="toc-the-single-arm-trial-and-the-evidentiary-challenge" class="nav-link" data-scroll-target="#the-single-arm-trial-and-the-evidentiary-challenge"><span class="header-section-number">5.4.1</span> The single-arm trial and the evidentiary challenge</a></li>
+  <li><a href="#adaptive-and-bayesian-trial-designs" id="toc-adaptive-and-bayesian-trial-designs" class="nav-link" data-scroll-target="#adaptive-and-bayesian-trial-designs"><span class="header-section-number">5.4.2</span> Adaptive and Bayesian trial designs</a></li>
+  <li><a href="#surrogate-endpoints-and-long-term-outcomes" id="toc-surrogate-endpoints-and-long-term-outcomes" class="nav-link" data-scroll-target="#surrogate-endpoints-and-long-term-outcomes"><span class="header-section-number">5.4.3</span> Surrogate endpoints and long-term outcomes</a></li>
+  <li><a href="#patient-reported-outcomes" id="toc-patient-reported-outcomes" class="nav-link" data-scroll-target="#patient-reported-outcomes"><span class="header-section-number">5.4.4</span> Patient-reported outcomes</a></li>
+  </ul></li>
+  <li><a href="#manufacturing-and-scalability" id="toc-manufacturing-and-scalability" class="nav-link" data-scroll-target="#manufacturing-and-scalability"><span class="header-section-number">5.5</span> Manufacturing and scalability</a>
+  <ul class="collapse">
+  <li><a href="#the-autologous-manufacturing-bottleneck" id="toc-the-autologous-manufacturing-bottleneck" class="nav-link" data-scroll-target="#the-autologous-manufacturing-bottleneck"><span class="header-section-number">5.5.1</span> The autologous manufacturing bottleneck</a></li>
+  <li><a href="#allogeneic-and-off-the-shelf-approaches" id="toc-allogeneic-and-off-the-shelf-approaches" class="nav-link" data-scroll-target="#allogeneic-and-off-the-shelf-approaches"><span class="header-section-number">5.5.2</span> Allogeneic and off-the-shelf approaches</a></li>
+  <li><a href="#cost-of-goods-and-the-pricing-equation" id="toc-cost-of-goods-and-the-pricing-equation" class="nav-link" data-scroll-target="#cost-of-goods-and-the-pricing-equation"><span class="header-section-number">5.5.3</span> Cost of goods and the pricing equation</a></li>
+  </ul></li>
+  <li><a href="#regulatory-approval-milestones" id="toc-regulatory-approval-milestones" class="nav-link" data-scroll-target="#regulatory-approval-milestones"><span class="header-section-number">5.6</span> Regulatory approval milestones</a>
+  <ul class="collapse">
+  <li><a href="#a-cross-jurisdictional-comparison" id="toc-a-cross-jurisdictional-comparison" class="nav-link" data-scroll-target="#a-cross-jurisdictional-comparison"><span class="header-section-number">5.6.1</span> A cross-jurisdictional comparison</a></li>
+  <li><a href="#the-atmp-classification-and-its-consequences" id="toc-the-atmp-classification-and-its-consequences" class="nav-link" data-scroll-target="#the-atmp-classification-and-its-consequences"><span class="header-section-number">5.6.2</span> The ATMP classification and its consequences</a></li>
+  </ul></li>
+  <li><a href="#sec-sti-5" id="toc-sec-sti-5" class="nav-link" data-scroll-target="#sec-sti-5"><span class="header-section-number">5.7</span> Sociotechnical Interlude V: the clinical trial as a sociotechnical system</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">5.8</span> Chapter summary</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/mm3ugr/crispr-ai-monograph/edit/main/05-clinical-pipeline.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/mm3ugr/crispr-ai-monograph/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-rare-diseases.html">Part II — Therapeutic Applications and the Clinical Pipeline</a></li><li class="breadcrumb-item"><a href="./05-clinical-pipeline.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Clinical Pipeline: From Bench to Bedside</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-clinical-pipeline" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Clinical Pipeline: From Bench to Bedside</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction-translating-molecular-precision-into-therapeutic-reality" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="introduction-translating-molecular-precision-into-therapeutic-reality"><span class="header-section-number">5.1</span> Introduction: translating molecular precision into therapeutic reality</h2>
+<p>The preceding chapter examined the diseases that CRISPR-AI systems aim to treat. What follows is an account of how those therapies reach patients — and why that process differs structurally from conventional drug development in ways that reshape access, evidence generation, and regulatory governance. The clinical pipeline for genome editing therapies is not simply a faster or more precise version of the pharmaceutical pipeline: it is a different kind of pipeline, with its own manufacturing logic, evidentiary challenges, and regulatory accommodations.</p>
+<p>The field currently divides along two delivery strategies. The <em>ex vivo</em> approach, whose leading example is Casgevy (exagamglogene autotemcel), requires the extraction, editing, and reinfusion of a patient’s own cells — a manufacturing process that is patient-specific by necessity, labour-intensive, and geographically constrained. The <em>in vivo</em> approach, advanced by Intellia’s NTLA-2001 for transthyretin amyloidosis and Verve Therapeutics’ VERVE-102 for familial hypercholesterolaemia, delivers editing components directly into the body — a simpler clinical workflow but one that introduces distinct challenges of biodistribution, immunogenicity, and off-target editing in non-target tissues. Each strategy has generated its own clinical evidence, confronted its own regulatory questions, and shaped its own manufacturing supply chain.</p>
+<p>The discussion moves from manufacturing through trial design, regulatory approval, and post-marketing surveillance, with particular attention to the points where computational tools — the AI systems of Part I — are deployed, and to the structural features that distinguish genome editing from conventional therapeutics.</p>
+</section>
+<section id="ex-vivo-gene-editing-the-current-clinical-frontier" class="level2 page-columns page-full" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="ex-vivo-gene-editing-the-current-clinical-frontier"><span class="header-section-number">5.2</span> Ex vivo gene editing: the current clinical frontier</h2>
+<section id="the-casgevy-manufacturing-workflow" class="level3 page-columns page-full" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="the-casgevy-manufacturing-workflow"><span class="header-section-number">5.2.1</span> The Casgevy manufacturing workflow</h3>
+<p>The production of Casgevy for a single patient involves a sequence of steps that, taken together, constitute one of the most complex manufacturing processes in the history of therapeutics. Understanding this workflow matters not only for appreciating the clinical achievement but also for grasping why each step compounds the scalability constraints that limit Casgevy’s global impact.</p>
+<p>The first bottleneck is cell collection. The patient receives plerixafor (a CXCR4 antagonist) to mobilise CD34+ haematopoietic stem and progenitor cells (HSPCs) from the bone marrow into the peripheral blood, followed by leukapheresis. Mobilisation efficiency varies across patients — particularly in SCD, where repeated vaso-occlusive crises may have damaged the bone marrow microenvironment — and insufficient yield at this stage can delay or derail the entire process. The collected product must then be shipped under controlled conditions to a centralised GMP manufacturing facility operated by Lonza, with a third facility approved as of late 2025 to meet growing demand. This shipping step alone introduces a logistical dependency on cold-chain infrastructure and international courier networks that is absent from conventional oral or injectable therapies.</p>
+<p>At the manufacturing site, CD34+ cells are enriched by immunomagnetic selection, then electroporated with a ribonucleoprotein (RNP) complex comprising SpCas9 protein and a synthetic single guide RNA targeting the erythroid-specific enhancer of <em>BCL11A</em>. The electroporation parameters — voltage, pulse duration, RNP concentration, cell density — have been optimised through extensive process development, and the specific conditions are proprietary. After editing, cells are cryopreserved and subjected to a battery of quality control assessments: viability, CD34+ purity, sterility, endotoxin levels, and — most consequentially for release decisions — on-target editing efficiency (measured by next-generation sequencing of the target locus) and off-target assessment. Because each patient’s cells respond differently to electroporation, editing efficiency is unavoidably variable: a manufacturing process that produces 85% allelic disruption in one patient may achieve only 60% in the next, with direct implications for engraftment kinetics and clinical response.</p>
+<p>The edited cells are shipped back to the treatment centre, where the patient undergoes myeloablative conditioning with pharmacokinetically dose-adjusted busulfan over four days. This step — the destruction of the patient’s existing bone marrow — is necessary to create ‘space’ for the edited cells to engraft, but it carries significant toxicity: weeks of pancytopenia with attendant risks of infection, bleeding, and organ damage. Patients require prolonged hospitalisation during the engraftment period, typically 4–6 weeks. After discharge, long-term follow-up continues for 15 years under the terms of the regulatory approval.</p>
+<p>The entire process, from first cell collection to infusion, takes approximately 6–9 months. As of late 2025, 165 patients had undergone first cell collection, 39 had been infused, and more than 45 authorised treatment centres had been activated globally — numbers that, while growing, remain a tiny fraction of the eligible patient population. The manufacturing workflow is, in effect, a personalised therapy pipeline that operates at artisanal scale within a regulatory framework designed for industrial production.</p>
+
+<div class="no-row-height column-margin column-container"><div class="" style="font-size: 0.88em;">
+<p>As of late 2025, the gap between eligible and treated patients is stark: an estimated 100,000 individuals with severe SCD or TDT could benefit from Casgevy in the US and EU alone, but fewer than 40 had been infused. The ratio — approximately 1 in 2,500 — illustrates the manufacturing bottleneck as a structural constraint, not a transient one.</p>
+</div></div></section>
+<section id="conditioning-regimens-and-the-burden-of-treatment" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="conditioning-regimens-and-the-burden-of-treatment"><span class="header-section-number">5.2.2</span> Conditioning regimens and the burden of treatment</h3>
+<p>The myeloablative conditioning step is arguably the single greatest barrier to broader adoption of ex vivo CRISPR therapies. Busulfan conditioning is associated with acute toxicities (mucositis, hepatic sinusoidal obstruction syndrome, seizures) and long-term risks (secondary malignancies, gonadal failure). For SCD patients — many of whom are children or young adults — the reproductive implications are particularly significant: busulfan is gonadotoxic, and fertility preservation must be offered before conditioning, adding complexity, cost, and emotional burden to an already demanding process.</p>
+<p>Research into reduced-intensity and non-myeloablative conditioning regimens is active but preliminary. Antibody-based conditioning — using antibodies against CD117 (c-Kit) to selectively deplete HSPCs without broad myeloablation — has shown promise in preclinical models and early clinical testing for non-CRISPR gene therapies, but has not yet been validated in the context of CRISPR-edited cell products. If successful, antibody conditioning could dramatically reduce the toxicity, hospitalisation duration, and infrastructure requirements of ex vivo editing, potentially bringing these therapies within reach of healthcare systems in low- and middle-income countries.</p>
+</section>
+<section id="beyond-casgevy-other-ex-vivo-programmes" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="beyond-casgevy-other-ex-vivo-programmes"><span class="header-section-number">5.2.3</span> Beyond Casgevy: other ex vivo programmes</h3>
+<p>Casgevy is not the only ex vivo CRISPR therapy in clinical development, though it is the only one with regulatory approval as of early 2026. Several programmes are advancing through clinical trials with distinct editing strategies. CRISPR-based engineering of chimeric antigen receptor T cells (CAR-T) uses multiplex editing to simultaneously insert the CAR transgene, disrupt the endogenous T cell receptor (to enable allogeneic ‘off-the-shelf’ products), and knock out immune checkpoint genes (to enhance persistence and anti-tumour activity). These allogeneic CAR-T products — if successfully developed — would eliminate the patient-specific manufacturing bottleneck of autologous approaches, though they introduce the challenge of graft-versus-host disease prevention.</p>
+<p>iPSC-derived cell therapies push this logic further: patient fibroblasts or blood cells are reprogrammed to induced pluripotent stem cells, edited at the iPSC stage, differentiated to the desired cell type (e.g., pancreatic beta cells, cardiomyocytes, retinal pigment epithelial cells), and administered to the patient. This approach decouples the editing event from the patient timeline, allowing the generation of banked, quality-controlled edited cell lines that can serve multiple patients — a manufacturing model that differs in kind, not merely in efficiency, from autologous approaches.</p>
+</section>
+</section>
+<section id="in-vivo-gene-editing-emerging-clinical-programmes" class="level2 page-columns page-full" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="in-vivo-gene-editing-emerging-clinical-programmes"><span class="header-section-number">5.3</span> In vivo gene editing: emerging clinical programmes</h2>
+<section id="verve-101-and-verve-102-base-editing-for-cardiovascular-disease" class="level3 page-columns page-full" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="verve-101-and-verve-102-base-editing-for-cardiovascular-disease"><span class="header-section-number">5.3.1</span> VERVE-101 and VERVE-102: base editing for cardiovascular disease</h3>
+<p>The Verve Therapeutics programme targeting <em>PCSK9</em> — a gene whose inactivation potently reduces LDL cholesterol — is the most advanced in vivo base editing clinical programme and illustrates both the potential and the iterative nature of clinical translation.</p>
+<p>VERVE-101, the first-generation product, consists of an adenine base editor (ABE) mRNA and a guide RNA targeting <em>PCSK9</em>, encapsulated in an engineered LNP for intravenous delivery to hepatocytes. The Heart-1 Phase 1b trial, initiated in 2022, enrolled 10 patients with heterozygous familial hypercholesterolaemia (HeFH) and established atherosclerotic cardiovascular disease. First-in-human data presented at AHA 2023 demonstrated proof of concept: at the 0.45 mg/kg dose, two patients showed PCSK9 protein reductions of 59% and 84% and LDL-C reductions of 39% and 48%, respectively. The single patient treated at 0.6 mg/kg achieved a 55% LDL-C reduction sustained to at least 180 days <span class="citation" data-cites="bellinger2023_verve101">(<a href="references.html#ref-bellinger2023_verve101" role="doc-biblioref">Bellinger et al., 2023</a>)</span>.</p>
+<p>However, the Heart-1 trial also revealed a safety signal in one participant who developed elevated liver transaminases and low platelet counts, effects attributed to the LNP delivery vehicle rather than the base editing payload. In April 2024, Verve paused Heart-1 enrolment and pivoted to VERVE-102, a second-generation product that uses a proprietary GalNAc-conjugated LNP (GalNAc-LNP) designed to improve liver targeting via the asialoglycoprotein receptor (ASGPR) while reducing uptake by non-hepatic tissues — particularly splenic macrophages, which are thought to mediate the platelet reduction observed with first-generation LNPs.</p>
+<p>The Heart-2 Phase 1b trial of VERVE-102, initiated in May 2024, has shown markedly improved results. Initial data reported in April 2025 from 14 patients across three dose cohorts (0.3, 0.45, and 0.6 mg/kg) demonstrated dose-dependent LDL-C reductions, with a mean reduction of 53% and a maximum of 69% in the highest dose cohort. Notably, no treatment-related serious adverse events, clinically significant liver enzyme elevations, or platelet reductions were observed at any dose level — a safety profile that Verve describes as ‘potentially best-in-class’ for LNP-delivered therapeutics. Meanwhile, durability data from the original VERVE-101 Heart-1 trial show sustained base editing effects at nearly two years of follow-up, supporting the mechanistic premise that a single DNA base change produces permanent gene inactivation.</p>
+
+<div class="no-row-height column-margin column-container"><div class="" style="font-size: 0.88em;">
+<p>The VERVE-101 → VERVE-102 pivot illustrates a design principle with broad implications: when editing payload and delivery vehicle are engineered as separable modules, safety signals attributable to the vehicle can be resolved without redesigning the therapeutic mechanism. This modularity — discussed in Chapter 3 as an optimisation target — becomes a regulatory advantage, since the base-editing component retains its existing safety and efficacy data.</p>
+</div></div><p>The VERVE programme is instructive for the broader field in several respects. First, it demonstrates that delivery vehicle safety, not editing payload safety, may be the dose-limiting factor for in vivo CRISPR therapies — a finding that redirects attention to the LNP engineering and optimisation tools discussed in Chapter 3. Second, the rapid pivot from VERVE-101 to VERVE-102 illustrates the modularity of the platform: the same base editor and guide RNA can be repackaged in a new delivery vehicle without redesigning the editing components. Third, the programme’s expansion into additional targets — VERVE-201 (targeting <em>ANGPTL3</em> for triglycerides) and VERVE-301 (targeting <em>LPA</em> for lipoprotein(a)) — suggests that in vivo base editing of hepatic genes may become a generalised therapeutic modality for cardiometabolic disease, not a one-off proof of concept.</p>
+</section>
+<section id="intellia-ntla-2001-and-liver-targeted-nuclease-editing" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="intellia-ntla-2001-and-liver-targeted-nuclease-editing"><span class="header-section-number">5.3.2</span> Intellia NTLA-2001 and liver-targeted nuclease editing</h3>
+<p>The Intellia programme for transthyretin amyloidosis, discussed in Chapter 4 in terms of its disease rationale, is equally significant as a pipeline milestone. NTLA-2001 uses SpCas9 mRNA and a synthetic guide RNA delivered via LNP to disrupt the <em>TTR</em> gene in hepatocytes. The distinction from VERVE is the editing modality: nuclease-mediated gene disruption (producing indels that knock out the gene) rather than base editing (producing a precise single-nucleotide change). Both achieve the same functional outcome — permanent reduction of a disease-causing protein — but through different molecular mechanisms with different off-target risk profiles.</p>
+<p>Phase 1 data demonstrated serum TTR knockdown of up to 93% after a single infusion, with durability beyond two years and clinical improvements in neuropathy scores <span class="citation" data-cites="gillmore2021_ntla">(<a href="references.html#ref-gillmore2021_ntla" role="doc-biblioref">Gillmore et al., 2021</a>)</span>. The Phase 2/3 programme is now advancing toward potential registration, and if approved, NTLA-2001 would become the first in vivo CRISPR nuclease therapy to receive regulatory authorisation — a distinct milestone from Casgevy (ex vivo) and from VERVE (base editing, not yet in registrational trials).</p>
+</section>
+<section id="retinal-and-other-tissue-targeted-programmes" class="level3" data-number="5.3.3">
+<h3 data-number="5.3.3" class="anchored" data-anchor-id="retinal-and-other-tissue-targeted-programmes"><span class="header-section-number">5.3.3</span> Retinal and other tissue-targeted programmes</h3>
+<p>In vivo editing of non-hepatic tissues faces delivery challenges of a different order. The liver is uniquely accessible to LNPs because of its fenestrated vasculature and receptor-mediated uptake mechanisms; other tissues lack these features. Retinal editing — illustrated most clearly by the discontinued EDIT-101 programme for LCA10 — used subretinal injection of AAV5 to achieve local delivery, an approach that is surgically invasive but anatomically constrained, limiting systemic exposure. Ongoing programmes for retinal dystrophies use similar local delivery strategies with updated editing payloads.</p>
+<p>Muscle-targeted in vivo editing for Duchenne muscular dystrophy remains the most formidable delivery challenge in the field, as noted in Chapter 4. Systemic AAV delivery at the doses required for whole-body muscle transduction has been associated with serious adverse events, including hepatotoxicity and thrombotic microangiopathy, in non-CRISPR gene therapy trials <span class="citation" data-cites="duan_systemic_2018">(<a href="references.html#ref-duan_systemic_2018" role="doc-biblioref">Duan, 2018</a>)</span>. The development of AI-engineered AAV capsids with enhanced muscle tropism and reduced liver sequestration — directly leveraging the ML-guided capsid engineering described in Chapter 3 — is a prerequisite for clinical translation of muscle-targeted editing.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-clinical-pipeline-map" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-clinical-pipeline-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="05-clinical-pipeline_files/figure-html/fig-clinical-pipeline-map-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-clinical-pipeline-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: CRISPR-based clinical programmes by delivery paradigm, therapeutic area, and development stage (as of early 2026). Horizontal position indicates most advanced clinical phase; vertical grouping distinguishes ex vivo (top) from in vivo (bottom) approaches. Colour indicates editing modality. The dashed line separates approved therapies from those in clinical development.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="clinical-trial-design-for-gene-editing-therapies" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="clinical-trial-design-for-gene-editing-therapies"><span class="header-section-number">5.4</span> Clinical trial design for gene editing therapies</h2>
+<section id="the-single-arm-trial-and-the-evidentiary-challenge" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="the-single-arm-trial-and-the-evidentiary-challenge"><span class="header-section-number">5.4.1</span> The single-arm trial and the evidentiary challenge</h3>
+<p>Virtually all CRISPR clinical trials to date have used single-arm, open-label designs in which all enrolled patients receive the investigational therapy and outcomes are compared to the patient’s own pre-treatment history or to external comparators derived from natural history studies or registry data. This design is standard for rare diseases where the patient population is small, the disease course is well characterised, and randomisation to a no-treatment arm would be ethically untenable given the severity of the condition and the absence of alternative therapies.</p>
+<p>The evidential limitations of single-arm trials are well understood: without concurrent controls, observed improvements cannot be causally attributed to the intervention with the same confidence as in a randomised trial. Regression to the mean, changes in concomitant care, patient selection effects, and temporal trends can all confound the estimate of treatment effect. For Casgevy, the FDA and EMA accepted the single-arm design on the basis that the primary endpoint (freedom from severe VOCs for ≥12 consecutive months) was sufficiently objective, the natural history of untreated SCD was well documented, and the magnitude of the observed effect (97–100% of patients achieving the endpoint) was implausibly attributable to confounding.</p>
+<p>The single-arm approach becomes more problematic as CRISPR therapies move into conditions where the treatment effect is smaller, the endpoint is less binary, or the natural history is more variable. For in vivo base editing of <em>PCSK9</em>, for example, the relevant endpoint is a continuous biomarker (LDL-C level) for which there are effective existing therapies (statins, ezetimibe, PCSK9 monoclonal antibodies, inclisiran). Verve has announced plans for a Phase 2 randomised, controlled trial of VERVE-102 — a design that reflects both the availability of active comparators and the regulatory expectation of comparative evidence for conditions that are not ultra-rare.</p>
+</section>
+<section id="adaptive-and-bayesian-trial-designs" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="adaptive-and-bayesian-trial-designs"><span class="header-section-number">5.4.2</span> Adaptive and Bayesian trial designs</h3>
+<p>The small patient populations characteristic of rare disease gene therapy programmes create a tension between the need for rigorous evidence and the practical impossibility of enrolling large trials. Adaptive trial designs — in which the trial’s sample size, randomisation ratio, dose levels, or inclusion criteria can be modified during the trial on the basis of interim data — offer a partial resolution. Bayesian adaptive designs are particularly relevant: they use prior information (from preclinical data, earlier cohorts, or external data sources) to construct a probabilistic model of the treatment effect that is updated as patient data accumulate, allowing the trial to reach a decision (stop for efficacy, stop for futility, or continue) with fewer patients than a fixed-sample frequentist design would require.</p>
+<p>The application of Bayesian methods to gene therapy trials is growing but remains non-standard. Regulatory agencies — particularly the FDA, through its 2019 guidance on adaptive designs, and the EMA, through its reflection paper on methodological issues — have signalled openness to these approaches, but sponsors report that pre-specification of the statistical framework, the handling of multiplicity, and the choice of informative priors remain areas of regulatory uncertainty. Combining AI-driven patient stratification (discussed in Chapter 6) with Bayesian trial designs is a natural next step: ML models trained on multi-omic data could identify patient subgroups most likely to respond, enriching the trial population and increasing statistical power without increasing sample size.</p>
+</section>
+<section id="surrogate-endpoints-and-long-term-outcomes" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="surrogate-endpoints-and-long-term-outcomes"><span class="header-section-number">5.4.3</span> Surrogate endpoints and long-term outcomes</h3>
+<p>Gene editing therapies aim for permanent, one-time correction of the underlying genetic defect — a goal that, by definition, cannot be fully evaluated within the timeframe of a registration trial. The regulatory framework handles this through a combination of surrogate endpoints (biomarkers that predict long-term clinical outcomes) and post-marketing commitments (long-term follow-up studies that monitor durability and late-onset adverse events).</p>
+<p>For Casgevy, the primary surrogate endpoint was HbF level and allelic editing efficiency, with VOC-free survival as the primary clinical endpoint. The relationship between HbF and clinical outcomes in SCD is well established — epidemiological and clinical data spanning decades demonstrate that higher HbF levels are associated with fewer VOCs, reduced organ damage, and longer survival — making HbF an acceptable surrogate under FDA and EMA criteria.</p>
+<p>For NTLA-2001, serum TTR protein level serves as the surrogate, with neuropathy and cardiac biomarker improvements as clinical endpoints. For VERVE-102, blood LDL-C serves as the surrogate, with major adverse cardiovascular events (MACE) as the ultimate clinical endpoint — though a MACE-driven trial would require thousands of patients and years of follow-up, making it impractical as a registration endpoint.</p>
+<p>The durability question is paramount. If editing is truly permanent — and the 5+ year follow-up data for Casgevy and the 2-year data for VERVE-101 suggest that it is — then the benefit–risk calculation differs in kind from that of chronic therapies. A single treatment with transient procedure-related toxicity may be acceptable even if that toxicity is substantial, provided the long-term benefit is durable. But the possibility of late-onset adverse events — genotoxicity from off-target editing, insertional mutagenesis (for AAV-delivered therapies), immune responses to persisting edited cell populations, or loss of editing over time due to clonal dynamics in the haematopoietic system — can only be assessed through extended follow-up. The 15-year post-marketing follow-up required for Casgevy reflects this concern.</p>
+</section>
+<section id="patient-reported-outcomes" class="level3" data-number="5.4.4">
+<h3 data-number="5.4.4" class="anchored" data-anchor-id="patient-reported-outcomes"><span class="header-section-number">5.4.4</span> Patient-reported outcomes</h3>
+<p>A dimension of clinical trial design that has historically received insufficient attention in gene therapy — and that connects directly to the STS themes of this monograph — is the systematic collection of patient-reported outcome measures (PROMs). For SCD, the CLIMB-121 trial included multiple PROM instruments: the Adult Sickle Cell Quality of Life Measurement Information System (ASCQ-Me), the EQ-5D, the PedsQL, and a weekly pain scale. Data from these instruments demonstrate clinically meaningful improvements across emotional impact, pain, social functioning, and stiffness domains — evidence that complements the biomarker and clinical endpoints with the patient’s own assessment of therapeutic benefit.</p>
+<p>The inclusion of PROMs is not merely a methodological refinement but a political act in the sense developed by the STS literature: it makes visible a dimension of disease impact (subjective quality of life) that is systematically undervalued by biomarker-centric trial designs. For conditions like Lynch syndrome, where surveillance programmes impose ongoing burdens of anxiety, invasive procedures, and reproductive decisions, PROMs are essential for evaluating whether AI-driven liquid biopsy approaches (such as those under development in PREDI-LYNCH) actually improve the lived experience of carriers — a question that biomarker sensitivity and specificity alone cannot answer.</p>
+</section>
+</section>
+<section id="manufacturing-and-scalability" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="manufacturing-and-scalability"><span class="header-section-number">5.5</span> Manufacturing and scalability</h2>
+<section id="the-autologous-manufacturing-bottleneck" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="the-autologous-manufacturing-bottleneck"><span class="header-section-number">5.5.1</span> The autologous manufacturing bottleneck</h3>
+<p>The patient-specific nature of autologous ex vivo editing creates a manufacturing model that differs in structure, not merely in scale, from conventional pharmaceuticals. Each Casgevy product is a batch of one: manufactured for a single patient, with patient-specific starting material, patient-specific editing efficiency, and patient-specific quality control data. This model does not benefit from the economies of scale that drive down cost in mass-produced therapies, and it creates logistical complexity in coordinating the patient’s treatment timeline with the manufacturing schedule (including cell collection, shipping, editing, cryopreservation, quality testing, and return shipment).</p>
+<p>Vertex’s response has been to centralise manufacturing with Lonza, securing approval for a third facility as of late 2025, and to activate a global network of authorised treatment centres. But the fundamental constraint remains: each patient requires a dedicated manufacturing slot, the turnaround time is measured in months, and the process is vulnerable to batch failures at any stage (inadequate cell collection, low editing efficiency, contamination, viability loss during cryopreservation).</p>
+</section>
+<section id="allogeneic-and-off-the-shelf-approaches" class="level3" data-number="5.5.2">
+<h3 data-number="5.5.2" class="anchored" data-anchor-id="allogeneic-and-off-the-shelf-approaches"><span class="header-section-number">5.5.2</span> Allogeneic and off-the-shelf approaches</h3>
+<p>Allogeneic gene-edited cell therapies — manufactured from healthy donor cells and banked as standardised products available for immediate administration — offer the most direct solution to the autologous bottleneck. For CAR-T applications, CRISPR is used to knock out genes that would cause graft-versus-host disease (TCR alpha chain) and host-versus-graft rejection (beta-2-microglobulin, CD52), creating ‘universal’ donor cells compatible with any recipient.</p>
+<p>The manufacturing advantages of allogeneic products are substantial: a single donor collection can generate hundreds or thousands of doses, quality control can be performed on the entire batch rather than on individual patient products, and the therapy can be available ‘off the shelf’ without a weeks-long manufacturing delay. The clinical challenge is that allogeneic cells, even with extensive editing, are not perfectly immunologically inert, and their persistence in the host may be limited without lymphodepleting conditioning. Multiple clinical programmes are testing allogeneic CRISPR-edited CAR-T cells, with mixed results — some showing encouraging initial responses but limited durability compared to autologous products.</p>
+</section>
+<section id="cost-of-goods-and-the-pricing-equation" class="level3" data-number="5.5.3">
+<h3 data-number="5.5.3" class="anchored" data-anchor-id="cost-of-goods-and-the-pricing-equation"><span class="header-section-number">5.5.3</span> Cost of goods and the pricing equation</h3>
+<p>The cost of goods sold (COGS) for autologous gene-edited cell therapies is estimated at $50,000–100,000 per patient, driven by the cost of GMP-grade reagents (Cas9 protein, synthetic guide RNA, electroporation supplies), the labour-intensive manufacturing process, quality control testing, and cryogenic shipping logistics. This COGS, while high by pharmaceutical standards, accounts for only a small fraction of the list price ($2.2 million for Casgevy), with the majority of the price reflecting development costs, regulatory costs, profit margin, and — most tellingly — the small denominator over which these fixed costs are amortised.</p>
+<p>For in vivo therapies, the COGS picture is different: LNP-encapsulated mRNA/gRNA products are manufactured using established nucleic acid synthesis and LNP formulation processes that are more amenable to scale-up, and the cost per dose is expected to decrease as manufacturing matures. However, the development costs remain high (Verve Therapeutics reported quarterly operating losses exceeding $50 million in early 2025), and the pricing of in vivo gene editing therapies has not yet been tested by market entry.</p>
+</section>
+</section>
+<section id="regulatory-approval-milestones" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="regulatory-approval-milestones"><span class="header-section-number">5.6</span> Regulatory approval milestones</h2>
+<section id="a-cross-jurisdictional-comparison" class="level3" data-number="5.6.1">
+<h3 data-number="5.6.1" class="anchored" data-anchor-id="a-cross-jurisdictional-comparison"><span class="header-section-number">5.6.1</span> A cross-jurisdictional comparison</h3>
+<p>The regulatory approval of Casgevy provides a natural experiment in how different jurisdictions respond to the same therapeutic innovation — and reveals both convergence and divergence in regulatory philosophy.</p>
+<p>The UK’s Medicines and Healthcare products Regulatory Agency (MHRA) granted conditional approval in November 2023, making Casgevy the first CRISPR therapy approved anywhere in the world. The MHRA’s speed reflected both its Innovative Licensing and Access Pathway (ILAP) — a dedicated route for therapies addressing unmet medical needs — and the UK’s post-Brexit incentive to establish itself as a competitive destination for advanced therapy development. The approval was for patients aged 12 and older with SCD characterised by recurrent VOCs, or TDT, where allogeneic HSCT is appropriate but no matched related donor is available.</p>
+<p>The US FDA followed in December 2023 with approval for SCD under its standard review process (following Regenerative Medicine Advanced Therapy designation, Priority Review, Orphan Drug Designation, and Fast Track Designation), and in January 2024 for TDT. The FDA approval was notable for its explicit acknowledgement of the single-arm trial design and its reliance on historical controls, as well as its requirement for 15-year post-marketing follow-up to monitor long-term safety, including the theoretical risk of off-target editing and malignancy.</p>
+<p>The European Medicines Agency (EMA) granted conditional marketing authorisation through its Committee for Advanced Therapies (CAT), classifying Casgevy as a gene therapy medicinal product — a subcategory of advanced therapy medicinal products (ATMPs) that triggers specific regulatory requirements including GMP manufacturing to ATMP standards, environmental risk assessment, and enhanced pharmacovigilance. The EMA conditional approval carries annual renewal requirements tied to the submission of additional data on long-term efficacy and safety.</p>
+<p>Approvals in Saudi Arabia, Bahrain, Canada, Switzerland, and the United Arab Emirates followed in 2024, and reimbursement negotiations — the decisive step between regulatory approval and actual patient access — have progressed at varying speeds. NICE approved Casgevy for SCD in England in May 2025 following an outcomes-based managed access agreement; discussions for TDT are ongoing. The pattern is consistent across jurisdictions: regulatory approval is achieved relatively quickly (12–18 months from submission to decision), but reimbursement and access negotiations add months to years of additional delay.</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-casgevy-regulatory" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-casgevy-regulatory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals. All three major agencies approved the therapy within 14 months, but diverge in product classification, conditional requirements, and reimbursement status — revealing that regulatory convergence on safety and efficacy coexists with structural divergence on the conditions of access.
+</figcaption>
+<div aria-describedby="tbl-casgevy-regulatory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="jtnqjpszdx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jtnqjpszdx table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#jtnqjpszdx thead, #jtnqjpszdx tbody, #jtnqjpszdx tfoot, #jtnqjpszdx tr, #jtnqjpszdx td, #jtnqjpszdx th {
+  border-style: none;
+}
+
+#jtnqjpszdx p {
+  margin: 0;
+  padding: 0;
+}
+
+#jtnqjpszdx .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#jtnqjpszdx .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#jtnqjpszdx .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#jtnqjpszdx .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#jtnqjpszdx .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jtnqjpszdx .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jtnqjpszdx .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jtnqjpszdx .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#jtnqjpszdx .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#jtnqjpszdx .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#jtnqjpszdx .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#jtnqjpszdx .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#jtnqjpszdx .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#jtnqjpszdx .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#jtnqjpszdx .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jtnqjpszdx .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#jtnqjpszdx .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#jtnqjpszdx .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#jtnqjpszdx .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jtnqjpszdx .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#jtnqjpszdx .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#jtnqjpszdx .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#jtnqjpszdx .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jtnqjpszdx .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#jtnqjpszdx .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#jtnqjpszdx .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jtnqjpszdx .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jtnqjpszdx .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#jtnqjpszdx .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jtnqjpszdx .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#jtnqjpszdx .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jtnqjpszdx .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jtnqjpszdx .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jtnqjpszdx .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jtnqjpszdx .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jtnqjpszdx .gt_left {
+  text-align: left;
+}
+
+#jtnqjpszdx .gt_center {
+  text-align: center;
+}
+
+#jtnqjpszdx .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#jtnqjpszdx .gt_font_normal {
+  font-weight: normal;
+}
+
+#jtnqjpszdx .gt_font_bold {
+  font-weight: bold;
+}
+
+#jtnqjpszdx .gt_font_italic {
+  font-style: italic;
+}
+
+#jtnqjpszdx .gt_super {
+  font-size: 65%;
+}
+
+#jtnqjpszdx .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#jtnqjpszdx .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#jtnqjpszdx .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#jtnqjpszdx .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#jtnqjpszdx .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#jtnqjpszdx .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#jtnqjpszdx .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#jtnqjpszdx .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#jtnqjpszdx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="8" class="gt_heading gt_title gt_font_normal"><strong>Casgevy (exagamglogene autotemcel): regulatory approval comparison</strong></td>
+</tr>
+<tr class="gt_heading even">
+<td colspan="8" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Three major jurisdictions, 2023–2024<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></td>
+</tr>
+<tr class="gt_col_headings header">
+<th id="Jurisdiction" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Jurisdiction</th>
+<th id="Agency" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Agency</th>
+<th id="Date" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Approval date</th>
+<th id="Pathway" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Regulatory pathway</th>
+<th id="Classification" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Product classification</th>
+<th id="Conditions" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Approval conditions</th>
+<th id="Post-marketing" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Post-marketing requirements</th>
+<th id="Reimbursement" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Reimbursement status (as of early 2026)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Jurisdiction" style="font-weight: bold">United Kingdom</td>
+<td class="gt_row gt_left" headers="Agency">MHRA</td>
+<td class="gt_row gt_left" headers="Date">Nov 2023</td>
+<td class="gt_row gt_left" headers="Pathway">ILAP (conditional)</td>
+<td class="gt_row gt_left" headers="Classification">ATMP — gene therapy</td>
+<td class="gt_row gt_left" headers="Conditions">Conditional approval; annual renewal</td>
+<td class="gt_row gt_left" headers="Post-marketing">15-year follow-up</td>
+<td class="gt_row gt_left" headers="Reimbursement">NICE MAA for SCD (May 2025); TDT pending</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="Jurisdiction" style="font-weight: bold">United States</td>
+<td class="gt_row gt_left gt_striped" headers="Agency">FDA</td>
+<td class="gt_row gt_left gt_striped" headers="Date">Dec 2023 (SCD) Jan 2024 (TDT)</td>
+<td class="gt_row gt_left gt_striped" headers="Pathway">RMAT + Priority Review + Orphan + Fast Track</td>
+<td class="gt_row gt_left gt_striped" headers="Classification">Biologic (BLA)</td>
+<td class="gt_row gt_left gt_striped" headers="Conditions">Standard approval; PMR for off-target and malignancy monitoring</td>
+<td class="gt_row gt_left gt_striped" headers="Post-marketing">15-year follow-up</td>
+<td class="gt_row gt_left gt_striped" headers="Reimbursement">Commercial launch; insurer negotiations ongoing</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Jurisdiction" style="font-weight: bold">European Union</td>
+<td class="gt_row gt_left" headers="Agency">EMA (CAT)</td>
+<td class="gt_row gt_left" headers="Date">2024</td>
+<td class="gt_row gt_left" headers="Pathway">Centralised (conditional MA)</td>
+<td class="gt_row gt_left" headers="Classification">ATMP — gene therapy medicinal product</td>
+<td class="gt_row gt_left" headers="Conditions">Conditional MA; annual renewal tied to data submission</td>
+<td class="gt_row gt_left" headers="Post-marketing">15-year follow-up; enhanced pharmacovigilance</td>
+<td class="gt_row gt_left" headers="Reimbursement">Member State–level; variable progress</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_footnotes odd">
+<td colspan="8" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> MAA = managed access agreement; RMAT = Regenerative Medicine Advanced Therapy; PMR = post-marketing requirement; MA = marketing authorisation.</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="the-atmp-classification-and-its-consequences" class="level3" data-number="5.6.2">
+<h3 data-number="5.6.2" class="anchored" data-anchor-id="the-atmp-classification-and-its-consequences"><span class="header-section-number">5.6.2</span> The ATMP classification and its consequences</h3>
+<p>The regulatory classification of CRISPR-based therapies as ATMPs (in the EU) or as biologics requiring Biologics License Application (BLA) review (in the US) has specific consequences for the development pathway. ATMP classification triggers requirements for GMP manufacturing that are more stringent in some respects than for conventional biologics — for example, the requirement for dedicated manufacturing suites, the need for potency assays that measure on-target editing efficiency, and environmental release considerations that, while largely theoretical for ex vivo therapies (the edited cells are contained within the patient), become substantive for in vivo therapies where LNPs or AAV vectors are administered systemically.</p>
+<p>The EMA’s hospital exemption pathway — which allows the preparation and use of ATMPs within a single Member State under the responsibility of a physician, without centralised marketing authorisation — offers a potential alternative route for rare disease applications where the patient population is too small to justify a full regulatory submission. However, the pathway is unevenly implemented across Member States, its quality and safety requirements are less standardised, and it has been criticised for creating a two-tier system in which patients in some countries have access to therapies that are unavailable in others.</p>
+</section>
+</section>
+<section id="sec-sti-5" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="sec-sti-5"><span class="header-section-number">5.7</span> Sociotechnical Interlude V: the clinical trial as a sociotechnical system</h2>
+<p>The preceding sections have described the clinical pipeline for CRISPR therapies in primarily technical terms: manufacturing workflows, trial endpoints, regulatory classifications. But clinical trials are not merely technical exercises — they are complex sociotechnical systems that enrol not only patients and molecules but also institutions, norms, expectations, and power relations. The CLIMB-121 trial protocol for Casgevy — the multi-hundred-page document that specified every aspect of the study’s conduct — provides a concrete object through which to examine this claim.</p>
+<p>Consider first who was enrolled, and where. Adriana Petryna’s ethnographic work on clinical trials in post-Soviet Eastern Europe and Latin America has shown that the geography of trial conduct is never accidental: it encodes assumptions about regulatory infrastructure, patient availability, and institutional capacity that systematically shape whose bodies produce the evidence on which approvals rest <span class="citation" data-cites="petryna2009when">(<a href="references.html#ref-petryna2009when" role="doc-biblioref">Petryna, 2009</a>)</span>. CLIMB-121 was conducted at 17 sites in the United States, United Kingdom, Belgium, Canada, France, Germany, and Italy. Not a single site was located in sub-Saharan Africa, where SCD affects the most people and where the disease burden is greatest. This is not an oversight but a structural consequence of the requirements for GMP manufacturing infrastructure, regulatory oversight capacity, and clinical expertise that trial conduct demands — requirements that systematically exclude the populations with the greatest need. When regulators in high-income countries approve Casgevy on the basis of data from 44 patients in the US and Europe, they are making a decision whose evidentiary foundation is geographically and demographically narrow. Whether the therapy performs equivalently in patients with different genetic backgrounds (SCD genotypes vary across populations), different nutritional states, different co-morbidity profiles, or different healthcare system contexts is an empirical question that the current evidence cannot answer.</p>
+<p>But the protocol shapes more than who participates; it also configures what the trial is able to see. Stefan Timmermans and Marc Berg have argued that medical protocols function as ‘sociotechnical artefacts’ — not neutral descriptions of scientific procedure but performative texts that produce the reality they claim merely to measure <span class="citation" data-cites="timmermans2003gold">(<a href="references.html#ref-timmermans2003gold" role="doc-biblioref">Timmermans &amp; Berg, 2003</a>)</span>. The CLIMB-121 protocol specified eligibility criteria (patients aged 12–35 with at least two severe VOCs per year), endpoint definitions (freedom from severe VOCs for ≥12 consecutive months), and a statistical analysis plan that together determined who counted as a patient, what counted as an outcome, and how uncertainty was managed. The age restriction excluded younger children — who may benefit most from early intervention — and older adults whose accumulated organ damage might confound efficacy assessment. The endpoint definition made VOC frequency the yardstick of success, rendering invisible other dimensions of SCD burden (chronic pain, fatigue, psychological distress) that PROMs only partially capture. The age expansion to children 5–11, now underway, illustrates how protocol boundaries evolve — but only through additional trials, additional regulatory submissions, and additional years of delay.</p>
+<p>Reading CLIMB-121 through both Petryna and Timmermans/Berg simultaneously reveals the protocol as a single artefact doing double work: it produces a geographically and demographically constrained evidence base (Petryna’s point) <em>and</em> it defines what counts as a therapeutic success within that constrained population (Timmermans and Berg’s point). The two operations are not independent — the choice of endpoints is shaped by the populations available for enrolment, and the geographic concentration of sites is reinforced by the clinical infrastructure required to measure those endpoints. The result is a feedback loop in which clinical trials generate evidence that is simultaneously robust within its parameters and silent about everything those parameters exclude.</p>
+<p>For the PREDI-LYNCH project and similar surveillance-focused initiatives, the Timmermans and Berg framework illuminates a different facet of protocol politics: the definitions of ‘early detection’ and ‘screening success’ embed assumptions about which cancers are worth detecting (those for which effective treatment exists), at what stage (the lead-time bias problem), and in which populations (carriers already under surveillance versus those yet to be identified). The EARLYSCAN cluster’s effort to harmonise endpoint definitions across PREDI-LYNCH, DISARM, and SHIELD is, from this perspective, not merely a technical standardisation exercise but a negotiation over what counts as evidence in the governance of hereditary cancer.</p>
+<p>As CRISPR therapies move from approval in high-income settings toward the aspiration of global access, attending to these structural features of trial design is not an academic luxury but a practical necessity — one that determines whose diseases are studied, whose outcomes are measured, and whose evidence shapes regulatory decisions.</p>
+</section>
+<section id="chapter-summary" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">5.8</span> Chapter summary</h2>
+<p>The clinical pipeline for CRISPR therapies divides along two delivery strategies — ex vivo and in vivo — each with distinct manufacturing, delivery, and regulatory characteristics. The ex vivo approach, epitomised by Casgevy, has achieved regulatory approval and demonstrated durable clinical benefit, but is constrained by complex patient-specific manufacturing, myeloablative conditioning, and a cost structure that limits global access. The in vivo approach, advancing through programmes such as VERVE-102 and NTLA-2001, offers a simpler clinical workflow but faces delivery challenges that have required iterative engineering — as demonstrated by the pivot from VERVE-101 to VERVE-102’s improved GalNAc-LNP platform.</p>
+<p>Clinical trial design for gene editing therapies is dominated by single-arm studies in rare disease populations, with Bayesian and adaptive approaches emerging as tools for maximising information from small samples. Surrogate endpoints and long-term follow-up requirements reflect the permanent nature of genomic edits. Patient-reported outcomes are gaining recognition as essential complements to biomarker-centric endpoints.</p>
+<p>Regulatory approval has been achieved across multiple jurisdictions, with the MHRA, FDA, and EMA each bringing distinct regulatory philosophies to the evaluation of CRISPR therapies. The gap between approval and access — mediated by reimbursement negotiations, manufacturing capacity, and healthcare infrastructure — remains the primary bottleneck for patient benefit.</p>
+<p>The Sociotechnical Interlude has argued that clinical trials are sociotechnical systems that encode geographic, demographic, and epistemic biases which shape whose diseases are studied, whose outcomes are measured, and whose evidence counts. As the field moves toward global deployment, these structural features demand explicit attention.</p>
+<p>Chapter 6 examines how AI is integrated across the therapeutic pipeline — from target identification through biomarker discovery, patient stratification, and trial optimisation — with specific attention to the PREDI-LYNCH and LATE-AYA projects.</p>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-bellinger2023_verve101" class="csl-entry" role="listitem">
+Bellinger, A. M. et al. (2023). Safety and pharmacodynamic effects of <span>VERVE</span>-101, an investigational <span>DNA</span> base editing medicine designed to durably inactivate the <span>PCSK9</span> gene and lower <span>LDL</span> cholesterol – interim results of the <span>Phase 1b Heart-1</span> trial. <em>Circulation</em>. <a href="https://www.vervetx.com/sites/default/files/2023-11/Verve_AHA_2023_LBS_for%20website.pdf">https://www.vervetx.com/sites/default/files/2023-11/Verve_AHA_2023_LBS_for%20website.pdf</a>
+</div>
+<div id="ref-duan_systemic_2018" class="csl-entry" role="listitem">
+Duan, D. (2018). Systemic AAV micro-dystrophin gene therapy for duchenne muscular dystrophy. <em>Molecular Therapy</em>, <em>26</em>(10), 2337–2356. <a href="https://doi.org/10.1016/j.ymthe.2018.07.011">https://doi.org/10.1016/j.ymthe.2018.07.011</a>
+</div>
+<div id="ref-gillmore2021_ntla" class="csl-entry" role="listitem">
+Gillmore, J. D., Gane, E., Taubel, J., Kao, J., Fontana, M., Maitland, M. L., et al. (2021). <span>CRISPR</span>-<span>Cas9</span> in vivo gene editing for transthyretin amyloidosis. <em>New England Journal of Medicine</em>, <em>385</em>(6), 493–502. <a href="https://doi.org/10.1056/NEJMoa2107454">https://doi.org/10.1056/NEJMoa2107454</a>
+</div>
+<div id="ref-petryna2009when" class="csl-entry" role="listitem">
+Petryna, A. (2009). <em>When experiments travel: Clinical trials and the global search for human subjects</em>. Princeton University Press.
+</div>
+<div id="ref-timmermans2003gold" class="csl-entry" role="listitem">
+Timmermans, S., &amp; Berg, M. (2003). <em>The gold standard: The challenge of evidence-based medicine and standardization in health care</em>. Temple University Press.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./04-rare-diseases.html" class="pagination-link" aria-label="Genetic Rare Diseases as Therapeutic Targets for CRISPR-AI">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Genetic Rare Diseases as Therapeutic Targets for CRISPR-AI</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./06-ai-pipeline.html" class="pagination-link" aria-label="AI Across the Therapeutic Pipeline">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">AI Across the Therapeutic Pipeline</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># The Clinical Pipeline: From Bench to Bedside {#sec-clinical-pipeline}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup-ch05</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/theme_monograph.R"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction: translating molecular precision into therapeutic reality</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>The preceding chapter examined the diseases that CRISPR-AI systems aim to treat. What follows is an account of how those therapies reach patients — and why that process differs structurally from conventional drug development in ways that reshape access, evidence generation, and regulatory governance. The clinical pipeline for genome editing therapies is not simply a faster or more precise version of the pharmaceutical pipeline: it is a different kind of pipeline, with its own manufacturing logic, evidentiary challenges, and regulatory accommodations.</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>The field currently divides along two delivery strategies. The *ex vivo* approach, whose leading example is Casgevy (exagamglogene autotemcel), requires the extraction, editing, and reinfusion of a patient's own cells — a manufacturing process that is patient-specific by necessity, labour-intensive, and geographically constrained. The *in vivo* approach, advanced by Intellia's NTLA-2001 for transthyretin amyloidosis and Verve Therapeutics' VERVE-102 for familial hypercholesterolaemia, delivers editing components directly into the body — a simpler clinical workflow but one that introduces distinct challenges of biodistribution, immunogenicity, and off-target editing in non-target tissues. Each strategy has generated its own clinical evidence, confronted its own regulatory questions, and shaped its own manufacturing supply chain.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>The discussion moves from manufacturing through trial design, regulatory approval, and post-marketing surveillance, with particular attention to the points where computational tools — the AI systems of Part I — are deployed, and to the structural features that distinguish genome editing from conventional therapeutics.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ex vivo gene editing: the current clinical frontier</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">### The Casgevy manufacturing workflow</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>The production of Casgevy for a single patient involves a sequence of steps that, taken together, constitute one of the most complex manufacturing processes in the history of therapeutics. Understanding this workflow matters not only for appreciating the clinical achievement but also for grasping why each step compounds the scalability constraints that limit Casgevy's global impact.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>The first bottleneck is cell collection. The patient receives plerixafor (a CXCR4 antagonist) to mobilise CD34+ haematopoietic stem and progenitor cells (HSPCs) from the bone marrow into the peripheral blood, followed by leukapheresis. Mobilisation efficiency varies across patients — particularly in SCD, where repeated vaso-occlusive crises may have damaged the bone marrow microenvironment — and insufficient yield at this stage can delay or derail the entire process. The collected product must then be shipped under controlled conditions to a centralised GMP manufacturing facility operated by Lonza, with a third facility approved as of late 2025 to meet growing demand. This shipping step alone introduces a logistical dependency on cold-chain infrastructure and international courier networks that is absent from conventional oral or injectable therapies.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>At the manufacturing site, CD34+ cells are enriched by immunomagnetic selection, then electroporated with a ribonucleoprotein (RNP) complex comprising SpCas9 protein and a synthetic single guide RNA targeting the erythroid-specific enhancer of *BCL11A*. The electroporation parameters — voltage, pulse duration, RNP concentration, cell density — have been optimised through extensive process development, and the specific conditions are proprietary. After editing, cells are cryopreserved and subjected to a battery of quality control assessments: viability, CD34+ purity, sterility, endotoxin levels, and — most consequentially for release decisions — on-target editing efficiency (measured by next-generation sequencing of the target locus) and off-target assessment. Because each patient's cells respond differently to electroporation, editing efficiency is unavoidably variable: a manufacturing process that produces 85% allelic disruption in one patient may achieve only 60% in the next, with direct implications for engraftment kinetics and clinical response.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>The edited cells are shipped back to the treatment centre, where the patient undergoes myeloablative conditioning with pharmacokinetically dose-adjusted busulfan over four days. This step — the destruction of the patient's existing bone marrow — is necessary to create 'space' for the edited cells to engraft, but it carries significant toxicity: weeks of pancytopenia with attendant risks of infection, bleeding, and organ damage. Patients require prolonged hospitalisation during the engraftment period, typically 4–6 weeks. After discharge, long-term follow-up continues for 15 years under the terms of the regulatory approval.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>The entire process, from first cell collection to infusion, takes approximately 6–9 months. As of late 2025, 165 patients had undergone first cell collection, 39 had been infused, and more than 45 authorised treatment centres had been activated globally — numbers that, while growing, remain a tiny fraction of the eligible patient population. The manufacturing workflow is, in effect, a personalised therapy pipeline that operates at artisanal scale within a regulatory framework designed for industrial production.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>::: {.column-margin style="font-size: 0.88em;"}</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>As of late 2025, the gap between eligible and treated patients is stark: an estimated 100,000 individuals with severe SCD or TDT could benefit from Casgevy in the US and EU alone, but fewer than 40 had been infused. The ratio — approximately 1 in 2,500 — illustrates the manufacturing bottleneck as a structural constraint, not a transient one.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">### Conditioning regimens and the burden of treatment</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>The myeloablative conditioning step is arguably the single greatest barrier to broader adoption of ex vivo CRISPR therapies. Busulfan conditioning is associated with acute toxicities (mucositis, hepatic sinusoidal obstruction syndrome, seizures) and long-term risks (secondary malignancies, gonadal failure). For SCD patients — many of whom are children or young adults — the reproductive implications are particularly significant: busulfan is gonadotoxic, and fertility preservation must be offered before conditioning, adding complexity, cost, and emotional burden to an already demanding process.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>Research into reduced-intensity and non-myeloablative conditioning regimens is active but preliminary. Antibody-based conditioning — using antibodies against CD117 (c-Kit) to selectively deplete HSPCs without broad myeloablation — has shown promise in preclinical models and early clinical testing for non-CRISPR gene therapies, but has not yet been validated in the context of CRISPR-edited cell products. If successful, antibody conditioning could dramatically reduce the toxicity, hospitalisation duration, and infrastructure requirements of ex vivo editing, potentially bringing these therapies within reach of healthcare systems in low- and middle-income countries.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="fu">### Beyond Casgevy: other ex vivo programmes</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Casgevy is not the only ex vivo CRISPR therapy in clinical development, though it is the only one with regulatory approval as of early 2026. Several programmes are advancing through clinical trials with distinct editing strategies. CRISPR-based engineering of chimeric antigen receptor T cells (CAR-T) uses multiplex editing to simultaneously insert the CAR transgene, disrupt the endogenous T cell receptor (to enable allogeneic 'off-the-shelf' products), and knock out immune checkpoint genes (to enhance persistence and anti-tumour activity). These allogeneic CAR-T products — if successfully developed — would eliminate the patient-specific manufacturing bottleneck of autologous approaches, though they introduce the challenge of graft-versus-host disease prevention.</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>iPSC-derived cell therapies push this logic further: patient fibroblasts or blood cells are reprogrammed to induced pluripotent stem cells, edited at the iPSC stage, differentiated to the desired cell type (e.g., pancreatic beta cells, cardiomyocytes, retinal pigment epithelial cells), and administered to the patient. This approach decouples the editing event from the patient timeline, allowing the generation of banked, quality-controlled edited cell lines that can serve multiple patients — a manufacturing model that differs in kind, not merely in efficiency, from autologous approaches.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## In vivo gene editing: emerging clinical programmes</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="fu">### VERVE-101 and VERVE-102: base editing for cardiovascular disease</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>The Verve Therapeutics programme targeting *PCSK9* — a gene whose inactivation potently reduces LDL cholesterol — is the most advanced in vivo base editing clinical programme and illustrates both the potential and the iterative nature of clinical translation.</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>VERVE-101, the first-generation product, consists of an adenine base editor (ABE) mRNA and a guide RNA targeting *PCSK9*, encapsulated in an engineered LNP for intravenous delivery to hepatocytes. The Heart-1 Phase 1b trial, initiated in 2022, enrolled 10 patients with heterozygous familial hypercholesterolaemia (HeFH) and established atherosclerotic cardiovascular disease. First-in-human data presented at AHA 2023 demonstrated proof of concept: at the 0.45 mg/kg dose, two patients showed PCSK9 protein reductions of 59% and 84% and LDL-C reductions of 39% and 48%, respectively. The single patient treated at 0.6 mg/kg achieved a 55% LDL-C reduction sustained to at least 180 days <span class="co">[</span><span class="ot">@bellinger2023_verve101</span><span class="co">]</span>.</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>However, the Heart-1 trial also revealed a safety signal in one participant who developed elevated liver transaminases and low platelet counts, effects attributed to the LNP delivery vehicle rather than the base editing payload. In April 2024, Verve paused Heart-1 enrolment and pivoted to VERVE-102, a second-generation product that uses a proprietary GalNAc-conjugated LNP (GalNAc-LNP) designed to improve liver targeting via the asialoglycoprotein receptor (ASGPR) while reducing uptake by non-hepatic tissues — particularly splenic macrophages, which are thought to mediate the platelet reduction observed with first-generation LNPs.</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>The Heart-2 Phase 1b trial of VERVE-102, initiated in May 2024, has shown markedly improved results. Initial data reported in April 2025 from 14 patients across three dose cohorts (0.3, 0.45, and 0.6 mg/kg) demonstrated dose-dependent LDL-C reductions, with a mean reduction of 53% and a maximum of 69% in the highest dose cohort. Notably, no treatment-related serious adverse events, clinically significant liver enzyme elevations, or platelet reductions were observed at any dose level — a safety profile that Verve describes as 'potentially best-in-class' for LNP-delivered therapeutics. Meanwhile, durability data from the original VERVE-101 Heart-1 trial show sustained base editing effects at nearly two years of follow-up, supporting the mechanistic premise that a single DNA base change produces permanent gene inactivation.</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>::: {.column-margin style="font-size: 0.88em;"}</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>The VERVE-101 → VERVE-102 pivot illustrates a design principle with broad implications: when editing payload and delivery vehicle are engineered as separable modules, safety signals attributable to the vehicle can be resolved without redesigning the therapeutic mechanism. This modularity — discussed in Chapter 3 as an optimisation target — becomes a regulatory advantage, since the base-editing component retains its existing safety and efficacy data.</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>The VERVE programme is instructive for the broader field in several respects. First, it demonstrates that delivery vehicle safety, not editing payload safety, may be the dose-limiting factor for in vivo CRISPR therapies — a finding that redirects attention to the LNP engineering and optimisation tools discussed in Chapter 3. Second, the rapid pivot from VERVE-101 to VERVE-102 illustrates the modularity of the platform: the same base editor and guide RNA can be repackaged in a new delivery vehicle without redesigning the editing components. Third, the programme's expansion into additional targets — VERVE-201 (targeting *ANGPTL3* for triglycerides) and VERVE-301 (targeting *LPA* for lipoprotein(a)) — suggests that in vivo base editing of hepatic genes may become a generalised therapeutic modality for cardiometabolic disease, not a one-off proof of concept.</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="fu">### Intellia NTLA-2001 and liver-targeted nuclease editing</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>The Intellia programme for transthyretin amyloidosis, discussed in Chapter 4 in terms of its disease rationale, is equally significant as a pipeline milestone. NTLA-2001 uses SpCas9 mRNA and a synthetic guide RNA delivered via LNP to disrupt the *TTR* gene in hepatocytes. The distinction from VERVE is the editing modality: nuclease-mediated gene disruption (producing indels that knock out the gene) rather than base editing (producing a precise single-nucleotide change). Both achieve the same functional outcome — permanent reduction of a disease-causing protein — but through different molecular mechanisms with different off-target risk profiles.</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>Phase 1 data demonstrated serum TTR knockdown of up to 93% after a single infusion, with durability beyond two years and clinical improvements in neuropathy scores <span class="co">[</span><span class="ot">@gillmore2021_ntla</span><span class="co">]</span>. The Phase 2/3 programme is now advancing toward potential registration, and if approved, NTLA-2001 would become the first in vivo CRISPR nuclease therapy to receive regulatory authorisation — a distinct milestone from Casgevy (ex vivo) and from VERVE (base editing, not yet in registrational trials).</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="fu">### Retinal and other tissue-targeted programmes</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>In vivo editing of non-hepatic tissues faces delivery challenges of a different order. The liver is uniquely accessible to LNPs because of its fenestrated vasculature and receptor-mediated uptake mechanisms; other tissues lack these features. Retinal editing — illustrated most clearly by the discontinued EDIT-101 programme for LCA10 — used subretinal injection of AAV5 to achieve local delivery, an approach that is surgically invasive but anatomically constrained, limiting systemic exposure. Ongoing programmes for retinal dystrophies use similar local delivery strategies with updated editing payloads.</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>Muscle-targeted in vivo editing for Duchenne muscular dystrophy remains the most formidable delivery challenge in the field, as noted in Chapter 4. Systemic AAV delivery at the doses required for whole-body muscle transduction has been associated with serious adverse events, including hepatotoxicity and thrombotic microangiopathy, in non-CRISPR gene therapy trials <span class="co">[</span><span class="ot">@duan_systemic_2018</span><span class="co">]</span>. The development of AI-engineered AAV capsids with enhanced muscle tropism and reduced liver sequestration — directly leveraging the ML-guided capsid engineering described in Chapter 3 — is a prerequisite for clinical translation of muscle-targeted editing.</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-clinical-pipeline-map</span></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "CRISPR-based clinical programmes by delivery paradigm, therapeutic area, and development stage (as of early 2026). Horizontal position indicates most advanced clinical phase; vertical grouping distinguishes ex vivo (top) from in vivo (bottom) approaches. Colour indicates editing modality. The dashed line separates approved therapies from those in clinical development."</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>programmes <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Casgevy (SCD)"</span>, <span class="st">"Casgevy (TDT)"</span>, <span class="st">"CTX001 (CAR-T)"</span>,</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>           <span class="st">"NTLA-2001 (ATTR)"</span>, <span class="st">"VERVE-102 (PCSK9)"</span>, <span class="st">"VERVE-201 (ANGPTL3)"</span>,</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>           <span class="st">"EDIT-101 (LCA10)"</span>, <span class="st">"In vivo DMD (preclinical)"</span>),</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>  <span class="at">paradigm =</span> <span class="fu">c</span>(<span class="st">"Ex vivo"</span>, <span class="st">"Ex vivo"</span>, <span class="st">"Ex vivo"</span>,</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>               <span class="st">"In vivo"</span>, <span class="st">"In vivo"</span>, <span class="st">"In vivo"</span>,</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>               <span class="st">"In vivo"</span>, <span class="st">"In vivo"</span>),</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>  <span class="at">phase =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="fl">3.5</span>, <span class="fl">1.5</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>  <span class="at">modality =</span> <span class="fu">c</span>(<span class="st">"Nuclease (disruption)"</span>, <span class="st">"Nuclease (disruption)"</span>, <span class="st">"Nuclease (multiplex)"</span>,</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Nuclease (disruption)"</span>, <span class="st">"Base editing"</span>, <span class="st">"Base editing"</span>,</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Nuclease (excision)"</span>, <span class="st">"Nuclease (exon skip)"</span>),</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>phase_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Preclinical"</span>, <span class="st">"Phase I"</span>, <span class="st">"Phase I/II"</span>, <span class="st">"Phase II"</span>, <span class="st">"Phase III"</span>, <span class="st">"Approved"</span>)</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(programmes, <span class="fu">aes</span>(<span class="at">x =</span> phase, <span class="at">y =</span> <span class="fu">reorder</span>(name, phase),</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>                       <span class="at">colour =</span> modality, <span class="at">shape =</span> paradigm)) <span class="sc">+</span></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">4.5</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">colour =</span> <span class="st">"grey60"</span>) <span class="sc">+</span></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.85</span>) <span class="sc">+</span></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">labels =</span> phase_labels, <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.3</span>, <span class="fl">5.5</span>)) <span class="sc">+</span></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Ex vivo"</span> <span class="ot">=</span> <span class="dv">16</span>, <span class="st">"In vivo"</span> <span class="ot">=</span> <span class="dv">17</span>), <span class="at">name =</span> <span class="st">"Paradigm"</span>) <span class="sc">+</span></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Nuclease (disruption)"</span> <span class="ot">=</span> <span class="st">"#2166AC"</span>,</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Nuclease (multiplex)"</span> <span class="ot">=</span> <span class="st">"#4393C3"</span>,</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Nuclease (excision)"</span> <span class="ot">=</span> <span class="st">"#92C5DE"</span>,</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Nuclease (exon skip)"</span> <span class="ot">=</span> <span class="st">"#D1E5F0"</span>,</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Base editing"</span> <span class="ot">=</span> <span class="st">"#4DAF4A"</span>),</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Editing modality"</span></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">4.7</span>, <span class="at">y =</span> <span class="fl">0.5</span>, <span class="at">label =</span> <span class="st">"Approved →"</span>, <span class="at">colour =</span> <span class="st">"grey50"</span>,</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>           <span class="at">size =</span> <span class="dv">3</span>, <span class="at">hjust =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Development stage"</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_monograph</span>() <span class="sc">+</span></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"right"</span>)</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="fu">## Clinical trial design for gene editing therapies</span></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a><span class="fu">### The single-arm trial and the evidentiary challenge</span></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>Virtually all CRISPR clinical trials to date have used single-arm, open-label designs in which all enrolled patients receive the investigational therapy and outcomes are compared to the patient's own pre-treatment history or to external comparators derived from natural history studies or registry data. This design is standard for rare diseases where the patient population is small, the disease course is well characterised, and randomisation to a no-treatment arm would be ethically untenable given the severity of the condition and the absence of alternative therapies.</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>The evidential limitations of single-arm trials are well understood: without concurrent controls, observed improvements cannot be causally attributed to the intervention with the same confidence as in a randomised trial. Regression to the mean, changes in concomitant care, patient selection effects, and temporal trends can all confound the estimate of treatment effect. For Casgevy, the FDA and EMA accepted the single-arm design on the basis that the primary endpoint (freedom from severe VOCs for ≥12 consecutive months) was sufficiently objective, the natural history of untreated SCD was well documented, and the magnitude of the observed effect (97–100% of patients achieving the endpoint) was implausibly attributable to confounding.</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>The single-arm approach becomes more problematic as CRISPR therapies move into conditions where the treatment effect is smaller, the endpoint is less binary, or the natural history is more variable. For in vivo base editing of *PCSK9*, for example, the relevant endpoint is a continuous biomarker (LDL-C level) for which there are effective existing therapies (statins, ezetimibe, PCSK9 monoclonal antibodies, inclisiran). Verve has announced plans for a Phase 2 randomised, controlled trial of VERVE-102 — a design that reflects both the availability of active comparators and the regulatory expectation of comparative evidence for conditions that are not ultra-rare.</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="fu">### Adaptive and Bayesian trial designs</span></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>The small patient populations characteristic of rare disease gene therapy programmes create a tension between the need for rigorous evidence and the practical impossibility of enrolling large trials. Adaptive trial designs — in which the trial's sample size, randomisation ratio, dose levels, or inclusion criteria can be modified during the trial on the basis of interim data — offer a partial resolution. Bayesian adaptive designs are particularly relevant: they use prior information (from preclinical data, earlier cohorts, or external data sources) to construct a probabilistic model of the treatment effect that is updated as patient data accumulate, allowing the trial to reach a decision (stop for efficacy, stop for futility, or continue) with fewer patients than a fixed-sample frequentist design would require.</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>The application of Bayesian methods to gene therapy trials is growing but remains non-standard. Regulatory agencies — particularly the FDA, through its 2019 guidance on adaptive designs, and the EMA, through its reflection paper on methodological issues — have signalled openness to these approaches, but sponsors report that pre-specification of the statistical framework, the handling of multiplicity, and the choice of informative priors remain areas of regulatory uncertainty. Combining AI-driven patient stratification (discussed in Chapter 6) with Bayesian trial designs is a natural next step: ML models trained on multi-omic data could identify patient subgroups most likely to respond, enriching the trial population and increasing statistical power without increasing sample size.</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="fu">### Surrogate endpoints and long-term outcomes</span></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>Gene editing therapies aim for permanent, one-time correction of the underlying genetic defect — a goal that, by definition, cannot be fully evaluated within the timeframe of a registration trial. The regulatory framework handles this through a combination of surrogate endpoints (biomarkers that predict long-term clinical outcomes) and post-marketing commitments (long-term follow-up studies that monitor durability and late-onset adverse events).</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>For Casgevy, the primary surrogate endpoint was HbF level and allelic editing efficiency, with VOC-free survival as the primary clinical endpoint. The relationship between HbF and clinical outcomes in SCD is well established — epidemiological and clinical data spanning decades demonstrate that higher HbF levels are associated with fewer VOCs, reduced organ damage, and longer survival — making HbF an acceptable surrogate under FDA and EMA criteria.</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>For NTLA-2001, serum TTR protein level serves as the surrogate, with neuropathy and cardiac biomarker improvements as clinical endpoints. For VERVE-102, blood LDL-C serves as the surrogate, with major adverse cardiovascular events (MACE) as the ultimate clinical endpoint — though a MACE-driven trial would require thousands of patients and years of follow-up, making it impractical as a registration endpoint.</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>The durability question is paramount. If editing is truly permanent — and the 5+ year follow-up data for Casgevy and the 2-year data for VERVE-101 suggest that it is — then the benefit–risk calculation differs in kind from that of chronic therapies. A single treatment with transient procedure-related toxicity may be acceptable even if that toxicity is substantial, provided the long-term benefit is durable. But the possibility of late-onset adverse events — genotoxicity from off-target editing, insertional mutagenesis (for AAV-delivered therapies), immune responses to persisting edited cell populations, or loss of editing over time due to clonal dynamics in the haematopoietic system — can only be assessed through extended follow-up. The 15-year post-marketing follow-up required for Casgevy reflects this concern.</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="fu">### Patient-reported outcomes</span></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>A dimension of clinical trial design that has historically received insufficient attention in gene therapy — and that connects directly to the STS themes of this monograph — is the systematic collection of patient-reported outcome measures (PROMs). For SCD, the CLIMB-121 trial included multiple PROM instruments: the Adult Sickle Cell Quality of Life Measurement Information System (ASCQ-Me), the EQ-5D, the PedsQL, and a weekly pain scale. Data from these instruments demonstrate clinically meaningful improvements across emotional impact, pain, social functioning, and stiffness domains — evidence that complements the biomarker and clinical endpoints with the patient's own assessment of therapeutic benefit.</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>The inclusion of PROMs is not merely a methodological refinement but a political act in the sense developed by the STS literature: it makes visible a dimension of disease impact (subjective quality of life) that is systematically undervalued by biomarker-centric trial designs. For conditions like Lynch syndrome, where surveillance programmes impose ongoing burdens of anxiety, invasive procedures, and reproductive decisions, PROMs are essential for evaluating whether AI-driven liquid biopsy approaches (such as those under development in PREDI-LYNCH) actually improve the lived experience of carriers — a question that biomarker sensitivity and specificity alone cannot answer.</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a><span class="fu">## Manufacturing and scalability</span></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a><span class="fu">### The autologous manufacturing bottleneck</span></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>The patient-specific nature of autologous ex vivo editing creates a manufacturing model that differs in structure, not merely in scale, from conventional pharmaceuticals. Each Casgevy product is a batch of one: manufactured for a single patient, with patient-specific starting material, patient-specific editing efficiency, and patient-specific quality control data. This model does not benefit from the economies of scale that drive down cost in mass-produced therapies, and it creates logistical complexity in coordinating the patient's treatment timeline with the manufacturing schedule (including cell collection, shipping, editing, cryopreservation, quality testing, and return shipment).</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>Vertex's response has been to centralise manufacturing with Lonza, securing approval for a third facility as of late 2025, and to activate a global network of authorised treatment centres. But the fundamental constraint remains: each patient requires a dedicated manufacturing slot, the turnaround time is measured in months, and the process is vulnerable to batch failures at any stage (inadequate cell collection, low editing efficiency, contamination, viability loss during cryopreservation).</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="fu">### Allogeneic and off-the-shelf approaches</span></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>Allogeneic gene-edited cell therapies — manufactured from healthy donor cells and banked as standardised products available for immediate administration — offer the most direct solution to the autologous bottleneck. For CAR-T applications, CRISPR is used to knock out genes that would cause graft-versus-host disease (TCR alpha chain) and host-versus-graft rejection (beta-2-microglobulin, CD52), creating 'universal' donor cells compatible with any recipient.</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>The manufacturing advantages of allogeneic products are substantial: a single donor collection can generate hundreds or thousands of doses, quality control can be performed on the entire batch rather than on individual patient products, and the therapy can be available 'off the shelf' without a weeks-long manufacturing delay. The clinical challenge is that allogeneic cells, even with extensive editing, are not perfectly immunologically inert, and their persistence in the host may be limited without lymphodepleting conditioning. Multiple clinical programmes are testing allogeneic CRISPR-edited CAR-T cells, with mixed results — some showing encouraging initial responses but limited durability compared to autologous products.</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a><span class="fu">### Cost of goods and the pricing equation</span></span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>The cost of goods sold (COGS) for autologous gene-edited cell therapies is estimated at $50,000–100,000 per patient, driven by the cost of GMP-grade reagents (Cas9 protein, synthetic guide RNA, electroporation supplies), the labour-intensive manufacturing process, quality control testing, and cryogenic shipping logistics. This COGS, while high by pharmaceutical standards, accounts for only a small fraction of the list price ($2.2 million for Casgevy), with the majority of the price reflecting development costs, regulatory costs, profit margin, and — most tellingly — the small denominator over which these fixed costs are amortised.</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>For in vivo therapies, the COGS picture is different: LNP-encapsulated mRNA/gRNA products are manufactured using established nucleic acid synthesis and LNP formulation processes that are more amenable to scale-up, and the cost per dose is expected to decrease as manufacturing matures. However, the development costs remain high (Verve Therapeutics reported quarterly operating losses exceeding $50 million in early 2025), and the pricing of in vivo gene editing therapies has not yet been tested by market entry.</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a><span class="fu">## Regulatory approval milestones</span></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a><span class="fu">### A cross-jurisdictional comparison</span></span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>The regulatory approval of Casgevy provides a natural experiment in how different jurisdictions respond to the same therapeutic innovation — and reveals both convergence and divergence in regulatory philosophy.</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>The UK's Medicines and Healthcare products Regulatory Agency (MHRA) granted conditional approval in November 2023, making Casgevy the first CRISPR therapy approved anywhere in the world. The MHRA's speed reflected both its Innovative Licensing and Access Pathway (ILAP) — a dedicated route for therapies addressing unmet medical needs — and the UK's post-Brexit incentive to establish itself as a competitive destination for advanced therapy development. The approval was for patients aged 12 and older with SCD characterised by recurrent VOCs, or TDT, where allogeneic HSCT is appropriate but no matched related donor is available.</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>The US FDA followed in December 2023 with approval for SCD under its standard review process (following Regenerative Medicine Advanced Therapy designation, Priority Review, Orphan Drug Designation, and Fast Track Designation), and in January 2024 for TDT. The FDA approval was notable for its explicit acknowledgement of the single-arm trial design and its reliance on historical controls, as well as its requirement for 15-year post-marketing follow-up to monitor long-term safety, including the theoretical risk of off-target editing and malignancy.</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>The European Medicines Agency (EMA) granted conditional marketing authorisation through its Committee for Advanced Therapies (CAT), classifying Casgevy as a gene therapy medicinal product — a subcategory of advanced therapy medicinal products (ATMPs) that triggers specific regulatory requirements including GMP manufacturing to ATMP standards, environmental risk assessment, and enhanced pharmacovigilance. The EMA conditional approval carries annual renewal requirements tied to the submission of additional data on long-term efficacy and safety.</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>Approvals in Saudi Arabia, Bahrain, Canada, Switzerland, and the United Arab Emirates followed in 2024, and reimbursement negotiations — the decisive step between regulatory approval and actual patient access — have progressed at varying speeds. NICE approved Casgevy for SCD in England in May 2025 following an outcomes-based managed access agreement; discussions for TDT are ongoing. The pattern is consistent across jurisdictions: regulatory approval is achieved relatively quickly (12–18 months from submission to decision), but reimbursement and access negotiations add months to years of additional delay.</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-casgevy-regulatory</span></span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Cross-jurisdictional comparison of Casgevy regulatory approvals. All three major agencies approved the therapy within 14 months, but diverge in product classification, conditional requirements, and reimbursement status — revealing that regulatory convergence on safety and efficacy coexists with structural divergence on the conditions of access."</span></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>casgevy_reg <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>Jurisdiction, <span class="sc">~</span>Agency, <span class="sc">~</span>Date, <span class="sc">~</span>Pathway, <span class="sc">~</span>Classification, <span class="sc">~</span>Conditions, <span class="sc">~</span><span class="st">`</span><span class="at">Post-marketing</span><span class="st">`</span>, <span class="sc">~</span>Reimbursement,</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>  <span class="st">"United Kingdom"</span>, <span class="st">"MHRA"</span>, <span class="st">"Nov 2023"</span>, <span class="st">"ILAP (conditional)"</span>, <span class="st">"ATMP — gene therapy"</span>, <span class="st">"Conditional approval; annual renewal"</span>, <span class="st">"15-year follow-up"</span>, <span class="st">"NICE MAA for SCD (May 2025); TDT pending"</span>,</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>  <span class="st">"United States"</span>, <span class="st">"FDA"</span>, <span class="st">"Dec 2023 (SCD)</span><span class="sc">\n</span><span class="st">Jan 2024 (TDT)"</span>, <span class="st">"RMAT + Priority Review + Orphan + Fast Track"</span>, <span class="st">"Biologic (BLA)"</span>, <span class="st">"Standard approval; PMR for off-target and malignancy monitoring"</span>, <span class="st">"15-year follow-up"</span>, <span class="st">"Commercial launch; insurer negotiations ongoing"</span>,</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>  <span class="st">"European Union"</span>, <span class="st">"EMA (CAT)"</span>, <span class="st">"2024"</span>, <span class="st">"Centralised (conditional MA)"</span>, <span class="st">"ATMP — gene therapy medicinal product"</span>, <span class="st">"Conditional MA; annual renewal tied to data submission"</span>, <span class="st">"15-year follow-up; enhanced pharmacovigilance"</span>, <span class="st">"Member State–level; variable progress"</span></span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>casgevy_reg <span class="sc">|&gt;</span></span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">md</span>(<span class="st">"**Casgevy (exagamglogene autotemcel): regulatory approval comparison**"</span>),</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Three major jurisdictions, 2023–2024"</span></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    <span class="at">Jurisdiction =</span> <span class="st">"Jurisdiction"</span>,</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>    <span class="at">Agency =</span> <span class="st">"Agency"</span>,</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>    <span class="at">Date =</span> <span class="st">"Approval date"</span>,</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>    <span class="at">Pathway =</span> <span class="st">"Regulatory pathway"</span>,</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    <span class="at">Classification =</span> <span class="st">"Product classification"</span>,</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    <span class="at">Conditions =</span> <span class="st">"Approval conditions"</span>,</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Post-marketing</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"Post-marketing requirements"</span>,</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    <span class="at">Reimbursement =</span> <span class="st">"Reimbursement status (as of early 2026)"</span></span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_width</span>(</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    Jurisdiction <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">110</span>),</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>    Agency <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">80</span>),</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    Date <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">100</span>),</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    Pathway <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">140</span>),</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    Classification <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">130</span>),</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    Conditions <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">150</span>),</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Post-marketing</span><span class="st">`</span> <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">130</span>),</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    Reimbursement <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">170</span>)</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="st">"MAA = managed access agreement; RMAT = Regenerative Medicine Advanced Therapy; PMR = post-marketing requirement; MA = marketing authorisation."</span>,</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="at">groups =</span> <span class="st">"subtitle"</span>)</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)),</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> Jurisdiction)</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_row_striping</span>()</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a><span class="fu">### The ATMP classification and its consequences</span></span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>The regulatory classification of CRISPR-based therapies as ATMPs (in the EU) or as biologics requiring Biologics License Application (BLA) review (in the US) has specific consequences for the development pathway. ATMP classification triggers requirements for GMP manufacturing that are more stringent in some respects than for conventional biologics — for example, the requirement for dedicated manufacturing suites, the need for potency assays that measure on-target editing efficiency, and environmental release considerations that, while largely theoretical for ex vivo therapies (the edited cells are contained within the patient), become substantive for in vivo therapies where LNPs or AAV vectors are administered systemically.</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>The EMA's hospital exemption pathway — which allows the preparation and use of ATMPs within a single Member State under the responsibility of a physician, without centralised marketing authorisation — offers a potential alternative route for rare disease applications where the patient population is too small to justify a full regulatory submission. However, the pathway is unevenly implemented across Member States, its quality and safety requirements are less standardised, and it has been criticised for creating a two-tier system in which patients in some countries have access to therapies that are unavailable in others.</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sociotechnical Interlude V: the clinical trial as a sociotechnical system {#sec-sti-5}</span></span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>The preceding sections have described the clinical pipeline for CRISPR therapies in primarily technical terms: manufacturing workflows, trial endpoints, regulatory classifications. But clinical trials are not merely technical exercises — they are complex sociotechnical systems that enrol not only patients and molecules but also institutions, norms, expectations, and power relations. The CLIMB-121 trial protocol for Casgevy — the multi-hundred-page document that specified every aspect of the study's conduct — provides a concrete object through which to examine this claim.</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>Consider first who was enrolled, and where. Adriana Petryna's ethnographic work on clinical trials in post-Soviet Eastern Europe and Latin America has shown that the geography of trial conduct is never accidental: it encodes assumptions about regulatory infrastructure, patient availability, and institutional capacity that systematically shape whose bodies produce the evidence on which approvals rest <span class="co">[</span><span class="ot">@petryna2009when</span><span class="co">]</span>. CLIMB-121 was conducted at 17 sites in the United States, United Kingdom, Belgium, Canada, France, Germany, and Italy. Not a single site was located in sub-Saharan Africa, where SCD affects the most people and where the disease burden is greatest. This is not an oversight but a structural consequence of the requirements for GMP manufacturing infrastructure, regulatory oversight capacity, and clinical expertise that trial conduct demands — requirements that systematically exclude the populations with the greatest need. When regulators in high-income countries approve Casgevy on the basis of data from 44 patients in the US and Europe, they are making a decision whose evidentiary foundation is geographically and demographically narrow. Whether the therapy performs equivalently in patients with different genetic backgrounds (SCD genotypes vary across populations), different nutritional states, different co-morbidity profiles, or different healthcare system contexts is an empirical question that the current evidence cannot answer.</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>But the protocol shapes more than who participates; it also configures what the trial is able to see. Stefan Timmermans and Marc Berg have argued that medical protocols function as 'sociotechnical artefacts' — not neutral descriptions of scientific procedure but performative texts that produce the reality they claim merely to measure <span class="co">[</span><span class="ot">@timmermans2003gold</span><span class="co">]</span>. The CLIMB-121 protocol specified eligibility criteria (patients aged 12–35 with at least two severe VOCs per year), endpoint definitions (freedom from severe VOCs for ≥12 consecutive months), and a statistical analysis plan that together determined who counted as a patient, what counted as an outcome, and how uncertainty was managed. The age restriction excluded younger children — who may benefit most from early intervention — and older adults whose accumulated organ damage might confound efficacy assessment. The endpoint definition made VOC frequency the yardstick of success, rendering invisible other dimensions of SCD burden (chronic pain, fatigue, psychological distress) that PROMs only partially capture. The age expansion to children 5–11, now underway, illustrates how protocol boundaries evolve — but only through additional trials, additional regulatory submissions, and additional years of delay.</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>Reading CLIMB-121 through both Petryna and Timmermans/Berg simultaneously reveals the protocol as a single artefact doing double work: it produces a geographically and demographically constrained evidence base (Petryna's point) *and* it defines what counts as a therapeutic success within that constrained population (Timmermans and Berg's point). The two operations are not independent — the choice of endpoints is shaped by the populations available for enrolment, and the geographic concentration of sites is reinforced by the clinical infrastructure required to measure those endpoints. The result is a feedback loop in which clinical trials generate evidence that is simultaneously robust within its parameters and silent about everything those parameters exclude.</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>For the PREDI-LYNCH project and similar surveillance-focused initiatives, the Timmermans and Berg framework illuminates a different facet of protocol politics: the definitions of 'early detection' and 'screening success' embed assumptions about which cancers are worth detecting (those for which effective treatment exists), at what stage (the lead-time bias problem), and in which populations (carriers already under surveillance versus those yet to be identified). The EARLYSCAN cluster's effort to harmonise endpoint definitions across PREDI-LYNCH, DISARM, and SHIELD is, from this perspective, not merely a technical standardisation exercise but a negotiation over what counts as evidence in the governance of hereditary cancer.</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>As CRISPR therapies move from approval in high-income settings toward the aspiration of global access, attending to these structural features of trial design is not an academic luxury but a practical necessity — one that determines whose diseases are studied, whose outcomes are measured, and whose evidence shapes regulatory decisions.</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a><span class="fu">## Chapter summary</span></span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>The clinical pipeline for CRISPR therapies divides along two delivery strategies — ex vivo and in vivo — each with distinct manufacturing, delivery, and regulatory characteristics. The ex vivo approach, epitomised by Casgevy, has achieved regulatory approval and demonstrated durable clinical benefit, but is constrained by complex patient-specific manufacturing, myeloablative conditioning, and a cost structure that limits global access. The in vivo approach, advancing through programmes such as VERVE-102 and NTLA-2001, offers a simpler clinical workflow but faces delivery challenges that have required iterative engineering — as demonstrated by the pivot from VERVE-101 to VERVE-102's improved GalNAc-LNP platform.</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>Clinical trial design for gene editing therapies is dominated by single-arm studies in rare disease populations, with Bayesian and adaptive approaches emerging as tools for maximising information from small samples. Surrogate endpoints and long-term follow-up requirements reflect the permanent nature of genomic edits. Patient-reported outcomes are gaining recognition as essential complements to biomarker-centric endpoints.</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>Regulatory approval has been achieved across multiple jurisdictions, with the MHRA, FDA, and EMA each bringing distinct regulatory philosophies to the evaluation of CRISPR therapies. The gap between approval and access — mediated by reimbursement negotiations, manufacturing capacity, and healthcare infrastructure — remains the primary bottleneck for patient benefit.</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>The Sociotechnical Interlude has argued that clinical trials are sociotechnical systems that encode geographic, demographic, and epistemic biases which shape whose diseases are studied, whose outcomes are measured, and whose evidence counts. As the field moves toward global deployment, these structural features demand explicit attention.</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>Chapter 6 examines how AI is integrated across the therapeutic pipeline — from target identification through biomarker discovery, patient stratification, and trial optimisation — with specific attention to the PREDI-LYNCH and LATE-AYA projects.</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/mm3ugr/crispr-ai-monograph/edit/main/05-clinical-pipeline.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/mm3ugr/crispr-ai-monograph/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

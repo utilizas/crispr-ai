@@ -1,0 +1,3041 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>References – CRISPR Systems and Artificial Intelligence</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./09-prospective.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-4c6d65c679321d81af7ec8b61b1d5a24.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">CRISPR Systems and Artificial Intelligence</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/mm3ugr/crispr-ai-monograph" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I — CRISPR Systems and AI: Technical Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-crispr-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">CRISPR Architectures: From Cas9 to Epigenome Editors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-ai-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">AI for Guide RNA Design and Off-Target Prediction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-ai-optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">AI-Driven Optimisation of Editing Outcomes</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II — Therapeutic Applications and the Clinical Pipeline</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-rare-diseases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Genetic Rare Diseases as Therapeutic Targets for CRISPR-AI</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-clinical-pipeline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Clinical Pipeline: From Bench to Bedside</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-ai-pipeline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">AI Across the Therapeutic Pipeline</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III — Governance, Ethics, and Futures</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-regulatory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Regulatory Frameworks for Gene Editing in Europe and Beyond</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-bioethics-sts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Bioethics and STS: Autonomy, Justice, and Sociotechnical Imaginaries</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-prospective.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Prospective Scenarios 2026–2030</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+    
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">References</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-abudayyeh2017" class="csl-entry" role="listitem">
+Abudayyeh, O. O., Gootenberg, J. S., Essletzbichler, P., Han, S., Joung,
+J., Belanto, J. J., Verdine, V., Cox, D. B. T., Kellner, M. J., Regev,
+A., Lander, E. S., Voytas, D. F., Ting, A. Y., &amp; Zhang, F. (2017).
+<span>RNA</span> targeting with <span>CRISPR</span>–<span>Cas13</span>.
+<em>Nature</em>, <em>550</em>(7675), 280–284. <a href="https://doi.org/10.1038/nature24049">https://doi.org/10.1038/nature24049</a>
+</div>
+<div id="ref-adamson2016multiplex" class="csl-entry" role="listitem">
+Adamson, B., Norman, T. M., Jost, M., Cho, M. Y., Nuñez, J. K., Chen,
+Y., Villalta, J. E., Gilbert, L. A., Horlbeck, M. A., Hein, M. Y., Pak,
+R. A., Gray, A. N., Gross, C. A., Dixit, A., Parnas, O., Regev, A.,
+&amp; Weissman, J. S. (2016). A multiplexed single-cell
+<span>CRISPR</span> screening platform enables systematic dissection of
+the unfolded protein response. <em>Cell</em>, <em>167</em>(7),
+1867–1882.e21. <a href="https://doi.org/10.1016/j.cell.2016.11.048">https://doi.org/10.1016/j.cell.2016.11.048</a>
+</div>
+<div id="ref-alaburde_2025_atmp_timelines" class="csl-entry" role="listitem">
+Alaburde, A., Ivaska, J., Kaspute, G., &amp; Ivaskiene, T. (2025).
+Impact of regulatory measures on the approval timelines of advanced
+therapy medicinal products by the <span>European Medicines
+Agency</span>. <em>Frontiers in Medicine</em>, <em>12</em>, 1623689. <a href="https://doi.org/10.3389/fmed.2025.1623689">https://doi.org/10.3389/fmed.2025.1623689</a>
+</div>
+<div id="ref-alexandrov_2020_repertoire_mutational_signatures" class="csl-entry" role="listitem">
+Alexandrov, L. B., Kim, J., Haradhvala, N. J., Huang, M. N., Tian Ng, A.
+W., Wu, Y., Boot, A., Covington, K. R., Gordenin, D. A., Bergstrom, E.
+N., Islam, S. M. A., Lopez-Bigas, N., Klimczak, L. J., McPherson, J. R.,
+Morganella, S., Sabarinathan, R., Wheeler, D. A., Mustonen, V., PCAWG
+Mutational Signatures Working Group, … Stratton, M. R. (2020). The
+repertoire of mutational signatures in human cancer. <em>Nature</em>,
+<em>578</em>, 94–101. <a href="https://doi.org/10.1038/s41586-020-1943-3">https://doi.org/10.1038/s41586-020-1943-3</a>
+</div>
+<div id="ref-alkan2018" class="csl-entry" role="listitem">
+Alkan, F., Wenzel, A., Anthon, C., Havgaard, J. H., &amp; Gorodkin, J.
+(2018). <span>CRISPR-Cas9</span> off-targeting assessment with nucleic
+acid duplex energy parameters. <em>Genome Biology</em>, <em>19</em>,
+177. <a href="https://doi.org/10.1186/s13059-018-1534-x">https://doi.org/10.1186/s13059-018-1534-x</a>
+</div>
+<div id="ref-allen2019forecast" class="csl-entry" role="listitem">
+Allen, F., Crepaldi, L., Alsinet, C., Strong, A. J., Kleshchevnikov, V.,
+De Angeli, P., Páleníková, P., Khodak, A., Kiselev, V., Kosicki, M.,
+Bassett, A. R., Harding, H., Gaber, Y., Muñoz-Manchado, A. B., Barber,
+M., &amp; Parts, L. (2019). Predicting the mutations generated by repair
+of <span>Cas9</span>-induced double-strand breaks. <em>Nature
+Biotechnology</em>, <em>37</em>(1), 64–72. <a href="https://doi.org/10.1038/nbt.4317">https://doi.org/10.1038/nbt.4317</a>
+</div>
+<div id="ref-anderson_2015_gonadal_toxicity" class="csl-entry" role="listitem">
+Anderson, R. A., Mitchell, R. T., Kelsey, T. W., Spears, N., Telfer, E.
+E., &amp; Wallace, W. H. B. (2015). Cancer treatment and gonadal
+function: Experimental and established strategies for fertility
+preservation in children and young adults. <em>The Lancet Diabetes &amp;
+Endocrinology</em>, <em>3</em>(7), 556–567. <a href="https://doi.org/10.1016/S2213-8587(15)00039-X">https://doi.org/10.1016/S2213-8587(15)00039-X</a>
+</div>
+<div id="ref-angermueller2020model" class="csl-entry" role="listitem">
+Angermueller, C., Dohan, D., Belanger, D., Deshpande, R., Murphy, K.,
+&amp; Colwell, L. (2020). Model-based reinforcement learning for
+biological sequence design. <em>Proceedings of the International
+Conference on Learning Representations (ICLR)</em>.
+</div>
+<div id="ref-angermueller2020pop" class="csl-entry" role="listitem">
+Angermueller, C., Dohan, D., Belanger, D., Murphy, K., &amp; Colwell, L.
+J. (2020). Population-based black-box optimization for biological
+sequence design. <em>Nature Methods</em>, <em>17</em>, 1173–1180. <a href="https://doi.org/10.1038/s41592-020-0965-8">https://doi.org/10.1038/s41592-020-0965-8</a>
+</div>
+<div id="ref-anzalone2022" class="csl-entry" role="listitem">
+Anzalone, A. V., Gao, X. D., Podracky, C. J., Nelson, A. T., Koblan, L.
+W., Raguram, A., Levy, J. M., Merber, J. M., Cho, T. C., &amp; Liu, D.
+R. (2022). Programmable deletion, replacement, integration and inversion
+of large <span>DNA</span> sequences with twin prime editing. <em>Nature
+Biotechnology</em>, <em>40</em>(5), 731–740. <a href="https://doi.org/10.1038/s41587-021-01133-w">https://doi.org/10.1038/s41587-021-01133-w</a>
+</div>
+<div id="ref-anzalone2019" class="csl-entry" role="listitem">
+Anzalone, A. V., Randolph, P. B., Davis, J. R., Sousa, A. A., Koblan, L.
+W., Levy, J. M., Chen, P. J., Wilson, C., Newby, G. A., Raguram, A.,
+&amp; Liu, D. R. (2019). Search-and-replace genome editing without
+double-strand breaks or donor <span>DNA</span>. <em>Nature</em>,
+<em>576</em>(7785), 149–157. <a href="https://doi.org/10.1038/s41586-019-1711-4">https://doi.org/10.1038/s41586-019-1711-4</a>
+</div>
+<div id="ref-arbab2020" class="csl-entry" role="listitem">
+Arbab, M., Shen, M. W., Mok, B., Wilson, C., Matuszek, Ż., Cassa, C. A.,
+&amp; Liu, D. R. (2020). Determinants of base editing outcomes from
+target library analysis and machine learning. <em>Cell</em>,
+<em>182</em>(2), 463–480.e30. <a href="https://doi.org/10.1016/j.cell.2020.05.037">https://doi.org/10.1016/j.cell.2020.05.037</a>
+</div>
+<div id="ref-arnold2018directed" class="csl-entry" role="listitem">
+Arnold, F. H. (2018). Directed evolution: Bringing new chemistry to
+life. <em>Angewandte Chemie International Edition</em>, <em>57</em>(16),
+4143–4148. <a href="https://doi.org/10.1002/anie.201708408">https://doi.org/10.1002/anie.201708408</a>
+</div>
+<div id="ref-arnstein1969ladder" class="csl-entry" role="listitem">
+Arnstein, S. R. (1969). A ladder of citizen participation. <em>Journal
+of the American Institute of Planners</em>, <em>35</em>(4), 216–224. <a href="https://doi.org/10.1080/01944366908977225">https://doi.org/10.1080/01944366908977225</a>
+</div>
+<div id="ref-asch2003disability" class="csl-entry" role="listitem">
+Asch, A. (2003). Disability equality and prenatal testing: Contradictory
+or compatible? In <em>Florida state university law review</em> (Vol. 30,
+pp. 315–342).
+</div>
+<div id="ref-earlyscan_2026" class="csl-entry" role="listitem">
+ASCO Post Staff. (2026). <em>New <span>European</span> project cluster
+<span>EARLYSCAN</span> launched to advance early detection of heritable
+cancers</em>. <a href="https://ascopost.com/news/february-2026/new-european-project-cluster-earlyscan-launched-to-advance-early-detection-of-heritable-cancers/">https://ascopost.com/news/february-2026/new-european-project-cluster-earlyscan-launched-to-advance-early-detection-of-heritable-cancers/</a>
+</div>
+<div id="ref-athey_2019_causal_forests" class="csl-entry" role="listitem">
+Athey, S., Tibshirani, J., &amp; Wager, S. (2019). Generalized random
+forests. <em>The Annals of Statistics</em>, <em>47</em>(2), 1148–1178.
+<a href="https://doi.org/10.1214/18-AOS1709">https://doi.org/10.1214/18-AOS1709</a>
+</div>
+<div id="ref-bae2014" class="csl-entry" role="listitem">
+Bae, S., Park, J., &amp; Kim, J.-S. (2014). <span>Cas-OFFinder</span>: A
+fast and versatile algorithm that searches for potential off-target
+sites of <span>Cas9</span> <span>RNA</span>-guided endonucleases.
+<em>Bioinformatics</em>, <em>30</em>(10), 1473–1475. <a href="https://doi.org/10.1093/bioinformatics/btu048">https://doi.org/10.1093/bioinformatics/btu048</a>
+</div>
+<div id="ref-baltussen2019values" class="csl-entry" role="listitem">
+Baltussen, R., Jansen, M. P. M., Bijl, N. de, &amp; Stolk, E. A. (2019).
+Value assessment frameworks for <span>HTA</span> agencies: The
+organization of evidence-informed deliberative processes. <em>Value in
+Health</em>, <em>22</em>(2), 213–220. <a href="https://doi.org/10.1016/j.jval.2018.11.003">https://doi.org/10.1016/j.jval.2018.11.003</a>
+</div>
+<div id="ref-barker_2009_ispy2" class="csl-entry" role="listitem">
+Barker, A. D., Sigman, C. C., Kelloff, G. J., Hylton, N. M., Berry, D.
+A., &amp; Esserman, L. J. (2009). <span>I-SPY 2</span>: An adaptive
+breast cancer trial design in the setting of neoadjuvant chemotherapy.
+<em>Clinical Pharmacology &amp; Therapeutics</em>, <em>86</em>(1),
+97–100. <a href="https://doi.org/10.1038/clpt.2009.68">https://doi.org/10.1038/clpt.2009.68</a>
+</div>
+<div id="ref-barrangou2007" class="csl-entry" role="listitem">
+Barrangou, R., Fremaux, C., Deveau, H., Richards, M., Boyaval, P.,
+Moineau, S., Romero, D. A., &amp; Horvath, P. (2007).
+<span>CRISPR</span> provides acquired resistance against viruses in
+prokaryotes. <em>Science</em>, <em>315</em>(5819), 1709–1712. <a href="https://doi.org/10.1126/science.1138140">https://doi.org/10.1126/science.1138140</a>
+</div>
+<div id="ref-basch_2017_proms_oncology" class="csl-entry" role="listitem">
+Basch, E., Deal, A. M., Dueck, A. C., Scher, H. I., Kris, M. G., Hudis,
+C., &amp; Schrag, D. (2017). Overall survival results of a trial
+assessing patient-reported outcomes for symptom monitoring during
+routine cancer treatment. <em>JAMA</em>, <em>318</em>(2), 197–198. <a href="https://doi.org/10.1001/jama.2017.7156">https://doi.org/10.1001/jama.2017.7156</a>
+</div>
+<div id="ref-bate_2009_pharmacovigilance_data_mining" class="csl-entry" role="listitem">
+Bate, A., &amp; Evans, S. J. W. (2009). Quantitative signal detection
+using spontaneous <span>ADR</span> reporting. <em>Pharmacoepidemiology
+and Drug Safety</em>, <em>18</em>(6), 427–436. <a href="https://doi.org/10.1002/pds.1742">https://doi.org/10.1002/pds.1742</a>
+</div>
+<div id="ref-baylis_2020_global_policy" class="csl-entry" role="listitem">
+Baylis, F., Darnovsky, M., Hasson, K., &amp; Krahn, T. M. (2020). Human
+germline and heritable genome editing: The global policy landscape.
+<em>The CRISPR Journal</em>, <em>3</em>(5), 365–377. <a href="https://doi.org/10.1089/crispr.2020.0082">https://doi.org/10.1089/crispr.2020.0082</a>
+</div>
+<div id="ref-baylis_ikemoto_2017" class="csl-entry" role="listitem">
+Baylis, F., &amp; Ikemoto, L. (2017). The <span class="nocase">Council
+of Europe</span> and the prohibition on human germline genome editing.
+<em>EMBO Reports</em>, <em>18</em>(12), 2084–2085. <a href="https://doi.org/10.15252/embr.201745343">https://doi.org/10.15252/embr.201745343</a>
+</div>
+<div id="ref-beamtherapeutics2025aatd" class="csl-entry" role="listitem">
+Beam Therapeutics. (2025). <em>Beam <span>Therapeutics</span> reports
+clinical data demonstrating first-ever <span>CRISPR</span> correction of
+a disease-causing mutation in patients with alpha-1 antitrypsin
+deficiency</em>. Corporate data presentation.
+</div>
+<div id="ref-beauchamp2019principles" class="csl-entry" role="listitem">
+Beauchamp, T. L., &amp; Childress, J. F. (2019). <em>Principles of
+biomedical ethics</em> (8th ed.). Oxford University Press.
+</div>
+<div id="ref-beckert2016imagined" class="csl-entry" role="listitem">
+Beckert, J. (2016). <em>Imagined futures: Fictional expectations and
+capitalist dynamics</em>. Harvard University Press.
+</div>
+<div id="ref-bellinger2023_verve101" class="csl-entry" role="listitem">
+Bellinger, A. M. et al. (2023). Safety and pharmacodynamic effects of
+<span>VERVE</span>-101, an investigational <span>DNA</span> base editing
+medicine designed to durably inactivate the <span>PCSK9</span> gene and
+lower <span>LDL</span> cholesterol – interim results of the <span>Phase
+1b Heart-1</span> trial. <em>Circulation</em>. <a href="https://www.vervetx.com/sites/default/files/2023-11/Verve_AHA_2023_LBS_for%20website.pdf">https://www.vervetx.com/sites/default/files/2023-11/Verve_AHA_2023_LBS_for%20website.pdf</a>
+</div>
+<div id="ref-benatar2003bioethics" class="csl-entry" role="listitem">
+Benatar, S. R. (2003). Bioethics: Power and injustice: <span>IAB</span>
+presidential address. <em>Bioethics</em>, <em>17</em>(5–6), 387–398. <a href="https://doi.org/10.1111/1467-8519.00355">https://doi.org/10.1111/1467-8519.00355</a>
+</div>
+<div id="ref-benjamin2019race" class="csl-entry" role="listitem">
+Benjamin, R. (2019). <em>Race after technology: Abolitionist tools for
+the <span>New Jim Code</span></em>. Polity Press.
+</div>
+<div id="ref-bernsen2020_pharmacogenomics" class="csl-entry" role="listitem">
+Bernsen, M. R., Zanden, S. Y. van der, Heuvel, J. J. M. W. van den,
+&amp; Masereeuw, R. (2020). Pharmacogenomics as a tool to limit acute
+and long-term adverse effects of chemotherapeutics. <em>Frontiers in
+Pharmacology</em>, <em>11</em>, 1184. <a href="https://doi.org/10.3389/fphar.2020.01184">https://doi.org/10.3389/fphar.2020.01184</a>
+</div>
+<div id="ref-borup2006sociology" class="csl-entry" role="listitem">
+Borup, M., Brown, N., Konrad, K., &amp; Van Lente, H. (2006). The
+sociology of expectations in science and technology. <em>Technology
+Analysis &amp; Strategic Management</em>, <em>18</em>(3–4), 285–298. <a href="https://doi.org/10.1080/09537320600777002">https://doi.org/10.1080/09537320600777002</a>
+</div>
+<div id="ref-bostrom2003transhumanist" class="csl-entry" role="listitem">
+Bostrom, N. (2003). The transhumanist <span>FAQ</span>: A general
+introduction. <em>Journal of Evolution and Technology</em>,
+<em>13</em>(1). <a href="https://www.jetpress.org/volume13/bostrom-tsfaq.html">https://www.jetpress.org/volume13/bostrom-tsfaq.html</a>
+</div>
+<div id="ref-bowker_star_1999_sorting" class="csl-entry" role="listitem">
+Bowker, G. C., &amp; Star, S. L. (1999). <em>Sorting things out:
+Classification and its consequences</em>. MIT Press.
+</div>
+<div id="ref-brown2003hope" class="csl-entry" role="listitem">
+Brown, N. (2003). Hope against hype: Accountability in biopasts,
+presents and futures. <em>Science Studies</em>, <em>16</em>(2), 3–21.
+</div>
+<div id="ref-bryant2021deep" class="csl-entry" role="listitem">
+Bryant, D. H., Bashir, A., Sinai, S., Jain, N. K., Ogden, P. J., Riley,
+P. F., Church, G. M., Colwell, L. J., &amp; Kelsic, E. D. (2021). Deep
+diversification of an <span>AAV</span> capsid protein by machine
+learning. <em>Nature Biotechnology</em>, <em>39</em>, 691–696. <a href="https://doi.org/10.1038/s41587-020-00793-4">https://doi.org/10.1038/s41587-020-00793-4</a>
+</div>
+<div id="ref-buchanan2000chance" class="csl-entry" role="listitem">
+Buchanan, A., Brock, D. W., Daniels, N., &amp; Wikler, D. (2000).
+<em>From chance to choice: Genetics and justice</em>. Cambridge
+University Press. <a href="https://doi.org/10.1017/CBO9780511806940">https://doi.org/10.1017/CBO9780511806940</a>
+</div>
+<div id="ref-byrne_2024_predictaya" class="csl-entry" role="listitem">
+Byrne, F. et al. (2024). <em>Prediction and prevention of late effects
+in AYA cancer survivors: The PredictAYA project</em>. European
+Commission Horizon Europe Project. <a href="https://doi.org/10.3030/101214879">https://doi.org/10.3030/101214879</a>
+</div>
+<div id="ref-calabrese2020crispr" class="csl-entry" role="listitem">
+Calabrese, C., Amin, A., &amp; Engel, K. (2020). Framing
+<span>CRISPR</span>: How media shape public understanding of gene
+editing. <em>Public Understanding of Science</em>, <em>29</em>(5),
+492–510. <a href="https://doi.org/10.1177/0963662520916775">https://doi.org/10.1177/0963662520916775</a>
+</div>
+<div id="ref-callon2003research" class="csl-entry" role="listitem">
+Callon, M., &amp; Rabeharisoa, V. (2003). Research <span>“in the
+wild”</span> and the shaping of new social identities. <em>Technology in
+Society</em>, <em>25</em>(2), 193–204. <a href="https://doi.org/10.1016/S0160-791X(03)00021-6">https://doi.org/10.1016/S0160-791X(03)00021-6</a>
+</div>
+<div id="ref-campa2019_mult" class="csl-entry" role="listitem">
+Campa, C. C., Weisbach, N. R., Santinha, A. J., Incarnato, D., &amp;
+Platt, R. J. (2019). Multiplexed genome engineering by
+<span>Cas12a</span> and <span>CRISPR</span> arrays encoded on single
+transcripts. <em>Nature Methods</em>, <em>16</em>(9), 887–893. <a href="https://doi.org/10.1038/s41592-019-0508-6">https://doi.org/10.1038/s41592-019-0508-6</a>
+</div>
+<div id="ref-cavazzana2020_condit" class="csl-entry" role="listitem">
+Cavazzana, M., &amp; Mavilio, F. (2020). The role of conditioning in
+hematopoietic stem-cell gene therapy. <em>Gene Therapy</em>,
+<em>27</em>, 1–10. <a href="https://doi.org/10.1038/s41434-019-0103-1">https://doi.org/10.1038/s41434-019-0103-1</a>
+</div>
+<div id="ref-cdbio_article13_2022" class="csl-entry" role="listitem">
+CDBIO. (2022). <em>Genome editing technologies: Final conclusions of the
+re-examination of article 13 of the oviedo convention</em>. Council of
+Europe. <a href="https://www.coe.int/en/web/human-rights-and-biomedicine/-/genome-editing-technologies-final-conclusions-of-the-re-examination-of-article-13-of-the-oviedo-convention">https://www.coe.int/en/web/human-rights-and-biomedicine/-/genome-editing-technologies-final-conclusions-of-the-re-examination-of-article-13-of-the-oviedo-convention</a>
+</div>
+<div id="ref-chandak_2023_building_biomedical_kg" class="csl-entry" role="listitem">
+Chandak, P., Huang, K., &amp; Zitnik, M. (2023). Building a knowledge
+graph to enable precision medicine. <em>Scientific Data</em>,
+<em>10</em>, 67. <a href="https://doi.org/10.1038/s41597-023-01960-3">https://doi.org/10.1038/s41597-023-01960-3</a>
+</div>
+<div id="ref-chari2015" class="csl-entry" role="listitem">
+Chari, R., Mali, P., Moosburner, M., &amp; Church, G. M. (2015).
+Unraveling <span>CRISPR</span>-<span>Cas9</span> genome engineering
+parameters via a library-on-library approach. <em>Nature Methods</em>,
+<em>12</em>(9), 823–826. <a href="https://doi.org/10.1038/nmeth.3473">https://doi.org/10.1038/nmeth.3473</a>
+</div>
+<div id="ref-charlesworth_2019_cas9_immunity" class="csl-entry" role="listitem">
+Charlesworth, C. T., Deshpande, P. S., Dever, D. P., Camarena, J.,
+Lemgart, V. T., Cromer, M. K., Vakulskas, C. A., Collingwood, M. A.,
+Zhang, L., Buj, N. L., Gomez-Ospina, N., Mantri, S., Pavel-Dinu, M.,
+Henle, J., Søndergaard, J. N., &amp; Porteus, M. H. (2019).
+Identification of preexisting adaptive immunity to <span>Cas9</span>
+proteins in humans. <em>Nature Medicine</em>, <em>25</em>(2), 249–254.
+<a href="https://doi.org/10.1038/s41591-018-0326-x">https://doi.org/10.1038/s41591-018-0326-x</a>
+</div>
+<div id="ref-chen2018detectr" class="csl-entry" role="listitem">
+Chen, J. S., Ma, E., Harrington, L. B., Da Costa, M., Tian, X.,
+Palefsky, J. M., &amp; Doudna, J. A. (2018).
+<span>CRISPR</span>-<span>Cas12a</span> target binding unleashes
+indiscriminate single-stranded <span>DNase</span> activity.
+<em>Science</em>, <em>360</em>(6387), 436–439. <a href="https://doi.org/10.1126/science.aar6245">https://doi.org/10.1126/science.aar6245</a>
+</div>
+<div id="ref-chen2021prime" class="csl-entry" role="listitem">
+Chen, P. J., Hussmann, J. A., Yan, J., Knipping, F., Ravisankar, P.,
+Chen, P.-F., Chen, C., Nelson, J. W., Newby, G. A., Sahin, M., Osborn,
+M. J., Weissman, J. S., Adamson, B., &amp; Liu, D. R. (2021). Enhanced
+prime editing systems by manipulating cellular determinants of editing
+outcomes. <em>Cell</em>, <em>184</em>(22), 5635–5652. <a href="https://doi.org/10.1016/j.cell.2021.09.018">https://doi.org/10.1016/j.cell.2021.09.018</a>
+</div>
+<div id="ref-chen2019forecast" class="csl-entry" role="listitem">
+Chen, W., McKenna, A., Schreiber, J., Haeussler, M., Yin, Y., Agarwal,
+V., Noble, W. S., &amp; Shendure, J. (2019). Massively parallel
+profiling and predictive modeling of the outcomes of
+<span>CRISPR</span>/<span>Cas9</span>-mediated double-strand break
+repair. <em>Nucleic Acids Research</em>, <em>47</em>(15), 7989–8003. <a href="https://doi.org/10.1093/nar/gkz487">https://doi.org/10.1093/nar/gkz487</a>
+</div>
+<div id="ref-cheng2023alphamissense" class="csl-entry" role="listitem">
+Cheng, J., Novati, G., Pan, J., Bycroft, C., Žemgulytė, A., Applebaum,
+T., Pritzel, A., Wong, L. H., Zielinski, M., Sargeant, T., Schneider, R.
+G., Senior, A. W., Jumper, J., Hassabis, D., Kohli, P., &amp; Avsec, Ž.
+(2023). Accurate proteome-wide missense variant effect prediction with
+<span>AlphaMissense</span>. <em>Science</em>, <em>381</em>(6664),
+eadg7492. <a href="https://doi.org/10.1126/science.adg7492">https://doi.org/10.1126/science.adg7492</a>
+</div>
+<div id="ref-chernozhukov_2018_double_ml" class="csl-entry" role="listitem">
+Chernozhukov, V., Chetverikov, D., Demirer, M., Duflo, E., Hansen, C.,
+Newey, W., &amp; Robins, J. (2018). Double/debiased machine learning for
+treatment and structural parameters. <em>The Econometrics Journal</em>,
+<em>21</em>(1), C1–C68. <a href="https://doi.org/10.1111/ectj.12097">https://doi.org/10.1111/ectj.12097</a>
+</div>
+<div id="ref-cho2013" class="csl-entry" role="listitem">
+Cho, S. W., Kim, S., Kim, J. M., &amp; Kim, J.-S. (2013). Targeted
+genome engineering in human cells with the <span>Cas9</span>
+<span>RNA</span>-guided endonuclease. <em>Nature Biotechnology</em>,
+<em>31</em>(3), 230–232. <a href="https://doi.org/10.1038/nbt.2507">https://doi.org/10.1038/nbt.2507</a>
+</div>
+<div id="ref-choi_2010_cat_proms" class="csl-entry" role="listitem">
+Choi, S. W., Reise, S. P., Pilkonis, P. A., Hays, R. D., &amp; Cella, D.
+(2010). Efficiency of static and computer adaptive short forms compared
+to full-length measures of depressive symptoms. <em>Quality of Life
+Research</em>, <em>19</em>(1), 125–136. <a href="https://doi.org/10.1007/s11136-009-9560-5">https://doi.org/10.1007/s11136-009-9560-5</a>
+</div>
+<div id="ref-chu2024" class="csl-entry" role="listitem">
+Chu, H. Y., Fong, J. H. C., Thean, D. G. L., Zhou, P., Fung, F. K. C.,
+Huang, Y., &amp; Wong, A. S. L. (2024). Accurate top protein variant
+discovery via low-<span>N</span> pick-and-validate machine learning.
+<em>Cell Systems</em>, <em>15</em>(2), 193–203.e6. <a href="https://doi.org/10.1016/j.cels.2024.01.002">https://doi.org/10.1016/j.cels.2024.01.002</a>
+</div>
+<div id="ref-chuai2018" class="csl-entry" role="listitem">
+Chuai, G., Ma, H., Yan, J., Chen, M., Hong, N., Xue, D., Zhou, C., Zhu,
+C., Chen, K., Duan, B., Gu, F., Qu, S., Huang, D., Wei, J., &amp; Liu,
+Q. (2018). <span>DeepCRISPR</span>: Optimized <span>CRISPR</span> guide
+<span>RNA</span> design by deep learning. <em>Genome Biology</em>,
+<em>19</em>, 80. <a href="https://doi.org/10.1186/s13059-018-1459-4">https://doi.org/10.1186/s13059-018-1459-4</a>
+</div>
+<div id="ref-collingridge_1980" class="csl-entry" role="listitem">
+Collingridge, D. (1980b). <em>The social control of technology</em>.
+Frances Pinter.
+</div>
+<div id="ref-collingridge1980social" class="csl-entry" role="listitem">
+Collingridge, D. (1980a). <em>The social control of technology</em>.
+Frances Pinter.
+</div>
+<div id="ref-collins2002" class="csl-entry" role="listitem">
+Collins, H. M., &amp; Evans, R. (2002). The third wave of science
+studies: Studies of expertise and experience. <em>Social Studies of
+Science</em>, <em>32</em>(2), 235–296. <a href="https://doi.org/10.1177/0306312702032002003">https://doi.org/10.1177/0306312702032002003</a>
+</div>
+<div id="ref-collins1992epistemological" class="csl-entry" role="listitem">
+Collins, H. M., &amp; Yearley, S. (1992). Epistemological chicken. In A.
+Pickering (Ed.), <em>Science as practice and culture</em> (pp. 301–326).
+University of Chicago Press.
+</div>
+<div id="ref-comande2017_regulating_algorithms" class="csl-entry" role="listitem">
+Comandè, G. (2017). Regulating algorithms’ regulation? First
+ethico-legal principles, problems, and opportunities of algorithms. In
+T. Cerquitelli, D. Quercia, &amp; F. Pasquale (Eds.), <em>Transparent
+data mining for big and small data</em> (Vol. 9853, pp. 169–206).
+Springer International Publishing. <a href="https://doi.org/10.1007/978-3-319-54024-5_8">https://doi.org/10.1007/978-3-319-54024-5_8</a>
+</div>
+<div id="ref-cong2013" class="csl-entry" role="listitem">
+Cong, L., Ran, F. A., Cox, D., Lin, S., Barretto, R., Habib, N., Hsu, P.
+D., Wu, X., Jiang, W., Marraffini, L. A., &amp; Zhang, F. (2013).
+Multiplex genome engineering using <span>CRISPR</span>/<span>Cas</span>
+systems. <em>Science</em>, <em>339</em>(6121), 819–823. <a href="https://doi.org/10.1126/science.1231143">https://doi.org/10.1126/science.1231143</a>
+</div>
+<div id="ref-pancarelife2024_gonadal_gwas" class="csl-entry" role="listitem">
+Consortium, P., Dorp, W. van, Mulder, R. L., Heuvel-Eibrink, M. M. van
+den, et al. (2024). Genetic determinants of gonadal impairment after
+childhood cancer treatment. <em>Nature Medicine</em>, <em>30</em>,
+1123–1134. <a href="https://doi.org/10.1038/s41591-024-02987-3">https://doi.org/10.1038/s41591-024-02987-3</a>
+</div>
+<div id="ref-predi_lynch_cordis" class="csl-entry" role="listitem">
+CORDIS. (2025). <em>Validated non-invasive liquid biopsy tests for
+cancer <span>PREDIction</span> in <span>LYNCH</span> syndrome
+(<span>PREDI-LYNCH</span>)</em>. <a href="https://doi.org/10.3030/101213916">https://doi.org/10.3030/101213916</a>
+</div>
+<div id="ref-corral-acero_2020_digital_twins_healthcare" class="csl-entry" role="listitem">
+Corral-Acero, J., Margara, F., Marciniak, M., Rodero, C., Lonber, F.,
+Feng, Y., Gilbert, A., Fernandes, J. F., Bukhari, H. A., Wajdan, A., et
+al. (2020). The <span>“digital twin”</span> to enable the vision of
+precision cardiology. <em>European Heart Journal</em>, <em>41</em>(48),
+4556–4564. <a href="https://doi.org/10.1093/eurheartj/ehaa159">https://doi.org/10.1093/eurheartj/ehaa159</a>
+</div>
+<div id="ref-corrigan-curay_2018_rwe_rwd_fda" class="csl-entry" role="listitem">
+Corrigan-Curay, J., Sacks, L., &amp; Woodcock, J. (2018). Real-world
+evidence and real-world data for evaluating drug safety and
+effectiveness. <em>JAMA</em>, <em>320</em>(9), 867–868. <a href="https://doi.org/10.1001/jama.2018.10136">https://doi.org/10.1001/jama.2018.10136</a>
+</div>
+<div id="ref-oviedo_convention_1997" class="csl-entry" role="listitem">
+Council of Europe. (1997). <em>Convention for the protection of human
+rights and dignity of the human being with regard to the application of
+biology and medicine: Convention on human rights and biomedicine</em>.
+</div>
+<div id="ref-cjeu_c528_16" class="csl-entry" role="listitem">
+Court of Justice of the European Union. (2018). <em>Judgment of 25
+<span>July</span> 2018, <span>Confédération</span> paysanne and others,
+<span>Case</span> <span>C</span>-528/16,
+<span>ECLI</span>:<span>EU</span>:<span>C</span>:2018:583</em>. <a href="https://infocuria.curia.europa.eu/tabs/document?source=document&amp;docid=204387&amp;doclang=EN">https://infocuria.curia.europa.eu/tabs/document?source=document&amp;docid=204387&amp;doclang=EN</a>
+</div>
+<div id="ref-cox2017" class="csl-entry" role="listitem">
+Cox, D. B. T., Gootenberg, J. S., Abudayyeh, O. O., Franklin, B.,
+Kellner, M. J., Joung, J., &amp; Zhang, F. (2017). <span>RNA</span>
+editing with <span>CRISPR</span>–<span>Cas13</span>. <em>Science</em>,
+<em>358</em>(6366), 1019–1027. <a href="https://doi.org/10.1126/science.aaq0180">https://doi.org/10.1126/science.aaq0180</a>
+</div>
+<div id="ref-china_criminal_law_article336" class="csl-entry" role="listitem">
+<em>Criminal law of the <span class="nocase">People’s Republic of
+China</span>, article 336</em>. (2021).
+</div>
+<div id="ref-cristiano_2019_fragmentomics" class="csl-entry" role="listitem">
+Cristiano, S., Leal, A., Phallen, J., Fiksel, J., Adleff, V., Bruhm, D.
+C., Jensen, S. Ø., Medina, J. E., Hruban, C., White, J. R., Palsgrove,
+D. N., Niknafs, N., Anagnostou, V., Forde, P., Velculescu, V. E., et al.
+(2019). Genome-wide cell-free <span>DNA</span> fragmentation in patients
+with cancer. <em>Nature</em>, <em>570</em>, 385–389. <a href="https://doi.org/10.1038/s41586-019-1272-6">https://doi.org/10.1038/s41586-019-1272-6</a>
+</div>
+<div id="ref-crowley_2013_liquid_biopsy" class="csl-entry" role="listitem">
+Crowley, E., Di Nicolantonio, F., Loupakis, F., &amp; Bardelli, A.
+(2013). Liquid biopsy: Monitoring cancer-genetics in the blood.
+<em>Nature Reviews Clinical Oncology</em>, <em>10</em>(8), 472–484. <a href="https://doi.org/10.1038/nrclinonc.2013.110">https://doi.org/10.1038/nrclinonc.2013.110</a>
+</div>
+<div id="ref-dalla-torre2025" class="csl-entry" role="listitem">
+Dalla-Torre, H., Gonzalez, L., Mendoza-Revilla, J., Lopez Carranza, N.,
+Grzywaczewski, A. H., Oteri, F., Dallago, C., Trop, E., Almeida, B. P.
+de, Sirelkhatim, H., Richard, G., Skwark, M., Beguir, K., Lopez, M.,
+&amp; Pierrot, T. (2025). Nucleotide transformer: Building and
+evaluating robust foundation models for human genomics. <em>Nature
+Methods</em>, <em>22</em>(2), 287–297. <a href="https://doi.org/10.1038/s41592-024-02523-z">https://doi.org/10.1038/s41592-024-02523-z</a>
+</div>
+<div id="ref-daniels2000normal" class="csl-entry" role="listitem">
+Daniels, N. (2000). Normal functioning and the treatment-enhancement
+distinction. <em>Cambridge Quarterly of Healthcare Ethics</em>,
+<em>9</em>(3), 309–322. <a href="https://doi.org/10.1017/S0963180100903037">https://doi.org/10.1017/S0963180100903037</a>
+</div>
+<div id="ref-darnovsky2019hype" class="csl-entry" role="listitem">
+Darnovsky, M. (2019). The case against designer babies: The perils of
+heritable genome editing. <em>Nature Biotechnology</em>, <em>37</em>(9),
+983.
+</div>
+<div id="ref-datlinger2017pooled" class="csl-entry" role="listitem">
+Datlinger, P., Rendeiro, A. F., Schmidl, C., Krausgruber, T., Traxler,
+P., Klughammer, J., Schuster, L. C., Kuchler, A., Alpar, D., &amp; Bock,
+C. (2017). Pooled <span>CRISPR</span> screening with single-cell
+transcriptome readout. <em>Nature Methods</em>, <em>14</em>(3), 297–301.
+<a href="https://doi.org/10.1038/nmeth.4177">https://doi.org/10.1038/nmeth.4177</a>
+</div>
+<div id="ref-davies_2018_mendelian_randomisation" class="csl-entry" role="listitem">
+Davies, N. M., Holmes, M. V., &amp; Davey Smith, G. (2018). Reading
+<span>Mendelian</span> randomisation studies: A guide, glossary, and
+checklist for clinicians. <em>BMJ</em>, <em>362</em>, k601. <a href="https://doi.org/10.1136/bmj.k601">https://doi.org/10.1136/bmj.k601</a>
+</div>
+<div id="ref-deltcheva2011" class="csl-entry" role="listitem">
+Deltcheva, E., Chylinski, K., Sharma, C. M., Gonzales, K., Chao, Y.,
+Pirzada, Z. A., Eckert, M. R., Vogel, J., &amp; Charpentier, E. (2011).
+<span>CRISPR</span> <span>RNA</span> maturation by trans-encoded small
+<span>RNA</span> and host factor <span>RNase</span> <span>III</span>.
+<em>Nature</em>, <em>471</em>(7340), 602–607. <a href="https://doi.org/10.1038/nature09886">https://doi.org/10.1038/nature09886</a>
+</div>
+<div id="ref-deverman2016credne" class="csl-entry" role="listitem">
+Deverman, B. E., Pravdo, P. L., Simpson, B. P., Kumar, S. R., Chan, K.
+Y., Banerjee, A., Wu, W.-L., Yang, B., Huber, N., Pasca, S. P., Bhatt,
+H. R., et al. (2016). <span>Cre</span>-dependent selection yields
+<span>AAV</span> variants for widespread gene transfer to the adult
+brain. <em>Nature Biotechnology</em>, <em>34</em>(2), 204–209. <a href="https://doi.org/10.1038/nbt.3440">https://doi.org/10.1038/nbt.3440</a>
+</div>
+<div id="ref-dewar2021_psych_aya" class="csl-entry" role="listitem">
+Dewar, E. O., Ahn, C., Eraj, S., Mahal, B. A., &amp; Sanford, N. N.
+(2021). Psychological distress and cognition among long-term survivors
+of adolescent and young adult cancer in the USA. <em>Journal of Cancer
+Survivorship</em>, <em>15</em>, 776–784. <a href="https://doi.org/10.1007/s11764-020-00986-0">https://doi.org/10.1007/s11764-020-00986-0</a>
+</div>
+<div id="ref-t_dinh_2020_personalized_fl" class="csl-entry" role="listitem">
+Dinh, C. T., Tran, N. H., &amp; Nguyen, T. D. (2020). <em>Personalized
+federated learning with moreau envelopes</em>. <em>NeurIPS ’20</em>,
+21394–21405. <a href="https://dl.acm.org/doi/abs/10.5555/3495724.3497520">https://dl.acm.org/doi/abs/10.5555/3495724.3497520</a>
+</div>
+<div id="ref-dixit_2016_perturbseq" class="csl-entry" role="listitem">
+Dixit, A., Parnas, O., Li, B., Chen, J., Fulco, C. P., Jerber, J.,
+Raychowdhury, R., Weissman, J. S., Regev, A., &amp; Hacohen, N. (2016).
+Perturb-seq: Dissecting molecular circuits with scalable single-cell
+<span>RNA</span> profiling of pooled genetic screens. <em>Cell</em>,
+<em>167</em>(7), 1853–1866.e17. <a href="https://doi.org/10.1016/j.cell.2016.11.038">https://doi.org/10.1016/j.cell.2016.11.038</a>
+</div>
+<div id="ref-dixit2016perturbseq" class="csl-entry" role="listitem">
+Dixit, A., Parnas, O., Li, B., Chen, J., Fulco, C. P., Jerby-Arnon, L.,
+Marjanovic, N. D., Dionne, D., Burks, T., Raychowdhury, R., Adamson, B.,
+Norman, T. M., Lander, E. S., Weissman, J. S., Friedman, N., &amp;
+Regev, A. (2016). Perturb-seq: Dissecting molecular circuits with
+scalable single-cell <span>RNA</span> profiling of pooled genetic
+screens. <em>Cell</em>, <em>167</em>(7), 1853–1866.e17. <a href="https://doi.org/10.1016/j.cell.2016.11.038">https://doi.org/10.1016/j.cell.2016.11.038</a>
+</div>
+<div id="ref-doench2016" class="csl-entry" role="listitem">
+Doench, J. G., Fusi, N., Sullender, M., Hegde, M., Vaimberg, E. W.,
+Donovan, K. F., Smith, I., Tothova, Z., Wilen, C., Orchard, R., Virgin,
+H. W., Listgarten, J., &amp; Root, D. E. (2016). Optimized <span class="nocase">sgRNA</span> design to maximize activity and minimize
+off-target effects of <span>CRISPR</span>-<span>Cas9</span>. <em>Nature
+Biotechnology</em>, <em>34</em>(2), 184–191. <a href="https://doi.org/10.1038/nbt.3437">https://doi.org/10.1038/nbt.3437</a>
+</div>
+<div id="ref-doench2014" class="csl-entry" role="listitem">
+Doench, J. G., Hartenian, E., Graham, D. B., Tothova, Z., Hegde, M.,
+Smith, I., Sullender, M., Ebert, B. L., Xavier, R. J., &amp; Root, D. E.
+(2014). Rational design of highly active <span class="nocase">sgRNAs</span> for
+<span>CRISPR</span>-<span>Cas9</span>-mediated gene inactivation.
+<em>Nature Biotechnology</em>, <em>32</em>(12), 1262–1267. <a href="https://doi.org/10.1038/nbt.3026">https://doi.org/10.1038/nbt.3026</a>
+</div>
+<div id="ref-dominguezvalentin2020" class="csl-entry" role="listitem">
+Dominguez-Valentin, M., Sampson, J. R., Seppälä, T. T., &amp; Ten
+Broeke, P., Sanne W and";";"; "; Møller. (2020). Cancer risks by gene,
+age, and gender in 6350 carriers of pathogenic mismatch repair variants:
+Findings from the <span>Prospective Lynch Syndrome Database</span>.
+<em>Genetics in Medicine</em>, <em>22</em>(1), 15–25. <a href="https://doi.org/10.1038/s41436-019-0596-9">https://doi.org/10.1038/s41436-019-0596-9</a>
+</div>
+<div id="ref-drummond2015methods" class="csl-entry" role="listitem">
+Drummond, M. F., Sculpher, M. J., Claxton, K., Stoddart, G. L., &amp;
+Torrance, G. W. (2015). <em>Methods for the economic evaluation of
+health care programmes</em> (4th ed.). Oxford University Press.
+</div>
+<div id="ref-duan_systemic_2018" class="csl-entry" role="listitem">
+Duan, D. (2018). Systemic AAV micro-dystrophin gene therapy for duchenne
+muscular dystrophy. <em>Molecular Therapy</em>, <em>26</em>(10),
+2337–2356. <a href="https://doi.org/10.1016/j.ymthe.2018.07.011">https://doi.org/10.1016/j.ymthe.2018.07.011</a>
+</div>
+<div id="ref-earlyscan2026" class="csl-entry" role="listitem">
+EARLYSCAN Cluster. (2026). <em>New <span>European</span> project cluster
+<span>EARLYSCAN</span> launched to advance early detection of heritable
+cancers</em>. ASCO Post, February 2026; press release via PREDI-LYNCH
+website. <a href="https://ascopost.com/news/february-2026/new-european-project-cluster-earlyscan-launched-to-advance-early-detection-of-heritable-cancers/">https://ascopost.com/news/february-2026/new-european-project-cluster-earlyscan-launched-to-advance-early-detection-of-heritable-cancers/</a>
+</div>
+<div id="ref-editas2023discontinuation" class="csl-entry" role="listitem">
+Editas Medicine. (2023). <em>Editas medicine announces strategic
+pipeline prioritization</em>. Press release. <a href="https://ir.editasmedicine.com/news-releases/news-release-details/editas-medicine-announces-strategic-updates-and-portfolio">https://ir.editasmedicine.com/news-releases/news-release-details/editas-medicine-announces-strategic-updates-and-portfolio</a>
+</div>
+<div id="ref-edwards_2010_vast_machine" class="csl-entry" role="listitem">
+Edwards, P. N. (2010). <em>A vast machine: Computer models, climate
+data, and the politics of global warming</em>. MIT Press.
+</div>
+<div id="ref-epstein1996impure" class="csl-entry" role="listitem">
+Epstein, S. (1996). <em>Impure science: <span>AIDS</span>, activism, and
+the politics of knowledge</em>. University of California Press.
+</div>
+<div id="ref-eudralex_vol4_part4" class="csl-entry" role="listitem">
+European Commission. (2017). <em><span>EudraLex</span> volume 4, part
+<span>IV</span>: Guidelines on good manufacturing practice specific to
+advanced therapy medicinal products</em>.
+</div>
+<div id="ref-horizon_europe_cluster1_annex" class="csl-entry" role="listitem">
+European Commission. (2021). <em>Horizon <span>Europe</span> cluster 1
+health: Annex <span>I</span> — key strategic orientations</em>.
+</div>
+<div id="ref-eu_cancer_mission" class="csl-entry" role="listitem">
+European Commission. (2024). <em><span>EU Mission</span>: cancer</em>.
+<a href="https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe/eu-missions-horizon-europe/eu-mission-cancer_en">https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe/eu-missions-horizon-europe/eu-mission-cancer_en</a>
+</div>
+<div id="ref-ehds_implementation_timeline" class="csl-entry" role="listitem">
+European Commission. (2025a). <em><span>European Health Data
+Space</span> implementation timeline</em>. <a href="https://health.ec.europa.eu/ehealth-digital-health-and-care/european-health-data-space-regulation-ehds_en">https://health.ec.europa.eu/ehealth-digital-health-and-care/european-health-data-space-regulation-ehds_en</a>
+</div>
+<div id="ref-cordis_predi-lynch_2025" class="csl-entry" role="listitem">
+European Commission. (2025b). <em>Validated non-invasive liquid biopsy
+tests for cancer <span>PREDIction</span> in <span>LYNCH</span> syndrome
+– <span>CORDIS</span></em>. <a href="https://cordis.europa.eu/project/id/101213916" class="uri">https://cordis.europa.eu/project/id/101213916</a>.
+</div>
+<div id="ref-ema_2023_rwe_methodology" class="csl-entry" role="listitem">
+European Medicines Agency. (2023). <em>Reflection paper on the use of
+real-world data in non-interventional studies to generate real-world
+evidence</em>. <a href="https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-use-real-world-data-non-interventional-studies-generate-real-world-evidence_en.pdf" class="uri">https://www.ema.europa.eu/en/documents/scientific-guideline/reflection-paper-use-real-world-data-non-interventional-studies-generate-real-world-evidence_en.pdf</a>.
+</div>
+<div id="ref-ema_cat_highlights_2025" class="csl-entry" role="listitem">
+European Medicines Agency. (2025a). <em><span>CAT</span> quarterly
+highlights and approved <span>ATMPs</span>, <span>December</span>
+2025</em>. <a href="https://www.ema.europa.eu/en/documents/committee-report/cat-quarterly-highlights-approved-atmps-december-2025_en.pdf">https://www.ema.europa.eu/en/documents/committee-report/cat-quarterly-highlights-approved-atmps-december-2025_en.pdf</a>
+</div>
+<div id="ref-ema_atmp_guideline_2025" class="csl-entry" role="listitem">
+European Medicines Agency. (2025b). <em>Guideline on quality,
+non-clinical and clinical requirements for investigational advanced
+therapy medicinal products in clinical trials</em>.
+</div>
+<div id="ref-directive_2001_18" class="csl-entry" role="listitem">
+European Parliament and Council. (2001). <em>Directive 2001/18/EC on the
+deliberate release into the environment of genetically modified
+organisms: L 106</em> (pp. 1–39). Official Journal of the European
+Communities. <a href="https://eur-lex.europa.eu/eli/dir/2001/18/oj/eng">https://eur-lex.europa.eu/eli/dir/2001/18/oj/eng</a>
+</div>
+<div id="ref-clinical_trials_regulation_536_2014" class="csl-entry" role="listitem">
+European Parliament and Council. (2014). <em>Regulation (EU) no 536/2014
+on clinical trials on medicinal products for human use: L 158</em> (pp.
+1–76). Official Journal of the European Union. <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0536">https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0536</a>
+</div>
+<div id="ref-eu_ai_act_2024" class="csl-entry" role="listitem">
+European Parliament and Council. (2024). <em>Regulation (EU) 2024/1689
+laying down harmonised rules on artificial intelligence (AI act):
+L</em>. Official Journal of the European Union. <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689">https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689</a>
+</div>
+<div id="ref-ehds_regulation_2025" class="csl-entry" role="listitem">
+European Parliament and Council. (2025). <em>Regulation (EU) 2025/327 on
+the european health data space</em>. Official Journal of the European
+Union. <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0327">https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0327</a>
+</div>
+<div id="ref-regulation_ec_1394_2007" class="csl-entry" role="listitem">
+European Parliament and Council of the European Union. (2007).
+<em>Regulation (EC) no 1394/2007 on advanced therapy medicinal products:
+L 324</em> (pp. 121–137). Official Journal of the European Union. <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007R1394">https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007R1394</a>
+</div>
+<div id="ref-gdpr_2016" class="csl-entry" role="listitem">
+European Parliament and Council of the European Union. (2016).
+<em>Regulation (EU) 2016/679 (general data protection regulation)</em>.
+<em>L 119</em>, 1–88. <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679">https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679</a>
+</div>
+<div id="ref-mdr_2017_745" class="csl-entry" role="listitem">
+European Parliament and Council of the European Union. (2017a).
+<em>Regulation (EU) 2017/745 on medical devices: L 117</em> (pp. 1–175).
+Official Journal of the European Union. <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32017R0745">https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32017R0745</a>
+</div>
+<div id="ref-ivdr_2017_746" class="csl-entry" role="listitem">
+European Parliament and Council of the European Union. (2017b).
+<em>Regulation (EU) 2017/746 on in vitro diagnostic medical devices: L
+117</em> (pp. 176–332). Official Journal of the European Union. <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32017R0746">https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32017R0746</a>
+</div>
+<div id="ref-euaiact2024" class="csl-entry" role="listitem">
+European Parliament and Council of the European Union. (2024).
+<em>Regulation (<span>EU</span>) 2024/1689 laying down harmonised rules
+on artificial intelligence (<span>AI</span> <span>Act</span>)</em>.
+Official Journal of the European Union, L series.
+</div>
+<div id="ref-ehds2025" class="csl-entry" role="listitem">
+European Parliament and Council of the European Union. (2025).
+<em>Regulation (<span>EU</span>) 2025/327 establishing the
+<span>European Health Data Space</span></em>. Official Journal of the
+European Union.
+</div>
+<div id="ref-faden1986history" class="csl-entry" role="listitem">
+Faden, R. R., &amp; Beauchamp, T. L. (1986). <em>A history and theory of
+informed consent</em>. Oxford University Press.
+</div>
+<div id="ref-gmlp_principles_2021" class="csl-entry" role="listitem">
+FDA, Health Canada, &amp; MHRA. (2021). <em>Good machine learning
+practice for medical device development: Guiding principles</em>.
+</div>
+<div id="ref-finan_2017_druggable_genome" class="csl-entry" role="listitem">
+Finan, C., Gaulton, A., Kruger, F. A., Lumbers, R. T., Shah, T.,
+Engmann, J., Galver, L., Kelley, R., Karlsson, A., Santos, R.,
+Overington, J. P., Hingorani, A. D., &amp; Casas, J. P. (2017). The
+druggable genome and support for target identification and validation in
+drug development. <em>Science Translational Medicine</em>,
+<em>9</em>(383), eaag1166. <a href="https://doi.org/10.1126/scitranslmed.aag1166">https://doi.org/10.1126/scitranslmed.aag1166</a>
+</div>
+<div id="ref-findlay2018saturation" class="csl-entry" role="listitem">
+Findlay, G. M., Daza, R. M., Martin, B., Zhang, M. D., Leith, A. P.,
+Gasperini, M., Janizek, J. D., Huang, X., Starita, L. M., &amp;
+Shendure, J. (2018). Accurate classification of <span>BRCA1</span>
+variants with saturation genome editing. <em>Nature</em>,
+<em>562</em>(7726), 217–222. <a href="https://doi.org/10.1038/s41586-018-0461-z">https://doi.org/10.1038/s41586-018-0461-z</a>
+</div>
+<div id="ref-finn2018" class="csl-entry" role="listitem">
+Finn, J. D., Smith, A. R., Patel, M. C., Shaw, L., Youniss, M. R.,
+Heteren, J. van, Dirstine, T., Ciullo, C., Lescarbeau, R., Seitzer, J.,
+Shah, R. R., Shah, A., Ling, D., Growe, J., Pink, M., Rohde, E., Wood,
+K. M., Salomon, W. E., Harrington, W. F., … Morrissey, D. V. (2018). A
+single administration of <span>CRISPR</span>/<span>Cas9</span> lipid
+nanoparticles achieves robust and persistent in vivo genome editing.
+<em>Cell Reports</em>, <em>22</em>(9), 2227–2235. <a href="https://doi.org/10.1016/j.celrep.2018.02.014">https://doi.org/10.1016/j.celrep.2018.02.014</a>
+</div>
+<div id="ref-forget1998molec" class="csl-entry" role="listitem">
+Forget, B. G. (1998). Molecular basis of hereditary persistence of fetal
+hemoglobin. <em>Annals of the New York Academy of Sciences</em>,
+<em>850</em>(1), 38–44. <a href="https://doi.org/10.1111/j.1749-6632.1998.tb10460.x">https://doi.org/10.1111/j.1749-6632.1998.tb10460.x</a>
+</div>
+<div id="ref-frangoul2021crispr" class="csl-entry" role="listitem">
+Frangoul, H., Altshuler, D., Cappellini, M. D., Chen, Y.-S., Domm, J.,
+Eustace, B. K., Foell, J., Fuente, J. de la, Gruber, S., Handgretinger,
+R., et al. (2021). <span>CRISPR</span>–<span>Cas9</span> gene editing
+for sickle cell disease and <span class="math inline"><em>β</em></span>-thalassemia. <em>New England
+Journal of Medicine</em>, <em>384</em>(3), 252–260. <a href="https://doi.org/10.1056/NEJMoa2031054">https://doi.org/10.1056/NEJMoa2031054</a>
+</div>
+<div id="ref-frangoul2024_nejm" class="csl-entry" role="listitem">
+Frangoul, H., Locatelli, F., Bhatia, M., et al. (2024). Exagamglogene
+autotemcel for severe sickle cell disease. <em>New England Journal of
+Medicine</em>, <em>390</em>(18), 1649–1662. <a href="https://doi.org/10.1056/NEJMoa2309676">https://doi.org/10.1056/NEJMoa2309676</a>
+</div>
+<div id="ref-fricker2007epistemic" class="csl-entry" role="listitem">
+Fricker, M. (2007). <em>Epistemic injustice: Power and the ethics of
+knowing</em>. Oxford University Press. <a href="https://doi.org/10.1093/acprof:oso/9780198237907.001.0001">https://doi.org/10.1093/acprof:oso/9780198237907.001.0001</a>
+</div>
+<div id="ref-fukuyama2002our" class="csl-entry" role="listitem">
+Fukuyama, F. (2002). <em>Our posthuman future: Consequences of the
+biotechnology revolution</em>. Farrar, Straus; Giroux.
+</div>
+<div id="ref-garrison2021value" class="csl-entry" role="listitem">
+Garrison, L. P., Jiao, B., &amp; Engel-Nitz, N. M. (2021). Gene therapy
+may not be as expensive as people think: Challenges in assessing the
+value of single and short-term therapies. <em>Journal of Managed Care
+&amp; Specialty Pharmacy</em>, <em>27</em>(5), 674–681. <a href="https://doi.org/10.18553/jmcp.2021.27.5.674">https://doi.org/10.18553/jmcp.2021.27.5.674</a>
+</div>
+<div id="ref-gasperini_2019_enhancer" class="csl-entry" role="listitem">
+Gasperini, M., Hill, A. J., McFaline-Figueroa, J. L., Martin, B., Kim,
+S., Zhang, M. D., Jackson, D., Leith, A., Schreiber, J., Noble, W. S.,
+Trapnell, C., Ahfeldt, T., &amp; Shendure, J. (2019). A genome-wide
+framework for mapping gene regulation via cellular genetic screens.
+<em>Cell</em>, <em>176</em>(1–2), 377–390.e19. <a href="https://doi.org/10.1016/j.cell.2018.11.029">https://doi.org/10.1016/j.cell.2018.11.029</a>
+</div>
+<div id="ref-gaudelli2017" class="csl-entry" role="listitem">
+Gaudelli, N. M., Komor, A. C., Rees, H. A., Packer, M. S., Badran, A.
+H., Bryson, D. I., &amp; Liu, D. R. (2017). Programmable base editing of
+<span>A</span>·<span>T</span> to <span>G</span>·<span>C</span> in
+genomic <span>DNA</span> without <span>DNA</span> cleavage.
+<em>Nature</em>, <em>551</em>(7681), 464–471. <a href="https://doi.org/10.1038/nature24644">https://doi.org/10.1038/nature24644</a>
+</div>
+<div id="ref-georgiadis_2019_msi_cfdna" class="csl-entry" role="listitem">
+Georgiadis, A., Durham, J. N., Keefer, L. A., Bartlett, B. R., Zielonka,
+M., Murphy, D., White, J. R., Lu, S., Verner, E. L., Rber, F., Paschen,
+A., Diaz, L. A., Silliman, N., &amp; Velculescu, V. E. (2019).
+Noninvasive detection of microsatellite instability and high tumor
+mutation burden in cancer patients treated with <span>PD-1</span>
+blockade. <em>Clinical Cancer Research</em>, <em>25</em>(23), 7024–7034.
+<a href="https://doi.org/10.1158/1078-0432.CCR-19-1372">https://doi.org/10.1158/1078-0432.CCR-19-1372</a>
+</div>
+<div id="ref-gilbert2013" class="csl-entry" role="listitem">
+Gilbert, L. A., Larson, M. H., Morsut, L., Liu, Z., Brar, G. A., Torres,
+S. E., Stern-Ginossar, N., Brandman, O., Whitehead, E. H., Doudna, J.
+A., Lim, W. A., Weissman, J. S., &amp; Qi, L. S. (2013).
+<span>CRISPR</span>-mediated modular <span>RNA</span>-guided regulation
+of transcription in eukaryotes. <em>Cell</em>, <em>154</em>(2), 442–451.
+<a href="https://doi.org/10.1016/j.cell.2013.06.044">https://doi.org/10.1016/j.cell.2013.06.044</a>
+</div>
+<div id="ref-gillmore2021_ntla" class="csl-entry" role="listitem">
+Gillmore, J. D., Gane, E., Taubel, J., Kao, J., Fontana, M., Maitland,
+M. L., et al. (2021). <span>CRISPR</span>-<span>Cas9</span> in vivo gene
+editing for transthyretin amyloidosis. <em>New England Journal of
+Medicine</em>, <em>385</em>(6), 493–502. <a href="https://doi.org/10.1056/NEJMoa2107454">https://doi.org/10.1056/NEJMoa2107454</a>
+</div>
+<div id="ref-gillmore2021" class="csl-entry" role="listitem">
+Gillmore, J. D., Gane, E., Taubel, J., Kao, J., Fontana, M., Maitland,
+M. L., Seitzer, J., O’Connell, D., Walsh, K. R., Wood, K., Phillips, J.,
+Xu, Y., Amaral, A., Boyd, A. P., Cehelsky, J. E., McKee, M. D.,
+Schiermeier, A., Hutchaleelaha, A., Beattie, B. J., … Sardh, E. (2021).
+<span>CRISPR</span>-<span>Cas9</span> in vivo gene editing for
+transthyretin amyloidosis. <em>New England Journal of Medicine</em>,
+<em>385</em>(6), 493–502. <a href="https://doi.org/10.1056/NEJMoa2107454">https://doi.org/10.1056/NEJMoa2107454</a>
+</div>
+<div id="ref-goddard2012automation" class="csl-entry" role="listitem">
+Goddard, K., Roudsari, A., &amp; Wyatt, J. C. (2012). Automation bias: A
+systematic review of frequency, effect mediators, and mitigators.
+<em>Journal of the American Medical Informatics Association</em>,
+<em>19</em>(1), 121–127. <a href="https://doi.org/10.1136/amiajnl-2011-000089">https://doi.org/10.1136/amiajnl-2011-000089</a>
+</div>
+<div id="ref-goldsack2023_digital_endpoints" class="csl-entry" role="listitem">
+Goldsack, J. C., Ernst, S., Dockendorf, M. F., Perumal, T. M., &amp;
+Vandendriessche, B. (2023). Digital endpoints in clinical trials:
+Building the business case for systematic adoption. <em>Nature</em>,
+<em>620</em>, 109–118. <a href="https://doi.org/10.1038/d41573-026-00033-5">https://doi.org/10.1038/d41573-026-00033-5</a>
+</div>
+<div id="ref-gonatopoulos2019systematic" class="csl-entry" role="listitem">
+Gonatopoulos-Pournatzis, T., Aregger, M., Brown, K. R., Farhangmehr, S.,
+Braunschweig, U., Ward, H. N., Ha, K. C. H., Weiss, A., Billmann, M.,
+Durbic, T., Myers, C. L., Blencowe, B. J., &amp; Moffat, J. (2020).
+Genetic interaction mapping and exon-resolution functional genomics with
+a hybrid <span>Cas9</span>–<span>Cas12a</span> platform. <em>Nature
+Biotechnology</em>, <em>38</em>, 638–648. <a href="https://doi.org/10.1038/s41587-020-0437-z">https://doi.org/10.1038/s41587-020-0437-z</a>
+</div>
+<div id="ref-gonzalez2016batch" class="csl-entry" role="listitem">
+González, J., Dai, Z., Hennig, P., &amp; Lawrence, N. (2016). Batch
+<span>Bayesian</span> optimization via local penalization.
+<em>Proceedings of the 19th International Conference on Artificial
+Intelligence and Statistics (AISTATS)</em>, 648–657. <a href="https://proceedings.mlr.press/v51/gonzalez16a.pdf">https://proceedings.mlr.press/v51/gonzalez16a.pdf</a>
+</div>
+<div id="ref-gootenberg2017" class="csl-entry" role="listitem">
+Gootenberg, J. S., Abudayyeh, O. O., Lee, J. W., Essletzbichler, P., Dy,
+A. J., Joung, J., Verdine, V., Donghia, N., Daringer, N. M., Freije, C.
+A., Myhrvold, C., Bhatt, R. P., Livny, J., Regev, A., Koonin, E. V.,
+Hung, D. T., Sabeti, P. C., Collins, J. J., &amp; Zhang, F. (2017).
+Nucleic acid detection with
+<span>CRISPR</span>-<span>Cas13a</span>/<span>C2c2</span>.
+<em>Science</em>, <em>356</em>(6336), 438–442. <a href="https://doi.org/10.1126/science.aam9321">https://doi.org/10.1126/science.aam9321</a>
+</div>
+<div id="ref-japan_act_regen" class="csl-entry" role="listitem">
+Government of Japan. (2013). <em>Act on the safety of regenerative
+medicine</em>. Act No. 85 of November 27, 2013. <a href="https://www.japaneselawtranslation.go.jp/en/laws/view/2837">https://www.japaneselawtranslation.go.jp/en/laws/view/2837</a>
+</div>
+<div id="ref-green_2014_fertility_preservation" class="csl-entry" role="listitem">
+Green, D. M., Nolan, V. G., Goodman, P. J., Whitton, J. A., Srivastava,
+D., Leisenring, W. M., Neglia, J. P., Sklar, C. A., Kaste, S. C.,
+Hudson, M. M., Diller, L. R., Stovall, M., Donaldson, S. S., &amp;
+Robison, L. L. (2014). The cyclophosphamide equivalent dose as an
+approach for quantifying alkylating agent exposure. <em>Pediatric Blood
+&amp; Cancer</em>, <em>61</em>(1), 53–67. <a href="https://doi.org/10.1002/pbc.24679">https://doi.org/10.1002/pbc.24679</a>
+</div>
+<div id="ref-guston2014understanding" class="csl-entry" role="listitem">
+Guston, D. H. (2014). Understanding <span>“anticipatory
+governance.”</span> <em>Social Studies of Science</em>, <em>44</em>(2),
+218–242. <a href="https://doi.org/10.1177/0306312713508669">https://doi.org/10.1177/0306312713508669</a>
+</div>
+<div id="ref-habermas2003future" class="csl-entry" role="listitem">
+Habermas, J. (2003). <em>The future of human nature</em>. Polity Press.
+</div>
+<div id="ref-haeussler2016" class="csl-entry" role="listitem">
+Haeussler, M., Schönig, K., Eckert, H., Eschstruth, A., Mianné, J.,
+Renaud, J.-B., Schneider-Maunoury, S., Shkumatava, A., Teboul, L., Kent,
+J., Joly, J.-S., &amp; Concordet, J.-P. (2016). Evaluation of off-target
+and on-target scoring algorithms and integration into the guide
+<span>RNA</span> selection tool <span>CRISPOR</span>. <em>Genome
+Biology</em>, <em>17</em>, 148. <a href="https://doi.org/10.1186/s13059-016-1012-2">https://doi.org/10.1186/s13059-016-1012-2</a>
+</div>
+<div id="ref-haraway1988situated" class="csl-entry" role="listitem">
+Haraway, D. (1988). Situated knowledges: The science question in
+feminism and the privilege of partial perspective. <em>Feminist
+Studies</em>, <em>14</em>(3), 575–599. <a href="https://doi.org/10.2307/3178066">https://doi.org/10.2307/3178066</a>
+</div>
+<div id="ref-harden2021genetic" class="csl-entry" role="listitem">
+Harden, K. P. (2021). <em>The genetic lottery: Why <span>DNA</span>
+matters for social equality</em>. Princeton University Press.
+</div>
+<div id="ref-harpaz_2012_text_mining_pharmacovigilance" class="csl-entry" role="listitem">
+Harpaz, R., DuMouchel, W., Shah, N. H., Madigan, D., Ryan, P., &amp;
+Friedman, C. (2012). Novel data-mining methodologies for adverse drug
+event discovery and analysis. <em>Clinical Pharmacology &amp;
+Therapeutics</em>, <em>91</em>(6), 1010–1021. <a href="https://doi.org/10.1038/clpt.2012.50">https://doi.org/10.1038/clpt.2012.50</a>
+</div>
+<div id="ref-hart_2017_bagel" class="csl-entry" role="listitem">
+Hart, T., &amp; Moffat, J. (2016). <span>BAGEL</span>: A computational
+framework for identifying essential genes from pooled library screens.
+<em>BMC Bioinformatics</em>, <em>17</em>, 164. <a href="https://doi.org/10.1186/s12859-016-1015-8">https://doi.org/10.1186/s12859-016-1015-8</a>
+</div>
+<div id="ref-vanderheijden2005scenarios" class="csl-entry" role="listitem">
+Heijden, K. van der. (2005). <em>Scenarios: The art of strategic
+conversation</em> (2nd ed.). John Wiley &amp; Sons.
+</div>
+<div id="ref-heil2021" class="csl-entry" role="listitem">
+Heil, B. J., Hoffman, M. M., Markowetz, F., Lee, S.-I., Greene, C. S.,
+&amp; Hicks, S. C. (2021). Reproducibility standards for machine
+learning in the life sciences. <em>Nature Methods</em>, <em>18</em>(10),
+1132–1135. <a href="https://doi.org/10.1038/s41592-021-01256-7">https://doi.org/10.1038/s41592-021-01256-7</a>
+</div>
+<div id="ref-heitzer_2019_liquid_biopsy_precision" class="csl-entry" role="listitem">
+Heitzer, E., Haque, I. S., Roberts, C. E. S., &amp; Speicher, M. R.
+(2019). Current and future perspectives of liquid biopsies in
+genomics-driven oncology. <em>Nature Reviews Genetics</em>,
+<em>20</em>(2), 71–88. <a href="https://doi.org/10.1038/s41576-018-0071-5">https://doi.org/10.1038/s41576-018-0071-5</a>
+</div>
+<div id="ref-hernán_2020_causal_inference" class="csl-entry" role="listitem">
+Hernán, M. A., &amp; Robins, J. M. (2020). <em>Causal inference: What
+if</em>. Chapman &amp; Hall/CRC.
+</div>
+<div id="ref-hilton2015" class="csl-entry" role="listitem">
+Hilton, I. B., D’Ippolito, A. M., Vockley, C. M., Thakore, P. I.,
+Crawford, G. E., Reddy, T. E., &amp; Gersbach, C. A. (2015). Epigenome
+editing by a <span>CRISPR</span>-<span>Cas9</span>-based
+acetyltransferase activates genes from promoters and enhancers.
+<em>Nature Biotechnology</em>, <em>33</em>(5), 510–517. <a href="https://doi.org/10.1038/nbt.3199">https://doi.org/10.1038/nbt.3199</a>
+</div>
+<div id="ref-himmelstein_2017_hetionet" class="csl-entry" role="listitem">
+Himmelstein, D. S., Lizee, A., Hessler, C., Brueggeman, L., Chen, S. L.,
+Hadley, D., Green, A., Khankhanian, P., &amp; Baranzini, S. E. (2017).
+Systematic integration of biomedical knowledge prioritizes drugs for
+repurposing. <em>eLife</em>, <em>6</em>, e26726. <a href="https://doi.org/10.7554/eLife.26726">https://doi.org/10.7554/eLife.26726</a>
+</div>
+<div id="ref-holmes2021_int" class="csl-entry" role="listitem">
+Holmes, M. V., Richardson, T. G., Ference, B. A., Davies, N. M., &amp;
+Davey Smith, G. (2021). Integrating genomics with biomarkers and
+therapeutic targets to invigorate cardiovascular drug development.
+<em>Nature Reviews Cardiology</em>, <em>18</em>(6), 435–453. <a href="https://doi.org/10.1038/s41569-020-00493-1">https://doi.org/10.1038/s41569-020-00493-1</a>
+</div>
+<div id="ref-horlbeck2016" class="csl-entry" role="listitem">
+Horlbeck, M. A., Gilbert, L. A., Villalta, J. E., Adamson, B., Pak, R.
+A., Chen, Y., Fields, A. P., Park, C. Y., Corn, J. E., Kampmann, M.,
+&amp; Weissman, J. S. (2016). Compact and highly active next-generation
+libraries for <span>CRISPR</span>-mediated gene repression and
+activation. <em>eLife</em>, <em>5</em>, e19760. <a href="https://doi.org/10.7554/eLife.19760">https://doi.org/10.7554/eLife.19760</a>
+</div>
+<div id="ref-hsu2013" class="csl-entry" role="listitem">
+Hsu, P. D., Scott, D. A., Weinstein, J. A., Ran, F. A., Konermann, S.,
+Agarwala, V., Li, Y., Fine, E. J., Wu, X., Shalem, O., Cradick, T. J.,
+Marraffini, L. A., Bao, G., &amp; Zhang, F. (2013). <span>DNA</span>
+targeting specificity of <span>RNA</span>-guided <span>Cas9</span>
+nucleases. <em>Nature Biotechnology</em>, <em>31</em>(9), 827–832. <a href="https://doi.org/10.1038/nbt.2647">https://doi.org/10.1038/nbt.2647</a>
+</div>
+<div id="ref-huang2019" class="csl-entry" role="listitem">
+Huang, T. P., Zhao, K. T., Miller, S. M., Gaudelli, N. M., Oakes, B. L.,
+Fellmann, C., Savage, D. F., &amp; Liu, D. R. (2019). Circularly
+permuted and <span>PAM</span>-modified <span>Cas9</span> variants
+broaden the targeting scope of base editors. <em>Nature
+Biotechnology</em>, <em>37</em>(6), 626–631. <a href="https://doi.org/10.1038/s41587-019-0134-y">https://doi.org/10.1038/s41587-019-0134-y</a>
+</div>
+<div id="ref-hjorth_2023_aya_survivorship" class="csl-entry" role="listitem">
+Husson, O., Thomas, D. M., &amp; Graaf, W. T. A. van der. (2023).
+Adolescent and young adult cancer survivorship and aging: The next step
+to take? <em>Cancer Survivorship Research &amp; Care</em>,
+<em>1</em>(1), 2234818. <a href="https://doi.org/10.1080/28352610.2023.2234818">https://doi.org/10.1080/28352610.2023.2234818</a>
+</div>
+<div id="ref-ich_q5a_viral_safety" class="csl-entry" role="listitem">
+International Council for Harmonisation. (2024). <em><span>ICH</span>
+<span>Q5A</span>(R2): Viral safety evaluation of biotechnology products
+derived from cell lines of human or animal origin</em>.
+</div>
+<div id="ref-ishino1987" class="csl-entry" role="listitem">
+Ishino, Y., Shinagawa, H., Makino, K., Amemura, M., &amp; Nakata, A.
+(1987). Nucleotide sequence of the iap gene, responsible for alkaline
+phosphatase isozyme conversion in <span class="nocase">Escherichia
+coli</span>, and identification of the gene product. <em>Journal of
+Bacteriology</em>, <em>169</em>(12), 5429–5433. <a href="https://doi.org/10.1128/jb.169.12.5429-5433.1987">https://doi.org/10.1128/jb.169.12.5429-5433.1987</a>
+</div>
+<div id="ref-jansen2002" class="csl-entry" role="listitem">
+Jansen, R., Embden, J. D. A. van, Gaastra, W., &amp; Schouls, L. M.
+(2002). Identification of genes that are associated with
+<span>DNA</span> repeats in prokaryotes. <em>Molecular
+Microbiology</em>, <em>43</em>(6), 1565–1575. <a href="https://doi.org/10.1046/j.1365-2958.2002.02839.x">https://doi.org/10.1046/j.1365-2958.2002.02839.x</a>
+</div>
+<div id="ref-jasanoff2004" class="csl-entry" role="listitem">
+Jasanoff, S. (2004a). <em>States of knowledge: The co-production of
+science and social order</em>. Routledge.
+</div>
+<div id="ref-jasanoff_2004_states_knowledge" class="csl-entry" role="listitem">
+Jasanoff, S. (2004b). <em>States of knowledge: The co-production of
+science and social order</em>. Routledge.
+</div>
+<div id="ref-jasanoff2004states" class="csl-entry" role="listitem">
+Jasanoff, S. (2004c). <em>States of knowledge: The co-production of
+science and the social order</em>. Routledge. <a href="https://doi.org/10.4324/9780203413845">https://doi.org/10.4324/9780203413845</a>
+</div>
+<div id="ref-jasanoff_2005_designs" class="csl-entry" role="listitem">
+Jasanoff, S. (2005b). <em>Designs on nature: Science and democracy in
+<span>Europe</span> and the <span>United States</span></em>. Princeton
+University Press.
+</div>
+<div id="ref-jasanoff2005designs" class="csl-entry" role="listitem">
+Jasanoff, S. (2005a). <em>Designs on nature: Science and democracy in
+<span>Europe</span> and the <span>United States</span></em>. Princeton
+University Press.
+</div>
+<div id="ref-jasanoff_hurlbut_2018" class="csl-entry" role="listitem">
+Jasanoff, S., &amp; Hurlbut, J. B. (2018b). A global observatory for
+gene editing. <em>Nature</em>, <em>555</em>, 435–437. <a href="https://doi.org/10.1038/d41586-018-03270-w">https://doi.org/10.1038/d41586-018-03270-w</a>
+</div>
+<div id="ref-jasanoff2019can" class="csl-entry" role="listitem">
+Jasanoff, S., &amp; Hurlbut, J. B. (2018a). A global observatory for
+gene editing. <em>Nature</em>, <em>555</em>, 435–437. <a href="https://doi.org/10.1038/d41586-018-03270-w">https://doi.org/10.1038/d41586-018-03270-w</a>
+</div>
+<div id="ref-jasanoff2015imaginaries" class="csl-entry" role="listitem">
+Jasanoff, S., &amp; Kim, S.-H. (Eds.). (2015b). <em>Dreamscapes of
+modernity: Sociotechnical imaginaries and the fabrication of power</em>.
+<a href="https://doi.org/10.7208/chicago/9780226276663.001.0001">https://doi.org/10.7208/chicago/9780226276663.001.0001</a>
+</div>
+<div id="ref-jasanoff2015dreamscapes" class="csl-entry" role="listitem">
+Jasanoff, S., &amp; Kim, S.-H. (2015a). <em>Dreamscapes of modernity:
+Sociotechnical imaginaries and the fabrication of power</em>. University
+of Chicago Press. <a href="https://doi.org/10.7208/chicago/9780226276663.001.0001">https://doi.org/10.7208/chicago/9780226276663.001.0001</a>
+</div>
+<div id="ref-jasin2013" class="csl-entry" role="listitem">
+Jasin, M., &amp; Rothstein, R. (2013). Repair of strand breaks by
+homologous recombination. <em>Cold Spring Harbor Perspectives in
+Biology</em>, <em>5</em>(11), a012740. <a href="https://doi.org/10.1101/cshperspect.a012740">https://doi.org/10.1101/cshperspect.a012740</a>
+</div>
+<div id="ref-ji2026emerging" class="csl-entry" role="listitem">
+Ji, R., Chen, Q., &amp; Zhang, Y. (2026). Emerging trends in gene and
+cell therapy: <span>CRISPR</span> in <span>DNA</span> editing and
+beyond. <em>Cell Reports Medicine</em>, <em>7</em>(1), 102459. <a href="https://doi.org/10.1016/j.xcrm.2025.102459">https://doi.org/10.1016/j.xcrm.2025.102459</a>
+</div>
+<div id="ref-ji2021dnabert" class="csl-entry" role="listitem">
+Ji, Y., Zhou, Z., Liu, H., &amp; Davuluri, R. V. (2021).
+<span>DNABERT</span>: Pre-trained bidirectional encoder representations
+from transformers model for <span>DNA</span>-language in genome.
+<em>Bioinformatics</em>, <em>37</em>(15), 2112–2120. <a href="https://doi.org/10.1093/bioinformatics/btab083">https://doi.org/10.1093/bioinformatics/btab083</a>
+</div>
+<div id="ref-jiang2025evolvepro" class="csl-entry" role="listitem">
+Jiang, K., Yan, Z., Di Bernardo, M., Sgrizzi, S. R., Villiger, L.,
+Kayabolen, A., Kim, B. J., Carscadden, J. K., Hiraizumi, M., Nishimasu,
+H., Gootenberg, J. S., &amp; Abudayyeh, O. O. (2025). Rapid in silico
+directed evolution by a protein language model with
+<span>EVOLVE</span>pro. <em>Science</em>, <em>387</em>(6732), eadr6006.
+<a href="https://doi.org/10.1126/science.adr6006">https://doi.org/10.1126/science.adr6006</a>
+</div>
+<div id="ref-jinek2012" class="csl-entry" role="listitem">
+Jinek, M., Chylinski, K., Fonfara, I., Hauer, M., Doudna, J. A., &amp;
+Charpentier, E. (2012). A programmable dual-<span>RNA</span>-guided
+<span>DNA</span> endonuclease in adaptive bacterial immunity.
+<em>Science</em>, <em>337</em>(6096), 816–821. <a href="https://doi.org/10.1126/science.1225829">https://doi.org/10.1126/science.1225829</a>
+</div>
+<div id="ref-jumper_2021_alphafold" class="csl-entry" role="listitem">
+Jumper, J., Evans, R., Pritzel, A., Green, T., Figurnov, M.,
+Ronneberger, O., Tunyasuvunakool, K., Bates, R., Žı́dek, A., Potapenko,
+A., Bridgland, A., Meyer, C., Kohl, S. A. A., Ballard, A. J., Cowie, A.,
+Romera-Paredes, B., Nikolov, S., Jain, R., Adler, J., … Hassabis, D.
+(2021). Highly accurate protein structure prediction with
+<span>AlphaFold</span>. <em>Nature</em>, <em>596</em>, 583–589. <a href="https://doi.org/10.1038/s41586-021-03819-2">https://doi.org/10.1038/s41586-021-03819-2</a>
+</div>
+<div id="ref-kang2017_eliie" class="csl-entry" role="listitem">
+Kang, T., Zhang, S., Tang, Y., Hruby, G. W., Rusanov, A., Elhadad, N.,
+&amp; Weng, C. (2017). EliIE: An open-source information extraction
+system for clinical trial eligibility criteria. <em>Journal of the
+American Medical Informatics Association</em>, <em>24</em>(6),
+1062–1071. <a href="https://doi.org/10.1093/jamia/ocx019">https://doi.org/10.1093/jamia/ocx019</a>
+</div>
+<div id="ref-karimireddy_2020_scaffold" class="csl-entry" role="listitem">
+Karimireddy, S. P., Kale, S., Mohri, M., Reddi, S., Stich, S., &amp;
+Suresh, A. T. (2020). <span>SCAFFOLD</span>: Stochastic controlled
+averaging for federated learning. <em>Proceedings of the 37th
+International Conference on Machine Learning (ICML)</em>, 5132–5143.
+</div>
+<div id="ref-kass2002life" class="csl-entry" role="listitem">
+Kass, L. R. (2002). <em>Life, liberty and the defense of dignity: The
+challenge for bioethics</em>. Encounter Books.
+</div>
+<div id="ref-katzman_2018_deepsurv" class="csl-entry" role="listitem">
+Katzman, J. L., Shaham, U., Cloninger, A., Bates, J., Jiang, T., &amp;
+Kluger, Y. (2018). <span>DeepSurv</span>: Personalized treatment
+recommender system using a <span>Cox</span> proportional hazards deep
+neural network. <em>BMC Medical Research Methodology</em>, <em>18</em>,
+24. <a href="https://doi.org/10.1186/s12874-018-0482-1">https://doi.org/10.1186/s12874-018-0482-1</a>
+</div>
+<div id="ref-kay2000who" class="csl-entry" role="listitem">
+Kay, L. E. (2000). <em>Who wrote the book of life? <span>A</span>
+history of the genetic code</em>. Stanford University Press.
+</div>
+<div id="ref-khera_2018_prs_cad" class="csl-entry" role="listitem">
+Khera, A. V., Chaffin, M., Aragam, K. G., Haas, M. E., Roselli, C.,
+Choi, S. H., Natarajan, P., Lander, E. S., Lubitz, S. A., Ellinor, P.
+T., &amp; Kathiresan, S. (2018). Genome-wide polygenic scores for common
+diseases identify individuals with risk equivalent to monogenic
+mutations. <em>Nature Genetics</em>, <em>50</em>(9), 1219–1224. <a href="https://doi.org/10.1038/s41588-018-0183-z">https://doi.org/10.1038/s41588-018-0183-z</a>
+</div>
+<div id="ref-kim2020hf" class="csl-entry" role="listitem">
+Kim, H. K., Lee, S., Kim, Y., Park, J., Min, S., Choi, J. W., Huang, T.
+P., Yoon, S., Liu, D. R., &amp; Kim, H. H. (2020). High-throughput
+analysis of the activities of xCas9, SpCas9-NG and SpCas9 at matched and
+mismatched target sequences in human cells. <em>Nature Biomedical
+Engineering</em>, <em>4</em>(1), 111–124. <a href="https://doi.org/10.1038/s41551-019-0505-1">https://doi.org/10.1038/s41551-019-0505-1</a>
+</div>
+<div id="ref-kim2019deepcas9" class="csl-entry" role="listitem">
+Kim, H. K., Min, S., Song, M., Jung, S., Choi, J. W., Kim, Y., Lee, S.,
+Yoon, S., &amp; Kim, H. H. (2019). <span>SpCas9</span> activity
+prediction by <span>DeepSpCas9</span>, a deep learning-based model with
+high generalization performance. <em>Science Advances</em>,
+<em>5</em>(11), eaax9249. <a href="https://doi.org/10.1126/sciadv.aax9249">https://doi.org/10.1126/sciadv.aax9249</a>
+</div>
+<div id="ref-kim2021pridict" class="csl-entry" role="listitem">
+Kim, H. K., Yu, G., Park, J., Min, S., Lee, S., Yoon, S., &amp; Kim, H.
+H. (2021). Predicting the efficiency of prime editing guide
+<span>RNAs</span> in human cells. <em>Nature Biotechnology</em>,
+<em>39</em>(2), 198–206. <a href="https://doi.org/10.1038/s41587-020-0677-y">https://doi.org/10.1038/s41587-020-0677-y</a>
+</div>
+<div id="ref-kim2023_deeprime" class="csl-entry" role="listitem">
+Kim, H. K., Yu, G., Park, J., Min, S., Lee, S., Yoon, S., &amp; Kim, H.
+H. (2023). Predicting the efficiency of prime editing guide
+<span>RNAs</span> in human cells. <em>Nature Biotechnology</em>,
+<em>41</em>, 1135–1148. <a href="https://doi.org/10.1038/s41587-020-0677-y">https://doi.org/10.1038/s41587-020-0677-y</a>
+</div>
+<div id="ref-klein_2021_galleri_ccga" class="csl-entry" role="listitem">
+Klein, E. A., Richards, D., Cohn, A., Tummala, M., Lapham, R., Cosgrove,
+D., Chung, G., Clement, J., Gao, J., Hunkapiller, N., Jamshidi, A.,
+Kurtzman, K. N., Seiden, M. V., Swanton, C., &amp; Liu, M. C. (2021).
+Clinical validation of a targeted methylation-based multi-cancer early
+detection test using an independent validation set. <em>Annals of
+Oncology</em>, <em>32</em>(9), 1167–1177. <a href="https://doi.org/10.1016/j.annonc.2021.05.806">https://doi.org/10.1016/j.annonc.2021.05.806</a>
+</div>
+<div id="ref-kleinstiver2025_pammla" class="csl-entry" role="listitem">
+Kleinstiver, B. P. et al. (2025). Custom
+<span>CRISPR</span>-<span>Cas9</span> <span>PAM</span> variants via
+scalable engineering and machine learning. <em>Nature
+Biotechnology</em>. <a href="https://doi.org/10.1038/s41586-025-09021-y">https://doi.org/10.1038/s41586-025-09021-y</a>
+</div>
+<div id="ref-chen2017ontarget" class="csl-entry" role="listitem">
+Klemm, S. L., Shipony, Z., &amp; Greenleaf, W. J. (2019). Chromatin
+accessibility and the regulatory epigenome. <em>Nature Reviews
+Genetics</em>, <em>20</em>(4), 207–220. <a href="https://doi.org/10.1038/s41576-018-0089-8">https://doi.org/10.1038/s41576-018-0089-8</a>
+</div>
+<div id="ref-klontzas_2025_pms_ai" class="csl-entry" role="listitem">
+Klontzas, M. E., Akinci D’Antonoli, T., Curvo Semedo, L., et al. (2025).
+<span>AI</span> medical device post-market surveillance regulations:
+Consensus recommendations by the <span class="nocase">European Society
+of Radiology</span>. <em>Insights into Imaging</em>, <em>16</em>, 275.
+<a href="https://doi.org/10.1186/s13244-025-02146-8">https://doi.org/10.1186/s13244-025-02146-8</a>
+</div>
+<div id="ref-komor2016" class="csl-entry" role="listitem">
+Komor, A. C., Kim, Y. B., Packer, M. S., Zuris, J. A., &amp; Liu, D. R.
+(2016). Programmable editing of a target base in genomic
+<span>DNA</span> without double-stranded <span>DNA</span> cleavage.
+<em>Nature</em>, <em>533</em>(7603), 420–424. <a href="https://doi.org/10.1038/nature17946">https://doi.org/10.1038/nature17946</a>
+</div>
+<div id="ref-konermann2015" class="csl-entry" role="listitem">
+Konermann, S., Brigham, M. D., Trevino, A. E., Joung, J., Abudayyeh, O.
+O., Barcena, C., Hsu, P. D., Habib, N., Gootenberg, J. S., Nishimasu,
+H., Nureki, O., &amp; Zhang, F. (2015). Genome-scale transcriptional
+activation by an engineered <span>CRISPR</span>-<span>Cas9</span>
+complex. <em>Nature</em>, <em>517</em>(7536), 583–588. <a href="https://doi.org/10.1038/nature14136">https://doi.org/10.1038/nature14136</a>
+</div>
+<div id="ref-konstantakos2022" class="csl-entry" role="listitem">
+Konstantakos, V., Nentidis, A., Krithara, A., &amp; Paliouras, G.
+(2022). <span>CRISPRbench</span>: A comprehensive benchmark for
+<span>CRISPR</span>-<span>Cas</span> guide <span>RNA</span> efficiency
+prediction. <em>Briefings in Bioinformatics</em>, <em>23</em>(5),
+bbac377. <a href="https://doi.org/10.1093/bib/bbac377">https://doi.org/10.1093/bib/bbac377</a>
+</div>
+<div id="ref-labun2019" class="csl-entry" role="listitem">
+Labun, K., Montague, T. G., Krause, M., Torres Cleuren, Y. N., Tjeldnes,
+H., &amp; Valen, E. (2019). <span>CHOPCHOP</span> v3: Expanding the
+<span>CRISPR</span> web toolbox beyond genome editing. <em>Nucleic Acids
+Research</em>, <em>47</em>(W1), W171–W174. <a href="https://doi.org/10.1093/nar/gkz365">https://doi.org/10.1093/nar/gkz365</a>
+</div>
+<div id="ref-lander_2019_moratorium" class="csl-entry" role="listitem">
+Lander, E. S., Baylis, F., Zhang, F., Charpentier, E., Berg, P., et al.
+(2019). Adopt a moratorium on heritable genome editing. <em>Nature</em>,
+<em>567</em>, 165–168. <a href="https://doi.org/10.1038/d41586-019-00726-5">https://doi.org/10.1038/d41586-019-00726-5</a>
+</div>
+<div id="ref-latour2004why" class="csl-entry" role="listitem">
+Latour, B. (2004). Why has critique run out of steam? <span>From</span>
+matters of fact to matters of concern. <em>Critical Inquiry</em>,
+<em>30</em>(2), 225–248. <a href="https://doi.org/10.1086/421123">https://doi.org/10.1086/421123</a>
+</div>
+<div id="ref-latour2005reassembling" class="csl-entry" role="listitem">
+Latour, B. (2005). <em>Reassembling the social: An introduction to
+<span>Actor-Network-Theory</span></em>. Oxford University Press.
+</div>
+<div id="ref-laubenbacher_2024_digital_twins_medicine" class="csl-entry" role="listitem">
+Laubenbacher, R., Mehrad, B., Shmulevich, I., &amp; Trayanova, N.
+(2024). Digital twins in medicine. <em>Nature Computational
+Science</em>, <em>4</em>(3), 184–191. <a href="https://doi.org/10.1038/s43588-024-00607-6">https://doi.org/10.1038/s43588-024-00607-6</a>
+</div>
+<div id="ref-li_2014_mageck" class="csl-entry" role="listitem">
+Li, W., Xu, H., Xiao, T., Cong, L., Love, M. I., Zhang, F., Irizarry, R.
+A., Liu, J. S., Brown, M., &amp; Liu, X. S. (2014). <span>MAGeCK</span>
+enables robust identification of essential genes from genome-scale
+<span>CRISPR/Cas9</span> knockout screens. <em>Genome Biology</em>,
+<em>15</em>, 554. <a href="https://doi.org/10.1186/s13059-014-0554-4">https://doi.org/10.1186/s13059-014-0554-4</a>
+</div>
+<div id="ref-lin2020" class="csl-entry" role="listitem">
+Lin, J., &amp; Wong, K.-C. (2018). Off-target predictions in
+<span>CRISPR</span>-<span>Cas9</span> gene editing using deep learning.
+<em>Bioinformatics</em>, <em>34</em>(17), i656–i663. <a href="https://doi.org/10.1093/bioinformatics/bty554">https://doi.org/10.1093/bioinformatics/bty554</a>
+</div>
+<div id="ref-lin2023" class="csl-entry" role="listitem">
+Lin, Z., Akin, H., Rao, R., Hie, B., Zhu, Z., Lu, W., Smetanin, N.,
+Verkuil, R., Kabeli, O., Shmueli, Y., Santos Costa, A. dos,
+Fazel-Zarandi, M., Sercu, T., Candela, S., &amp; Rives, A. (2023).
+Evolutionary-scale prediction of atomic-level protein structure with a
+language model. <em>Science</em>, <em>379</em>(6637), 1123–1130. <a href="https://doi.org/10.1126/science.ade2574">https://doi.org/10.1126/science.ade2574</a>
+</div>
+<div id="ref-lippman1991prenatal" class="csl-entry" role="listitem">
+Lippman, A. (1991). Prenatal genetic testing and screening: Constructing
+needs and reinforcing inequities. <em>American Journal of Law &amp;
+Medicine</em>, <em>17</em>(1–2), 15–50. <a href="https://doi.org/10.1017/S0098858800007917">https://doi.org/10.1017/S0098858800007917</a>
+</div>
+<div id="ref-listgarten2018" class="csl-entry" role="listitem">
+Listgarten, J., Weinstein, M., Kleinstiver, B. P., Sousa, A. A., Joung,
+J. K., Crawford, J., Gao, K., Hoang, L., Elibol, M., Doench, J. G.,
+&amp; Fusi, N. (2018). Prediction of off-target activities for the
+end-to-end design of <span>CRISPR</span> guide <span>RNAs</span>.
+<em>Nature Biomedical Engineering</em>, <em>2</em>(1), 38–47. <a href="https://doi.org/10.1038/s41551-017-0178-6">https://doi.org/10.1038/s41551-017-0178-6</a>
+</div>
+<div id="ref-liu2019casx" class="csl-entry" role="listitem">
+Liu, J.-J., Orlova, N., Oakes, B. L., Ma, E., Spinner, H. B., Baez, K.
+L. M., Duber, J., Schoeb, F., Abudayyeh, O. O., Gootenberg, J. S.,
+Zhang, F., Doudna, J. A., &amp; Banfield, J. F. (2019).
+<span>CasX</span> enzymes comprise a distinct family of
+<span>RNA</span>-guided genome editors. <em>Nature</em>,
+<em>566</em>(7743), 218–223. <a href="https://doi.org/10.1038/s41586-019-0908-x">https://doi.org/10.1038/s41586-019-0908-x</a>
+</div>
+<div id="ref-liu2024_autocancer" class="csl-entry" role="listitem">
+Liu, L., Xiong, Y., Zheng, Z., Huang, L., Song, J., Lin, Q., Tang, B.,
+&amp; Wong, K.-C. (2024). AutoCancer as an automated multimodal
+framework for early cancer detection. <em>iScience</em>, <em>27</em>(7),
+110183. <a href="https://doi.org/10.1016/j.isci.2024.110183">https://doi.org/10.1016/j.isci.2024.110183</a>
+</div>
+<div id="ref-liu_2020_grail_methylation" class="csl-entry" role="listitem">
+Liu, M. C., Oxnard, G. R., Klein, E. A., Swanton, C., &amp; Seiden, M.
+V. (2020). Sensitive and specific multi-cancer detection and
+localization using methylation signatures in cell-free <span>DNA</span>.
+<em>Annals of Oncology</em>, <em>31</em>(6), 745–759. <a href="https://doi.org/10.1016/j.annonc.2020.02.011">https://doi.org/10.1016/j.annonc.2020.02.011</a>
+</div>
+<div id="ref-london2019artificial" class="csl-entry" role="listitem">
+London, A. J. (2019). Artificial intelligence and black-box medical
+decisions: Accuracy versus explainability. <em>Hastings Center
+Report</em>, <em>49</em>(1), 15–21. <a href="https://doi.org/10.1002/hast.973">https://doi.org/10.1002/hast.973</a>
+</div>
+<div id="ref-lotfollahi2023" class="csl-entry" role="listitem">
+Lotfollahi, M., Klimovskaia Susmelj, A., De Donno, C., Xia, L., et al.
+(2023). Predicting cellular responses to complex perturbations in
+high-throughput screens. <em>Molecular Systems Biology</em>,
+<em>19</em>, e11517. <a href="https://doi.org/10.15252/msb.202211517">https://doi.org/10.15252/msb.202211517</a>
+</div>
+<div id="ref-low_2020_wearable_sensors_cancer" class="csl-entry" role="listitem">
+Low, C. A., Dey, A. K., Ferreira, D., Kamarck, T., Sun, W., Bae, S.,
+&amp; Doryab, A. (2020). Behavioral and physiological data from wearable
+sensors: Feasibility and acceptability in cancer survivors. <em>PLOS
+ONE</em>, <em>15</em>(9), e0237698. <a href="https://doi.org/10.1371/journal.pone.0237698">https://doi.org/10.1371/journal.pone.0237698</a>
+</div>
+<div id="ref-lu2023_cfDNA_MSI" class="csl-entry" role="listitem">
+Lu, N. (2023). <em>Know thy cell-free DNA: Early detection of
+microsatellite instability using ultra-low-pass cell-free DNA
+sequences</em> [Master’s thesis, Massachusetts Institute of Technology].
+<a href="https://dspace.mit.edu/handle/1721.1/151965">https://dspace.mit.edu/handle/1721.1/151965</a>
+</div>
+<div id="ref-Luo2024Inter" class="csl-entry" role="listitem">
+Luo, Y. et al. (2024). Interpretable CRISPR/Cas9 off-target activities
+with mismatches and indels prediction using BERT. <em>Computers in
+Biology and Medicine</em>, <em>169</em>, 107932. <a href="https://doi.org/10.1016/j.compbiomed.2024.107932">https://doi.org/10.1016/j.compbiomed.2024.107932</a>
+</div>
+<div id="ref-lynch2015review" class="csl-entry" role="listitem">
+Lynch, H. T., Snyder, C. L., Shaw, T. G., Heinen, C. D., &amp; Hitchins,
+M. P. (2015). Milestones of <span>Lynch</span> syndrome: 1895–2015.
+<em>Nature Reviews Cancer</em>, <em>15</em>(3), 181–194. <a href="https://doi.org/10.1038/nrc3878">https://doi.org/10.1038/nrc3878</a>
+</div>
+<div id="ref-mackenzie2000relational" class="csl-entry" role="listitem">
+Mackenzie, C., &amp; Stoljar, N. (Eds.). (2000). <em>Relational
+autonomy: Feminist perspectives on autonomy, agency, and the social
+self</em>. Oxford University Press.
+</div>
+<div id="ref-madani2023" class="csl-entry" role="listitem">
+Madani, A., Krause, B., Greene, E. R., Subramanian, S., Mohr, B. P.,
+Holton, J. M., Olmos, J. L., Xiong, C., Sun, Z. Z., Socher, R., Fraser,
+J. S., &amp; Naik, N. (2023). Large language models generate functional
+protein sequences across diverse families. <em>Nature
+Biotechnology</em>, <em>41</em>, 1099–1106. <a href="https://doi.org/10.1038/s41587-022-01618-2">https://doi.org/10.1038/s41587-022-01618-2</a>
+</div>
+<div id="ref-makary2025plausible" class="csl-entry" role="listitem">
+Makary, M., &amp; Prasad, V. (2025). A new regulatory pathway for
+bespoke genetic therapies. <em>New England Journal of Medicine</em>.
+</div>
+<div id="ref-mali2013" class="csl-entry" role="listitem">
+Mali, P., Yang, L., Esvelt, K. M., Aach, J., Guell, M., DiCarlo, J. E.,
+Norville, J. E., &amp; Church, G. M. (2013). <span>RNA</span>-guided
+human genome engineering via <span>Cas9</span>. <em>Science</em>,
+<em>339</em>(6121), 823–826. <a href="https://doi.org/10.1126/science.1232033">https://doi.org/10.1126/science.1232033</a>
+</div>
+<div id="ref-martani2025_repol" class="csl-entry" role="listitem">
+Martani, A., Weij, F. van der, Baalen, S. van, &amp; Beers, B. van.
+(2025). Repoliticizing heritable human genome editing: Discursive
+narrowing and technomoral change in the international debate on human
+germline modification. <em>New Genetics and Society</em>,
+<em>44</em>(1). <a href="https://doi.org/10.1080/14636778.2025.2598071">https://doi.org/10.1080/14636778.2025.2598071</a>
+</div>
+<div id="ref-martin_2019_prs_transferability" class="csl-entry" role="listitem">
+Martin, A. R., Kanai, M., Kamatani, Y., Okada, Y., Neale, B. M., &amp;
+Daly, M. J. (2019). Clinical use of current polygenic risk scores may
+exacerbate health disparities. <em>Nature Genetics</em>, <em>51</em>(4),
+584–591. <a href="https://doi.org/10.1038/s41588-019-0379-x">https://doi.org/10.1038/s41588-019-0379-x</a>
+</div>
+<div id="ref-mathios_2021_fragmentomics_detection" class="csl-entry" role="listitem">
+Mathios, D., Johansen, J. S., Cristiano, S., Medina, J. E., Phallen, J.,
+Larsen, K. R., Bruhm, D. C., Niknafs, N., Ferreira, L., Adleff, V.,
+Chiao, J. Y., Leal, A., Noe, M., White, J. R., Arun, A. S., Hruban, C.,
+Annapragada, A. V., Jensen, S. Ø., Ørntoft, M.-B. V., &amp; Velculescu,
+V. E. (2021). Detection and characterization of lung cancer using
+cell-free <span>DNA</span> fragmentomes. <em>Nature Communications</em>,
+<em>12</em>(1), 5060. <a href="https://doi.org/10.1038/s41467-021-24994-w">https://doi.org/10.1038/s41467-021-24994-w</a>
+</div>
+<div id="ref-mavaddat_2019_prs_breast" class="csl-entry" role="listitem">
+Mavaddat, N., Michailidou, K., Dennis, J., Lush, M., Fachal, L., Lee,
+A., Tyrer, J. P., et al. (2019). Polygenic risk scores for prediction of
+breast cancer and breast cancer subtypes. <em>American Journal of Human
+Genetics</em>, <em>104</em>(1), 21–34. <a href="https://doi.org/10.1016/j.ajhg.2018.11.002">https://doi.org/10.1016/j.ajhg.2018.11.002</a>
+</div>
+<div id="ref-mazzucato2013entrepreneurial" class="csl-entry" role="listitem">
+Mazzucato, M. (2013). <em>The entrepreneurial state: Debunking public
+vs.&nbsp;Private sector myths</em>. Anthem Press.
+</div>
+<div id="ref-mbembe2017critique" class="csl-entry" role="listitem">
+Mbembe, A. (2017). <em>Critique of black reason</em>. Duke University
+Press. <a href="https://doi.org/10.1215/9780822373230">https://doi.org/10.1215/9780822373230</a>
+</div>
+<div id="ref-mdcg_2025_6" class="csl-entry" role="listitem">
+Medical Device Coordination Group. (2025). <em><span>MDCG</span> 2025-6:
+Interplay between the <span>Medical Devices Regulation</span>
+(<span>MDR</span>) &amp; <span>In Vitro Diagnostic Medical Devices
+Regulation</span> (<span>IVDR</span>) and the <span>Artificial
+Intelligence Act</span> (<span>AIA</span>)</em>.
+</div>
+<div id="ref-mhra_ai_airlock" class="csl-entry" role="listitem">
+Medicines and Healthcare products Regulatory Agency. (2024).
+<em><span>AI</span> airlock: The regulatory sandbox for
+<span>AIaMD</span></em>. GOV.UK. <a href="https://www.gov.uk/government/collections/ai-airlock-the-regulatory-sandbox-for-aiamd">https://www.gov.uk/government/collections/ai-airlock-the-regulatory-sandbox-for-aiamd</a>
+</div>
+<div id="ref-mhra_point_of_care_2025" class="csl-entry" role="listitem">
+Medicines and Healthcare products Regulatory Agency. (2025).
+<em>Regulatory framework for point of care manufacturing</em>. GOV.UK.
+<a href="https://www.gov.uk/government/publications/point-of-care-manufacturing-regulatory-framework">https://www.gov.uk/government/publications/point-of-care-manufacturing-regulatory-framework</a>
+</div>
+<div id="ref-meier2021" class="csl-entry" role="listitem">
+Meier, J., Rao, R., Verkuil, R., Liu, J., Sercu, T., &amp; Rives, A.
+(2021). Language models enable zero-shot prediction of the effects of
+mutations on protein function. <em>Advances in Neural Information
+Processing Systems</em>, <em>34</em>, 29287–29303. <a href="https://proceedings.neurips.cc/paper_files/paper/2021/file/f51338d736f95dd42427296047067694-Paper.pdf">https://proceedings.neurips.cc/paper_files/paper/2021/file/f51338d736f95dd42427296047067694-Paper.pdf</a>
+</div>
+<div id="ref-mercieca-bebber_2018_proms_clinical_trials" class="csl-entry" role="listitem">
+Mercieca-Bebber, R., King, M. T., Calvert, M. J., Stockler, M. R., &amp;
+Friedlander, M. (2018). The importance of patient-reported outcomes in
+clinical trials and strategies for future optimization. <em>Patient
+Related Outcome Measures</em>, <em>9</em>, 353–367. <a href="https://doi.org/10.2147/PROM.S156279">https://doi.org/10.2147/PROM.S156279</a>
+</div>
+<div id="ref-mittelstadt2016ethics" class="csl-entry" role="listitem">
+Mittelstadt, B. D., Allo, P., Taddeo, M., Wachter, S., &amp; Floridi, L.
+(2016). The ethics of algorithms: Mapping the debate. <em>Big Data &amp;
+Society</em>, <em>3</em>(2), 1–21. <a href="https://doi.org/10.1177/2053951716679679">https://doi.org/10.1177/2053951716679679</a>
+</div>
+<div id="ref-mojica2005" class="csl-entry" role="listitem">
+Mojica, F. J. M., Díez-Villaseñor, C., García-Martínez, J., &amp; Soria,
+E. (2005). Intervening sequences of regularly spaced prokaryotic repeats
+derive from foreign genetic elements. <em>Journal of Molecular
+Evolution</em>, <em>60</em>(2), 174–182. <a href="https://doi.org/10.1007/s00239-004-0046-3">https://doi.org/10.1007/s00239-004-0046-3</a>
+</div>
+<div id="ref-mol1999ontological" class="csl-entry" role="listitem">
+Mol, A. (1999). Ontological politics: A word and some questions. <em>The
+Sociological Review</em>, <em>47</em>(S1), 74–89. <a href="https://doi.org/10.1111/j.1467-954X.1999.tb03483.x">https://doi.org/10.1111/j.1467-954X.1999.tb03483.x</a>
+</div>
+<div id="ref-moller_cancer_2017" class="csl-entry" role="listitem">
+Møller, P., Seppälä, T., Bernstein, I., Holinski-Feder, E., Sala, P.,
+Evans, D. G., Lindblom, A., Macrae, F., Blanco, I., Jeffries, J., Vasen,
+H., Burn, J., Nakken, S., Hovig, E., Rodland, E. A., Tharmaratnam, K.,
+Vos Tot Nederveen Cappel, W. H. de, Hill, J., Wijnen, J., et al.others.
+(2017). Cancer incidence and survival in lynch syndrome patients
+receiving colonoscopic and gynaecological surveillance: First report
+from the prospective lynch syndrome database. <em>Gut</em>,
+<em>66</em>(3), 464–472. <a href="https://doi.org/10.1136/gutjnl-2015-309675">https://doi.org/10.1136/gutjnl-2015-309675</a>
+</div>
+<div id="ref-moreno-mateos2015" class="csl-entry" role="listitem">
+Moreno-Mateos, M. A., Vejnar, C. E., Beaudoin, J.-D., Fernandez, J. P.,
+Mis, E. K., Khokha, M. K., &amp; Giraldez, A. J. (2015).
+<span>CRISPRscan</span>: Designing highly efficient <span class="nocase">sgRNAs</span> for <span>CRISPR</span>-<span>Cas9</span>
+targeting in vivo. <em>Nature Methods</em>, <em>12</em>(10), 982–988. <a href="https://doi.org/10.1038/nmeth.3543">https://doi.org/10.1038/nmeth.3543</a>
+</div>
+<div id="ref-musunuru2025bespoke" class="csl-entry" role="listitem">
+Musunuru, K., Urnov, F., Giannikopoulos, P., et al. (2025). <em>First
+personalised <span>CRISPR</span> therapy administered to an infant with
+<span>CPS1</span> deficiency</em>. Reported by Innovative Genomics
+Institute and Children’s Hospital of Philadelphia.
+</div>
+<div id="ref-naldini2015" class="csl-entry" role="listitem">
+Naldini, L. (2015). Gene therapy returns to centre stage.
+<em>Nature</em>, <em>526</em>(7573), 351–360. <a href="https://doi.org/10.1038/nature15818">https://doi.org/10.1038/nature15818</a>
+</div>
+<div id="ref-nasem2017human" class="csl-entry" role="listitem">
+National Academies of Sciences, Engineering, and Medicine. (2017).
+<em>Human genome editing: Science, ethics, and governance</em>. The
+National Academies Press. <a href="https://doi.org/10.17226/24623">https://doi.org/10.17226/24623</a>
+</div>
+<div id="ref-protein2pam2025" class="csl-entry" role="listitem">
+Nayfach, S., Bhatnagar, A., Novichkov, A., Estevam, G. O., Kim, N.,
+Hill, E., Ruffolo, J. A., Silverstein, R., Gallagher, J., Kleinstiver,
+B., Meeske, A. J., Cameron, P., &amp; Madani, A. (2025). Engineering of
+<span>CRISPR</span>-<span>Cas</span> <span>PAM</span> recognition using
+deep learning of vast evolutionary data. <em>bioRxiv</em>. <a href="https://doi.org/10.1101/2025.01.06.631536">https://doi.org/10.1101/2025.01.06.631536</a>
+</div>
+<div id="ref-nelson2022" class="csl-entry" role="listitem">
+Nelson, J. W., Randolph, P. B., Shen, S. P., Everette, K. A., Chen, P.
+J., Anzalone, A. V., An, M., Newby, G. A., Chen, J. C., Hsu, A., &amp;
+Liu, D. R. (2022). Engineered <span class="nocase">pegRNAs</span>
+improve prime editing efficiency. <em>Nature Biotechnology</em>,
+<em>40</em>(3), 402–410. <a href="https://doi.org/10.1038/s41587-021-01039-7">https://doi.org/10.1038/s41587-021-01039-7</a>
+</div>
+<div id="ref-newby2021_base_editing_scd" class="csl-entry" role="listitem">
+Newby, G. A., Yen, J. S., Woodard, K. J., Mayuranathan, T., Lazzarotto,
+C. R., Li, Y., Sheppard-Tillman, H., Porter, S. N., Yao, Y., et al.
+(2021). Base editing of haematopoietic stem cells rescues sickle cell
+disease in mice. <em>Nature</em>, <em>595</em>, 295–302. <a href="https://doi.org/10.1038/s41586-021-03609-w">https://doi.org/10.1038/s41586-021-03609-w</a>
+</div>
+<div id="ref-nguengang2020estimating" class="csl-entry" role="listitem">
+Nguengang Wakap, S., Lambert, D. M., Olry, A., Rodwell, C., Gueydan, C.,
+Lanneau, V., Murphy, D., Le Cam, Y., &amp; Rath, A. (2020). Estimating
+cumulative point prevalence of rare diseases: Analysis of the
+<span>Orphanet</span> database. <em>European Journal of Human
+Genetics</em>, <em>28</em>, 165–173. <a href="https://doi.org/10.1038/s41431-019-0508-0">https://doi.org/10.1038/s41431-019-0508-0</a>
+</div>
+<div id="ref-nguyen2024" class="csl-entry" role="listitem">
+Nguyen, E., Poli, M., Durrant, M. G., Thomas, A. W., Kang, B., Sullivan,
+J., Ng, M. Y., Lewis, A., Patel, A., Lou, A., Erber, S., et al. (2024).
+Sequence modeling and design from molecular to genome scale with
+<span>Evo</span>. <em>Science</em>, <em>386</em>(6723), eado9336. <a href="https://doi.org/10.1126/science.ado9336">https://doi.org/10.1126/science.ado9336</a>
+</div>
+<div id="ref-ni_2015_nlp_clinical_trial_matching" class="csl-entry" role="listitem">
+Ni, Y., Kennebeck, S., Dexheimer, J. W., McAneney, C. M., Tang, H.,
+Lingren, T., Li, Q., Zhai, H., &amp; Solti, I. (2015). Automated
+clinical trial eligibility prescreening: Increasing the efficiency of
+patient identification for clinical trials in the emergency department.
+<em>Journal of the American Medical Informatics Association</em>,
+<em>22</em>(1), 166–178. <a href="https://doi.org/10.1136/amiajnl-2014-002887">https://doi.org/10.1136/amiajnl-2014-002887</a>
+</div>
+<div id="ref-nishimasu2014" class="csl-entry" role="listitem">
+Nishimasu, H., Ran, F. A., Hsu, P. D., Konermann, S., Shehata, S. I.,
+Dohmae, N., Ishitani, R., Zhang, F., &amp; Nureki, O. (2014). Crystal
+structure of <span>Cas9</span> in complex with guide <span>RNA</span>
+and target <span>DNA</span>. <em>Cell</em>, <em>156</em>(5), 935–949. <a href="https://doi.org/10.1016/j.cell.2014.02.001">https://doi.org/10.1016/j.cell.2014.02.001</a>
+</div>
+<div id="ref-nishimasu2018" class="csl-entry" role="listitem">
+Nishimasu, H., Shi, X., Ishiguro, S., Gao, L., Hirano, S., Okazaki, S.,
+Noda, T., Abudayyeh, O. O., Gootenberg, J. S., Mori, H., Oura, S.,
+Holmes, B., Tanaka, M., Seki, M., Hirano, H., Aburatani, H., Ishitani,
+R., Ikawa, M., Yachie, N., … Nureki, O. (2018). Engineered
+<span>CRISPR</span>-<span>Cas9</span> nuclease with expanded targeting
+space. <em>Science</em>, <em>361</em>(6408), 1259–1262. <a href="https://doi.org/10.1126/science.aas9129">https://doi.org/10.1126/science.aas9129</a>
+</div>
+<div id="ref-niu_2014_msisensor" class="csl-entry" role="listitem">
+Niu, B., Ye, K., Zhang, Q., Lu, C., Xie, M., McLellan, M. D., Wendl, M.
+C., &amp; Ding, L. (2014). <span>MSIsensor</span>: Microsatellite
+instability detection using paired tumor-normal sequence data.
+<em>Bioinformatics</em>, <em>30</em>(7), 1015–1016. <a href="https://doi.org/10.1093/bioinformatics/btt755">https://doi.org/10.1093/bioinformatics/btt755</a>
+</div>
+<div id="ref-norman2019exploring" class="csl-entry" role="listitem">
+Norman, T. M., Horlbeck, M. A., Replogle, J. M., Ge, A. Y., Xu, A.,
+Jost, M., Gilbert, L. A., &amp; Weissman, J. S. (2019). Exploring
+genetic interaction manifolds constructed from rich single-cell
+phenotypes. <em>Science</em>, <em>365</em>(6455), 786–793. <a href="https://doi.org/10.1126/science.aax4438">https://doi.org/10.1126/science.aax4438</a>
+</div>
+<div id="ref-novas2006political" class="csl-entry" role="listitem">
+Novas, C. (2006). The political economy of hope: Patients’
+organizations, science and biovalue. <em>BioSocieties</em>,
+<em>1</em>(3), 289–305. <a href="https://doi.org/10.1017/S1745855206003024">https://doi.org/10.1017/S1745855206003024</a>
+</div>
+<div id="ref-nuffield_2018" class="csl-entry" role="listitem">
+Nuffield Council on Bioethics. (2018b). <em>Genome editing and human
+reproduction: Social and ethical issues</em>.
+</div>
+<div id="ref-nuffield2018genome" class="csl-entry" role="listitem">
+Nuffield Council on Bioethics. (2018a). <em>Genome editing and human
+reproduction: Social and ethical issues</em>. Nuffield Council on
+Bioethics. <a href="https://www.nuffieldbioethics.org/publications/genome-editing-and-human-reproduction">https://www.nuffieldbioethics.org/publications/genome-editing-and-human-reproduction</a>
+</div>
+<div id="ref-nunez2021" class="csl-entry" role="listitem">
+Nuñez, J. K., Chen, J., Pommier, G. C., Cogan, J. Z., Replogle, J. M.,
+Adriaens, C., Ramadoss, G. N., Shi, Q., Hung, K.-L., Samelson, A. J.,
+Pogson, A. N., Kim, J. Y. S., Chung, A., Leonetti, M. D., Chang, H. Y.,
+Kampmann, M., Bernstein, B. E., Hovestadt, V., Gilbert, L. A., &amp;
+Weissman, J. S. (2021). Genome-wide programmable transcriptional memory
+by <span>CRISPR</span>-based epigenome editing. <em>Cell</em>,
+<em>184</em>(9), 2503–2519. <a href="https://doi.org/10.1016/j.cell.2021.03.025">https://doi.org/10.1016/j.cell.2021.03.025</a>
+</div>
+<div id="ref-o_donnell_2020_mhcflurry" class="csl-entry" role="listitem">
+O’Donnell, T. J., Rubinsteyn, A., &amp; Laserson, U. (2020).
+<span>MHCflurry</span> 2.0: Improved pan-allele prediction of <span class="nocase">MHC class I</span>-presented peptides by incorporating
+antigen processing. <em>Cell Systems</em>, <em>11</em>(1), 42–48.e7. <a href="https://doi.org/10.1016/j.cels.2020.06.010">https://doi.org/10.1016/j.cels.2020.06.010</a>
+</div>
+<div id="ref-ogden2019predictive" class="csl-entry" role="listitem">
+Ogden, P. J., Kelsic, E. D., Sinai, S., &amp; Church, G. M. (2019).
+Comprehensive <span>AAV</span> capsid fitness landscape reveals a viral
+gene and enables machine-guided design. <em>Science</em>,
+<em>366</em>(6469), 1139–1143. <a href="https://doi.org/10.1126/science.aaw2900">https://doi.org/10.1126/science.aaw2900</a>
+</div>
+<div id="ref-onnela_2021_opportunities_challenges_digital_phenotyping" class="csl-entry" role="listitem">
+Onnela, J.-P. (2021). Opportunities and challenges in the collection and
+analysis of digital phenotyping data. <em>Neuropsychopharmacology</em>,
+<em>46</em>(1), 45–54. <a href="https://doi.org/10.1038/s41386-020-0771-3">https://doi.org/10.1038/s41386-020-0771-3</a>
+</div>
+<div id="ref-third_summit_2023" class="csl-entry" role="listitem">
+Organizing Committee of the Third International Summit on Human Genome
+Editing. (2023). <em>Statement by the organizing committee of the third
+international summit on human genome editing</em>. Nature. <a href="https://www.nature.com/articles/d41586-023-00747-2">https://www.nature.com/articles/d41586-023-00747-2</a>
+</div>
+<div id="ref-marquart2022" class="csl-entry" role="listitem">
+Pallaseni, A., Peets, E. M., Koeppel, J., Weller, J., Vanderstichele,
+T., Ho, U. L., Crepaldi, L., Leeuwen, J. van, Allen, F., &amp; Parts, L.
+(2022). Predicting base editing outcomes using position-specific
+sequence determinants. <em>Nucleic Acids Research</em>, <em>50</em>(6),
+3551–3564. <a href="https://doi.org/10.1093/nar/gkac161">https://doi.org/10.1093/nar/gkac161</a>
+</div>
+<div id="ref-pallmann_2018_adaptive_designs_review" class="csl-entry" role="listitem">
+Pallmann, P., Bedding, A. W., Choodari-Oskooei, B., Dimairo, M., Flight,
+L., Hampson, L. V., Holmes, J., Mander, A. P., Odondi, L., Sydes, M. R.,
+Villar, S. S., Wason, J. M. S., Weir, C. J., Wheeler, G. M., Yap, C.,
+&amp; Jaki, T. (2018). Adaptive designs in clinical trials: Why use
+them, and how to run and report them. <em>BMC Medicine</em>,
+<em>16</em>, 29. <a href="https://doi.org/10.1186/s12916-018-1017-7">https://doi.org/10.1186/s12916-018-1017-7</a>
+</div>
+<div id="ref-parens1998enhancing" class="csl-entry" role="listitem">
+Parens, E. (1998). Is better always good? <span>The</span> enhancement
+project. In E. Parens (Ed.), <em>Enhancing human traits: Ethical and
+social implications</em> (pp. 1–28). Georgetown University Press.
+</div>
+<div id="ref-parens2000prenatal" class="csl-entry" role="listitem">
+Parens, E., &amp; Asch, A. (2000). The disability rights critique of
+prenatal genetic testing: Reflections and recommendations. In E. Parens
+&amp; A. Asch (Eds.), <em>Prenatal testing and disability rights</em>
+(pp. 3–43). Georgetown University Press.
+</div>
+<div id="ref-coe_pace_2023_genome" class="csl-entry" role="listitem">
+Parliamentary Assembly of the Council of Europe. (2023). <em>Heritable
+genome editing in human beings</em>.
+</div>
+<div id="ref-pausch2020" class="csl-entry" role="listitem">
+Pausch, P., Al-Shayeb, B., Biber, E., Cress, B. J., Sato, K., Chen, J.,
+Banfield, J. F., &amp; Doudna, J. A. (2020).
+<span>CRISPR</span>-<span>CasΦ</span> from huge phages is a hypercompact
+genome editor. <em>Science</em>, <em>369</em>(6501), 333–337. <a href="https://doi.org/10.1126/science.abb1400">https://doi.org/10.1126/science.abb1400</a>
+</div>
+<div id="ref-petryna2009when" class="csl-entry" role="listitem">
+Petryna, A. (2009). <em>When experiments travel: Clinical trials and the
+global search for human subjects</em>. Princeton University Press.
+</div>
+<div id="ref-phallen_2017_direct_detection_early_ctdna" class="csl-entry" role="listitem">
+Phallen, J., Sausen, M., Adleff, V., Leal, A., Hruban, C., White, J.,
+Anagnostou, V., Fiksel, J., Cristiano, S., Papp, E., Speir, S., Reinert,
+T., Orntoft, M.-B. W., Woodward, B. D., Murphy, D., Parpart-Li, S.,
+Riley, D., Nesselbush, M., Sengamalay, N., … Velculescu, V. E. (2017).
+Direct detection of early-stage cancers using circulating tumor
+<span>DNA</span>. <em>Science Translational Medicine</em>,
+<em>9</em>(403), eaan2415. <a href="https://doi.org/10.1126/scitranslmed.aan2415">https://doi.org/10.1126/scitranslmed.aan2415</a>
+</div>
+<div id="ref-picard_2021_multiomics_integration" class="csl-entry" role="listitem">
+Picard, M., Scott-Boyer, M.-P., Bodein, A., Pépin, S., &amp; Droit, A.
+(2021). Integration strategies of multi-omics data for machine learning
+analysis. <em>Computational and Structural Biotechnology Journal</em>,
+<em>19</em>, 3735–3746. <a href="https://doi.org/10.1016/j.csbj.2021.06.030">https://doi.org/10.1016/j.csbj.2021.06.030</a>
+</div>
+<div id="ref-piel2017scd_global" class="csl-entry" role="listitem">
+Piel, F. B., Steinberg, M. H., &amp; Rees, D. C. (2017). Sickle cell
+disease. <em>New England Journal of Medicine</em>, <em>376</em>(16),
+1561–1573. <a href="https://doi.org/10.1056/NEJMra1510865">https://doi.org/10.1056/NEJMra1510865</a>
+</div>
+<div id="ref-porter1995trust" class="csl-entry" role="listitem">
+Porter, T. M. (1995). <em>Trust in numbers: The pursuit of objectivity
+in science and public life</em>. Princeton University Press.
+</div>
+<div id="ref-prainsack2017solidarity" class="csl-entry" role="listitem">
+Prainsack, B., &amp; Buyx, A. (2017). <em>Solidarity in biomedicine and
+beyond</em>. Cambridge University Press. <a href="https://doi.org/10.1017/9781139696593">https://doi.org/10.1017/9781139696593</a>
+</div>
+<div id="ref-presidents1982splicing" class="csl-entry" role="listitem">
+President’s Commission for the Study of Ethical Problems in Medicine and
+Biomedical and Behavioral Research. (1982). <em>Splicing life: A report
+on the social and ethical issues of genetic engineering with human
+beings</em>. US Government Printing Office.
+</div>
+<div id="ref-pukkala_2018_nordic_cancer_registries" class="csl-entry" role="listitem">
+Pukkala, E., Engholm, G., Hojsgaard Schmidt, L. K., Storm, H., Khan, S.,
+Lambe, M., Pettersson, D., Olafsdottir, E., Tryggvadottir, L., Hakama,
+M., Tsnomaki, E., Bray, F., &amp; Klint, Å. (2018). Nordic cancer
+registries – an overview of their procedures and data comparability.
+<em>Acta Oncologica</em>, <em>57</em>(4), 440–455. <a href="https://doi.org/10.1080/0284186X.2017.1407039">https://doi.org/10.1080/0284186X.2017.1407039</a>
+</div>
+<div id="ref-pushpakom_2019_drug_repurposing" class="csl-entry" role="listitem">
+Pushpakom, S., Iorio, F., Eyers, P. A., Escott, K. J., Hopper, S.,
+Wells, A., Doig, A., Guilliams, T., Latimer, J., McNamee, C., Norris,
+A., Sanseau, P., Cavalla, D., &amp; Pirmohamed, M. (2019). Drug
+repurposing: Progress, challenges and recommendations. <em>Nature
+Reviews Drug Discovery</em>, <em>18</em>(1), 41–58. <a href="https://doi.org/10.1038/nrd.2018.168">https://doi.org/10.1038/nrd.2018.168</a>
+</div>
+<div id="ref-qi2013" class="csl-entry" role="listitem">
+Qi, L. S., Larson, M. H., Gilbert, L. A., Doudna, J. A., Weissman, J.
+S., Arkin, A. P., &amp; Lim, W. A. (2013). Repurposing
+<span>CRISPR</span> as an <span>RNA</span>-guided platform for
+sequence-specific control of gene expression. <em>Cell</em>,
+<em>152</em>(5), 1173–1183. <a href="https://doi.org/10.1016/j.cell.2013.02.022">https://doi.org/10.1016/j.cell.2013.02.022</a>
+</div>
+<div id="ref-rabeharisoa2014evidence" class="csl-entry" role="listitem">
+Rabeharisoa, V., Moreira, T., &amp; Akrich, M. (2014). Evidence-based
+activism: Patients’, users’ and activists’ groups in knowledge society.
+In <em>BioSocieties</em> (Vol. 9, pp. 111–128). <a href="https://doi.org/10.1057/biosoc.2014.2">https://doi.org/10.1057/biosoc.2014.2</a>
+</div>
+<div id="ref-rajkomar_2019_ml_clinical" class="csl-entry" role="listitem">
+Rajkomar, A., Dean, J., &amp; Kohane, I. (2019). Machine learning in
+medicine. <em>New England Journal of Medicine</em>, <em>380</em>(14),
+1347–1358. <a href="https://doi.org/10.1056/NEJMra1814259">https://doi.org/10.1056/NEJMra1814259</a>
+</div>
+<div id="ref-rees2018" class="csl-entry" role="listitem">
+Rees, H. A., &amp; Liu, D. R. (2018). Base editing: Precision chemistry
+on the genome and transcriptome of living cells. <em>Nature Reviews
+Genetics</em>, <em>19</em>(12), 770–788. <a href="https://doi.org/10.1038/s41576-018-0059-1">https://doi.org/10.1038/s41576-018-0059-1</a>
+</div>
+<div id="ref-replogle_2022_perturb_seq_genome_scale" class="csl-entry" role="listitem">
+Replogle, J. M., Saunders, R. A., Pogson, A. N., Hussmann, J. A.,
+Lenail, A., Guna, A., Mascibroda, L., Wagner, E. J., Adelman, K.,
+Lithwick-Yanai, G., Bren-Rickson, E., Norman, T. M., &amp; Weissman, J.
+S. (2022). Mapping information-rich genotype-phenotype landscapes with
+genome-scale <span class="nocase">Perturb-seq</span>. <em>Cell</em>,
+<em>185</em>(14), 2559–2575.e28. <a href="https://doi.org/10.1016/j.cell.2022.05.013">https://doi.org/10.1016/j.cell.2022.05.013</a>
+</div>
+<div id="ref-reynisson_2020_netmhcpan" class="csl-entry" role="listitem">
+Reynisson, B., Alvarez, B., Paul, S., Peters, B., &amp; Nielsen, M.
+(2020). <span>NetMHCpan-4.1</span> and <span>NetMHCIIpan-4.0</span>:
+Improved predictions of <span>MHC</span> antigen presentation by
+concurrent motif deconvolution and integration of <span>MS</span>
+<span>MHC</span> eluted ligand data. <em>Nucleic Acids Research</em>,
+<em>48</em>(W1), W449–W454. <a href="https://doi.org/10.1093/nar/gkaa379">https://doi.org/10.1093/nar/gkaa379</a>
+</div>
+<div id="ref-richards2015acmg" class="csl-entry" role="listitem">
+Richards, S., Aziz, N., Bale, S., Bick, D., Das, S., Gastier-Foster, J.,
+Grody, W. W., Hegde, M., Lyon, E., Spector, E., Voelkerding, K., &amp;
+Rehm, H. L. (2015). Standards and guidelines for the interpretation of
+sequence variants: A joint consensus recommendation of the <span class="nocase">American College of Medical Genetics and Genomics</span>
+and the <span class="nocase">Association for Molecular Pathology</span>.
+<em>Genetics in Medicine</em>, <em>17</em>(5), 405–424. <a href="https://doi.org/10.1038/gim.2015.30">https://doi.org/10.1038/gim.2015.30</a>
+</div>
+<div id="ref-richter2020" class="csl-entry" role="listitem">
+Richter, M. F., Zhao, K. T., Eton, E., Lapinaite, A., Newby, G. A.,
+Thuronyi, B. W., Wilson, C., Koblan, L. W., Zeng, J., Bauer, D. E.,
+Doudna, J. A., &amp; Liu, D. R. (2020). Phage-assisted evolution of an
+adenine base editor with improved <span>Cas</span> domain compatibility
+and activity. <em>Nature Biotechnology</em>, <em>38</em>(7), 883–891. <a href="https://doi.org/10.1038/s41587-020-0453-z">https://doi.org/10.1038/s41587-020-0453-z</a>
+</div>
+<div id="ref-rieke_2020_federated_learning_health" class="csl-entry" role="listitem">
+Rieke, N., Hancox, J., Li, W., Milletari, F., Roth, H. R., Albarqouni,
+S., Bakas, S., Galtier, M. N., Landman, B. A., Maier-Hein, K., Ourselin,
+S., Sheller, M., Summers, R. M., Trask, A., Xu, D., Baust, M., &amp;
+Cardoso, M. J. (2020). The future of digital health with federated
+learning. <em>Npj Digital Medicine</em>, <em>3</em>, 119. <a href="https://doi.org/10.1038/s41746-020-00323-1">https://doi.org/10.1038/s41746-020-00323-1</a>
+</div>
+<div id="ref-riesselman2018" class="csl-entry" role="listitem">
+Riesselman, A. J., Ingraham, J. B., &amp; Marks, D. S. (2018). Deep
+generative models of genetic variation capture the effects of mutations.
+<em>Nature Methods</em>, <em>15</em>, 816–822. <a href="https://doi.org/10.1038/s41592-018-0138-4">https://doi.org/10.1038/s41592-018-0138-4</a>
+</div>
+<div id="ref-ringland1998scenario" class="csl-entry" role="listitem">
+Ringland, G. (1998). <em>Scenario planning: Managing for the
+future</em>. John Wiley &amp; Sons.
+</div>
+<div id="ref-rizopoulos_2012_joint_models" class="csl-entry" role="listitem">
+Rizopoulos, D. (2012). <em>Joint models for longitudinal and
+time-to-event data: With applications in <span>R</span></em>. Chapman;
+Hall/CRC.
+</div>
+<div id="ref-roache2009enhancement" class="csl-entry" role="listitem">
+Roache, R., &amp; Clarke, S. (2009). Bioconservatism, bioliberalism, and
+the wisdom of reflecting on repugnance. In <em>Monash bioethics
+review</em> (Vol. 28, pp. 1–21). <a href="https://doi.org/10.1007/BF03351306">https://doi.org/10.1007/BF03351306</a>
+</div>
+<div id="ref-robertson1994children" class="csl-entry" role="listitem">
+Robertson, J. A. (1994). <em>Children of choice: Freedom and the new
+reproductive technologies</em>. Princeton University Press.
+</div>
+<div id="ref-roth2018" class="csl-entry" role="listitem">
+Roth, T. L., Puig-Saus, C., Yu, R., Shifrut, E., Carnevale, J., Li, P.
+J., Hiatt, J., Saco, J., Krystofinski, P., Li, H., Tobin, V., Nguyen, D.
+N., Lee, M. R., Putnam, A. L., Ferris, A. L., Chen, J. W., Schickel,
+J.-N., Pellerin, L., Carmody, D., … Marson, A. (2018). Reprogramming
+human <span>T</span> cell function and specificity with non-viral genome
+targeting. <em>Nature</em>, <em>559</em>, 405–409. <a href="https://doi.org/10.1038/s41586-018-0326-5">https://doi.org/10.1038/s41586-018-0326-5</a>
+</div>
+<div id="ref-ruffolo2024" class="csl-entry" role="listitem">
+Ruffolo, J. A., &amp; Madani, A. (2024). Designing proteins with
+language models. <em>Nature Biotechnology</em>, <em>42</em>, 200–202. <a href="https://doi.org/10.1038/s41587-024-02123-4">https://doi.org/10.1038/s41587-024-02123-4</a>
+</div>
+<div id="ref-salipante_2014_msings" class="csl-entry" role="listitem">
+Salipante, S. J., Scroggins, S. M., Hampel, H. L., Turner, E. H., &amp;
+Pritchard, C. C. (2014). Microsatellite instability detection by next
+generation sequencing. <em>Clinical Chemistry</em>, <em>60</em>(9),
+1192–1199. <a href="https://doi.org/10.1373/clinchem.2014.223677">https://doi.org/10.1373/clinchem.2014.223677</a>
+</div>
+<div id="ref-sandel2007case" class="csl-entry" role="listitem">
+Sandel, M. J. (2007). <em>The case against perfection: Ethics in the age
+of genetic engineering</em>. Harvard University Press.
+</div>
+<div id="ref-savulescu2005new" class="csl-entry" role="listitem">
+Savulescu, J. (2005). New breeds of humans: The moral obligation to
+enhance. <em>Reproductive BioMedicine Online</em>, <em>10</em>(Suppl 1),
+36–39. <a href="https://doi.org/10.1016/S1472-6483(10)62202-X">https://doi.org/10.1016/S1472-6483(10)62202-X</a>
+</div>
+<div id="ref-savulescu2015moral" class="csl-entry" role="listitem">
+Savulescu, J., Pugh, J., Douglas, T., &amp; Gyngell, C. (2015). The
+moral imperative to continue gene editing research on human embryos.
+<em>Protein &amp; Cell</em>, <em>6</em>(7), 476–479. <a href="https://doi.org/10.1007/s13238-015-0184-y">https://doi.org/10.1007/s13238-015-0184-y</a>
+</div>
+<div id="ref-schauer1985slippery" class="csl-entry" role="listitem">
+Schauer, F. (1985). Slippery slopes. <em>Harvard Law Review</em>,
+<em>99</em>(2), 361–383. <a href="https://doi.org/10.2307/1341127">https://doi.org/10.2307/1341127</a>
+</div>
+<div id="ref-scheufele2017all" class="csl-entry" role="listitem">
+Scheufele, D. A., Xenos, M. A., Howell, E. L., Rose, K. M., Brossard,
+D., &amp; Hardy, B. W. (2017). <span>U.S.</span>&nbsp;Attitudes on human
+genome editing. <em>Science</em>, <em>357</em>(6351), 553–554. <a href="https://doi.org/10.1126/science.aan3708">https://doi.org/10.1126/science.aan3708</a>
+</div>
+<div id="ref-schmiedel2019" class="csl-entry" role="listitem">
+Schmiedel, J. M., &amp; Lehner, B. (2019). Determining protein
+structures using deep mutagenesis. <em>Nature Genetics</em>,
+<em>51</em>(7), 1177–1186. <a href="https://doi.org/10.1038/s41588-019-0431-x">https://doi.org/10.1038/s41588-019-0431-x</a>
+</div>
+<div id="ref-schwartz1991art" class="csl-entry" role="listitem">
+Schwartz, P. (1991). <em>The art of the long view: Planning for the
+future in an uncertain world</em>. Doubleday.
+</div>
+<div id="ref-sam_2018_gene_editing" class="csl-entry" role="listitem">
+Scientific Advice Mechanism High Level Group of Scientific Advisors.
+(2018). <em>A scientific perspective on the regulatory status of
+products derived from gene editing and the implications for the
+<span>GMO</span> directive</em>.
+</div>
+<div id="ref-xcrisp2025" class="csl-entry" role="listitem">
+Seale, C., &amp; Gonçalves, J. P. (2025). <span>X-CRISP</span>:
+Domain-adaptable and interpretable <span>CRISPR</span> repair outcome
+prediction. <em>Bioinformatics Advances</em>, <em>5</em>(1), vbaf157. <a href="https://doi.org/10.1093/bioadv/vbaf157">https://doi.org/10.1093/bioadv/vbaf157</a>
+</div>
+<div id="ref-shakespeare2006disability" class="csl-entry" role="listitem">
+Shakespeare, T. (2006). <em>Disability rights and wrongs</em>.
+Routledge. <a href="https://doi.org/10.4324/9780203640098">https://doi.org/10.4324/9780203640098</a>
+</div>
+<div id="ref-shalem_2014_crispr_screen" class="csl-entry" role="listitem">
+Shalem, O., Sanjana, N. E., Hartenian, E., Shi, X., Scott, D. A.,
+Mikkelsen, T. S., Heckl, D., Ebert, B. L., Root, D. E., Doench, J. G.,
+&amp; Zhang, F. (2014). Genome-scale <span>CRISPR-Cas9</span> knockout
+screening in human cells. <em>Science</em>, <em>343</em>(6166), 84–87.
+<a href="https://doi.org/10.1126/science.1247005">https://doi.org/10.1126/science.1247005</a>
+</div>
+<div id="ref-sheller_2020_federated_brain_tumour" class="csl-entry" role="listitem">
+Sheller, M. J., Edwards, B., Reina, G. A., Martin, J., Pati, S.,
+Kotrotsou, A., Milchenko, M., Xu, W., Marcus, D., Colen, R. R., &amp;
+Bakas, S. (2020). Federated learning in medicine: Facilitating
+multi-institutional collaborations without sharing patient data.
+<em>Scientific Reports</em>, <em>10</em>, 12598. <a href="https://doi.org/10.1038/s41598-020-69250-1">https://doi.org/10.1038/s41598-020-69250-1</a>
+</div>
+<div id="ref-shen2018" class="csl-entry" role="listitem">
+Shen, M. W., Arbab, M., Hsu, J. Y., Worstell, D., Culbertson, S. J.,
+Krabbe, O., Cassa, C. A., Liu, D. R., Gifford, D. K., &amp; Sherwood, R.
+I. (2018). Predictable and precise template-free <span>CRISPR</span>
+editing of pathogenic variants. <em>Nature</em>, <em>563</em>(7733),
+646–651. <a href="https://doi.org/10.1038/s41586-018-0686-x">https://doi.org/10.1038/s41586-018-0686-x</a>
+</div>
+<div id="ref-sherkow2017" class="csl-entry" role="listitem">
+Sherkow, J. S. (2017). Patent protection for <span>CRISPR</span>: An
+<span>ELSI</span> review. <em>Journal of Law and the Biosciences</em>,
+<em>4</em>(3), 565–576. <a href="https://doi.org/10.1093/jlb/lsx036">https://doi.org/10.1093/jlb/lsx036</a>
+</div>
+<div id="ref-sherman_2016_rwe_drug_development" class="csl-entry" role="listitem">
+Sherman, R. E., Anderson, S. A., Dal Pan, G. J., Gray, G. W., Gross, T.,
+Hunter, N. L., LaVange, L., Marinac-Dabic, D., Marks, P. W., Robb, M.
+A., Shuren, J., Temple, R., Woodcock, J., Yue, L. Q., &amp; Califf, R.
+M. (2016). Real-world evidence – what is it and what can it tell us?
+<em>New England Journal of Medicine</em>, <em>375</em>(23), 2293–2297.
+<a href="https://doi.org/10.1056/NEJMsb1609216">https://doi.org/10.1056/NEJMsb1609216</a>
+</div>
+<div id="ref-shields2021bayesian" class="csl-entry" role="listitem">
+Shields, B. J., Stevens, J., Li, J., Parasram, M., Damber, F., Janey, J.
+M., Adams, A., &amp; Gonzalez, J. (2021). Bayesian reaction optimization
+as a tool for chemical synthesis. <em>Nature</em>, <em>590</em>, 89–96.
+<a href="https://doi.org/10.1038/s41586-021-03213-y">https://doi.org/10.1038/s41586-021-03213-y</a>
+</div>
+<div id="ref-sibieude2022_pk_ml" class="csl-entry" role="listitem">
+Sibieude, E., Khandelwal, A., Girard, P., Hesthaven, J. S., &amp;
+Terranova, N. (2022). Population pharmacokinetic model selection
+assisted by machine learning. <em>Journal of Pharmacokinetics and
+Pharmacodynamics</em>, <em>49</em>, 257–270. <a href="https://doi.org/10.1007/s10928-021-09793-6">https://doi.org/10.1007/s10928-021-09793-6</a>
+</div>
+<div id="ref-vandersloot2024euaiact" class="csl-entry" role="listitem">
+Sloot, B. van der, Vetter, A., &amp; Zilgalvis, P. (2024). The
+<span>EU</span> <span>Artificial Intelligence Act</span> (2024):
+Implications for healthcare. <em>Health Policy</em>, <em>149</em>,
+105173. <a href="https://doi.org/10.1016/j.healthpol.2024.105173">https://doi.org/10.1016/j.healthpol.2024.105173</a>
+</div>
+<div id="ref-song2020" class="csl-entry" role="listitem">
+Song, M., Kim, H. K., Lee, S., Kim, Y., Seo, S.-Y., Park, J., Choi, J.
+W., Jang, H., Shin, J. H., Min, S., Quan, Z., Kim, J. H., Kang, H. C.,
+Yoon, S., &amp; Kim, H. H. (2020). Sequence-specific prediction of the
+efficiencies of adenine and cytosine base editors. <em>Nature
+Biotechnology</em>, <em>38</em>(9), 1037–1043. <a href="https://doi.org/10.1038/s41587-020-0573-5">https://doi.org/10.1038/s41587-020-0573-5</a>
+</div>
+<div id="ref-sovacool2017ordering" class="csl-entry" role="listitem">
+Sovacool, B. K., &amp; Hess, D. J. (2017). Ordering theories: Typologies
+and conceptual frameworks for sociotechnical change. <em>Social Studies
+of Science</em>, <em>47</em>(5), 703–750. <a href="https://doi.org/10.1177/0306312717709363">https://doi.org/10.1177/0306312717709363</a>
+</div>
+<div id="ref-star1989" class="csl-entry" role="listitem">
+Star, S. L., &amp; Griesemer, J. R. (1989). Institutional ecology,
+<span>“translations”</span> and boundary objects: Amateurs and
+professionals in <span class="nocase">Berkeley’s Museum of Vertebrate
+Zoology</span>, 1907–39. <em>Social Studies of Science</em>,
+<em>19</em>(3), 387–420. <a href="https://doi.org/10.1177/030631289019003001">https://doi.org/10.1177/030631289019003001</a>
+</div>
+<div id="ref-china_draft_biotech_regulations" class="csl-entry" role="listitem">
+State Council of the People’s Republic of China. (2019).
+<em>Administrative regulations on human genetic resources
+management</em>.
+</div>
+<div id="ref-stilgoe2013developing" class="csl-entry" role="listitem">
+Stilgoe, J., Owen, R., &amp; Macnaghten, P. (2013a). Developing a
+framework for responsible innovation. <em>Research Policy</em>,
+<em>42</em>(9), 1568–1580. <a href="https://doi.org/10.1016/j.respol.2013.05.008">https://doi.org/10.1016/j.respol.2013.05.008</a>
+</div>
+<div id="ref-stilgoe_2013_rri" class="csl-entry" role="listitem">
+Stilgoe, J., Owen, R., &amp; Macnaghten, P. (2013b). Developing a
+framework for responsible research and innovation. <em>Research
+Policy</em>, <em>42</em>(9), 1568–1580. <a href="https://doi.org/10.1016/j.respol.2013.05.008">https://doi.org/10.1016/j.respol.2013.05.008</a>
+</div>
+<div id="ref-strecker2019" class="csl-entry" role="listitem">
+Strecker, J., Jones, S., Koopal, B., Schmid-Burgk, J., Zetsche, B., Gao,
+L., Makarova, K. S., Koonin, E. V., &amp; Zhang, F. (2019). Engineering
+of <span>CRISPR</span>–<span>Cas12b</span> for human genome editing.
+<em>Nature Communications</em>, <em>10</em>, 212. <a href="https://doi.org/10.1038/s41467-018-08224-4">https://doi.org/10.1038/s41467-018-08224-4</a>
+</div>
+<div id="ref-sykora_caplan_2017" class="csl-entry" role="listitem">
+Sykora, P., &amp; Caplan, A. (2017). The <span class="nocase">Council of
+Europe</span> should not reaffirm the ban on germline genome editing in
+humans. <em>EMBO Reports</em>, <em>18</em>(11), 1871–1872. <a href="https://doi.org/10.15252/embr.201745246">https://doi.org/10.15252/embr.201745246</a>
+</div>
+<div id="ref-ascopost_earlyscan_2026" class="csl-entry" role="listitem">
+The ASCO Post Staff. (2026). <em>New <span>European</span> project
+cluster <span>EARLYSCAN</span> launched to advance early detection of
+heritable cancers</em>. <a href="https://ascopost.com/news/february-2026/new-european-project-cluster-earlyscan-launched-to-advance-early-detection-of-heritable-cancers/" class="uri">https://ascopost.com/news/february-2026/new-european-project-cluster-earlyscan-launched-to-advance-early-detection-of-heritable-cancers/</a>.
+</div>
+<div id="ref-lim2022" class="csl-entry" role="listitem">
+Thean, D. G. L., Chu, H. Y., Fong, J. H. C., Chan, B. K. C., Zhou, P.,
+Kwok, C. C. S., Chan, Y. M., Mak, S. Y. L., Choi, G. C. G., Ho, J. W.
+K., Zheng, Z., &amp; Wong, A. S. L. (2022). Machine learning-coupled
+combinatorial mutagenesis enables resource-efficient engineering of
+<span>CRISPR</span>-<span>Cas9</span> genome editor activities.
+<em>Nature Communications</em>, <em>13</em>(1), 2219. <a href="https://doi.org/10.1038/s41467-022-29874-5">https://doi.org/10.1038/s41467-022-29874-5</a>
+</div>
+<div id="ref-thielen2022_cost" class="csl-entry" role="listitem">
+Thielen, F. W., Meijden, C. M. van der, Meulen, P. van der, et al.
+(2022). Towards sustainability and affordability of expensive cell and
+gene therapies? Applying a cost-based pricing model to estimate prices
+for libmeldy and zolgensma. <em>Cytotherapy</em>, <em>24</em>(12),
+1245–1258. <a href="https://doi.org/10.1016/j.jcyt.2022.09.002">https://doi.org/10.1016/j.jcyt.2022.09.002</a>
+</div>
+<div id="ref-thorlund_2020_synthetic_control_arms" class="csl-entry" role="listitem">
+Thorlund, K., Dron, L., Park, J. J. H., &amp; Mills, E. J. (2020).
+Synthetic and external controls in clinical trials – a primer for
+researchers. <em>Clinical Pharmacology &amp; Therapeutics</em>,
+<em>107</em>(4), 883–891. <a href="https://doi.org/10.1002/cpt.1742">https://doi.org/10.1002/cpt.1742</a>
+</div>
+<div id="ref-thorlund_2018_adaptive_clinical_trials" class="csl-entry" role="listitem">
+Thorlund, K., Haggstrom, J., Park, J. J. H., &amp; Mills, E. J. (2018).
+Key design considerations for adaptive clinical trials: A primer for
+clinicians. <em>BMJ</em>, <em>360</em>, k698. <a href="https://doi.org/10.1136/bmj.k698">https://doi.org/10.1136/bmj.k698</a>
+</div>
+<div id="ref-timmermans2003gold" class="csl-entry" role="listitem">
+Timmermans, S., &amp; Berg, M. (2003). <em>The gold standard: The
+challenge of evidence-based medicine and standardization in health
+care</em>. Temple University Press.
+</div>
+<div id="ref-topol_2019_high_performance_medicine" class="csl-entry" role="listitem">
+Topol, E. J. (2019). High-performance medicine: The convergence of human
+and artificial intelligence. <em>Nature Medicine</em>, <em>25</em>(1),
+44–56. <a href="https://doi.org/10.1038/s41591-018-0300-7">https://doi.org/10.1038/s41591-018-0300-7</a>
+</div>
+<div id="ref-torous_2016_digital_phenotyping" class="csl-entry" role="listitem">
+Torous, J., Kiang, M. V., Lorme, J., &amp; Onnela, J.-P. (2016). New
+tools for new research in psychiatry: A scalable and customizable
+platform to empower data driven smartphone research. <em>JMIR Mental
+Health</em>, <em>3</em>(2), e16. <a href="https://doi.org/10.2196/mental.5165">https://doi.org/10.2196/mental.5165</a>
+</div>
+<div id="ref-tsai2017" class="csl-entry" role="listitem">
+Tsai, S. Q., Nguyen, N. T., Malagon-Lopez, J., Topkar, V. V., Aryee, M.
+J., &amp; Joung, J. K. (2017). CIRCLE-seq: A highly sensitive in vitro
+screen for genome-wide CRISPR–Cas9 nuclease off-targets. <em>Nature
+Methods</em>, <em>14</em>(6), 607–614. <a href="https://doi.org/10.1038/nmeth.4278">https://doi.org/10.1038/nmeth.4278</a>
+</div>
+<div id="ref-tsai2015" class="csl-entry" role="listitem">
+Tsai, S. Q., Zheng, Z., Nguyen, N. T., Lieber, M., Topkar, V. V.,
+Thapar, V., Wyvekens, N., Khaber, C., Iafrate, A. J., Le, L. P., Aryee,
+M. J., &amp; Joung, J. K. (2015). <span>GUIDE</span>-seq enables
+genome-wide profiling of off-target cleavage by
+<span>CRISPR</span>-<span>Cas</span> nucleases. <em>Nature
+Biotechnology</em>, <em>33</em>(2), 187–197. <a href="https://doi.org/10.1038/nbt.3117">https://doi.org/10.1038/nbt.3117</a>
+</div>
+<div id="ref-uk_mrt_regulations_2015" class="csl-entry" role="listitem">
+UK Government. (2015). <em>The human fertilisation and embryology
+(mitochondrial donation) regulations 2015</em>. <a href="https://www.legislation.gov.uk/uksi/2015/572/contents/made">https://www.legislation.gov.uk/uksi/2015/572/contents/made</a>
+</div>
+<div id="ref-uk_human_fertilisation_1990" class="csl-entry" role="listitem">
+UK Parliament. (1990). <em>Human fertilisation and embryology act
+1990</em>. <a href="https://www.legislation.gov.uk/ukpga/1990/37">https://www.legislation.gov.uk/ukpga/1990/37</a>
+</div>
+<div id="ref-fda_2019_rwe_framework" class="csl-entry" role="listitem">
+U.S. Food and Drug Administration. (2018). <em>Framework for
+<span>FDA</span>’s real-world evidence program</em>. <a href="https://www.fda.gov/media/120060/download" class="uri">https://www.fda.gov/media/120060/download</a>.
+</div>
+<div id="ref-fda_ai_ml_samd_framework_2019" class="csl-entry" role="listitem">
+U.S. Food and Drug Administration. (2019). <em>Proposed regulatory
+framework for modifications to artificial intelligence/machine learning
+(<span>AI/ML</span>)-based software as a medical device
+(<span>SaMD</span>)</em>.
+</div>
+<div id="ref-fda_casgevy_approval_scd_2023" class="csl-entry" role="listitem">
+U.S. Food and Drug Administration. (2023). <em><span>FDA</span> approves
+first gene therapies to treat sickle cell disease</em>. <a href="https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapies-treat-sickle-cell-disease">https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapies-treat-sickle-cell-disease</a>
+</div>
+<div id="ref-fda_rmat_designation" class="csl-entry" role="listitem">
+U.S. Food and Drug Administration. (2024a). <em>Regenerative medicine
+advanced therapy designation</em>. <a href="https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/regenerative-medicine-advanced-therapy-designation">https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/regenerative-medicine-advanced-therapy-designation</a>
+</div>
+<div id="ref-fda_genome_editing_guidance_2022" class="csl-entry" role="listitem">
+U.S. Food and Drug Administration. (2024b). <em>Human gene therapy
+products incorporating human genome editing</em>. <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/human-gene-therapy-products-incorporating-human-genome-editing">https://www.fda.gov/regulatory-information/search-fda-guidance-documents/human-gene-therapy-products-incorporating-human-genome-editing</a>
+</div>
+<div id="ref-vanderweele_2016_mediation" class="csl-entry" role="listitem">
+VanderWeele, T. J. (2016). Mediation analysis: A practitioner’s guide.
+<em>Annual Review of Public Health</em>, <em>37</em>, 17–32. <a href="https://doi.org/10.1146/annurev-publhealth-032315-021402">https://doi.org/10.1146/annurev-publhealth-032315-021402</a>
+</div>
+<div id="ref-varadi_2022_alphafold_db" class="csl-entry" role="listitem">
+Varadi, M., Anyango, S., Deshpande, M., Nair, S., Natassia, C.,
+Yordanova, G., Yuan, D., Stroe, O., Wood, G., Laydon, A., Žı́dek, A.,
+Green, T., Tunyasuvunakool, K., Petersen, S., Jumper, J., Clancy, E.,
+Green, R., Vora, A., Lutfi, M., … Velankar, S. (2022). <span>AlphaFold
+Protein Structure Database</span>: Massively expanding the structural
+coverage of protein-sequence space with high-accuracy models.
+<em>Nucleic Acids Research</em>, <em>50</em>(D1), D439–D444. <a href="https://doi.org/10.1093/nar/gkab1061">https://doi.org/10.1093/nar/gkab1061</a>
+</div>
+<div id="ref-vaswani2017" class="csl-entry" role="listitem">
+Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez,
+A. N., Kaiser, Ł., &amp; Polosukhin, I. (2017). Attention is all you
+need. <em>Advances in Neural Information Processing Systems</em>,
+<em>30</em>, 5998–6008. <a href="https://doi.org/10.48550/arXiv.1706.03762">https://doi.org/10.48550/arXiv.1706.03762</a>
+</div>
+<div id="ref-velupillai_2018_clinical_nlp" class="csl-entry" role="listitem">
+Velupillai, S., Suominen, H., Liakata, M., Roberts, A., Shah, A. D.,
+Morley, K., Osborn, D., Hayes, J., Stewart, R., Downs, J., Chapman, W.,
+&amp; Dutta, R. (2018). Using clinical <span>Natural Language
+Processing</span> for health outcomes research: Overview and actionable
+suggestions for future advances. <em>Journal of Biomedical
+Informatics</em>, <em>88</em>, 11–19. <a href="https://doi.org/10.1016/j.jbi.2018.10.005">https://doi.org/10.1016/j.jbi.2018.10.005</a>
+</div>
+<div id="ref-verghese2018what" class="csl-entry" role="listitem">
+Verghese, A., Shah, N. H., &amp; Harrington, R. A. (2018). What this
+computer needs is a physician: Humanism and artificial intelligence.
+<em>JAMA</em>, <em>319</em>(1), 19–20. <a href="https://doi.org/10.1001/jama.2017.19198">https://doi.org/10.1001/jama.2017.19198</a>
+</div>
+<div id="ref-vertex2023casgevy" class="csl-entry" role="listitem">
+Vertex Pharmaceuticals and CRISPR Therapeutics. (2023).
+<em><span>CASGEVY</span> (<span class="nocase">exagamglogene
+autotemcel</span>) approved by <span>FDA</span> for treatment of sickle
+cell disease and transfusion-dependent beta thalassemia</em>. Press
+release.
+</div>
+<div id="ref-viele_2014_bayesian_borrowing" class="csl-entry" role="listitem">
+Viele, K., Berry, S., Neuenschwander, B., Amzal, B., Chen, F., Enas, N.,
+Hobbs, B., Ibrahim, J. G., Kinnersley, N., Lindborg, S., Micallef, S.,
+Roychoudhury, S., &amp; Thompson, L. (2014). Use of historical control
+data for assessing treatment effects in clinical trials.
+<em>Pharmaceutical Statistics</em>, <em>13</em>(1), 41–54. <a href="https://doi.org/10.1002/pst.1589">https://doi.org/10.1002/pst.1589</a>
+</div>
+<div id="ref-visscher_2017_gwas_decade" class="csl-entry" role="listitem">
+Visscher, P. M., Wray, N. R., Zhang, Q., Sklar, P., McCarthy, M. I.,
+Brown, M. A., &amp; Yang, J. (2017). 10 years of <span>GWAS</span>
+discovery: Biology, function, and translation. <em>American Journal of
+Human Genetics</em>, <em>101</em>(1), 5–22. <a href="https://doi.org/10.1016/j.ajhg.2017.06.005">https://doi.org/10.1016/j.ajhg.2017.06.005</a>
+</div>
+<div id="ref-vivesvalles2020_ecj" class="csl-entry" role="listitem">
+Vives-Vallés, J. A., &amp; Collonnier, C. (2020). The judgment of the
+<span>CJEU</span> of 25 july 2018 on mutagenesis: Interpretation and
+interim legislative proposal. <em>Frontiers in Plant Science</em>,
+<em>10</em>, 1813. <a href="https://doi.org/10.3389/fpls.2019.01813">https://doi.org/10.3389/fpls.2019.01813</a>
+</div>
+<div id="ref-vojta2016" class="csl-entry" role="listitem">
+Vojta, A., Dobrinić, P., Tadić, V., Bočkor, L., Korać, P., Julg, B.,
+Klasić, M., &amp; Zoldoš, V. (2016). Repurposing the
+<span>CRISPR</span>-<span>Cas9</span> system for targeted
+<span>DNA</span> methylation. <em>Nucleic Acids Research</em>,
+<em>44</em>(12), 5615–5628. <a href="https://doi.org/10.1093/nar/gkw159">https://doi.org/10.1093/nar/gkw159</a>
+</div>
+<div id="ref-wagner_2019_anti_cas9" class="csl-entry" role="listitem">
+Wagner, D. L., Amini, L., Wendering, D. J., Burkhardt, L.-M., Akyüz, L.,
+Reinke, P., Volk, H.-D., &amp; Schweizer, M. (2019). High prevalence of
+<span class="nocase">Streptococcus pyogenes Cas9</span>-reactive
+<span>T</span> cells within the adult human population. <em>Nature
+Medicine</em>, <em>25</em>(2), 242–248. <a href="https://doi.org/10.1038/s41591-018-0204-6">https://doi.org/10.1038/s41591-018-0204-6</a>
+</div>
+<div id="ref-walton2020" class="csl-entry" role="listitem">
+Walton, R. T., Christie, K. A., Whittaker, M. N., &amp; Kleinstiver, B.
+P. (2020). Unconstrained genome targeting with near-<span>PAMless</span>
+engineered <span>CRISPR</span>-<span>Cas9</span> variants.
+<em>Science</em>, <em>368</em>(6488), eaba8853. <a href="https://doi.org/10.1126/science.aba8853">https://doi.org/10.1126/science.aba8853</a>
+</div>
+<div id="ref-wan_2017_liquid_biopsy_review" class="csl-entry" role="listitem">
+Wan, J. C. M., Massie, C., Garcia-Corbacho, J., Mouliere, F., Brenton,
+J. D., Caldas, C., Pacey, S., Baird, R., &amp; Rosenfeld, N. (2017).
+Liquid biopsies come of age: Towards implementation of circulating
+tumour <span>DNA</span>. <em>Nature Reviews Cancer</em>, <em>17</em>(4),
+223–238. <a href="https://doi.org/10.1038/nrc.2017.7">https://doi.org/10.1038/nrc.2017.7</a>
+</div>
+<div id="ref-wang2020delivery" class="csl-entry" role="listitem">
+Wang, D., Zhang, F., &amp; Gao, G. (2020). <span>CRISPR</span>-based
+therapeutic genome editing: Strategies and in vivo delivery by
+<span>AAV</span> vectors. <em>Cell</em>, <em>181</em>(1), 136–150. <a href="https://doi.org/10.1016/j.cell.2020.03.023">https://doi.org/10.1016/j.cell.2020.03.023</a>
+</div>
+<div id="ref-wang2014" class="csl-entry" role="listitem">
+Wang, T., Wei, J. J., Sabatini, D. M., &amp; Lander, E. S. (2014).
+Genetic screens in human cells using the
+<span>CRISPR</span>-<span>Cas9</span> system. <em>Science</em>,
+<em>343</em>(6166), 80–84. <a href="https://doi.org/10.1126/science.1246981">https://doi.org/10.1126/science.1246981</a>
+</div>
+<div id="ref-wang2022_cancerbert" class="csl-entry" role="listitem">
+Wang, Y., Sohn, S., &amp; Liu, H. (2022). CancerBERT: A cancer
+domain-specific language model for extracting cancer phenotypes from
+clinical text. <em>Journal of Biomedical Informatics</em>, <em>130</em>,
+104072. <a href="https://doi.org/10.1016/j.jbi.2022.104072">https://doi.org/10.1016/j.jbi.2022.104072</a>
+</div>
+<div id="ref-wang_2018_nlp_ehr_clinical" class="csl-entry" role="listitem">
+Wang, Y., Wang, L., Rastegar-Mojarad, M., Moon, S., Shen, F., Afzal, N.,
+Liu, S., Zeng, Y., Mehrabi, S., Sohn, S., &amp; Liu, H. (2018). Clinical
+information extraction applications: A literature review. <em>Journal of
+Biomedical Informatics</em>, <em>77</em>, 34–49. <a href="https://doi.org/10.1016/j.jbi.2017.11.011">https://doi.org/10.1016/j.jbi.2017.11.011</a>
+</div>
+<div id="ref-wasmer2019_ecj" class="csl-entry" role="listitem">
+Wasmer, M. (2019). Roads forward for european <span>GMO</span> policy —
+uncertainties in wake of <span>ECJ</span> judgment have to be mitigated
+by regulatory reform. <em>Frontiers in Bioengineering and
+Biotechnology</em>, <em>7</em>, 132. <a href="https://doi.org/10.3389/fbioe.2019.00132">https://doi.org/10.3389/fbioe.2019.00132</a>
+</div>
+<div id="ref-wienert2019" class="csl-entry" role="listitem">
+Wienert, B., Wyman, S. K., Richardson, C. D., Yeh, C. D., Akcakaya, P.,
+Porritt, M. J., Morlock, M., Vu, J. T., Kazane, K. R., Watry, H. L.,
+Judge, L. M., Conklin, B. R., Maresca, M., &amp; Corn, J. E. (2019).
+Unbiased detection of <span>CRISPR</span> off-targets in vivo using
+<span>DISCOVER</span>-seq. <em>Science</em>, <em>364</em>(6437),
+286–289. <a href="https://doi.org/10.1126/science.aav9023">https://doi.org/10.1126/science.aav9023</a>
+</div>
+<div id="ref-wilkinson2014essence" class="csl-entry" role="listitem">
+Wilkinson, A., &amp; Kupers, R. (2014). <em>The essence of scenarios:
+Learning from the shell experience</em>. Amsterdam University Press. <a href="https://doi.org/10.5117/9789089646927">https://doi.org/10.5117/9789089646927</a>
+</div>
+<div id="ref-winner1980artifacts" class="csl-entry" role="listitem">
+Winner, L. (1980). Do artifacts have politics? <em>Daedalus</em>,
+<em>109</em>(1), 121–136. <a href="https://www.jstor.org/stable/20024652">https://www.jstor.org/stable/20024652</a>
+</div>
+<div id="ref-wishart_2019_metabolomics_cancer" class="csl-entry" role="listitem">
+Wishart, D. S. (2019). Metabolomics for investigating physiological and
+pathophysiological processes. <em>Physiological Reviews</em>,
+<em>99</em>(4), 1819–1875. <a href="https://doi.org/10.1152/physrev.00035.2018">https://doi.org/10.1152/physrev.00035.2018</a>
+</div>
+<div id="ref-who_2021_governance_framework" class="csl-entry" role="listitem">
+World Health Organization. (2021b). <em>Human genome editing: A
+framework for governance</em>. <a href="https://www.who.int/publications/i/item/9789240030060">https://www.who.int/publications/i/item/9789240030060</a>
+</div>
+<div id="ref-who2021framework" class="csl-entry" role="listitem">
+World Health Organization. (2021a). <em>Human genome editing: A
+framework for governance</em>. World Health Organization.
+</div>
+<div id="ref-who_2021_recommendations" class="csl-entry" role="listitem">
+World Health Organization. (2021c). <em>Human genome editing:
+recommendations</em>. <a href="https://www.who.int/publications/i/item/9789240030381">https://www.who.int/publications/i/item/9789240030381</a>
+</div>
+<div id="ref-wu2025_crc_microsimulation" class="csl-entry" role="listitem">
+Wu, W., Yang, J., Tan, Y., Gu, K., Shen, Q., Yang, C., Hu, M., Xiang,
+Y., &amp; Xu, W. (2025). Cost-effectiveness of colorectal cancer
+screening under different scenarios of colonoscopy adherence: A
+microsimulation study. <em>BMJ Public Health</em>, <em>3</em>(1),
+e001344. <a href="https://doi.org/10.1136/bmjph-2024-001344">https://doi.org/10.1136/bmjph-2024-001344</a>
+</div>
+<div id="ref-yeh_2019_crispr_dna_repair" class="csl-entry" role="listitem">
+Yeh, C. D., Richardson, C. D., &amp; Corn, J. E. (2019). Advances in
+genome editing through control of <span>DNA</span> repair pathways.
+<em>Nature Cell Biology</em>, <em>21</em>(12), 1468–1478. <a href="https://doi.org/10.1038/s41556-019-0425-z">https://doi.org/10.1038/s41556-019-0425-z</a>
+</div>
+<div id="ref-yoon2025_regen" class="csl-entry" role="listitem">
+Yoon, J., Kim, J., Park, S., Lee, M., et al. (2025). Brief summary of
+the regulatory frameworks of regenerative medicine therapies.
+<em>Frontiers in Pharmacology</em>, <em>15</em>, 1486812. <a href="https://doi.org/10.3389/fphar.2024.1486812">https://doi.org/10.3389/fphar.2024.1486812</a>
+</div>
+<div id="ref-yotova2020_genome_editing_human_rights" class="csl-entry" role="listitem">
+Yotova, R. (2020). Regulating genome editing under international human
+rights law. <em>International and Comparative Law Quarterly</em>,
+<em>69</em>(3), 653–684. <a href="https://doi.org/10.1017/S0020589320000184">https://doi.org/10.1017/S0020589320000184</a>
+</div>
+<div id="ref-young2011responsibility" class="csl-entry" role="listitem">
+Young, I. M. (2011). <em>Responsibility for justice</em>. Oxford
+University Press. <a href="https://doi.org/10.1093/acprof:oso/9780195392388.001.0001">https://doi.org/10.1093/acprof:oso/9780195392388.001.0001</a>
+</div>
+<div id="ref-zeng2025_trajsurv" class="csl-entry" role="listitem">
+Zeng, S., Liu, L. J., Wen, J., Yetisgen, M., Etzioni, R., &amp; Luo, G.
+(2025). TrajSurv: Learning continuous latent trajectories from
+electronic health records for trustworthy survival prediction.
+<em>Proceedings of Machine Learning for Healthcare</em>, <em>298</em>,
+1–27.
+</div>
+<div id="ref-zetsche2015" class="csl-entry" role="listitem">
+Zetsche, B., Gootenberg, J. S., Abudayyeh, O. O., Slaymaker, I. M.,
+Makarova, K. S., Essletzbichler, P., Volz, S. E., Joung, J., Oost, J.
+van der, Regev, A., Koonin, E. V., &amp; Zhang, F. (2015).
+<span>Cpf1</span> is a single <span>RNA</span>-guided endonuclease of a
+class 2 <span>CRISPR</span>-<span>Cas</span> system. <em>Cell</em>,
+<em>163</em>(3), 759–771. <a href="https://doi.org/10.1016/j.cell.2015.09.038">https://doi.org/10.1016/j.cell.2015.09.038</a>
+</div>
+<div id="ref-zhang2020crisprip" class="csl-entry" role="listitem">
+Zhang, G., Dai, Z., &amp; Dai, X. (2020). <span>CRISPR-IP</span>: A
+<span>CRISPR</span> off-target prediction tool with improved
+performance. <em>Bioinformatics</em>, <em>36</em>(10), 3137–3138. <a href="https://doi.org/10.1093/bioinformatics/btaa143">https://doi.org/10.1093/bioinformatics/btaa143</a>
+</div>
+<div id="ref-zhang2023crisprbert" class="csl-entry" role="listitem">
+Zhang, Y., Long, Y., &amp; Kwoh, C. K. (2023).
+<em><span>CRISPR-BERT</span>: Enhancing <span>CRISPR/Cas9</span>
+off-target activities with mismatches and indels prediction using
+<span>BERT</span>-based convolutional and recurrent neural
+networks</em>. <a href="https://github.com/BrokenStringx/CRISPR-BERT" class="uri">https://github.com/BrokenStringx/CRISPR-BERT</a>.
+</div>
+<div id="ref-zhu2019" class="csl-entry" role="listitem">
+Zhu, H., Richmond, E., &amp; Liang, C. (2019).
+<em><span>CRISPR</span>-based tools for multiplex genome editing</em>.
+<em>Methods in Molecular Biology</em>, <em>1961</em>, 53–67. <a href="https://doi.org/10.1007/978-1-4939-9170-9_4">https://doi.org/10.1007/978-1-4939-9170-9_4</a>
+</div>
+</div>
+
+
+<!-- -->
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./09-prospective.html" class="pagination-link" aria-label="Prospective Scenarios 2026–2030">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Prospective Scenarios 2026–2030</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># References {.unnumbered}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/mm3ugr/crispr-ai-monograph/edit/main/references.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/mm3ugr/crispr-ai-monograph/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
