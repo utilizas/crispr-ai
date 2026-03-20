@@ -3,7 +3,7 @@
 **Technical Frontiers, Therapeutic Applications, and Sociotechnical Governance**
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19136685.svg)](https://doi.org/10.5281/zenodo.19136685)
 [![Deploy: Vercel](https://img.shields.io/badge/deploy-Vercel-black?logo=vercel)](https://crispr-ai-chi.vercel.app/)
 [![Deploy: Netlify](https://img.shields.io/badge/deploy-Netlify-00C7B7?logo=netlify)](https://crispr-ai.netlify.app/)
 
