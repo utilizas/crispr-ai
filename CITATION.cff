@@ -1,0 +1,60 @@
+cff-version: 1.2.0
+message: "If you use or reference this monograph, please cite it as below."
+type: book
+title: "CRISPR Systems and Artificial Intelligence: Technical Frontiers, Therapeutic Applications, and Sociotechnical Governance"
+authors:
+  - family-names: Moreno
+    given-names: Miguel
+    orcid: "https://orcid.org/0000-0002-0746-9587"
+    affiliation: "Universidad de Granada"
+date-released: "2026-03-20"
+year: 2026
+url: "https://crispr-ai-chi.vercel.app/"
+repository-code: "https://github.com/utilizas/crispr-ai"
+doi: "10.5281/zenodo.19136685"
+license: "CC-BY-NC-SA-4.0"
+abstract: >-
+  Academic monograph examining the convergence of CRISPR-based genome editing
+  systems and artificial intelligence, from molecular mechanism to clinical
+  application to sociotechnical governance. Structured in three parts across
+  nine chapters: Part I reviews CRISPR architectures and AI-driven design and
+  optimisation; Part II maps the therapeutic landscape for rare diseases and
+  hereditary cancer syndromes; Part III analyses regulatory frameworks,
+  bioethics, STS perspectives, and prospective scenarios for 2026–2030.
+  Approximately 58,000 words and 384+ bibliographic entries. Produced through
+  transparent hybrid human–AI collaboration at the Universidad de Granada
+  within the framework of Horizon Europe projects PREDI-LYNCH (Grant 101213916)
+  and LATE-AYA (Grant 101214879).
+keywords:
+  - CRISPR genome editing
+  - artificial intelligence in biomedicine
+  - Science and Technology Studies
+  - regulatory governance
+  - rare diseases
+  - Horizon Europe
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19136685"
+    description: "Zenodo archival deposit (version of record)"
+  - type: url
+    value: "https://crispr-ai-chi.vercel.app/"
+    description: "Vercel deployment (HTML book)"
+  - type: url
+    value: "https://crispr-ai.netlify.app/"
+    description: "Netlify deployment (HTML book)"
+references:
+  - type: grant
+    title: "PREDI-LYNCH — Validated non-invasive liquid biopsy tests for cancer PREDIction in LYNCH Syndrome"
+    number: "101213916"
+    institution:
+      name: "European Commission, Horizon Europe"
+  - type: grant
+    title: "LATE-AYA / PredictAYA — Prediction and prevention of late effects in AYA cancer survivors"
+    number: "101214879"
+    institution:
+      name: "European Commission, Horizon Europe"
+  - type: grant
+    title: "AUTAI — Human autonomy and artificial intelligence"
+    number: "PID2022-137953OB-I00"
+    institution:
+      name: "MCIN/AEI, Spain"
