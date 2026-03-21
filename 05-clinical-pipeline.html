@@ -128,6 +128,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -518,29 +547,29 @@ div.csl-indent {
 <h2 data-number="5.1" class="anchored" data-anchor-id="introduction-translating-molecular-precision-into-therapeutic-reality"><span class="header-section-number">5.1</span> Introduction: translating molecular precision into therapeutic reality</h2>
 <p>The preceding chapter examined the diseases that CRISPR-AI systems aim to treat. What follows is an account of how those therapies reach patients — and why that process differs structurally from conventional drug development in ways that reshape access, evidence generation, and regulatory governance. The clinical pipeline for genome editing therapies is not simply a faster or more precise version of the pharmaceutical pipeline: it is a different kind of pipeline, with its own manufacturing logic, evidentiary challenges, and regulatory accommodations.</p>
 <p>The field currently divides along two delivery strategies. The <em>ex vivo</em> approach, whose leading example is Casgevy (exagamglogene autotemcel), requires the extraction, editing, and reinfusion of a patient’s own cells — a manufacturing process that is patient-specific by necessity, labour-intensive, and geographically constrained. The <em>in vivo</em> approach, advanced by Intellia’s NTLA-2001 for transthyretin amyloidosis and Verve Therapeutics’ VERVE-102 for familial hypercholesterolaemia, delivers editing components directly into the body — a simpler clinical workflow but one that introduces distinct challenges of biodistribution, immunogenicity, and off-target editing in non-target tissues. Each strategy has generated its own clinical evidence, confronted its own regulatory questions, and shaped its own manufacturing supply chain.</p>
-<p>The discussion moves from manufacturing through trial design, regulatory approval, and post-marketing surveillance, with particular attention to the points where computational tools — the AI systems of Part I — are deployed, and to the structural features that distinguish genome editing from conventional therapeutics.</p>
+<p>The discussion moves from manufacturing through trial design, regulatory approval, and post-marketing surveillance, with particular attention to the points where computational tools — the AI systems of Part I — are deployed, and to the structural features that distinguish genome editing from conventional therapeutics <span class="citation" data-cites="schambach2023_precision">(<a href="references.html#ref-schambach2023_precision" role="doc-biblioref">Schambach et al., 2023</a>)</span>.</p>
 </section>
 <section id="ex-vivo-gene-editing-the-current-clinical-frontier" class="level2 page-columns page-full" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="ex-vivo-gene-editing-the-current-clinical-frontier"><span class="header-section-number">5.2</span> Ex vivo gene editing: the current clinical frontier</h2>
 <section id="the-casgevy-manufacturing-workflow" class="level3 page-columns page-full" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="the-casgevy-manufacturing-workflow"><span class="header-section-number">5.2.1</span> The Casgevy manufacturing workflow</h3>
-<p>The production of Casgevy for a single patient involves a sequence of steps that, taken together, constitute one of the most complex manufacturing processes in the history of therapeutics. Understanding this workflow matters not only for appreciating the clinical achievement but also for grasping why each step compounds the scalability constraints that limit Casgevy’s global impact.</p>
+<p>The production of Casgevy for a single patient involves a sequence of steps that, taken together, constitute one of the most complex manufacturing processes in the history of therapeutics <span class="citation" data-cites="frangoul2024_nejm Frangoul2021CRISPRCas9">(<a href="references.html#ref-Frangoul2021CRISPRCas9" role="doc-biblioref">Frangoul et al., 2021</a>; <a href="references.html#ref-frangoul2024_nejm" role="doc-biblioref">Frangoul et al., 2024</a>)</span>. Understanding this workflow matters not only for appreciating the clinical achievement but also for grasping why each step compounds the scalability constraints that limit Casgevy’s global impact.</p>
 <p>The first bottleneck is cell collection. The patient receives plerixafor (a CXCR4 antagonist) to mobilise CD34+ haematopoietic stem and progenitor cells (HSPCs) from the bone marrow into the peripheral blood, followed by leukapheresis. Mobilisation efficiency varies across patients — particularly in SCD, where repeated vaso-occlusive crises may have damaged the bone marrow microenvironment — and insufficient yield at this stage can delay or derail the entire process. The collected product must then be shipped under controlled conditions to a centralised GMP manufacturing facility operated by Lonza, with a third facility approved as of late 2025 to meet growing demand. This shipping step alone introduces a logistical dependency on cold-chain infrastructure and international courier networks that is absent from conventional oral or injectable therapies.</p>
-<p>At the manufacturing site, CD34+ cells are enriched by immunomagnetic selection, then electroporated with a ribonucleoprotein (RNP) complex comprising SpCas9 protein and a synthetic single guide RNA targeting the erythroid-specific enhancer of <em>BCL11A</em>. The electroporation parameters — voltage, pulse duration, RNP concentration, cell density — have been optimised through extensive process development, and the specific conditions are proprietary. After editing, cells are cryopreserved and subjected to a battery of quality control assessments: viability, CD34+ purity, sterility, endotoxin levels, and — most consequentially for release decisions — on-target editing efficiency (measured by next-generation sequencing of the target locus) and off-target assessment. Because each patient’s cells respond differently to electroporation, editing efficiency is unavoidably variable: a manufacturing process that produces 85% allelic disruption in one patient may achieve only 60% in the next, with direct implications for engraftment kinetics and clinical response.</p>
+<p>At the manufacturing site, CD34+ cells are enriched by immunomagnetic selection, then electroporated with a ribonucleoprotein (RNP) complex comprising SpCas9 protein and a synthetic single guide RNA targeting the erythroid-specific enhancer of <em>BCL11A</em> <span class="citation" data-cites="wu2019_bcl11a">(<a href="references.html#ref-wu2019_bcl11a" role="doc-biblioref">Wu et al., 2019</a>)</span>. The electroporation parameters — voltage, pulse duration, RNP concentration, cell density — have been optimised through extensive process development, and the specific conditions are proprietary. After editing, cells are cryopreserved and subjected to a battery of quality control assessments: viability, CD34+ purity, sterility, endotoxin levels, and — most consequentially for release decisions — on-target editing efficiency (measured by next-generation sequencing of the target locus) and off-target assessment. Because each patient’s cells respond differently to electroporation, editing efficiency is unavoidably variable: a manufacturing process that produces 85% allelic disruption in one patient may achieve only 60% in the next, with direct implications for engraftment kinetics and clinical response.</p>
 <p>The edited cells are shipped back to the treatment centre, where the patient undergoes myeloablative conditioning with pharmacokinetically dose-adjusted busulfan over four days. This step — the destruction of the patient’s existing bone marrow — is necessary to create ‘space’ for the edited cells to engraft, but it carries significant toxicity: weeks of pancytopenia with attendant risks of infection, bleeding, and organ damage. Patients require prolonged hospitalisation during the engraftment period, typically 4–6 weeks. After discharge, long-term follow-up continues for 15 years under the terms of the regulatory approval.</p>
 <p>The entire process, from first cell collection to infusion, takes approximately 6–9 months. As of late 2025, 165 patients had undergone first cell collection, 39 had been infused, and more than 45 authorised treatment centres had been activated globally — numbers that, while growing, remain a tiny fraction of the eligible patient population. The manufacturing workflow is, in effect, a personalised therapy pipeline that operates at artisanal scale within a regulatory framework designed for industrial production.</p>
 
 <div class="no-row-height column-margin column-container"><div class="" style="font-size: 0.88em;">
-<p>As of late 2025, the gap between eligible and treated patients is stark: an estimated 100,000 individuals with severe SCD or TDT could benefit from Casgevy in the US and EU alone, but fewer than 40 had been infused. The ratio — approximately 1 in 2,500 — illustrates the manufacturing bottleneck as a structural constraint, not a transient one.</p>
+<p>As of late 2025, the gap between eligible and treated patients is stark: an estimated 100,000 individuals with severe SCD or TDT could benefit from Casgevy in the US and EU alone, but fewer than 40 had been infused <span class="citation" data-cites="frangoul2024_nejm">(<a href="references.html#ref-frangoul2024_nejm" role="doc-biblioref">Frangoul et al., 2024</a>)</span>. The ratio — approximately 1 in 2,500 — illustrates the manufacturing bottleneck as a structural constraint, not a transient one.</p>
 </div></div></section>
 <section id="conditioning-regimens-and-the-burden-of-treatment" class="level3" data-number="5.2.2">
 <h3 data-number="5.2.2" class="anchored" data-anchor-id="conditioning-regimens-and-the-burden-of-treatment"><span class="header-section-number">5.2.2</span> Conditioning regimens and the burden of treatment</h3>
-<p>The myeloablative conditioning step is arguably the single greatest barrier to broader adoption of ex vivo CRISPR therapies. Busulfan conditioning is associated with acute toxicities (mucositis, hepatic sinusoidal obstruction syndrome, seizures) and long-term risks (secondary malignancies, gonadal failure). For SCD patients — many of whom are children or young adults — the reproductive implications are particularly significant: busulfan is gonadotoxic, and fertility preservation must be offered before conditioning, adding complexity, cost, and emotional burden to an already demanding process.</p>
+<p>The myeloablative conditioning step is arguably the single greatest barrier to broader adoption of ex vivo CRISPR therapies. Busulfan conditioning is associated with acute toxicities (mucositis, hepatic sinusoidal obstruction syndrome, seizures) and long-term risks (secondary malignancies, gonadal failure). For SCD patients — many of whom are children or young adults — the reproductive implications are particularly significant: busulfan is gonadotoxic, and fertility preservation must be offered before conditioning, adding complexity, cost, and emotional burden to an already demanding process <span class="citation" data-cites="nickel2022_fertility">(<a href="references.html#ref-nickel2022_fertility" role="doc-biblioref">Nickel et al., 2022</a>)</span>.</p>
 <p>Research into reduced-intensity and non-myeloablative conditioning regimens is active but preliminary. Antibody-based conditioning — using antibodies against CD117 (c-Kit) to selectively deplete HSPCs without broad myeloablation — has shown promise in preclinical models and early clinical testing for non-CRISPR gene therapies, but has not yet been validated in the context of CRISPR-edited cell products. If successful, antibody conditioning could dramatically reduce the toxicity, hospitalisation duration, and infrastructure requirements of ex vivo editing, potentially bringing these therapies within reach of healthcare systems in low- and middle-income countries.</p>
 </section>
 <section id="beyond-casgevy-other-ex-vivo-programmes" class="level3" data-number="5.2.3">
 <h3 data-number="5.2.3" class="anchored" data-anchor-id="beyond-casgevy-other-ex-vivo-programmes"><span class="header-section-number">5.2.3</span> Beyond Casgevy: other ex vivo programmes</h3>
-<p>Casgevy is not the only ex vivo CRISPR therapy in clinical development, though it is the only one with regulatory approval as of early 2026. Several programmes are advancing through clinical trials with distinct editing strategies. CRISPR-based engineering of chimeric antigen receptor T cells (CAR-T) uses multiplex editing to simultaneously insert the CAR transgene, disrupt the endogenous T cell receptor (to enable allogeneic ‘off-the-shelf’ products), and knock out immune checkpoint genes (to enhance persistence and anti-tumour activity). These allogeneic CAR-T products — if successfully developed — would eliminate the patient-specific manufacturing bottleneck of autologous approaches, though they introduce the challenge of graft-versus-host disease prevention.</p>
+<p>Casgevy is not the only ex vivo CRISPR therapy in clinical development, though it is the only one with regulatory approval as of early 2026. Several programmes are advancing through clinical trials with distinct editing strategies. CRISPR-based engineering of chimeric antigen receptor T cells (CAR-T) uses multiplex editing to simultaneously insert the CAR transgene, disrupt the endogenous T cell receptor (to enable allogeneic ‘off-the-shelf’ products), and knock out immune checkpoint genes (to enhance persistence and anti-tumour activity). These allogeneic CAR-T products — if successfully developed — would eliminate the patient-specific manufacturing bottleneck of autologous approaches, though they introduce the challenge of graft-versus-host disease prevention <span class="citation" data-cites="ottaviano2022_crispr_cart chiesa2023_becar7">(<a href="references.html#ref-chiesa2023_becar7" role="doc-biblioref">Chiesa et al., 2023</a>; <a href="references.html#ref-ottaviano2022_crispr_cart" role="doc-biblioref">Ottaviano et al., 2022</a>)</span>.</p>
 <p>iPSC-derived cell therapies push this logic further: patient fibroblasts or blood cells are reprogrammed to induced pluripotent stem cells, edited at the iPSC stage, differentiated to the desired cell type (e.g., pancreatic beta cells, cardiomyocytes, retinal pigment epithelial cells), and administered to the patient. This approach decouples the editing event from the patient timeline, allowing the generation of banked, quality-controlled edited cell lines that can serve multiple patients — a manufacturing model that differs in kind, not merely in efficiency, from autologous approaches.</p>
 </section>
 </section>
@@ -548,7 +577,7 @@ div.csl-indent {
 <h2 data-number="5.3" class="anchored" data-anchor-id="in-vivo-gene-editing-emerging-clinical-programmes"><span class="header-section-number">5.3</span> In vivo gene editing: emerging clinical programmes</h2>
 <section id="verve-101-and-verve-102-base-editing-for-cardiovascular-disease" class="level3 page-columns page-full" data-number="5.3.1">
 <h3 data-number="5.3.1" class="anchored" data-anchor-id="verve-101-and-verve-102-base-editing-for-cardiovascular-disease"><span class="header-section-number">5.3.1</span> VERVE-101 and VERVE-102: base editing for cardiovascular disease</h3>
-<p>The Verve Therapeutics programme targeting <em>PCSK9</em> — a gene whose inactivation potently reduces LDL cholesterol — is the most advanced in vivo base editing clinical programme and illustrates both the potential and the iterative nature of clinical translation.</p>
+<p>The Verve Therapeutics programme targeting <em>PCSK9</em> — a gene whose inactivation potently reduces LDL cholesterol — is the most advanced in vivo base editing clinical programme and illustrates both the potential and the iterative nature of clinical translation <span class="citation" data-cites="laurent2024_crispr_clinical">(<a href="references.html#ref-laurent2024_crispr_clinical" role="doc-biblioref">Laurent et al., 2024</a>)</span>.</p>
 <p>VERVE-101, the first-generation product, consists of an adenine base editor (ABE) mRNA and a guide RNA targeting <em>PCSK9</em>, encapsulated in an engineered LNP for intravenous delivery to hepatocytes. The Heart-1 Phase 1b trial, initiated in 2022, enrolled 10 patients with heterozygous familial hypercholesterolaemia (HeFH) and established atherosclerotic cardiovascular disease. First-in-human data presented at AHA 2023 demonstrated proof of concept: at the 0.45 mg/kg dose, two patients showed PCSK9 protein reductions of 59% and 84% and LDL-C reductions of 39% and 48%, respectively. The single patient treated at 0.6 mg/kg achieved a 55% LDL-C reduction sustained to at least 180 days <span class="citation" data-cites="bellinger2023_verve101">(<a href="references.html#ref-bellinger2023_verve101" role="doc-biblioref">Bellinger et al., 2023</a>)</span>.</p>
 <p>However, the Heart-1 trial also revealed a safety signal in one participant who developed elevated liver transaminases and low platelet counts, effects attributed to the LNP delivery vehicle rather than the base editing payload. In April 2024, Verve paused Heart-1 enrolment and pivoted to VERVE-102, a second-generation product that uses a proprietary GalNAc-conjugated LNP (GalNAc-LNP) designed to improve liver targeting via the asialoglycoprotein receptor (ASGPR) while reducing uptake by non-hepatic tissues — particularly splenic macrophages, which are thought to mediate the platelet reduction observed with first-generation LNPs.</p>
 <p>The Heart-2 Phase 1b trial of VERVE-102, initiated in May 2024, has shown markedly improved results. Initial data reported in April 2025 from 14 patients across three dose cohorts (0.3, 0.45, and 0.6 mg/kg) demonstrated dose-dependent LDL-C reductions, with a mean reduction of 53% and a maximum of 69% in the highest dose cohort. Notably, no treatment-related serious adverse events, clinically significant liver enzyme elevations, or platelet reductions were observed at any dose level — a safety profile that Verve describes as ‘potentially best-in-class’ for LNP-delivered therapeutics. Meanwhile, durability data from the original VERVE-101 Heart-1 trial show sustained base editing effects at nearly two years of follow-up, supporting the mechanistic premise that a single DNA base change produces permanent gene inactivation.</p>
@@ -593,7 +622,7 @@ Figure&nbsp;5.1: CRISPR-based clinical programmes by delivery paradigm, therapeu
 <section id="adaptive-and-bayesian-trial-designs" class="level3" data-number="5.4.2">
 <h3 data-number="5.4.2" class="anchored" data-anchor-id="adaptive-and-bayesian-trial-designs"><span class="header-section-number">5.4.2</span> Adaptive and Bayesian trial designs</h3>
 <p>The small patient populations characteristic of rare disease gene therapy programmes create a tension between the need for rigorous evidence and the practical impossibility of enrolling large trials. Adaptive trial designs — in which the trial’s sample size, randomisation ratio, dose levels, or inclusion criteria can be modified during the trial on the basis of interim data — offer a partial resolution. Bayesian adaptive designs are particularly relevant: they use prior information (from preclinical data, earlier cohorts, or external data sources) to construct a probabilistic model of the treatment effect that is updated as patient data accumulate, allowing the trial to reach a decision (stop for efficacy, stop for futility, or continue) with fewer patients than a fixed-sample frequentist design would require.</p>
-<p>The application of Bayesian methods to gene therapy trials is growing but remains non-standard. Regulatory agencies — particularly the FDA, through its 2019 guidance on adaptive designs, and the EMA, through its reflection paper on methodological issues — have signalled openness to these approaches, but sponsors report that pre-specification of the statistical framework, the handling of multiplicity, and the choice of informative priors remain areas of regulatory uncertainty. Combining AI-driven patient stratification (discussed in Chapter 6) with Bayesian trial designs is a natural next step: ML models trained on multi-omic data could identify patient subgroups most likely to respond, enriching the trial population and increasing statistical power without increasing sample size.</p>
+<p>The application of Bayesian methods to gene therapy trials is growing but remains non-standard. Regulatory agencies — particularly the FDA, through its 2019 guidance on adaptive designs, and the EMA, through its reflection paper on methodological issues — have signalled openness to these approaches, but sponsors report that pre-specification of the statistical framework, the handling of multiplicity, and the choice of informative priors remain areas of regulatory uncertainty <span class="citation" data-cites="fda2019adaptive">(<a href="references.html#ref-fda2019adaptive" role="doc-biblioref">U.S. Food and Drug Administration, 2019</a>)</span>. Combining AI-driven patient stratification (discussed in Chapter 6) with Bayesian trial designs is a natural next step: ML models trained on multi-omic data could identify patient subgroups most likely to respond, enriching the trial population and increasing statistical power without increasing sample size.</p>
 </section>
 <section id="surrogate-endpoints-and-long-term-outcomes" class="level3" data-number="5.4.3">
 <h3 data-number="5.4.3" class="anchored" data-anchor-id="surrogate-endpoints-and-long-term-outcomes"><span class="header-section-number">5.4.3</span> Surrogate endpoints and long-term outcomes</h3>
@@ -604,7 +633,7 @@ Figure&nbsp;5.1: CRISPR-based clinical programmes by delivery paradigm, therapeu
 </section>
 <section id="patient-reported-outcomes" class="level3" data-number="5.4.4">
 <h3 data-number="5.4.4" class="anchored" data-anchor-id="patient-reported-outcomes"><span class="header-section-number">5.4.4</span> Patient-reported outcomes</h3>
-<p>A dimension of clinical trial design that has historically received insufficient attention in gene therapy — and that connects directly to the STS themes of this monograph — is the systematic collection of patient-reported outcome measures (PROMs). For SCD, the CLIMB-121 trial included multiple PROM instruments: the Adult Sickle Cell Quality of Life Measurement Information System (ASCQ-Me), the EQ-5D, the PedsQL, and a weekly pain scale. Data from these instruments demonstrate clinically meaningful improvements across emotional impact, pain, social functioning, and stiffness domains — evidence that complements the biomarker and clinical endpoints with the patient’s own assessment of therapeutic benefit.</p>
+<p>A dimension of clinical trial design that has historically received insufficient attention in gene therapy — and that connects directly to the STS themes of this monograph — is the systematic collection of patient-reported outcome measures (PROMs). For SCD, the CLIMB-121 trial included multiple PROM instruments: the Adult Sickle Cell Quality of Life Measurement Information System (ASCQ-Me), the EQ-5D, the PedsQL, and a weekly pain scale. Data from these instruments demonstrate clinically meaningful improvements across emotional impact, pain, social functioning, and stiffness domains — evidence that complements the biomarker and clinical endpoints with the patient’s own assessment of therapeutic benefit <span class="citation" data-cites="sharma2025_climb_pro">(<a href="references.html#ref-sharma2025_climb_pro" role="doc-biblioref">Sharma et al., 2025</a>)</span>.</p>
 <p>The inclusion of PROMs is not merely a methodological refinement but a political act in the sense developed by the STS literature: it makes visible a dimension of disease impact (subjective quality of life) that is systematically undervalued by biomarker-centric trial designs. For conditions like Lynch syndrome, where surveillance programmes impose ongoing burdens of anxiety, invasive procedures, and reproductive decisions, PROMs are essential for evaluating whether AI-driven liquid biopsy approaches (such as those under development in PREDI-LYNCH) actually improve the lived experience of carriers — a question that biomarker sensitivity and specificity alone cannot answer.</p>
 </section>
 </section>
@@ -622,7 +651,7 @@ Figure&nbsp;5.1: CRISPR-based clinical programmes by delivery paradigm, therapeu
 </section>
 <section id="cost-of-goods-and-the-pricing-equation" class="level3" data-number="5.5.3">
 <h3 data-number="5.5.3" class="anchored" data-anchor-id="cost-of-goods-and-the-pricing-equation"><span class="header-section-number">5.5.3</span> Cost of goods and the pricing equation</h3>
-<p>The cost of goods sold (COGS) for autologous gene-edited cell therapies is estimated at $50,000–100,000 per patient, driven by the cost of GMP-grade reagents (Cas9 protein, synthetic guide RNA, electroporation supplies), the labour-intensive manufacturing process, quality control testing, and cryogenic shipping logistics. This COGS, while high by pharmaceutical standards, accounts for only a small fraction of the list price ($2.2 million for Casgevy), with the majority of the price reflecting development costs, regulatory costs, profit margin, and — most tellingly — the small denominator over which these fixed costs are amortised.</p>
+<p>The cost of goods sold (COGS) for autologous gene-edited cell therapies is estimated at $50,000–100,000 per patient, driven by the cost of GMP-grade reagents (Cas9 protein, synthetic guide RNA, electroporation supplies), the labour-intensive manufacturing process, quality control testing, and cryogenic shipping logistics. This COGS, while high by pharmaceutical standards, accounts for only a small fraction of the list price ($2.2 million for Casgevy), with the majority of the price reflecting development costs, regulatory costs, profit margin, and — most tellingly — the small denominator over which these fixed costs are amortised <span class="citation" data-cites="CRISPRTx2024Bus">(<a href="references.html#ref-CRISPRTx2024Bus" role="doc-biblioref">CRISPR Therapeutics, 2024</a>)</span>.</p>
 <p>For in vivo therapies, the COGS picture is different: LNP-encapsulated mRNA/gRNA products are manufactured using established nucleic acid synthesis and LNP formulation processes that are more amenable to scale-up, and the cost per dose is expected to decrease as manufacturing matures. However, the development costs remain high (Verve Therapeutics reported quarterly operating losses exceeding $50 million in early 2025), and the pricing of in vivo gene editing therapies has not yet been tested by market entry.</p>
 </section>
 </section>
@@ -634,7 +663,7 @@ Figure&nbsp;5.1: CRISPR-based clinical programmes by delivery paradigm, therapeu
 <p>The UK’s Medicines and Healthcare products Regulatory Agency (MHRA) granted conditional approval in November 2023, making Casgevy the first CRISPR therapy approved anywhere in the world. The MHRA’s speed reflected both its Innovative Licensing and Access Pathway (ILAP) — a dedicated route for therapies addressing unmet medical needs — and the UK’s post-Brexit incentive to establish itself as a competitive destination for advanced therapy development. The approval was for patients aged 12 and older with SCD characterised by recurrent VOCs, or TDT, where allogeneic HSCT is appropriate but no matched related donor is available.</p>
 <p>The US FDA followed in December 2023 with approval for SCD under its standard review process (following Regenerative Medicine Advanced Therapy designation, Priority Review, Orphan Drug Designation, and Fast Track Designation), and in January 2024 for TDT. The FDA approval was notable for its explicit acknowledgement of the single-arm trial design and its reliance on historical controls, as well as its requirement for 15-year post-marketing follow-up to monitor long-term safety, including the theoretical risk of off-target editing and malignancy.</p>
 <p>The European Medicines Agency (EMA) granted conditional marketing authorisation through its Committee for Advanced Therapies (CAT), classifying Casgevy as a gene therapy medicinal product — a subcategory of advanced therapy medicinal products (ATMPs) that triggers specific regulatory requirements including GMP manufacturing to ATMP standards, environmental risk assessment, and enhanced pharmacovigilance. The EMA conditional approval carries annual renewal requirements tied to the submission of additional data on long-term efficacy and safety.</p>
-<p>Approvals in Saudi Arabia, Bahrain, Canada, Switzerland, and the United Arab Emirates followed in 2024, and reimbursement negotiations — the decisive step between regulatory approval and actual patient access — have progressed at varying speeds. NICE approved Casgevy for SCD in England in May 2025 following an outcomes-based managed access agreement; discussions for TDT are ongoing. The pattern is consistent across jurisdictions: regulatory approval is achieved relatively quickly (12–18 months from submission to decision), but reimbursement and access negotiations add months to years of additional delay.</p>
+<p>Approvals in Saudi Arabia, Bahrain, Canada, Switzerland, and the United Arab Emirates followed in 2024, and reimbursement negotiations — the decisive step between regulatory approval and actual patient access — have progressed at varying speeds. NICE approved Casgevy for SCD in England in May 2025 following an outcomes-based managed access agreement; discussions for TDT are ongoing. The pattern is consistent across jurisdictions: regulatory approval is achieved relatively quickly (12–18 months from submission to decision), but reimbursement and access negotiations add months to years of additional delay <span class="citation" data-cites="NHS2025GeneEditingSickleCell">(<a href="references.html#ref-NHS2025GeneEditingSickleCell" role="doc-biblioref">NHS England, 2025</a>)</span>.</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-casgevy-regulatory" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -643,23 +672,23 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
 </figcaption>
 <div aria-describedby="tbl-casgevy-regulatory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="zclocajzko" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zclocajzko table {
+<div id="plasjbhpsi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#plasjbhpsi table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zclocajzko thead, #zclocajzko tbody, #zclocajzko tfoot, #zclocajzko tr, #zclocajzko td, #zclocajzko th {
+#plasjbhpsi thead, #plasjbhpsi tbody, #plasjbhpsi tfoot, #plasjbhpsi tr, #plasjbhpsi td, #plasjbhpsi th {
   border-style: none;
 }
 
-#zclocajzko p {
+#plasjbhpsi p {
   margin: 0;
   padding: 0;
 }
 
-#zclocajzko .gt_table {
+#plasjbhpsi .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -685,12 +714,12 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   border-left-color: #D3D3D3;
 }
 
-#zclocajzko .gt_caption {
+#plasjbhpsi .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zclocajzko .gt_title {
+#plasjbhpsi .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -702,7 +731,7 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   border-bottom-width: 0;
 }
 
-#zclocajzko .gt_subtitle {
+#plasjbhpsi .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -714,7 +743,7 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   border-top-width: 0;
 }
 
-#zclocajzko .gt_heading {
+#plasjbhpsi .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -726,13 +755,13 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   border-right-color: #D3D3D3;
 }
 
-#zclocajzko .gt_bottom_border {
+#plasjbhpsi .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zclocajzko .gt_col_headings {
+#plasjbhpsi .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -747,7 +776,7 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   border-right-color: #D3D3D3;
 }
 
-#zclocajzko .gt_col_heading {
+#plasjbhpsi .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -767,7 +796,7 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   overflow-x: hidden;
 }
 
-#zclocajzko .gt_column_spanner_outer {
+#plasjbhpsi .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -779,15 +808,15 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   padding-right: 4px;
 }
 
-#zclocajzko .gt_column_spanner_outer:first-child {
+#plasjbhpsi .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zclocajzko .gt_column_spanner_outer:last-child {
+#plasjbhpsi .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zclocajzko .gt_column_spanner {
+#plasjbhpsi .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -799,11 +828,11 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   width: 100%;
 }
 
-#zclocajzko .gt_spanner_row {
+#plasjbhpsi .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zclocajzko .gt_group_heading {
+#plasjbhpsi .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -829,7 +858,7 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   text-align: left;
 }
 
-#zclocajzko .gt_empty_group_heading {
+#plasjbhpsi .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -844,15 +873,15 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   vertical-align: middle;
 }
 
-#zclocajzko .gt_from_md > :first-child {
+#plasjbhpsi .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zclocajzko .gt_from_md > :last-child {
+#plasjbhpsi .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zclocajzko .gt_row {
+#plasjbhpsi .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -871,7 +900,7 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   overflow-x: hidden;
 }
 
-#zclocajzko .gt_stub {
+#plasjbhpsi .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -884,7 +913,7 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   padding-right: 5px;
 }
 
-#zclocajzko .gt_stub_row_group {
+#plasjbhpsi .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -898,15 +927,15 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   vertical-align: top;
 }
 
-#zclocajzko .gt_row_group_first td {
+#plasjbhpsi .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zclocajzko .gt_row_group_first th {
+#plasjbhpsi .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zclocajzko .gt_summary_row {
+#plasjbhpsi .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -916,16 +945,16 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   padding-right: 5px;
 }
 
-#zclocajzko .gt_first_summary_row {
+#plasjbhpsi .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zclocajzko .gt_first_summary_row.thick {
+#plasjbhpsi .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zclocajzko .gt_last_summary_row {
+#plasjbhpsi .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -935,7 +964,7 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   border-bottom-color: #D3D3D3;
 }
 
-#zclocajzko .gt_grand_summary_row {
+#plasjbhpsi .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -945,7 +974,7 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   padding-right: 5px;
 }
 
-#zclocajzko .gt_first_grand_summary_row {
+#plasjbhpsi .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -955,7 +984,7 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   border-top-color: #D3D3D3;
 }
 
-#zclocajzko .gt_last_grand_summary_row_top {
+#plasjbhpsi .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -965,11 +994,11 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   border-bottom-color: #D3D3D3;
 }
 
-#zclocajzko .gt_striped {
+#plasjbhpsi .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zclocajzko .gt_table_body {
+#plasjbhpsi .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -978,7 +1007,7 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   border-bottom-color: #D3D3D3;
 }
 
-#zclocajzko .gt_footnotes {
+#plasjbhpsi .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -992,7 +1021,7 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   border-right-color: #D3D3D3;
 }
 
-#zclocajzko .gt_footnote {
+#plasjbhpsi .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1001,7 +1030,7 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   padding-right: 5px;
 }
 
-#zclocajzko .gt_sourcenotes {
+#plasjbhpsi .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1015,7 +1044,7 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   border-right-color: #D3D3D3;
 }
 
-#zclocajzko .gt_sourcenote {
+#plasjbhpsi .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1023,72 +1052,72 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
   padding-right: 5px;
 }
 
-#zclocajzko .gt_left {
+#plasjbhpsi .gt_left {
   text-align: left;
 }
 
-#zclocajzko .gt_center {
+#plasjbhpsi .gt_center {
   text-align: center;
 }
 
-#zclocajzko .gt_right {
+#plasjbhpsi .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zclocajzko .gt_font_normal {
+#plasjbhpsi .gt_font_normal {
   font-weight: normal;
 }
 
-#zclocajzko .gt_font_bold {
+#plasjbhpsi .gt_font_bold {
   font-weight: bold;
 }
 
-#zclocajzko .gt_font_italic {
+#plasjbhpsi .gt_font_italic {
   font-style: italic;
 }
 
-#zclocajzko .gt_super {
+#plasjbhpsi .gt_super {
   font-size: 65%;
 }
 
-#zclocajzko .gt_footnote_marks {
+#plasjbhpsi .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zclocajzko .gt_asterisk {
+#plasjbhpsi .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zclocajzko .gt_indent_1 {
+#plasjbhpsi .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zclocajzko .gt_indent_2 {
+#plasjbhpsi .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zclocajzko .gt_indent_3 {
+#plasjbhpsi .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zclocajzko .gt_indent_4 {
+#plasjbhpsi .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zclocajzko .gt_indent_5 {
+#plasjbhpsi .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zclocajzko .katex-display {
+#plasjbhpsi .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zclocajzko div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#plasjbhpsi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1161,7 +1190,7 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
 <section id="the-atmp-classification-and-its-consequences" class="level3" data-number="5.6.2">
 <h3 data-number="5.6.2" class="anchored" data-anchor-id="the-atmp-classification-and-its-consequences"><span class="header-section-number">5.6.2</span> The ATMP classification and its consequences</h3>
 <p>The regulatory classification of CRISPR-based therapies as ATMPs (in the EU) or as biologics requiring Biologics License Application (BLA) review (in the US) has specific consequences for the development pathway. ATMP classification triggers requirements for GMP manufacturing that are more stringent in some respects than for conventional biologics — for example, the requirement for dedicated manufacturing suites, the need for potency assays that measure on-target editing efficiency, and environmental release considerations that, while largely theoretical for ex vivo therapies (the edited cells are contained within the patient), become substantive for in vivo therapies where LNPs or AAV vectors are administered systemically.</p>
-<p>The EMA’s hospital exemption pathway — which allows the preparation and use of ATMPs within a single Member State under the responsibility of a physician, without centralised marketing authorisation — offers a potential alternative route for rare disease applications where the patient population is too small to justify a full regulatory submission. However, the pathway is unevenly implemented across Member States, its quality and safety requirements are less standardised, and it has been criticised for creating a two-tier system in which patients in some countries have access to therapies that are unavailable in others.</p>
+<p>The EMA’s hospital exemption pathway — which allows the preparation and use of ATMPs within a single Member State under the responsibility of a physician, without centralised marketing authorisation — offers a potential alternative route for rare disease applications where the patient population is too small to justify a full regulatory submission. However, the pathway is unevenly implemented across Member States, its quality and safety requirements are less standardised, and it has been criticised for creating a two-tier system in which patients in some countries have access to therapies that are unavailable in others <span class="citation" data-cites="regulation_ec_1394_2007">(<a href="references.html#ref-regulation_ec_1394_2007" role="doc-biblioref">European Parliament and Council of the European Union, 2007</a>)</span>.</p>
 </section>
 </section>
 <section id="sec-sti-5" class="level2" data-number="5.7">
@@ -1188,17 +1217,56 @@ Table&nbsp;5.1: Cross-jurisdictional comparison of Casgevy regulatory approvals.
 <div id="ref-bellinger2023_verve101" class="csl-entry" role="listitem">
 Bellinger, A. M. et al. (2023). Safety and pharmacodynamic effects of <span>VERVE</span>-101, an investigational <span>DNA</span> base editing medicine designed to durably inactivate the <span>PCSK9</span> gene and lower <span>LDL</span> cholesterol – interim results of the <span>Phase 1b Heart-1</span> trial. <em>Circulation</em>. <a href="https://www.vervetx.com/sites/default/files/2023-11/Verve_AHA_2023_LBS_for%20website.pdf">https://www.vervetx.com/sites/default/files/2023-11/Verve_AHA_2023_LBS_for%20website.pdf</a>
 </div>
+<div id="ref-chiesa2023_becar7" class="csl-entry" role="listitem">
+Chiesa, R., Georgiadis, C., Syed, F., et al. (2023). Base-edited <span>CAR7</span> <span>T</span> cells for relapsed <span>T</span>-cell acute lymphoblastic leukemia. <em>New England Journal of Medicine</em>, <em>389</em>(10), 899–910. <a href="https://doi.org/10.1056/NEJMoa2300709">https://doi.org/10.1056/NEJMoa2300709</a>
+</div>
+<div id="ref-CRISPRTx2024Bus" class="csl-entry" role="listitem">
+CRISPR Therapeutics. (2024). <em>CRISPR therapeutics provides business update and reports fourth quarter and full year 2024 financial results</em>. <a href="https://crisprtx.com/about-us/press-releases-and-presentations/crispr-therapeutics-provides-business-update-and-reports-fourth-quarter-and-full-year-2024-financial-results" class="uri">https://crisprtx.com/about-us/press-releases-and-presentations/crispr-therapeutics-provides-business-update-and-reports-fourth-quarter-and-full-year-2024-financial-results</a>.
+</div>
 <div id="ref-duan_systemic_2018" class="csl-entry" role="listitem">
 Duan, D. (2018). Systemic AAV micro-dystrophin gene therapy for duchenne muscular dystrophy. <em>Molecular Therapy</em>, <em>26</em>(10), 2337–2356. <a href="https://doi.org/10.1016/j.ymthe.2018.07.011">https://doi.org/10.1016/j.ymthe.2018.07.011</a>
+</div>
+<div id="ref-regulation_ec_1394_2007" class="csl-entry" role="listitem">
+European Parliament and Council of the European Union. (2007). <em>Regulation (EC) no 1394/2007 on advanced therapy medicinal products: L 324</em> (pp. 121–137). Official Journal of the European Union. <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007R1394">https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007R1394</a>
+</div>
+<div id="ref-Frangoul2021CRISPRCas9" class="csl-entry" role="listitem">
+Frangoul, H. et al. (2021). CRISPR-Cas9 gene editing for sickle cell disease and <span class="math inline">\(\beta\)</span>-thalassemia. <em>New England Journal of Medicine</em>, <em>384</em>(3), 252–260. <a href="https://doi.org/10.1056/NEJMoa2031054">https://doi.org/10.1056/NEJMoa2031054</a>
+</div>
+<div id="ref-frangoul2024_nejm" class="csl-entry" role="listitem">
+Frangoul, H., Locatelli, F., Sharma, A., et al. (2024). Exagamglogene autotemcel for severe sickle cell disease. <em>New England Journal of Medicine</em>, <em>390</em>(18), 1649–1662. <a href="https://doi.org/10.1056/NEJMoa2309676">https://doi.org/10.1056/NEJMoa2309676</a>
 </div>
 <div id="ref-gillmore2021_ntla" class="csl-entry" role="listitem">
 Gillmore, J. D., Gane, E., Taubel, J., Kao, J., Fontana, M., Maitland, M. L., et al. (2021). <span>CRISPR</span>-<span>Cas9</span> in vivo gene editing for transthyretin amyloidosis. <em>New England Journal of Medicine</em>, <em>385</em>(6), 493–502. <a href="https://doi.org/10.1056/NEJMoa2107454">https://doi.org/10.1056/NEJMoa2107454</a>
 </div>
+<div id="ref-laurent2024_crispr_clinical" class="csl-entry" role="listitem">
+Laurent, M., Geoffroy, M., Pavani, G., &amp; Guiraud, S. (2024). <span>CRISPR</span>-based gene therapies: From preclinical to clinical treatments. <em>Cells</em>, <em>13</em>(10), 800. <a href="https://doi.org/10.3390/cells13100800">https://doi.org/10.3390/cells13100800</a>
+</div>
+<div id="ref-NHS2025GeneEditingSickleCell" class="csl-entry" role="listitem">
+NHS England. (2025). <em>Revolutionary gene editing therapy for sickle cell</em>. <a href="https://www.england.nhs.uk/2025/01/revolutionary-gene-editing-therapy-for-sickle-cell/" class="uri">https://www.england.nhs.uk/2025/01/revolutionary-gene-editing-therapy-for-sickle-cell/</a>.
+</div>
+<div id="ref-nickel2022_fertility" class="csl-entry" role="listitem">
+Nickel, R. S., Maher, J. Y., Hsieh, M. H., Davis, M. F., Hsieh, M. M., &amp; Pecker, L. H. (2022). Fertility after curative therapy for sickle cell disease: A comprehensive review to guide care. <em>Journal of Clinical Medicine</em>, <em>11</em>(9), 2318. <a href="https://doi.org/10.3390/jcm11092318">https://doi.org/10.3390/jcm11092318</a>
+</div>
+<div id="ref-ottaviano2022_crispr_cart" class="csl-entry" role="listitem">
+Ottaviano, G., Georgiadis, C., Gkazi, S. A., et al. (2022). Phase 1 clinical trial of <span>CRISPR</span>-engineered <span>CAR19</span> universal <span>T</span> cells for treatment of children with refractory <span>B</span> cell leukemia. <em>Science Translational Medicine</em>, <em>14</em>(668), eabq3010. <a href="https://doi.org/10.1126/scitranslmed.abq3010">https://doi.org/10.1126/scitranslmed.abq3010</a>
+</div>
 <div id="ref-petryna2009when" class="csl-entry" role="listitem">
 Petryna, A. (2009). <em>When experiments travel: Clinical trials and the global search for human subjects</em>. Princeton University Press.
 </div>
+<div id="ref-schambach2023_precision" class="csl-entry" role="listitem">
+Schambach, A., Buchholz, C. J., Torres-Ruiz, R., Cichutek, K., Morgan, M., Trapani, I., &amp; Büning, H. (2023). A new age of precision gene therapy. <em>Lancet</em>, <em>403</em>(10426), 568–582. <a href="https://doi.org/10.1016/S0140-6736(23)01952-9">https://doi.org/10.1016/S0140-6736(23)01952-9</a>
+</div>
+<div id="ref-sharma2025_climb_pro" class="csl-entry" role="listitem">
+Sharma, A., Locatelli, F., Bhatia, M., et al. (2025). Improvements in health-related quality of life in patients with severe sickle cell disease after exagamglogene autotemcel. <em>Blood Advances</em>, <em>9</em>(24), 6481–6490. <a href="https://doi.org/10.1182/bloodadvances.2025016701">https://doi.org/10.1182/bloodadvances.2025016701</a>
+</div>
 <div id="ref-timmermans2003gold" class="csl-entry" role="listitem">
 Timmermans, S., &amp; Berg, M. (2003). <em>The gold standard: The challenge of evidence-based medicine and standardization in health care</em>. Temple University Press.
+</div>
+<div id="ref-fda2019adaptive" class="csl-entry" role="listitem">
+U.S. Food and Drug Administration. (2019). Adaptive designs for clinical trials of drugs and biologics: Guidance for industry. <em>FDA Guidance Document</em>.
+</div>
+<div id="ref-wu2019_bcl11a" class="csl-entry" role="listitem">
+Wu, Y., Zeng, J., Roscoe, B. P., et al. (2019). Highly efficient therapeutic gene editing of human hematopoietic stem cells. <em>Nature Medicine</em>, <em>25</em>(5), 776–783. <a href="https://doi.org/10.1038/s41591-019-0401-y">https://doi.org/10.1038/s41591-019-0401-y</a>
 </div>
 </div>
 </section>
@@ -1703,36 +1771,36 @@ Timmermans, S., &amp; Berg, M. (2003). <em>The gold standard: The challenge of e
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>The field currently divides along two delivery strategies. The *ex vivo* approach, whose leading example is Casgevy (exagamglogene autotemcel), requires the extraction, editing, and reinfusion of a patient's own cells — a manufacturing process that is patient-specific by necessity, labour-intensive, and geographically constrained. The *in vivo* approach, advanced by Intellia's NTLA-2001 for transthyretin amyloidosis and Verve Therapeutics' VERVE-102 for familial hypercholesterolaemia, delivers editing components directly into the body — a simpler clinical workflow but one that introduces distinct challenges of biodistribution, immunogenicity, and off-target editing in non-target tissues. Each strategy has generated its own clinical evidence, confronted its own regulatory questions, and shaped its own manufacturing supply chain.</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>The discussion moves from manufacturing through trial design, regulatory approval, and post-marketing surveillance, with particular attention to the points where computational tools — the AI systems of Part I — are deployed, and to the structural features that distinguish genome editing from conventional therapeutics.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>The discussion moves from manufacturing through trial design, regulatory approval, and post-marketing surveillance, with particular attention to the points where computational tools — the AI systems of Part I — are deployed, and to the structural features that distinguish genome editing from conventional therapeutics <span class="co">[</span><span class="ot">@schambach2023_precision</span><span class="co">]</span>.</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ex vivo gene editing: the current clinical frontier</span></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">### The Casgevy manufacturing workflow</span></span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>The production of Casgevy for a single patient involves a sequence of steps that, taken together, constitute one of the most complex manufacturing processes in the history of therapeutics. Understanding this workflow matters not only for appreciating the clinical achievement but also for grasping why each step compounds the scalability constraints that limit Casgevy's global impact.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>The production of Casgevy for a single patient involves a sequence of steps that, taken together, constitute one of the most complex manufacturing processes in the history of therapeutics <span class="co">[</span><span class="ot">@frangoul2024_nejm; @Frangoul2021CRISPRCas9</span><span class="co">]</span>. Understanding this workflow matters not only for appreciating the clinical achievement but also for grasping why each step compounds the scalability constraints that limit Casgevy's global impact.</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>The first bottleneck is cell collection. The patient receives plerixafor (a CXCR4 antagonist) to mobilise CD34+ haematopoietic stem and progenitor cells (HSPCs) from the bone marrow into the peripheral blood, followed by leukapheresis. Mobilisation efficiency varies across patients — particularly in SCD, where repeated vaso-occlusive crises may have damaged the bone marrow microenvironment — and insufficient yield at this stage can delay or derail the entire process. The collected product must then be shipped under controlled conditions to a centralised GMP manufacturing facility operated by Lonza, with a third facility approved as of late 2025 to meet growing demand. This shipping step alone introduces a logistical dependency on cold-chain infrastructure and international courier networks that is absent from conventional oral or injectable therapies.</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>At the manufacturing site, CD34+ cells are enriched by immunomagnetic selection, then electroporated with a ribonucleoprotein (RNP) complex comprising SpCas9 protein and a synthetic single guide RNA targeting the erythroid-specific enhancer of *BCL11A*. The electroporation parameters — voltage, pulse duration, RNP concentration, cell density — have been optimised through extensive process development, and the specific conditions are proprietary. After editing, cells are cryopreserved and subjected to a battery of quality control assessments: viability, CD34+ purity, sterility, endotoxin levels, and — most consequentially for release decisions — on-target editing efficiency (measured by next-generation sequencing of the target locus) and off-target assessment. Because each patient's cells respond differently to electroporation, editing efficiency is unavoidably variable: a manufacturing process that produces 85% allelic disruption in one patient may achieve only 60% in the next, with direct implications for engraftment kinetics and clinical response.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>At the manufacturing site, CD34+ cells are enriched by immunomagnetic selection, then electroporated with a ribonucleoprotein (RNP) complex comprising SpCas9 protein and a synthetic single guide RNA targeting the erythroid-specific enhancer of *BCL11A* <span class="co">[</span><span class="ot">@wu2019_bcl11a</span><span class="co">]</span>. The electroporation parameters — voltage, pulse duration, RNP concentration, cell density — have been optimised through extensive process development, and the specific conditions are proprietary. After editing, cells are cryopreserved and subjected to a battery of quality control assessments: viability, CD34+ purity, sterility, endotoxin levels, and — most consequentially for release decisions — on-target editing efficiency (measured by next-generation sequencing of the target locus) and off-target assessment. Because each patient's cells respond differently to electroporation, editing efficiency is unavoidably variable: a manufacturing process that produces 85% allelic disruption in one patient may achieve only 60% in the next, with direct implications for engraftment kinetics and clinical response.</span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>The edited cells are shipped back to the treatment centre, where the patient undergoes myeloablative conditioning with pharmacokinetically dose-adjusted busulfan over four days. This step — the destruction of the patient's existing bone marrow — is necessary to create 'space' for the edited cells to engraft, but it carries significant toxicity: weeks of pancytopenia with attendant risks of infection, bleeding, and organ damage. Patients require prolonged hospitalisation during the engraftment period, typically 4–6 weeks. After discharge, long-term follow-up continues for 15 years under the terms of the regulatory approval.</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>The entire process, from first cell collection to infusion, takes approximately 6–9 months. As of late 2025, 165 patients had undergone first cell collection, 39 had been infused, and more than 45 authorised treatment centres had been activated globally — numbers that, while growing, remain a tiny fraction of the eligible patient population. The manufacturing workflow is, in effect, a personalised therapy pipeline that operates at artisanal scale within a regulatory framework designed for industrial production.</span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>::: {.column-margin style="font-size: 0.88em;"}</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>As of late 2025, the gap between eligible and treated patients is stark: an estimated 100,000 individuals with severe SCD or TDT could benefit from Casgevy in the US and EU alone, but fewer than 40 had been infused. The ratio — approximately 1 in 2,500 — illustrates the manufacturing bottleneck as a structural constraint, not a transient one.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>As of late 2025, the gap between eligible and treated patients is stark: an estimated 100,000 individuals with severe SCD or TDT could benefit from Casgevy in the US and EU alone, but fewer than 40 had been infused <span class="co">[</span><span class="ot">@frangoul2024_nejm</span><span class="co">]</span>. The ratio — approximately 1 in 2,500 — illustrates the manufacturing bottleneck as a structural constraint, not a transient one.</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">### Conditioning regimens and the burden of treatment</span></span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>The myeloablative conditioning step is arguably the single greatest barrier to broader adoption of ex vivo CRISPR therapies. Busulfan conditioning is associated with acute toxicities (mucositis, hepatic sinusoidal obstruction syndrome, seizures) and long-term risks (secondary malignancies, gonadal failure). For SCD patients — many of whom are children or young adults — the reproductive implications are particularly significant: busulfan is gonadotoxic, and fertility preservation must be offered before conditioning, adding complexity, cost, and emotional burden to an already demanding process.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>The myeloablative conditioning step is arguably the single greatest barrier to broader adoption of ex vivo CRISPR therapies. Busulfan conditioning is associated with acute toxicities (mucositis, hepatic sinusoidal obstruction syndrome, seizures) and long-term risks (secondary malignancies, gonadal failure). For SCD patients — many of whom are children or young adults — the reproductive implications are particularly significant: busulfan is gonadotoxic, and fertility preservation must be offered before conditioning, adding complexity, cost, and emotional burden to an already demanding process <span class="co">[</span><span class="ot">@nickel2022_fertility</span><span class="co">]</span>.</span>
 <span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>Research into reduced-intensity and non-myeloablative conditioning regimens is active but preliminary. Antibody-based conditioning — using antibodies against CD117 (c-Kit) to selectively deplete HSPCs without broad myeloablation — has shown promise in preclinical models and early clinical testing for non-CRISPR gene therapies, but has not yet been validated in the context of CRISPR-edited cell products. If successful, antibody conditioning could dramatically reduce the toxicity, hospitalisation duration, and infrastructure requirements of ex vivo editing, potentially bringing these therapies within reach of healthcare systems in low- and middle-income countries.</span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="fu">### Beyond Casgevy: other ex vivo programmes</span></span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Casgevy is not the only ex vivo CRISPR therapy in clinical development, though it is the only one with regulatory approval as of early 2026. Several programmes are advancing through clinical trials with distinct editing strategies. CRISPR-based engineering of chimeric antigen receptor T cells (CAR-T) uses multiplex editing to simultaneously insert the CAR transgene, disrupt the endogenous T cell receptor (to enable allogeneic 'off-the-shelf' products), and knock out immune checkpoint genes (to enhance persistence and anti-tumour activity). These allogeneic CAR-T products — if successfully developed — would eliminate the patient-specific manufacturing bottleneck of autologous approaches, though they introduce the challenge of graft-versus-host disease prevention.</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Casgevy is not the only ex vivo CRISPR therapy in clinical development, though it is the only one with regulatory approval as of early 2026. Several programmes are advancing through clinical trials with distinct editing strategies. CRISPR-based engineering of chimeric antigen receptor T cells (CAR-T) uses multiplex editing to simultaneously insert the CAR transgene, disrupt the endogenous T cell receptor (to enable allogeneic 'off-the-shelf' products), and knock out immune checkpoint genes (to enhance persistence and anti-tumour activity). These allogeneic CAR-T products — if successfully developed — would eliminate the patient-specific manufacturing bottleneck of autologous approaches, though they introduce the challenge of graft-versus-host disease prevention <span class="co">[</span><span class="ot">@ottaviano2022_crispr_cart; @chiesa2023_becar7</span><span class="co">]</span>.</span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>iPSC-derived cell therapies push this logic further: patient fibroblasts or blood cells are reprogrammed to induced pluripotent stem cells, edited at the iPSC stage, differentiated to the desired cell type (e.g., pancreatic beta cells, cardiomyocytes, retinal pigment epithelial cells), and administered to the patient. This approach decouples the editing event from the patient timeline, allowing the generation of banked, quality-controlled edited cell lines that can serve multiple patients — a manufacturing model that differs in kind, not merely in efficiency, from autologous approaches.</span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
@@ -1741,7 +1809,7 @@ Timmermans, S., &amp; Berg, M. (2003). <em>The gold standard: The challenge of e
 <span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="fu">### VERVE-101 and VERVE-102: base editing for cardiovascular disease</span></span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>The Verve Therapeutics programme targeting *PCSK9* — a gene whose inactivation potently reduces LDL cholesterol — is the most advanced in vivo base editing clinical programme and illustrates both the potential and the iterative nature of clinical translation.</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>The Verve Therapeutics programme targeting *PCSK9* — a gene whose inactivation potently reduces LDL cholesterol — is the most advanced in vivo base editing clinical programme and illustrates both the potential and the iterative nature of clinical translation <span class="co">[</span><span class="ot">@laurent2024_crispr_clinical</span><span class="co">]</span>.</span>
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>VERVE-101, the first-generation product, consists of an adenine base editor (ABE) mRNA and a guide RNA targeting *PCSK9*, encapsulated in an engineered LNP for intravenous delivery to hepatocytes. The Heart-1 Phase 1b trial, initiated in 2022, enrolled 10 patients with heterozygous familial hypercholesterolaemia (HeFH) and established atherosclerotic cardiovascular disease. First-in-human data presented at AHA 2023 demonstrated proof of concept: at the 0.45 mg/kg dose, two patients showed PCSK9 protein reductions of 59% and 84% and LDL-C reductions of 39% and 48%, respectively. The single patient treated at 0.6 mg/kg achieved a 55% LDL-C reduction sustained to at least 180 days <span class="co">[</span><span class="ot">@bellinger2023_verve101</span><span class="co">]</span>.</span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
@@ -1824,7 +1892,7 @@ Timmermans, S., &amp; Berg, M. (2003). <em>The gold standard: The challenge of e
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>The small patient populations characteristic of rare disease gene therapy programmes create a tension between the need for rigorous evidence and the practical impossibility of enrolling large trials. Adaptive trial designs — in which the trial's sample size, randomisation ratio, dose levels, or inclusion criteria can be modified during the trial on the basis of interim data — offer a partial resolution. Bayesian adaptive designs are particularly relevant: they use prior information (from preclinical data, earlier cohorts, or external data sources) to construct a probabilistic model of the treatment effect that is updated as patient data accumulate, allowing the trial to reach a decision (stop for efficacy, stop for futility, or continue) with fewer patients than a fixed-sample frequentist design would require.</span>
 <span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>The application of Bayesian methods to gene therapy trials is growing but remains non-standard. Regulatory agencies — particularly the FDA, through its 2019 guidance on adaptive designs, and the EMA, through its reflection paper on methodological issues — have signalled openness to these approaches, but sponsors report that pre-specification of the statistical framework, the handling of multiplicity, and the choice of informative priors remain areas of regulatory uncertainty. Combining AI-driven patient stratification (discussed in Chapter 6) with Bayesian trial designs is a natural next step: ML models trained on multi-omic data could identify patient subgroups most likely to respond, enriching the trial population and increasing statistical power without increasing sample size.</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>The application of Bayesian methods to gene therapy trials is growing but remains non-standard. Regulatory agencies — particularly the FDA, through its 2019 guidance on adaptive designs, and the EMA, through its reflection paper on methodological issues — have signalled openness to these approaches, but sponsors report that pre-specification of the statistical framework, the handling of multiplicity, and the choice of informative priors remain areas of regulatory uncertainty <span class="co">[</span><span class="ot">@fda2019adaptive</span><span class="co">]</span>. Combining AI-driven patient stratification (discussed in Chapter 6) with Bayesian trial designs is a natural next step: ML models trained on multi-omic data could identify patient subgroups most likely to respond, enriching the trial population and increasing statistical power without increasing sample size.</span>
 <span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="fu">### Surrogate endpoints and long-term outcomes</span></span>
 <span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
@@ -1838,7 +1906,7 @@ Timmermans, S., &amp; Berg, M. (2003). <em>The gold standard: The challenge of e
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="fu">### Patient-reported outcomes</span></span>
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>A dimension of clinical trial design that has historically received insufficient attention in gene therapy — and that connects directly to the STS themes of this monograph — is the systematic collection of patient-reported outcome measures (PROMs). For SCD, the CLIMB-121 trial included multiple PROM instruments: the Adult Sickle Cell Quality of Life Measurement Information System (ASCQ-Me), the EQ-5D, the PedsQL, and a weekly pain scale. Data from these instruments demonstrate clinically meaningful improvements across emotional impact, pain, social functioning, and stiffness domains — evidence that complements the biomarker and clinical endpoints with the patient's own assessment of therapeutic benefit.</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>A dimension of clinical trial design that has historically received insufficient attention in gene therapy — and that connects directly to the STS themes of this monograph — is the systematic collection of patient-reported outcome measures (PROMs). For SCD, the CLIMB-121 trial included multiple PROM instruments: the Adult Sickle Cell Quality of Life Measurement Information System (ASCQ-Me), the EQ-5D, the PedsQL, and a weekly pain scale. Data from these instruments demonstrate clinically meaningful improvements across emotional impact, pain, social functioning, and stiffness domains — evidence that complements the biomarker and clinical endpoints with the patient's own assessment of therapeutic benefit <span class="co">[</span><span class="ot">@sharma2025_climb_pro</span><span class="co">]</span>.</span>
 <span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>The inclusion of PROMs is not merely a methodological refinement but a political act in the sense developed by the STS literature: it makes visible a dimension of disease impact (subjective quality of life) that is systematically undervalued by biomarker-centric trial designs. For conditions like Lynch syndrome, where surveillance programmes impose ongoing burdens of anxiety, invasive procedures, and reproductive decisions, PROMs are essential for evaluating whether AI-driven liquid biopsy approaches (such as those under development in PREDI-LYNCH) actually improve the lived experience of carriers — a question that biomarker sensitivity and specificity alone cannot answer.</span>
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
@@ -1859,9 +1927,9 @@ Timmermans, S., &amp; Berg, M. (2003). <em>The gold standard: The challenge of e
 <span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a><span class="fu">### Cost of goods and the pricing equation</span></span>
 <span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>The cost of goods sold (COGS) for autologous gene-edited cell therapies is estimated at $50,000–100,000 per patient, driven by the cost of GMP-grade reagents (Cas9 protein, synthetic guide RNA, electroporation supplies), the labour-intensive manufacturing process, quality control testing, and cryogenic shipping logistics. This COGS, while high by pharmaceutical standards, accounts for only a small fraction of the list price ($2.2 million for Casgevy), with the majority of the price reflecting development costs, regulatory costs, profit margin, and — most tellingly — the small denominator over which these fixed costs are amortised.</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>The cost of goods sold (COGS) for autologous gene-edited cell therapies is estimated at $50,000–100,000 per patient, driven by the cost of GMP-grade reagents (Cas9 protein, synthetic guide RNA, electroporation supplies), the labour-intensive manufacturing process, quality control testing, and cryogenic shipping logistics. This COGS, while high by pharmaceutical standards, accounts for only a small fraction of the list price ($2.2 million for Casgevy), with the majority of the price reflecting development costs, regulatory costs, profit margin, and — most tellingly — the small denominator over which these fixed costs are amortised <span class="co">[</span><span class="ot">@CRISPRTx2024Bus</span><span class="co">]</span>.</span>
 <span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>For in vivo therapies, the COGS picture is different: LNP-encapsulated mRNA/gRNA products are manufactured using established nucleic acid synthesis and LNP formulation processes that are more amenable to scale-up, and the cost per dose is expected to decrease as manufacturing matures. However, the development costs remain high (Verve Therapeutics reported quarterly operating losses exceeding $50 million in early 2025), and the pricing of in vivo gene editing therapies has not yet been tested by market entry.</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>For in vivo therapies, the COGS picture is different: LNP-encapsulated mRNA/gRNA products are manufactured using established nucleic acid synthesis and LNP formulation processes that are more amenable to scale-up, and the cost per dose is expected to decrease as manufacturing matures. However, the development costs remain high (Verve Therapeutics reported quarterly operating losses exceeding $50 million in early 2025), and the pricing of in vivo gene editing therapies has not yet been tested by market entry <span class="co">[</span><span class="ot">@Hoy2024Exagamglogene</span><span class="co">]</span>.</span>
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a><span class="fu">## Regulatory approval milestones</span></span>
@@ -1876,7 +1944,7 @@ Timmermans, S., &amp; Berg, M. (2003). <em>The gold standard: The challenge of e
 <span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>The European Medicines Agency (EMA) granted conditional marketing authorisation through its Committee for Advanced Therapies (CAT), classifying Casgevy as a gene therapy medicinal product — a subcategory of advanced therapy medicinal products (ATMPs) that triggers specific regulatory requirements including GMP manufacturing to ATMP standards, environmental risk assessment, and enhanced pharmacovigilance. The EMA conditional approval carries annual renewal requirements tied to the submission of additional data on long-term efficacy and safety.</span>
 <span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>Approvals in Saudi Arabia, Bahrain, Canada, Switzerland, and the United Arab Emirates followed in 2024, and reimbursement negotiations — the decisive step between regulatory approval and actual patient access — have progressed at varying speeds. NICE approved Casgevy for SCD in England in May 2025 following an outcomes-based managed access agreement; discussions for TDT are ongoing. The pattern is consistent across jurisdictions: regulatory approval is achieved relatively quickly (12–18 months from submission to decision), but reimbursement and access negotiations add months to years of additional delay.</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>Approvals in Saudi Arabia, Bahrain, Canada, Switzerland, and the United Arab Emirates followed in 2024, and reimbursement negotiations — the decisive step between regulatory approval and actual patient access — have progressed at varying speeds. NICE approved Casgevy for SCD in England in May 2025 following an outcomes-based managed access agreement; discussions for TDT are ongoing. The pattern is consistent across jurisdictions: regulatory approval is achieved relatively quickly (12–18 months from submission to decision), but reimbursement and access negotiations add months to years of additional delay <span class="co">[</span><span class="ot">@NHS2025GeneEditingSickleCell</span><span class="co">]</span>.</span>
 <span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-casgevy-regulatory</span></span>
@@ -1930,7 +1998,7 @@ Timmermans, S., &amp; Berg, M. (2003). <em>The gold standard: The challenge of e
 <span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>The regulatory classification of CRISPR-based therapies as ATMPs (in the EU) or as biologics requiring Biologics License Application (BLA) review (in the US) has specific consequences for the development pathway. ATMP classification triggers requirements for GMP manufacturing that are more stringent in some respects than for conventional biologics — for example, the requirement for dedicated manufacturing suites, the need for potency assays that measure on-target editing efficiency, and environmental release considerations that, while largely theoretical for ex vivo therapies (the edited cells are contained within the patient), become substantive for in vivo therapies where LNPs or AAV vectors are administered systemically.</span>
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>The EMA's hospital exemption pathway — which allows the preparation and use of ATMPs within a single Member State under the responsibility of a physician, without centralised marketing authorisation — offers a potential alternative route for rare disease applications where the patient population is too small to justify a full regulatory submission. However, the pathway is unevenly implemented across Member States, its quality and safety requirements are less standardised, and it has been criticised for creating a two-tier system in which patients in some countries have access to therapies that are unavailable in others.</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>The EMA's hospital exemption pathway — which allows the preparation and use of ATMPs within a single Member State under the responsibility of a physician, without centralised marketing authorisation — offers a potential alternative route for rare disease applications where the patient population is too small to justify a full regulatory submission. However, the pathway is unevenly implemented across Member States, its quality and safety requirements are less standardised, and it has been criticised for creating a two-tier system in which patients in some countries have access to therapies that are unavailable in others <span class="co">[</span><span class="ot">@regulation_ec_1394_2007</span><span class="co">]</span>.</span>
 <span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sociotechnical Interlude V: the clinical trial as a sociotechnical system {#sec-sti-5}</span></span>
