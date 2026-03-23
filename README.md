@@ -6,6 +6,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19136685.svg)](https://doi.org/10.5281/zenodo.19136685)
 [![Deploy: Vercel](https://img.shields.io/badge/deploy-Vercel-black?logo=vercel)](https://crispr-ai-chi.vercel.app/)
 [![Deploy: Netlify](https://img.shields.io/badge/deploy-Netlify-00C7B7?logo=netlify)](https://crispr-ai.netlify.app/)
+[![Deploy: Cloudflare](https://img.shields.io/badge/Cloudflare-crispr--ai-F38020?logo=cloudflare)](https://crispr-ai.utilizas.workers.dev/)
 
 ---
 
@@ -68,6 +69,7 @@ The rendered site is deployed as a static HTML book to:
 
 - **Vercel**: [https://crispr-ai-chi.vercel.app](https://crispr-ai-chi.vercel.app/)
 - **Netlify**: [https://crispr-ai.netlify.app](https://crispr-ai.netlify.app/)
+- ***Cloudflare**: [https://crispr-ai.utilizas.workers.dev/](https://crispr-ai.utilizas.workers.dev/)
 
 Both platforms serve the contents of this repository directly. No build step is required — the HTML is pre-rendered.
 
@@ -146,6 +148,6 @@ You are free to share and adapt this material for non-commercial purposes, provi
 
 The complete project archive — including `references.bib` and rendered outputs — is preserved on Zenodo:
 
-> **DOI**: [10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXX)
+> **DOI**: [10.5281/zenodo.19136685](https://doi.org/10.5281/zenodo.19136685)
 
 The Zenodo deposit constitutes the version of record for archival and reproducibility purposes.
