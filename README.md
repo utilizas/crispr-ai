@@ -69,7 +69,7 @@ The rendered site is deployed as a static HTML book to:
 
 - **Vercel**: [https://crispr-ai-chi.vercel.app](https://crispr-ai-chi.vercel.app/)
 - **Netlify**: [https://crispr-ai.netlify.app](https://crispr-ai.netlify.app/)
-- ***Cloudflare**: [https://crispr-ai.utilizas.workers.dev/](https://crispr-ai.utilizas.workers.dev/)
+- **Cloudflare**: [https://crispr-ai.utilizas.workers.dev/](https://crispr-ai.utilizas.workers.dev/)
 
 Both platforms serve the contents of this repository directly. No build step is required — the HTML is pre-rendered.
 
